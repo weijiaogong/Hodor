@@ -1,15 +1,18 @@
 CodeMonkeys::Application.routes.draw do
 	mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-	
+
 	namespace :admin do
 		resources :posters, :only => [:index, :create] do
 			collection { post :import}
 		end
+		
 	end
 	
 	namespace :judge do
 		resources :posters, :only => [:index, :edit, :update] 
 	end
+
+	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
