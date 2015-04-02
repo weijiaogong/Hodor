@@ -2,7 +2,7 @@ require 'csv'
 
 class Admin::PostersController < ApplicationController
 	def index
-		@posters = Poster.order(score: :desc)
+		@posters = Poster.all
 	end
 	
 	def import
