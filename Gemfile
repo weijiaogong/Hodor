@@ -11,6 +11,7 @@ group :development, :test do
   	gem 'sqlite3'
   	gem 'debugger'
 	gem 'jasmine-rails'
+	gem 'railroady'
 end
 
 group :test do
