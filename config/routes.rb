@@ -2,14 +2,17 @@ CodeMonkeys::Application.routes.draw do
 	mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
 	namespace :admin do
-		resources :posters, :only => [:index, :create] do
-			collection { post :import}
+		resources :posters, :only => [:index] do
+			collection { 
+                post :import
+                delete :clear
+            }
 		end
-		
 	end
 	
-	namespace :judge do
-		resources :posters, :only => [:index, :edit, :update] 
+	resources :judges, :only => [:edit, :show] do
+		resources :posters, :only => [:edit, :update]
+        put :assign
 	end
 
 	

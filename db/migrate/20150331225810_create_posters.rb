@@ -4,9 +4,7 @@ class CreatePosters < ActiveRecord::Migration
 			t.integer :number
 			t.string :presenter
 			t.string :title
-			t.string :advisors #multiple advisors should be seperated by commas
-			t.integer :score, default: 0
-			t.integer :judges, default: 0 #number of judges assigned to this specific poster
+			t.string :advisors 
 		end
   	end
 

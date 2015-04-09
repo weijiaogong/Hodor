@@ -1,5 +1,7 @@
 class Poster < ActiveRecord::Base
-	attr_accessible :number, :presenter, :title, :advisors, :score, :judges
+	attr_accessible :number, :presenter, :title, :advisors
+	has_many :scores
+	has_many :judges, through: :scores
 
 	def self.import_csv(file)
 		CSV.foreach(file.path, headers: true, encoding: 'windows-1251:utf-8') do |row|
