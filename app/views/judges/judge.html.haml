@@ -1,7 +1,7 @@
 !!!
 %html
-  %body
-    %form{:action => "judgement"}
+  %body Poster #
+    %form{:name => "judge", :url=>{:controller=>"posters", :action=>"update"}}
       Novelty (research contribution of the work)
       %br/
       = succeed "1" do
@@ -70,3 +70,7 @@
         %input{:name => "cat5", :type => "radio", :value => "4"}/
       = succeed "5" do
         %input{:name => "cat5", :type => "radio", :value => "5"}/
+%br/
+%br/
+%br/
+%button{:type => "submit"} Submit
