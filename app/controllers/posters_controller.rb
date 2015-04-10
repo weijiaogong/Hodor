@@ -19,11 +19,5 @@ class PostersController < ApplicationController
     def no_show
         @score = Score.where(judge_id: @judge.id, poster_id: @poster.id).first()
 
-        @score.no_show = true
-        @score.novelty = -1
-        @score.utility = -1
-        @score.difficulty = -1
-        @score.verbal = -1
-        @score.written = -1
     end
 end
