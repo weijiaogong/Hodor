@@ -1,23 +1,21 @@
 = form_tag import_admin_posters_path, multipart: true do
-	= file_field_tag :file
-	= submit_tag "Import"
+    = file_field_tag :file
+    = submit_tag "Import"
 - if flash[:notice]
-	#notice.message= flash[:notice]
+    #notice.message= flash[:notice]
 - elsif flash[:warning]
-	#notice.message= flash[:warning]
+    #notice.message= flash[:warning]
 %table#posters
-	%thead
-		%th Poster Number
-		%th Presenter
-		%th Title
-		%th Advisor(s)
-		%th Score
-	%tbody
-		- @posters.each do |poster|
-			%tr
-				%td= poster.number
-				%td= poster.presenter
-				%td= poster.title
-				%td= poster.advisors
-				%td= poster.score
+    %thead
+        %th Poster Number
+        %th Presenter
+        %th Title
+        %th Advisor(s)
+    %tbody
+        - @posters.each do |poster|
+            %tr
+                %td= poster.number
+                %td= poster.presenter
+                %td= poster.title
+                %td= poster.advisors
 
