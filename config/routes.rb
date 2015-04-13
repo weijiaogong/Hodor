@@ -10,9 +10,10 @@ CodeMonkeys::Application.routes.draw do
 		end
 	end
 	
-	resources :judges, :only => [:edit, :show] do
+	resources :judges, :only => [:show] do
 		resources :posters, :only => [:edit, :update]
-        put :assign
+        	put :assign
+                get :register
 	end
 
 	

@@ -12,7 +12,7 @@ class JudgesController < ApplicationController
     end
 
     #display the form to add name and company name for a specific judge
-    def edit
+    def register
         
     end
 end

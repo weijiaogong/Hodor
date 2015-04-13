@@ -14,4 +14,8 @@ class Poster < ActiveRecord::Base
 			end
 		end
 	end
+
+	def self.find_least_judged()
+
+	end
 end
