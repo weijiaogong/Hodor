@@ -5,4 +5,4 @@
             = poster.number.inspect
             %br
             = poster.title.inspect
-            %br
+        %br
