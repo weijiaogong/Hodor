@@ -16,6 +16,6 @@ class Poster < ActiveRecord::Base
 	end
 
 	def self.find_least_judged()
-
+		return Poster.order(:judges.size() => :desc).find(:all)
 	end
 end

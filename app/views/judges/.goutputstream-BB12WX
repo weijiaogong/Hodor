@@ -1,0 +1,7 @@
+- @posters.each do |poster|
+    = link_to edit_judge_poster_path(poster.id) do
+        %div
+            Poster #: 
+            #poster.number
+            %br
+            #poster.title

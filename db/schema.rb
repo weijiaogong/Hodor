@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20150408035211) do
   create_table "judges", :force => true do |t|
     t.string "name"
     t.string "company_name"
+    t.string "access_code"
   end
 
   create_table "posters", :force => true do |t|
@@ -32,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20150408035211) do
     t.integer "verbal"
     t.integer "written"
     t.boolean "no_show"
-    t.integer "posters_id"
-    t.integer "judges_id"
+    t.integer "poster_id"
+    t.integer "judge_id"
   end
 
 end
