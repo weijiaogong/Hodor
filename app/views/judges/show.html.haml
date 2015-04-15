@@ -1,5 +1,5 @@
 - @posters.each do |poster|
-    = link_to edit_judge_poster_path(poster.id) do
+    = link_to judge_poster_judge_path(@judge.id, poster.id) do
         %div
             Poster #: 
             = poster.number.inspect

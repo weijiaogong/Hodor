@@ -14,9 +14,10 @@
 ActiveRecord::Schema.define(:version => 20150408035211) do
 
   create_table "judges", :force => true do |t|
-    t.string "name"
-    t.string "company_name"
-    t.string "access_code"
+    t.string  "name"
+    t.string  "company_name"
+    t.string  "access_code"
+    t.integer "scores_count", :default => 0
   end
 
   create_table "posters", :force => true do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20150408035211) do
     t.string  "presenter"
     t.string  "title"
     t.string  "advisors"
+    t.integer "scores_count", :default => 0
   end
 
   create_table "scores", :force => true do |t|

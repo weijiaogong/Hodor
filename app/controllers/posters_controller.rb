@@ -1,9 +1,9 @@
 class PostersController < ApplicationController
     
     #render the view for judging each poster
-    def edit
-        @poster = Poster.find(params{:id})
-        @judge = Judge.find(params{:judge_id})
+    def judge
+        @poster = Poster.find(params[:id])
+        @judge = Judge.find(params[:judge_id])
     end    
     
     #update the Score associated with a specific poster and a specific judge

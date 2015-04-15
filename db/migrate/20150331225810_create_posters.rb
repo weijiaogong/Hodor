@@ -4,7 +4,8 @@ class CreatePosters < ActiveRecord::Migration
 			t.integer :number
 			t.string :presenter
 			t.string :title
-			t.string :advisors 
+			t.string :advisors
+			t.integer "scores_count", default: 0 
 		end
   	end
 

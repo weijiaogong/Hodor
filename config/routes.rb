@@ -11,7 +11,9 @@ CodeMonkeys::Application.routes.draw do
     end
 	
     resources :judges, :only => [:show] do
-        resources :posters, :only => [:edit, :update]
+        resources :posters, :only => [:update]{
+	        get :judge
+	    }
         collection { #temporary
             get :register
         }

@@ -1,5 +1,5 @@
 class Poster < ActiveRecord::Base
-	attr_accessible :number, :presenter, :title, :advisors
+	attr_accessible :number, :presenter, :title, :advisors, :scores_count
 	has_many :scores
 	has_many :judges, through: :scores
 
@@ -16,6 +16,6 @@ class Poster < ActiveRecord::Base
 	end
 
 	def self.find_least_judged()
-		return Poster.order(:judges.size() => :desc).find(:all)
+		return Poster.order('scores_count').find(:all)
 	end
 end

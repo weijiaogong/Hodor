@@ -4,6 +4,7 @@ class CreateJudges < ActiveRecord::Migration
 			t.string :name
 			t.string :company_name
             t.string :access_code
+			t.integer "scores_count", default: 0
 		end
   	end
 

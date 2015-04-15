@@ -1,5 +1,5 @@
 class Judge < ActiveRecord::Base
-	attr_accessible :name, :company_name, :access_code
+	attr_accessible :name, :company_name, :access_code, :scores_count
 	has_many :scores
 	has_many :posters, through: :scores
 
