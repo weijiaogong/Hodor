@@ -16,7 +16,7 @@ class PostersController < ApplicationController
         
         @score.update_attributes(:novelty => params[:novelty], :utility => params[:utility], :difficulty => params[:difficulty], :verbal => params[:verbal], :written => params[:written], :no_show => false)
 
-        redirect_to judge_path(params[:judge_id])
+        redirect_to judge_poster_path(params[:judge_id], params[:id])
     end
 
     def no_show
