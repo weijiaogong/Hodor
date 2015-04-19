@@ -12,6 +12,7 @@ CodeMonkeys::Application.routes.draw do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
+        root to: "admin#index"
     end
 	
     resources :judges, :only => [:show] do
