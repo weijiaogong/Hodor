@@ -1,0 +1,16 @@
+= form_tag import_admin_posters_path, multipart: true do
+    = file_field_tag :file
+    = submit_tag "Import"
+
+%table#judges
+    %thead
+        %th Access Code
+        %th Name
+        %th Company
+    %tbody
+        - @judges.each do |judge|
+            %tr
+                %td= judge.access_code
+                %td= judge.name
+                %td= judge.company_name
+

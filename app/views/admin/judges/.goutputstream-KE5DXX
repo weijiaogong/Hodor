@@ -1,0 +1,16 @@
+= form_tag admin_judges_path, multipart: true do
+	= text_field_tag :number
+	= submit_tag "Generate"
+
+%table#judges
+    %thead
+        %th Access Code
+        %th Name
+        %th Company
+    %tbody
+        - @judges.each do |judge|
+            %tr
+                %td= judge.access_code
+                %td= judge.name
+                %td= judge.company_name
+

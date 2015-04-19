@@ -16,4 +16,9 @@ class Admin::PostersController < ApplicationController
 			redirect_to admin_posters_path, :notice => "Invalid file extension"
 		end
 	end
+
+	def clear
+		Poster.destroy_all
+		redirect_to admin_posters_path
+	end
 end

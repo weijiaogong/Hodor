@@ -5,9 +5,10 @@
     #notice.message= flash[:notice]
 - elsif flash[:warning]
     #notice.message= flash[:warning]
+= button_to "Clear", clear_admin_posters_path, method: "delete"
 %table#posters
     %thead
-        %th Poster Number
+        %th #
         %th Presenter
         %th Title
         %th Advisor(s)
