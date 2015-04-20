@@ -1,8 +1,16 @@
+%h1 ----------- IAP Research Poster Competition -----------
+%h2 Judge Assignments Page
+
+%person Judge #{@judge.id}, #{@judge.name} from company #{@judge.company_name}
+%br
+%br
+
 - @posters.each do |poster|
-    = link_to judge_poster_judge_path(@judge.id, poster.id) do
-        %div
-            Poster #: 
-            = poster.number.inspect
-            %br
-            = poster.title.inspect
-        %br
+	= button_to "Poster #{poster.id}", judge_poster_judge_path(@judge.id, poster.id) do
+		%div
+			Poster #:
+			= poster.number.inspect
+			%br
+			= poster.title.inspect
+		%br
+	%br
