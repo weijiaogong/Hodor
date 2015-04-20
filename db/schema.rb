@@ -11,14 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150408035211) do
+ActiveRecord::Schema.define(:version => 20150420075815) do
 
   create_table "judges", :force => true do |t|
     t.string  "name"
     t.string  "company_name"
     t.string  "access_code"
-    t.integer "scores_count", :default => 0
+    t.integer "scores_count",   :default => 0
+    t.string  "remember_token"
   end
+
+  add_index "judges", ["remember_token"], :name => "index_judges_on_remember_token"
 
   create_table "posters", :force => true do |t|
     t.integer "number"

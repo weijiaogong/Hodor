@@ -1,0 +1,3057 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 00:11:57 -0300
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (2ms)
+
+
+Started GET "/judges/judge" for 127.0.0.1 at 2015-04-20 01:46:43 -0300
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"judge"}
+Completed 500 Internal Server Error in 65.8ms
+
+ActiveRecord::StatementInvalid (Could not find table 'judges'):
+  app/controllers/judges_controller.rb:5:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/spec" for 127.0.0.1 at 2015-04-20 01:48:41 -0300
+
+ActionController::RoutingError (No route matches [GET] "/spec"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/specs" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/jasmine-rails-0.10.8/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.2ms)
+Compiled jasmine.css  (0ms)  (pid 3480)
+Compiled jasmine-specs.css  (2ms)  (pid 3480)
+Compiled jasmine.js  (0ms)  (pid 3480)
+Compiled json2.js  (0ms)  (pid 3480)
+Compiled jasmine-html.js  (0ms)  (pid 3480)
+Compiled boot.js  (0ms)  (pid 3480)
+Compiled jquery.js  (16ms)  (pid 3480)
+Compiled jquery_ujs.js  (0ms)  (pid 3480)
+Compiled application.js  (26ms)  (pid 3480)
+Compiled jasmine-specs.js  (31ms)  (pid 3480)
+Completed 200 OK in 137.2ms (Views: 137.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jasmine.css?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jasmine.css - 200 OK (1ms)
+
+
+Started GET "/assets/boot.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /boot.js - 200 OK (1ms)
+
+
+Started GET "/assets/jasmine-html.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jasmine-html.js - 200 OK (1ms)
+
+
+Started GET "/assets/jasmine.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jasmine.js - 200 OK (1ms)
+
+
+Started GET "/assets/jasmine-specs.css?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jasmine-specs.css - 200 OK (2ms)
+
+
+Started GET "/assets/json2.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /json2.js - 200 OK (1ms)
+
+
+Started GET "/assets/jasmine-specs.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jasmine-specs.js - 200 OK (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:48:51 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-20 01:49:06 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.7ms
+
+ActiveRecord::StatementInvalid (Could not find table 'posters'):
+  app/controllers/admin/posters_controller.rb:5:in `index'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (9.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreatePosters (20150331225810)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "presenter" varchar(255), "title" varchar(255), "advisors" varchar(255), "scores_count" integer DEFAULT 0) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150331225810')[0m
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to CreateScores (20150408035157)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150408035157')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to CreateJudges (20150408035211)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "judges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_name" varchar(255), "access_code" varchar(255), "scores_count" integer DEFAULT 0) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150408035211')[0m
+  [1m[35m (4.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2015-04-20 01:50:27 -0300
+
+ActionController::RoutingError (No route matches [GET] "/static_pages/home"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.3ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2015-04-20 01:50:32 -0300
+
+ActionController::RoutingError (No route matches [GET] "/static_pages/home"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.2ms)
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-20 01:50:34 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.0ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.6ms)
+Compiled application.css  (0ms)  (pid 3480)
+Completed 200 OK in 39.0ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:50:34 -0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:50:34 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:50:34 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:50:34 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 01:54:31 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.0ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 10.7ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:54:31 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:54:31 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:54:31 -0300
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:54:31 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-20 01:55:07 -0300
+Processing by JudgesController#register as HTML
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (26.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  Rendered judges/register.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 46.2ms (Views: 5.2ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:55:07 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:07 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:07 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:07 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/judges/1/assign" for 127.0.0.1 at 2015-04-20 01:55:35 -0300
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "name"=>"Eliezer", "company"=>"Blackwood Company", "commit"=>"Register", "judge_id"=>"1"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  UPDATE "judges" SET "name" = 'Eliezer', "company_name" = 'Blackwood Company' WHERE "judges"."id" = 1
+  [1m[36m (19.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" ORDER BY scores_count
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "judges" WHERE "judges"."id" = ?  [["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  Rendered error.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 35.1ms (Views: 3.0ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:55:35 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:35 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:35 -0300
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:35 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-20 01:55:42 -0300
+Processing by JudgesController#register as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)[0m  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[35m (13.9ms)[0m  commit transaction
+  Rendered judges/register.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 34.8ms (Views: 19.8ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:55:42 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:42 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:42 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:42 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/judges/2/assign" for 127.0.0.1 at 2015-04-20 01:55:57 -0300
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "name"=>"Ali", "company"=>"Mages Guild", "commit"=>"Register", "judge_id"=>"2"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mUPDATE "judges" SET "name" = 'Ali', "company_name" = 'Mages Guild' WHERE "judges"."id" = 2[0m
+  [1m[35m (16.9ms)[0m  commit transaction
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" ORDER BY scores_count[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "judges" WHERE "judges"."id" = ?[0m  [["id", 2]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  Rendered error.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 30.5ms (Views: 2.6ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:55:57 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:57 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:57 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:55:57 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-20 01:56:02 -0300
+Processing by JudgesController#register as HTML
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  Rendered judges/register.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 19.4ms (Views: 3.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:56:03 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:03 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:03 -0300
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:03 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/judges/3/assign" for 127.0.0.1 at 2015-04-20 01:56:12 -0300
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "name"=>"Cabrera", "company"=>"Dark Brotherhood", "commit"=>"Register", "judge_id"=>"3"}
+  [1m[35mJudge Load (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  UPDATE "judges" SET "name" = 'Cabrera', "company_name" = 'Dark Brotherhood' WHERE "judges"."id" = 3
+  [1m[36m (15.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" ORDER BY scores_count
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "judges" WHERE "judges"."id" = ?  [["id", 3]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  Rendered error.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 27.7ms (Views: 2.6ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:56:12 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:12 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:12 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:12 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-20 01:56:15 -0300
+Processing by JudgesController#register as HTML
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)[0m  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  Rendered judges/register.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 17.3ms (Views: 6.9ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:56:16 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:16 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:16 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/judges/4/assign" for 127.0.0.1 at 2015-04-20 01:56:44 -0300
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "name"=>"Marin", "company"=>"Order of the Virtuous Blood", "commit"=>"Register", "judge_id"=>"4"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mUPDATE "judges" SET "name" = 'Marin', "company_name" = 'Order of the Virtuous Blood' WHERE "judges"."id" = 4[0m
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" ORDER BY scores_count[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "judges" WHERE "judges"."id" = ?[0m  [["id", 4]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  Rendered error.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 27.5ms (Views: 2.6ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 01:56:44 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:44 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:44 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 01:56:44 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/4/" for 127.0.0.1 at 2015-04-20 01:58:37 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "4"]]
+Completed 404 Not Found in 0.8ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=4):
+  app/controllers/judges_controller.rb:5:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 01:58:41 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 404 Not Found in 0.7ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=1):
+  app/controllers/judges_controller.rb:5:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/admin/" for 127.0.0.1 at 2015-04-20 02:04:33 -0300
+Processing by Admin::AdminController#index as HTML
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 4.5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:04:33 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:04:33 -0300
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:04:33 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:04:33 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 02:04:35 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 4.3ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:04:35 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:04:35 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:04:35 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:04:35 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/judges" for 127.0.0.1 at 2015-04-20 02:05:00 -0300
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "number"=>"Blackwood Company", "commit"=>"Generate"}
+Redirected to http://localhost:3000/admin/judges
+Completed 302 Found in 0.5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 02:05:00 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 3.2ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:05:00 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:05:00 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:05:00 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:05:00 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/admin/judges" for 127.0.0.1 at 2015-04-20 02:13:53 -0300
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "number"=>"1", "commit"=>"Generate"}
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = 'aa4b'[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Binary data inserted for `string` type on column `access_code`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)[0m  [["access_code", "aa4b"], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[35m (18.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/judges
+Completed 302 Found in 32.7ms (ActiveRecord: 19.6ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 02:13:53 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 40.3ms (Views: 39.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:13:53 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:13:53 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:13:53 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:13:53 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-20 02:15:16 -0300
+Processing by JudgesController#register as HTML
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)[0m  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[35m (13.8ms)[0m  commit transaction
+  Rendered judges/register.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 18.5ms (Views: 3.5ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:15:16 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:15:16 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:15:16 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:15:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 02:16:22 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 404 Not Found in 0.6ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=1):
+  app/controllers/judges_controller.rb:5:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/judges/5" for 127.0.0.1 at 2015-04-20 02:17:42 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 5[0m
+  Rendered judges/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 109.5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:17:42 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:17:42 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:17:42 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:17:42 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/register/5" for 127.0.0.1 at 2015-04-20 02:18:46 -0300
+
+ActionController::RoutingError (No route matches [GET] "/judges/register/5"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/judges/register/" for 127.0.0.1 at 2015-04-20 02:18:50 -0300
+Processing by JudgesController#register as HTML
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)[0m  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[35m (10.2ms)[0m  commit transaction
+  Rendered judges/register.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 16.4ms (Views: 4.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:18:50 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:18:50 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:18:50 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:18:50 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/judges/7/assign" for 127.0.0.1 at 2015-04-20 02:19:01 -0300
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "name"=>"Eliezer", "company"=>"Blackwood Company", "commit"=>"Register", "judge_id"=>"7"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mUPDATE "judges" SET "name" = 'Eliezer', "company_name" = 'Blackwood Company' WHERE "judges"."id" = 7[0m
+  [1m[35m (14.3ms)[0m  commit transaction
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" ORDER BY scores_count[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "judges" WHERE "judges"."id" = ?[0m  [["id", 7]]
+  [1m[35m (4.2ms)[0m  commit transaction
+  Rendered error.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 23.2ms (Views: 2.5ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:19:01 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:19:01 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:19:01 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:19:01 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/7/" for 127.0.0.1 at 2015-04-20 02:19:11 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "7"]]
+Completed 404 Not Found in 0.5ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=7):
+  app/controllers/judges_controller.rb:5:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.5ms)
+
+
+Started GET "/judges/5" for 127.0.0.1 at 2015-04-20 02:19:17 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 5[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 3.7ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:19:17 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:19:17 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:19:17 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:19:17 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.6ms)
+Warning. Error encountered while saving cache /home/saasbook/Documents/posterjudging/CodeMonkeys/tmp/cache/sass/f8324316de663a89476019d5309d99a3a7222498/sessions.css.scssc: can't dump anonymous class #<Class:0xa862dc4>
+Compiled sessions.css  (5ms)  (pid 3480)
+Compiled application.css  (10ms)  (pid 3480)
+Compiled sessions.js  (42ms)  (pid 3480)
+Compiled application.js  (48ms)  (pid 3480)
+Completed 200 OK in 70.6ms (Views: 70.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 02:44:09 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 3.3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:23 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 2.8ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 02:46:25 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:52:06 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 31.7ms
+
+ActionView::Template::Error (undefined local variable or method `name' for #<#<Class:0xacefb94>:0xad55c50>):
+    1: %html
+    2:   %head
+    3:     %tile = content_for?(:title) ? yield(:title) : 'CodeMonkeys'
+    4:     %meta{:content => content_for?(:description) ? yield(:description) : 'CodeMonkeys', name => 'description'}
+    5:     = stylesheet_link_tag    :application, :media => "all"
+    6:     = javascript_include_tag :application
+    7:     = csrf_meta_tags
+  app/views/layouts/application.html.haml:4:in `_app_views_layouts_application_html_haml___359241590_94740280'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.6ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 3.5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:57:18 -0300
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 4.6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:58:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 5.5ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Served asset /sessions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 02:59:09 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:31:10 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.2ms)
+Completed 500 Internal Server Error in 1.6ms
+
+ActionView::Template::Error (Unbalanced brackets.):
+    3: %h1 Sign in
+    4: 
+    5: %div{:class => 'row'}
+    6:   %div{:class => 'span6 offset3
+    7:     = form_for @session, url: sessions_path do
+    8: 
+    9:       = label :access_code
+  app/views/sessions/new.html.haml:6
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.4ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:32:21 -0300
+Processing by SessionsController#new as HTML
+ERROR: compiling _app_views_sessions_new_html_haml__83016315__627751908 RAISED /home/saasbook/Documents/posterjudging/CodeMonkeys/app/views/sessions/new.html.haml:6: unterminated string meets end of file
+/home/saasbook/Documents/posterjudging/CodeMonkeys/app/views/sessions/new.html.haml:6: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_sessions_new_html_haml__83016315__627751908(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "sessions/new";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(haml_buffer, {:autoclose=>["area", "base", "basefont", "br", "col", "command", "embed", "frame", "hr", "img", "input", "isindex", "keygen", "link", "menuitem", "meta", "param", "source", "track", "wbr"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true, :hyphenate_data_attrs=>true, :cdata=>false});_erbout = _hamlout.buffer;@output_buffer = output_buffer ||= ActionView::OutputBuffer.new rescue nil;;_hamlout.push_text("#{_hamlout.format_script_false_false_false_true_false_true_false(( content_for(:title, 'Sign in')
+));}\n<h1>Sign in</h1>\n<div class='row'>\n  <div#{_hamlout.adjust_tabs(1); 
+
+
+
+_hamlout.attributes({}, nil, :class => 'span6 offset3)}>\n    ", 1, false);
+haml_temp =  form_for @session, url: sessions_path do
+_hamlout.push_text("    #{
+_hamlout.format_script_false_false_false_true_false_true_false(( label :access_code
+));}\n    #{_hamlout.format_script_false_false_false_true_false_true_false(( password_field :access_code
+));}\n    #{
+_hamlout.format_script_false_false_false_true_false_true_false(( submit_tag "Sign in"
+));}\n", 0, false);end;_hamlout.buffer << _hamlout.format_script_false_false_false_true_false_false_false(haml_temp);_hamlout.push_text("\n  </div>\n</div>\n", -2, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `module_eval'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `compile'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/template.rb:232:in `compile!'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/template.rb:144:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications.rb:125:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/template.rb:143:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:88:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:167:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:414:in `_run__453392128__process_action__399060069__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:121:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:45:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal.rb:203:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_controller/metal.rb:246:in `block in action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.15/lib/active_record/query_cache.rb:64:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `_run__491184101__call__480251440__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.15/lib/rails/rack/logger.rb:32:in `call_app'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.15/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.15/lib/rails/engine.rb:484:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.15/lib/rails/application.rb:231:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.15/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered sessions/new.html.haml within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 3.9ms
+
+ActionView::Template::Error (/home/saasbook/Documents/posterjudging/CodeMonkeys/app/views/sessions/new.html.haml:6: unterminated string meets end of file
+/home/saasbook/Documents/posterjudging/CodeMonkeys/app/views/sessions/new.html.haml:6: syntax error, unexpected $end, expecting ')'):
+    3: %h1 Sign in
+    4: 
+    5: %div{:class => 'row'}
+    6:   %div{:class => 'span6 offset3}
+    7:     = form_for @session, url: sessions_path do
+    8: 
+    9:       = label :access_code
+  actionpack (3.2.15) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.15) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.15) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.15) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.15) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.15) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.15) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.15) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__453392128__process_action__399060069__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__491184101__call__480251440__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:32:36 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 3.5ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    4: 
+    5: %div{:class => 'row'}
+    6:   %div{:class => 'span6 offset3'}
+    7:     = form_for @session, url: sessions_path do
+    8: 
+    9:       = label :access_code
+    10:       = password_field :access_code
+  app/views/sessions/new.html.haml:7:in `_app_views_sessions_new_html_haml__83016315__623200178'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:35:57 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 4.4ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    6:   %div{:class => 'span6 offset3'}
+    7:     = form_for :session, url: sessions_path do
+    8: 
+    9:       = label :access_code
+    10:       = password_field :access_code
+    11: 
+    12:       = submit_tag "Sign in"
+  app/views/sessions/new.html.haml:9:in `block in _app_views_sessions_new_html_haml__83016315__628090188'
+  app/views/sessions/new.html.haml:7:in `_app_views_sessions_new_html_haml__83016315__628090188'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:38:44 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 4.6ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    7:     = form_for :session, url: sessions_path do
+    8: 
+    9:       = label_tag :access_code, "Enter your access code"
+    10:       = password_field :access_code
+    11: 
+    12:       = submit_tag "Sign in"
+  app/views/sessions/new.html.haml:10:in `block in _app_views_sessions_new_html_haml__83016315__624085088'
+  app/views/sessions/new.html.haml:7:in `_app_views_sessions_new_html_haml__83016315__624085088'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:44:17 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 6.0ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 03:44:18 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 03:44:18 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:18 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:18 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:18 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:18 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5.3ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 03:44:37 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 4.9ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:31 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  Rendered sessions/new.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 4.6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 03:55:33 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 03:55:54 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 1.7ms
+
+ActionView::MissingTemplate (Missing template sessions/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee, :haml]}. Searched in:
+  * "/home/saasbook/Documents/posterjudging/CodeMonkeys/app/views"
+  * "/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/jasmine-rails-0.10.8/app/views"
+):
+  actionpack (3.2.15) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.15) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.15) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__453392128__process_action__581771439__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__491184101__call__480251440__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosters (20150331225810)
+Migrating to CreateScores (20150408035157)
+Migrating to CreateJudges (20150408035211)
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" ADD "remember_token" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150420075815')
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/sessions" for 127.0.0.1 at 2015-04-20 05:22:00 -0300
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:22:32 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:23:44 -0300
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:23:47 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:23:48 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:24:10 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:25:16 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-04-20 05:25:19 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 61.0ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:26:02 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:27:11 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 3.9ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:28:43 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 10.4ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:28:59 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "access_code"."{:class=>:password_field}" = 'fdfds'[0m
+SQLite3::SQLException: no such column: access_code.{:class=>:password_field}: SELECT "judges".* FROM "judges"  WHERE "access_code"."{:class=>:password_field}" = 'fdfds'
+Completed 500 Internal Server Error in 90.2ms
+  [1m[35mJudge Load (1.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "access_code"."{:class=>:password_field}" = 'fdfds'
+SQLite3::SQLException: no such column: access_code.{:class=>:password_field}: SELECT "judges".* FROM "judges"  WHERE "access_code"."{:class=>:password_field}" = 'fdfds'
+
+NoMethodError (undefined method `remember_token' for #<ActiveRecord::Relation:0xad1fcf4>):
+  app/helpers/sessions_helper.rb:4:in `sign_in'
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "access_code"."{:class=>:password_field}" = 'fdfds'[0m
+SQLite3::SQLException: no such column: access_code.{:class=>:password_field}: SELECT "judges".* FROM "judges"  WHERE "access_code"."{:class=>:password_field}" = 'fdfds'
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.7ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (9.0ms)[0m  CREATE TABLE "judges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_name" varchar(255), "access_code" varchar(255), "scores_count" integer DEFAULT 0, "remember_token" varchar(255)) 
+  [1m[36m (2.4ms)[0m  [1mCREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")[0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE "posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "presenter" varchar(255), "title" varchar(255), "advisors" varchar(255), "scores_count" integer DEFAULT 0) 
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) [0m
+  [1m[35m (11.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (4.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150420075815')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150331225810')
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035211')[0m
+  [1m[35m (4.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035157')
+  [1m[36m (1.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/sessions" for 127.0.0.1 at 2015-04-20 05:35:45 -0300
+
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 9.0ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:35:52 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:35:58 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "access_code"."{:class=>:password_field}" = 'abc'
+SQLite3::SQLException: no such column: access_code.{:class=>:password_field}: SELECT "judges".* FROM "judges"  WHERE "access_code"."{:class=>:password_field}" = 'abc'
+Completed 500 Internal Server Error in 12.5ms
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "access_code"."{:class=>:password_field}" = 'abc'[0m
+SQLite3::SQLException: no such column: access_code.{:class=>:password_field}: SELECT "judges".* FROM "judges"  WHERE "access_code"."{:class=>:password_field}" = 'abc'
+
+NoMethodError (undefined method `remember_token' for #<ActiveRecord::Relation:0xb5835d50>):
+  app/helpers/sessions_helper.rb:4:in `sign_in'
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "access_code"."{:class=>:password_field}" = 'abc'
+SQLite3::SQLException: no such column: access_code.{:class=>:password_field}: SELECT "judges".* FROM "judges"  WHERE "access_code"."{:class=>:password_field}" = 'abc'
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 8.4ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:41:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:41:18 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "access_code"=>{"{:class=>:password_field}"=>"[FILTERED]"}, "commit"=>"Sign in"}
+Completed 500 Internal Server Error in 5.8ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/sessions_controller.rb:8:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 05:43:41 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (36.7ms)
+Completed 500 Internal Server Error in 37.8ms
+
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<#<Class:0xb579d9b0>:0xb08cb1c>):
+    14:       <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    15:     <% end %>
+    16: 
+    17:     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    18:   </div>
+    19: </div>
+  app/views/sessions/new.html.erb:17:in `_app_views_sessions_new_html_erb__62380170_93237510'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (14.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5.9ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:11 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4.0ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:44:51 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:44:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'abc'[0m
+Completed 500 Internal Server Error in 6.5ms
+
+NoMethodError (undefined method `remember_token' for []:ActiveRecord::Relation):
+  app/helpers/sessions_helper.rb:4:in `sign_in'
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:46:04 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'abc' LIMIT 1
+Completed 500 Internal Server Error in 11.0ms
+
+NoMethodError (undefined method `remember_token' for nil:NilClass):
+  app/helpers/sessions_helper.rb:4:in `sign_in'
+  app/controllers/sessions_controller.rb:9:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'abc' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13.7ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:47:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Processing by JudgesController#register as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (20.9ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)[0m  [["access_code", nil], ["company_name", nil], ["name", nil], ["remember_token", "qVPSfkNboQ63L2BA758nQw"], ["scores_count", 0]]
+  [1m[35m (10.0ms)[0m  commit transaction
+  Rendered judges/register.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 46.0ms (Views: 5.5ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 14.3ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:44 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/judges" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "number"=>"15", "commit"=>"Generate"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = 'c0a9'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "c0a9"], ["company_name", nil], ["name", nil], ["remember_token", "H3YWZSCC98cZsxd9AhZvzw"], ["scores_count", 0]]
+  [1m[36m (12.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = 'f96c'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "f96c"], ["company_name", nil], ["name", nil], ["remember_token", "dSWpsbk-PZLsrfdngzCwmA"], ["scores_count", 0]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = 'c21f'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "c21f"], ["company_name", nil], ["name", nil], ["remember_token", "3RPVzydojdbZKV3bqjl-4A"], ["scores_count", 0]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '948e'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "948e"], ["company_name", nil], ["name", nil], ["remember_token", "wzNo9R01VoQI2WUhRUpcCg"], ["scores_count", 0]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '5ed2'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "5ed2"], ["company_name", nil], ["name", nil], ["remember_token", "YjNXlpsy0RbwQp9aHTG2Jw"], ["scores_count", 0]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '67c4'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "67c4"], ["company_name", nil], ["name", nil], ["remember_token", "5_3MhevkU34pXuzWRU4Sog"], ["scores_count", 0]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = 'af19'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "af19"], ["company_name", nil], ["name", nil], ["remember_token", "ZxWQ1ISrfUlUtR9JZ8oByA"], ["scores_count", 0]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '42b6'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "42b6"], ["company_name", nil], ["name", nil], ["remember_token", "fcI4c0XtR31GVLHIY0Csbw"], ["scores_count", 0]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '08f9'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "08f9"], ["company_name", nil], ["name", nil], ["remember_token", "itX431K2IGLhC8CfDLZd_A"], ["scores_count", 0]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '4dfd'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "4dfd"], ["company_name", nil], ["name", nil], ["remember_token", "q3axAl5-Vg7QfDqTdOWndg"], ["scores_count", 0]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '03a7'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "03a7"], ["company_name", nil], ["name", nil], ["remember_token", "w17zITGlIHR90ZsPW-AhPg"], ["scores_count", 0]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '2174'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "2174"], ["company_name", nil], ["name", nil], ["remember_token", "LnHoJ3VHdy-IfE5XS_Dq6w"], ["scores_count", 0]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '7b66'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "7b66"], ["company_name", nil], ["name", nil], ["remember_token", "4UoQ6XB1fQxzoOnz9KVrhA"], ["scores_count", 0]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '03d4'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "03d4"], ["company_name", nil], ["name", nil], ["remember_token", "vGEGK6uR2G5mrMxnGMKPyw"], ["scores_count", 0]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '9492'
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `access_code`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES (?, ?, ?, ?, ?)  [["access_code", "9492"], ["company_name", nil], ["name", nil], ["remember_token", "I_I2MMYTXZkbNyuJnFOECQ"], ["scores_count", 0]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/judges
+Completed 302 Found in 72.6ms (ActiveRecord: 57.6ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 6.7ms (Views: 5.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:48:52 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/admin/judges/clear" for 127.0.0.1 at 2015-04-20 05:49:59 -0300
+
+ActionController::RoutingError (No route matches [GET] "/admin/judges/clear"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (7.8ms)[0m  CREATE TABLE "judges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_name" varchar(255), "access_code" varchar(255), "scores_count" integer DEFAULT 0, "remember_token" varchar(255)) 
+  [1m[36m (2.7ms)[0m  [1mCREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "presenter" varchar(255), "title" varchar(255), "advisors" varchar(255), "scores_count" integer DEFAULT 0) 
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) [0m
+  [1m[35m (2.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150420075815')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150331225810')
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035211')[0m
+  [1m[35m (6.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035157')
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'fail' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5.1ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:47 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'pass' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5.2ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:56:50 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'pass' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5.0ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:57:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'pass' LIMIT 1
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 18.6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 102.5ms (Views: 4.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 05:59:13 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4.4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:05 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'what' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5.8ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:08 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'pass' LIMIT 1
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 0.7ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 4.0ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:00:11 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:05:27 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 18.7ms
+
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0xb5d53bac>:0xab80f74>):
+    6:     = csrf_meta_tags
+    7:   %body
+    8:     %div
+    9:       = link_to "Sign out", signout_path, :method => delete
+    10:     = yield
+  app/views/layouts/application.html.haml:9:in `_app_views_layouts_application_html_haml___612411299_89912960'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 7.0ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:01 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2015-04-20 06:06:04 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls="}
+Completed 500 Internal Server Error in 1.0ms
+
+NameError (undefined local variable or method `sign_out' for #<SessionsController:0xb5b0dc80>):
+  app/controllers/sessions_controller.rb:20:in `destroy'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 9.4ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:52 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0.4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 8.3ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:06:54 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'pass' LIMIT 1[0m
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 37.5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 17.0ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:07:00 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0.3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5.8ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:03 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'code' LIMIT 1
+Redirected to http://localhost:3000/judges/2
+Completed 302 Found in 1.2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/judges/2" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 2
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 11.1ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:07:55 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 29.4ms (Views: 28.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:08:11 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 0.5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4.1ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:23:42 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:23:52 -0300
+
+ActionController::RoutingError (undefined local variable or method `only' for JudgesController:Class):
+  app/controllers/judges_controller.rb:2:in `<class:JudgesController>'
+  app/controllers/judges_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 41.3ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:24:32 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:25:29 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+Redirected to http://localhost:3000/signin
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 10.4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 06:25:29 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6.1ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:30 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:30 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:30 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:30 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4.9ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:35 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/2" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+  [1m[35mJudge Load (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "2"]]
+Redirected to http://localhost:3000/signin
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1.1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5.4ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:43 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWMvgB8BPft9BRoI/4uZCu/5XwINbCsY1mj3yybzXls=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'pass' LIMIT 1[0m
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 1.7ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '6nvjt67SnZTIuqV07DRLCw' LIMIT 1
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 22.5ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:50 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/2" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '6nvjt67SnZTIuqV07DRLCw' LIMIT 1
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Redirected to http://localhost:3000/signin
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1.2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4.0ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:53 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '6nvjt67SnZTIuqV07DRLCw' LIMIT 1
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 6.8ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-04-20 06:25:58 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)

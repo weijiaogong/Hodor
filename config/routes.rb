@@ -25,6 +25,11 @@ CodeMonkeys::Application.routes.draw do
         put :assign
     end
 
+    resources :sessions, only: [:new, :create, :destroy]
+    match '/signin', to: 'sessions#new'
+    match '/signout', to: 'sessions#destroy', via: :delete
+
+    root :to => 'sessions#new'
 	
 
   # The priority is based upon order of creation:
