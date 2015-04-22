@@ -5845,3 +5845,1844 @@ Migrating to CreateScores (20150408035157)
 Migrating to CreateJudges (20150408035211)
   [1m[35m (0.2ms)[0m  select sqlite_version(*)
   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-19 04:06:35 -0500
+Connecting to database specified by database.yml
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (20.1ms)
+Completed 200 OK in 509.4ms (Views: 212.4ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:06:38 -0500
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:38 -0500
+Served asset /jquery.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:38 -0500
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (17ms)
+
+
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-19 04:06:46 -0500
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "file"=>#<ActionDispatch::Http::UploadedFile:0xb576bdc0 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\n", @tempfile=#<File:/tmp/RackMultipart20150419-6634-1bq60jd>>, "commit"=>"Import"}
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (89.8ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", "Lawrence Rauchwerger"], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[36m (16.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", "Tiffani Williams"], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", "Robin Murphy"], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/posters
+Completed 302 Found in 262.6ms (ActiveRecord: 137.2ms)
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-19 04:06:46 -0500
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 25.9ms (Views: 24.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:06:46 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:46 -0500
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:46 -0500
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-19 04:06:51 -0500
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (10.5ms)
+Completed 200 OK in 43.2ms (Views: 30.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:06:51 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:51 -0500
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:06:51 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-19 04:07:03 -0500
+Processing by JudgesController#register as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.0ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)[0m  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[35m (13.9ms)[0m  commit transaction
+  Rendered judges/register.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 88.5ms (Views: 43.0ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:07:03 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:03 -0500
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:03 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started PUT "/judges/1/assign" for 127.0.0.1 at 2015-04-19 04:07:13 -0500
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "name"=>"Angela", "company"=>"Company", "commit"=>"Register", "judge_id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mUPDATE "judges" SET "name" = 'Angela', "company_name" = 'Company' WHERE "judges"."id" = 1[0m
+  [1m[35m (17.6ms)[0m  commit transaction
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" ORDER BY scores_count[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["difficulty", -1], ["judge_id", 1], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (5.6ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 1
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 1
+  [1m[36m (17.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (2.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["difficulty", -1], ["judge_id", 1], ["no_show", false], ["novelty", -1], ["poster_id", 2], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 1
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 2
+  [1m[36m (16.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["difficulty", -1], ["judge_id", 1], ["no_show", false], ["novelty", -1], ["poster_id", 3], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 1
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 3
+  [1m[36m (12.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 528.6ms (ActiveRecord: 78.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:07:14 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (1.3ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 210.3ms (Views: 17.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:07:14 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:14 -0500
+Served asset /jquery.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:14 -0500
+Served asset /application.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-19 04:07:17 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[35mPoster Load (4.7ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 31.1ms (Views: 24.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:07:18 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:18 -0500
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:18 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-19 04:07:31 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"1", "utility"=>"2", "difficulty"=>"3", "verbal"=>"4", "written"=>"5"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  UPDATE "scores" SET "novelty" = NULL, "utility" = NULL, "difficulty" = NULL, "verbal" = NULL, "written" = NULL WHERE "scores"."id" = 1
+  [1m[36m (21.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 27.6ms (ActiveRecord: 22.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:07:32 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 40.3ms (Views: 31.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:07:32 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:32 -0500
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:32 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:07:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-19 04:12:25 -0500
+Connecting to database specified by database.yml
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[36mPoster Load (4.4ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 577.8ms (Views: 225.9ms | ActiveRecord: 32.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:12:28 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:12:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:12:28 -0500
+Served asset /jquery.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:12:28 -0500
+Served asset /application.js - 304 Not Modified (110ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-19 04:12:44 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"1", "utility"=>"2", "difficulty"=>"3", "verbal"=>"4", "written"=>"5"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (30.0ms)[0m  [1mUPDATE "scores" SET "novelty" = 0 WHERE "scores"."id" = 1[0m
+  [1m[35m (23.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 214.6ms (ActiveRecord: 58.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:12:44 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 440.6ms (Views: 24.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:12:45 -0500
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:12:45 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:12:45 -0500
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:12:45 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-19 04:15:15 -0500
+Connecting to database specified by database.yml
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 531.1ms (Views: 219.8ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:15:18 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:15:18 -0500
+Served asset /jquery.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:15:18 -0500
+Served asset /application.js - 304 Not Modified (91ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:15:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-19 04:15:31 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"2", "utility"=>"3", "difficulty"=>"4", "verbal"=>"5", "written"=>"1"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 125.2ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:15:31 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 417.4ms (Views: 22.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:15:31 -0500
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:15:32 -0500
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:15:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:15:32 -0500
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:21:21 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (58.8ms)
+Completed 200 OK in 951.2ms (Views: 251.4ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:21:25 -0500
+Served asset /application.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:25 -0500
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:25 -0500
+Served asset /application.js - 304 Not Modified (41ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-19 04:21:28 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[36mPoster Load (0.6ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 33.5ms (Views: 28.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:21:28 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:28 -0500
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:28 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-19 04:21:43 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"5", "utility"=>"4", "difficulty"=>"3", "verbal"=>"2", "written"=>"1"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[36mScore Load (0.1ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (15.7ms)[0m  [1mUPDATE "scores" SET "novelty" = 5 WHERE "scores"."id" = 1[0m
+  [1m[35m (17.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 180.2ms (ActiveRecord: 33.4ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:21:44 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 38.9ms (Views: 30.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:21:44 -0500
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:44 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:21:44 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:25:05 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (61.6ms)
+Completed 200 OK in 986.5ms (Views: 255.3ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:25:08 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:08 -0500
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:08 -0500
+Served asset /jquery.js - 304 Not Modified (36ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-19 04:25:19 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[36mPoster Load (3.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 30.9ms (Views: 25.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:25:19 -0500
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:19 -0500
+Served asset /jquery.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:19 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-19 04:25:30 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"5", "utility"=>"4", "difficulty"=>"3", "verbal"=>"2", "written"=>"1"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (25.5ms)[0m  [1mUPDATE "scores" SET "utility" = 4, "difficulty" = 3, "verbal" = 2, "written" = 1 WHERE "scores"."id" = 1[0m
+  [1m[35m (18.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 174.1ms (ActiveRecord: 45.0ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:25:31 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 29.0ms (Views: 21.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:25:31 -0500
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:31 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:31 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:25:31 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:31:09 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (87.9ms)
+Completed 200 OK in 1111.4ms (Views: 320.4ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:31:13 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:13 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:13 -0500
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:13 -0500
+Served asset /jquery.js - 304 Not Modified (19ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-19 04:31:18 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 33.5ms (Views: 26.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:31:18 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:18 -0500
+Served asset /jquery.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:18 -0500
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-19 04:31:36 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"5", "utility"=>"3", "difficulty"=>"2", "verbal"=>"1", "written"=>"2"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (18.6ms)[0m  [1mUPDATE "scores" SET "utility" = 3, "difficulty" = 2, "verbal" = 1, "written" = 2 WHERE "scores"."id" = 1[0m
+  [1m[35m (14.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 165.7ms (ActiveRecord: 33.8ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:31:36 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (7.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (13.7ms)
+Completed 200 OK in 56.0ms (Views: 38.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:31:36 -0500
+Served asset /application.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:36 -0500
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:31:37 -0500
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/judges/1/posters/2/judge" for 127.0.0.1 at 2015-04-19 04:33:13 -0500
+Connecting to database specified by database.yml
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"2"}
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (73.3ms)
+Completed 200 OK in 568.3ms (Views: 230.5ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:33:16 -0500
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:33:16 -0500
+Served asset /jquery.js - 304 Not Modified (52ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:33:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:33:16 -0500
+Served asset /application.js - 304 Not Modified (46ms)
+
+
+Started PUT "/judges/2/posters/1" for 127.0.0.1 at 2015-04-19 04:33:39 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"5", "difficulty"=>"3", "verbal"=>"2", "written"=>"1"}, "commit"=>"Submit", "judge_id"=>"2", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 2 AND "scores"."poster_id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 180.0ms
+
+NoMethodError (undefined method `update_attributes' for nil:NilClass):
+  app/controllers/posters_controller.rb:17:in `update'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.5ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.4ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:37:04 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (73.3ms)
+Completed 200 OK in 1023.9ms (Views: 295.8ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:37:07 -0500
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:37:07 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:37:07 -0500
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:37:07 -0500
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/judges/1/posters/3/judge" for 127.0.0.1 at 2015-04-19 04:37:14 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"3"}
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 43.2ms (Views: 34.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:37:15 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:37:15 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:37:15 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:37:15 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/judges/3/posters/1" for 127.0.0.1 at 2015-04-19 04:37:36 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"utility"=>"5", "difficulty"=>"4", "verbal"=>"3", "written"=>"2"}, "commit"=>"Submit", "judge_id"=>"3", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 3 AND "scores"."poster_id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 11.6ms
+
+NoMethodError (undefined method `has_key?' for nil:NilClass):
+  app/controllers/posters_controller.rb:15:in `update'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.3ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:41:38 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (69.4ms)
+Completed 200 OK in 1152.2ms (Views: 311.9ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:41:42 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:41:42 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:41:42 -0500
+Served asset /jquery.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:41:42 -0500
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/judges/1/posters/3/judge" for 127.0.0.1 at 2015-04-19 04:41:46 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"3"}
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 52.0ms (Views: 49.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:41:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:41:46 -0500
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:41:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:41:46 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/judges/3/posters/1" for 127.0.0.1 at 2015-04-19 04:41:59 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"utility"=>"4", "difficulty"=>"3", "verbal"=>"2", "written"=>"1"}, "commit"=>"Submit", "judge_id"=>"3", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 3 AND "scores"."poster_id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 16.4ms
+
+NoMethodError (undefined method `has_key?' for nil:NilClass):
+  app/controllers/posters_controller.rb:15:in `update'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.9ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.0ms)
+
+
+Started GET "/judges/" for 127.0.0.1 at 2015-04-19 04:49:18 -0500
+Connecting to database specified by database.yml
+
+ActionController::RoutingError (No route matches [GET] "/judges"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (19.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 04:49:21 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (1.8ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 898.9ms (Views: 68.5ms | ActiveRecord: 73.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:49:22 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:49:22 -0500
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:49:22 -0500
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:49:22 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/judges/1/posters/3/judge" for 127.0.0.1 at 2015-04-19 04:49:27 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"3"}
+  [1m[36mPoster Load (4.5ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+ERROR: compiling _app_views_posters_judge_html_erb__719039799_93034500 RAISED /home/angela/CodeMonkeys/app/views/posters/judge.html.erb:7: syntax error, unexpected ')', expecting tASSOC
+...velty, :required => true, "1" );@output_buffer.safe_concat('1
+...                               ^
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+ end 
+    ^
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:49: syntax error, unexpected keyword_ensure, expecting ')'
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:51: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_posters_judge_html_erb__719039799_93034500(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posters/judge";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id="scoring">
+<h1>Poster #');@output_buffer.append= ( @poster.number );@output_buffer.safe_concat('</h1>
+Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being excellent.
+<br><br>
+');@output_buffer.append=  form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  Novelty (research contribution of the work)<br>
+  ');@output_buffer.append= ( f.radio_button :novelty, :required => true, "1" );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :novelty, "2" );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :novelty, "3" );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :novelty, "4" );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :novelty, "5" );@output_buffer.safe_concat('5
+  <br><br>
+  Utility (practical implications of the work)<br>
+  ');@output_buffer.append= ( f.radio_button :utility, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :utility, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :utility, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :utility, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :utility, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)<br>
+  ');@output_buffer.append= ( f.radio_button :difficulty, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :difficulty, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :difficulty, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :difficulty, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :difficulty, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  Verbal Presentation<br>
+  ');@output_buffer.append= ( f.radio_button :verbal, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :verbal, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :verbal, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :verbal, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :verbal, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  Written/Graphical Presentation (the poster itself)<br>
+  ');@output_buffer.append= ( f.radio_button :written, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :written, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :written, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :written, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :written, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  ');@output_buffer.append= ( f.submit "Submit" );@output_buffer.safe_concat(' &nbsp;&nbsp;&nbsp;&nbsp;');@output_buffer.append= ( f.button :'No Show' );@output_buffer.safe_concat('
+');  if flash[:notice] 
+@output_buffer.safe_concat('  <div class="notice">');@output_buffer.append= ( flash[:notice] );@output_buffer.safe_concat('</div>
+');   end 
+ end 
+@output_buffer.safe_concat('</div>
+
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `module_eval'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `compile'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:232:in `compile!'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:144:in `block in render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:125:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:143:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:88:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:167:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:414:in `_run__377236792__process_action__782677533__callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:121:in `process'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:45:in `process'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal.rb:203:in `dispatch'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal.rb:246:in `block in action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/query_cache.rb:64:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `_run__568681981__call__774601686__callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/logger.rb:32:in `call_app'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `block in call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/engine.rb:484:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/application.rb:231:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered posters/judge.html.erb within layouts/application (259.6ms)
+Completed 500 Internal Server Error in 270.8ms
+
+ActionView::Template::Error (/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:7: syntax error, unexpected ')', expecting tASSOC
+...velty, :required => true, "1" );@output_buffer.safe_concat('1
+...                               ^
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:45: syntax error, unexpected keyword_end, expecting ')'
+ end 
+    ^
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:49: syntax error, unexpected keyword_ensure, expecting ')'
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:51: syntax error, unexpected keyword_end, expecting ')'):
+    4: <br><br>
+    5: <%= form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| %>
+    6:   Novelty (research contribution of the work)<br>
+    7:   <%= f.radio_button :novelty, :required => true, "1" %>1
+    8:   <%= f.radio_button :novelty, "2" %>2
+    9:   <%= f.radio_button :novelty, "3" %>3
+    10:   <%= f.radio_button :novelty, "4" %>4
+  actionpack (3.2.15) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.15) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.15) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.15) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.15) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.15) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.15) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.15) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__377236792__process_action__782677533__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__568681981__call__774601686__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.4ms)
+
+
+Started GET "/judges/1/" for 127.0.0.1 at 2015-04-19 04:53:22 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (59.7ms)
+Completed 200 OK in 1019.1ms (Views: 261.2ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:53:25 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:53:25 -0500
+Served asset /jquery.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:53:25 -0500
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:53:25 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/judges/1/posters/3/judge" for 127.0.0.1 at 2015-04-19 04:53:29 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"3"}
+  [1m[36mPoster Load (0.6ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 46.8ms (Views: 36.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 04:53:29 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 04:53:29 -0500
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 04:53:29 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 04:53:29 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started PUT "/judges/3/posters/1" for 127.0.0.1 at 2015-04-19 04:53:41 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"utility"=>"3", "difficulty"=>"4", "verbal"=>"2", "written"=>"5"}, "commit"=>"Submit", "judge_id"=>"3", "id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 3 AND "scores"."poster_id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 19.6ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/posters_controller.rb:15:in `update'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 05:00:35 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (83.3ms)
+Completed 200 OK in 1037.0ms (Views: 277.5ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 05:00:38 -0500
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 05:00:38 -0500
+Served asset /application.js - 304 Not Modified (46ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 05:00:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 05:00:38 -0500
+Served asset /jquery.js - 304 Not Modified (67ms)
+
+
+Started GET "/judges/1/posters/3/judge" for 127.0.0.1 at 2015-04-19 05:01:19 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"3"}
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+ERROR: compiling _app_views_posters_judge_html_erb___1000985826__627165158 RAISED /home/angela/CodeMonkeys/app/views/posters/judge.html.erb:7: syntax error, unexpected '=', expecting ')'
+....radio_button :novelty, :name = "at", "1" );@output_buffer.s...
+...                               ^
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:7: syntax error, unexpected ',', expecting ')'
+..._button :novelty, :name = "at", "1" );@output_buffer.safe_co...
+...                               ^
+Function body:           def _app_views_posters_judge_html_erb___1000985826__627165158(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "posters/judge";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<div id="scoring">
+<h1>Poster #');@output_buffer.append= ( @poster.number );@output_buffer.safe_concat('</h1>
+Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being excellent.
+<br><br>
+');@output_buffer.append=  form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  Novelty (research contribution of the work)<br>
+  ');@output_buffer.append= ( f.radio_button :novelty, :name = "at", "1" );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :novelty, "2" );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :novelty, "3" );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :novelty, "4" );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :novelty, "5" );@output_buffer.safe_concat('5
+  <br><br>
+  Utility (practical implications of the work)<br>
+  ');@output_buffer.append= ( f.radio_button :utility, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :utility, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :utility, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :utility, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :utility, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)<br>
+  ');@output_buffer.append= ( f.radio_button :difficulty, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :difficulty, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :difficulty, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :difficulty, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :difficulty, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  Verbal Presentation<br>
+  ');@output_buffer.append= ( f.radio_button :verbal, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :verbal, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :verbal, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :verbal, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :verbal, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  Written/Graphical Presentation (the poster itself)<br>
+  ');@output_buffer.append= ( f.radio_button :written, 1 );@output_buffer.safe_concat('1
+  ');@output_buffer.append= ( f.radio_button :written, 2 );@output_buffer.safe_concat('2
+  ');@output_buffer.append= ( f.radio_button :written, 3 );@output_buffer.safe_concat('3
+  ');@output_buffer.append= ( f.radio_button :written, 4 );@output_buffer.safe_concat('4
+  ');@output_buffer.append= ( f.radio_button :written, 5 );@output_buffer.safe_concat('5
+  <br><br>
+  ');@output_buffer.append= ( f.submit "Submit", :disabled => f.at.empty? );@output_buffer.safe_concat(' &nbsp;&nbsp;&nbsp;&nbsp;');@output_buffer.append= ( f.button :'No Show' );@output_buffer.safe_concat('
+');  if flash[:notice] 
+@output_buffer.safe_concat('  <div class="notice">');@output_buffer.append= ( flash[:notice] );@output_buffer.safe_concat('</div>
+');   end 
+ end 
+@output_buffer.safe_concat('</div>
+
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `module_eval'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `compile'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:232:in `compile!'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:144:in `block in render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:125:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/template.rb:143:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:88:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:167:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:414:in `_run__489559220__process_action__1070942761__callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:121:in `process'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:45:in `process'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal.rb:203:in `dispatch'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_controller/metal.rb:246:in `block in action'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/query_cache.rb:64:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activerecord-3.2.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `_run__718784456__call__252363079__callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/logger.rb:32:in `call_app'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `block in call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/activesupport-3.2.15/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/engine.rb:484:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/application.rb:231:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/railties-3.2.15/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/angela/.rvm/gems/ruby-1.9.3-p551/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered posters/judge.html.erb within layouts/application (363.6ms)
+Completed 500 Internal Server Error in 380.6ms
+
+ActionView::Template::Error (/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:7: syntax error, unexpected '=', expecting ')'
+....radio_button :novelty, :name = "at", "1" );@output_buffer.s...
+...                               ^
+/home/angela/CodeMonkeys/app/views/posters/judge.html.erb:7: syntax error, unexpected ',', expecting ')'
+..._button :novelty, :name = "at", "1" );@output_buffer.safe_co...
+...                               ^):
+    4: <br><br>
+    5: <%= form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| %>
+    6:   Novelty (research contribution of the work)<br>
+    7:   <%= f.radio_button :novelty, :name = "at", "1" %>1
+    8:   <%= f.radio_button :novelty, "2" %>2
+    9:   <%= f.radio_button :novelty, "3" %>3
+    10:   <%= f.radio_button :novelty, "4" %>4
+  actionpack (3.2.15) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.15) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.15) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.15) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.15) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.15) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.15) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.15) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.15) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.15) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.15) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__489559220__process_action__1070942761__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__718784456__call__252363079__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/angela/.rvm/rubies/ruby-1.9.3-p551/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.3ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-19 05:03:29 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (6.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (77.4ms)
+Completed 200 OK in 992.6ms (Views: 261.6ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-19 05:03:32 -0500
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-19 05:03:32 -0500
+Served asset /application.js - 304 Not Modified (46ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-19 05:03:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-19 05:03:32 -0500
+Served asset /jquery.js - 304 Not Modified (57ms)
+
+
+Started GET "/judges/1/posters/3/judge" for 127.0.0.1 at 2015-04-19 05:03:35 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"3"}
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (366.5ms)
+Completed 500 Internal Server Error in 385.3ms
+
+ActionView::Template::Error (undefined method `novelty' for #<ActionView::Helpers::FormBuilder:0xb5dfd850>):
+    38:   <%= f.radio_button :written, 4 %>4
+    39:   <%= f.radio_button :written, 5 %>5
+    40:   <br><br>
+    41:   <%= f.submit "Submit", :disabled => f.novelty.empty? %> &nbsp;&nbsp;&nbsp;&nbsp;<%= f.button :'No Show' %>
+    42:   <%if flash[:notice] %>
+    43:   <div class="notice"><%= flash[:notice] %></div>
+    44:   <% end %>
+  app/views/posters/judge.html.erb:41:in `block in _app_views_posters_judge_html_erb___417836518__625671408'
+  app/views/posters/judge.html.erb:5:in `_app_views_posters_judge_html_erb___417836518__625671408'
+
+
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/angela/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (26.1ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-22 08:14:28 -0500
+Connecting to database specified by database.yml
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (4.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (105.2ms)
+Completed 200 OK in 1386.9ms (Views: 409.3ms | ActiveRecord: 43.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:14:33 -0500
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:33 -0500
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:33 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:34 -0500
+Served asset /application.js - 304 Not Modified (45ms)
+
+
+Started GET "/judges/1/posters/1/judge" for 127.0.0.1 at 2015-04-22 08:14:38 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"1", "poster_id"=>"1"}
+  [1m[36mPoster Load (6.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered posters/judge.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 55.5ms (Views: 46.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:14:38 -0500
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:39 -0500
+Served asset /jquery.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:39 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started PUT "/judges/1/posters/1" for 127.0.0.1 at 2015-04-22 08:14:56 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"5", "utility"=>"4", "difficulty"=>"3", "verbal"=>"4", "written"=>"1"}, "commit"=>"Submit", "judge_id"=>"1", "id"=>"1"}
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (53.7ms)[0m  [1mUPDATE "scores" SET "utility" = 4, "difficulty" = 3, "verbal" = 4, "written" = 1 WHERE "scores"."id" = 1[0m
+  [1m[35m (16.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/1
+Completed 302 Found in 270.0ms (ActiveRecord: 79.9ms)
+
+
+Started GET "/judges/1" for 127.0.0.1 at 2015-04-22 08:14:57 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 52.2ms (Views: 43.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:14:57 -0500
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:57 -0500
+Served asset /jquery.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:58 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:14:58 -0500
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/judges/register" for 127.0.0.1 at 2015-04-22 08:25:46 -0500
+Processing by JudgesController#register as HTML
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "scores_count") VALUES (?, ?, ?, ?)  [["access_code", nil], ["company_name", nil], ["name", nil], ["scores_count", 0]]
+  [1m[36m (27.8ms)[0m  [1mcommit transaction[0m
+  Rendered judges/register.html.haml within layouts/application (16.4ms)
+Completed 200 OK in 83.6ms (Views: 45.8ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:25:46 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:25:46 -0500
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:25:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:25:46 -0500
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started PUT "/judges/2/assign" for 127.0.0.1 at 2015-04-22 08:26:13 -0500
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "name"=>"AngelaR", "company"=>"Company", "commit"=>"Register", "judge_id"=>"2"}
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  UPDATE "judges" SET "name" = 'AngelaR', "company_name" = 'Company' WHERE "judges"."id" = 2
+  [1m[36m (18.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" ORDER BY scores_count
+  [1m[36mJudge Load (4.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (9.2ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36mSQL (5.7ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 1[0m
+  [1m[35m (19.1ms)[0m  commit transaction
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 2], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 2[0m
+  [1m[35m (17.7ms)[0m  commit transaction
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (5.3ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 3], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (6.1ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 3[0m
+  [1m[35m (16.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/2
+Completed 302 Found in 424.1ms (ActiveRecord: 115.7ms)
+
+
+Started GET "/judges/2" for 127.0.0.1 at 2015-04-22 08:26:13 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPoster Load (0.7ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 2
+  Rendered judges/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 61.8ms (Views: 42.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:26:14 -0500
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:26:14 -0500
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:26:14 -0500
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:26:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/2/posters/2/judge" for 127.0.0.1 at 2015-04-22 08:26:25 -0500
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"2", "poster_id"=>"2"}
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered posters/judge.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 65.4ms (Views: 47.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:26:26 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:26:26 -0500
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:26:26 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:26:26 -0500
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started PUT "/judges/2/posters/2" for 127.0.0.1 at 2015-04-22 08:27:03 -0500
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4NWQHPS8PQPutqQfxQlf6iPB5BEQmGCAViqcraCf7Y=", "score"=>{"novelty"=>"4", "utility"=>"5", "difficulty"=>"3", "verbal"=>"2", "written"=>"4"}, "commit"=>"Submit", "judge_id"=>"2", "id"=>"2"}
+  [1m[36mScore Load (0.7ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 2 AND "scores"."poster_id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (9.5ms)[0m  [1mUPDATE "scores" SET "novelty" = 4, "utility" = 5, "difficulty" = 3, "verbal" = 2, "written" = 4 WHERE "scores"."id" = 5[0m
+  [1m[35m (15.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/judges/2
+Completed 302 Found in 34.4ms (ActiveRecord: 25.8ms)
+
+
+Started GET "/judges/2" for 127.0.0.1 at 2015-04-22 08:27:03 -0500
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJudge Load (3.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPoster Load (4.2ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 2
+  Rendered judges/show.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 45.3ms (Views: 33.9ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:27:03 -0500
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:27:03 -0500
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:27:03 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:27:04 -0500
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-22 08:27:59 -0500
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (13.4ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (13.7ms)
+Completed 200 OK in 44.6ms (Views: 29.5ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-04-22 08:27:59 -0500
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-04-22 08:28:00 -0500
+Served asset /jquery.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-04-22 08:28:00 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-04-22 08:28:00 -0500
+Served asset /application.js - 304 Not Modified (8ms)

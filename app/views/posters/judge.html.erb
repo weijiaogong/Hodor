@@ -4,11 +4,11 @@ Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being exc
 <br><br>
 <%= form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| %>
   Novelty (research contribution of the work)<br>
-  <%= f.radio_button :novelty, 1 %>1
-  <%= f.radio_button :novelty, 2 %>2
-  <%= f.radio_button :novelty, 3 %>3
-  <%= f.radio_button :novelty, 4 %>4
-  <%= f.radio_button :novelty, 5 %>5
+  <%= f.radio_button :novelty, "1" %>1
+  <%= f.radio_button :novelty, "2" %>2
+  <%= f.radio_button :novelty, "3" %>3
+  <%= f.radio_button :novelty, "4" %>4
+  <%= f.radio_button :novelty, "5" %>5
   <br><br>
   Utility (practical implications of the work)<br>
   <%= f.radio_button :utility, 1 %>1
@@ -39,9 +39,7 @@ Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being exc
   <%= f.radio_button :written, 5 %>5
   <br><br>
   <%= f.submit "Submit" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= f.button :'No Show' %>
-  <%if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+
 <% end %>
 </div>
 

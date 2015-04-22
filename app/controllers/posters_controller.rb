@@ -10,13 +10,12 @@ class PostersController < ApplicationController
     def update
         #check to make sure all radio buttons are checked
 
-        flash[:notice] = "Unchecked"
-
         @score = Score.where(judge_id: params[:judge_id], poster_id: params[:id]).first()
-        
-        @score.update_attributes(:novelty => params[:novelty], :utility => params[:utility], :difficulty => params[:difficulty], :verbal => params[:verbal], :written => params[:written], :no_show => false)
+
+        @score.update_attributes(:novelty => params[:score][:novelty].to_i, :utility => params[:score][:utility].to_i, :difficulty => params[:score][:difficulty].to_i, :verbal => params[:score][:verbal].to_i, :written => params[:score][:written].to_i, :no_show => false)
 
         redirect_to judge_path(params[:judge_id])
+
     end
 
     def no_show
