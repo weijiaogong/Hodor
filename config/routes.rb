@@ -1,13 +1,10 @@
 CodeMonkeys::Application.routes.draw do
-<<<<<<< HEAD
-    mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-=======
-  get "static_pages/home"
+    get "static_pages/home"
 
-  get "sessions/new"
+    get "sessions/new"
 
 	mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
->>>>>>> log-in
+
 
     namespace :admin do
 		resources :posters, :only => [:index] do
@@ -27,12 +24,15 @@ CodeMonkeys::Application.routes.draw do
         resources :posters, :only => [:update]{
 	        get :judge
 	    }
-        collection { #temporary
-            get :register
-        }
+        get :register
         put :assign
     end
 
+    resources :sessions, only: [:new, :create, :destroy]
+    match '/signin', to: 'sessions#new'
+    match '/signout', to: 'sessions#destroy', via: :delete
+
+    root :to => 'sessions#new'
 	
 
   # The priority is based upon order of creation:

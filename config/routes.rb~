@@ -1,22 +1,39 @@
 CodeMonkeys::Application.routes.draw do
-  get "sessions/new"
+    get "static_pages/home"
+
+    get "sessions/new"
 
 	mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
-	namespace :admin do
+
+    namespace :admin do
 		resources :posters, :only => [:index] do
-			collection { 
+            collection { 
                 post :import
                 delete :clear
             }
+        end
+		resources :judges, :only => [:index] do
+			delete :clear, on: :collection
+			post :create, on: :collection
 		end
-	end
+        root to: "admin#index"
+    end
 	
-	resources :judges, :only => [:edit, :show] do
-		resources :posters, :only => [:edit, :update]
+    resources :judges, :only => [:show] do
+        resources :posters, :only => [:update]{
+	        get :judge
+	    }
+        get :register
+ 
         put :assign
-	end
+    end
 
+    resources :sessions, only: [:new, :create, :destroy]
+    match '/signin', to: 'sessions#new'
+    match '/signout', to: 'sessions#destroy', via: :delete
+
+    root :to => 'sessions#new'
 	
 
   # The priority is based upon order of creation:
@@ -75,8 +92,4 @@ CodeMonkeys::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-  root               'static_pages#home'
-  get    'login'  => 'sessions#new'
-  post   'login'  => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
 end

@@ -1,5 +1,13 @@
 class JudgesController < ApplicationController
-    
+    before_filter :require_login, only: [:show]
+
+    def require_login
+      unless current_user == Judge.find(params[:id])
+        flash[:error] = "You must be logged in to access this action"
+        redirect_to signin_path
+      end
+    end
+
     #display the posters assigned to a specific judge
     def show
         @judge = Judge.find(params[:id])
@@ -46,6 +54,6 @@ class JudgesController < ApplicationController
 
     #display the form to add name and company name for a specific judge
     def register
-        @judge = Judge.create! #temporary
+        @judge = Judge.find(params[:judge_id])
     end
 end
