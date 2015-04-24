@@ -18,6 +18,7 @@ CodeMonkeys::Application.routes.draw do
     resources :judges, :only => [:show] do
         resources :posters, :only => [:update]{
 	        get :judge
+                post :no_show
 	    }
         
         get :register

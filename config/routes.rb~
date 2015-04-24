@@ -18,10 +18,10 @@ CodeMonkeys::Application.routes.draw do
     resources :judges, :only => [:show] do
         resources :posters, :only => [:update]{
 	        get :judge
+                put :no_show
 	    }
-        collection { #temporary
-            get :register
-        }
+        
+        get :register
         put :assign
     end
 

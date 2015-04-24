@@ -19,9 +19,11 @@ class PostersController < ApplicationController
     end
 
     def no_show
-        @score = Score.where(judge_id: @judge.id, poster_id: @poster.id).first()
+        @score = Score.where(judge_id: params[:judge_id], poster_id: params[:poster_id]).first()
 
         @score.update_attributes(:no_show => true)
+
+        redirect_to judge_path(params[:judge_id])
 
     end
 end
