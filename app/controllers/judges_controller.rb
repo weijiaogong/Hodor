@@ -1,5 +1,5 @@
 class JudgesController < ApplicationController
-    before_filter :require_login, only: [:show]
+    #before_filter :require_login, only: [:show]
 
     def require_login
       unless current_user == Judge.find(params[:id])

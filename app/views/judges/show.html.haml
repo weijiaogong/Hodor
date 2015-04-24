@@ -6,7 +6,7 @@
 %br
 
 - @posters.each do |poster|
-	= button_to "Poster #{poster.id}", judge_poster_judge_path(@judge.id, poster.id) do
+	= button_to "Poster #{poster.id}", judge_poster_judge_path(@judge.id, poster.id), method: "get" do
 		%div
 			Poster #:
 			= poster.number.inspect

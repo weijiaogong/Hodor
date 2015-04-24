@@ -38,10 +38,8 @@ Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being exc
   <%= f.radio_button :written, 4 %>4
   <%= f.radio_button :written, 5 %>5
   <br><br>
-  <%= f.submit "Submit", :disabled =>  %> &nbsp;&nbsp;&nbsp;&nbsp;<%= f.button :'No Show' %>
-  <%if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+  <%= f.submit "Submit" %> &nbsp;&nbsp;&nbsp;&nbsp;<%= f.button :'No Show' %>
+
 <% end %>
 </div>
 
