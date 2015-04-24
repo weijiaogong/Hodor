@@ -1,12 +1,5 @@
 class JudgesController < ApplicationController
-    #before_filter :require_login, only: [:show]
-
-    def require_login
-      unless current_user == Judge.find(params[:id])
-        flash[:error] = "You must be logged in to access this action"
-        redirect_to signin_path
-      end
-    end
+    before_filter :require_login
 
     #display the posters assigned to a specific judge
     def show
@@ -19,7 +12,8 @@ class JudgesController < ApplicationController
     def assign
         @judge = Judge.find(params[:judge_id])
         error_msg = "Missing: "
-	    if(params[:name].empty?)
+
+	if(params[:name].empty?)
             error_msg += "name"	    
         end
 
@@ -41,7 +35,7 @@ class JudgesController < ApplicationController
         
         if(@posters.count == 0)
             flash[:error] = "There are no more posters to be assigned."
-            @judge.destroy
+            #@judge.destroy
             render "/error" and return
         end
         

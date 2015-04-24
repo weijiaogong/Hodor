@@ -1,6 +1,8 @@
 require 'securerandom'
 
 class Admin::JudgesController < ApplicationController
+    before_filter :require_login
+
     def index
         @judges = Judge.find(:all)
     end

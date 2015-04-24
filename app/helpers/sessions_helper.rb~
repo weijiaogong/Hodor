@@ -19,6 +19,18 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||= Judge.where(remember_token: cookies[:remember_token])
+    @current_user ||= Judge.where(remember_token: cookies[:remember_token]).first
+  end
+
+  def require_login
+    id = params[:judge_id]
+    unless (id && current_user == Judge.find(id)) || admin
+      flash[:error] = "You must be logged in to access this action"
+      redirect_to signin_path
+    end
+  end
+
+  def admin
+    current_user == Judge.find(1)
   end
 end

@@ -1,6 +1,8 @@
 require 'csv'
 
 class Admin::PostersController < ApplicationController
+        before_filter :require_login
+
 	def index
 		@posters = Poster.all
 	end
