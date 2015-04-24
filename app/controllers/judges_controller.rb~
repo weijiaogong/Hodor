@@ -2,7 +2,7 @@ class JudgesController < ApplicationController
     before_filter :require_login, only: [:show]
 
     def require_login
-      unless current_user = Judge.find(params[:id])
+      unless current_user == Judge.find(params[:id])
         flash[:error] = "You must be logged in to access this action"
         redirect_to signin_path
       end

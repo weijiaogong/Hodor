@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     judge = Judge.where(access_code: params[:session][:password]).first
     if judge
       sign_in judge
-      redirect_to judge
+      redirect_to judge_register_path(judge.id)
     else
       flash.now[:error] = 'Invalid password'
       render 'new'

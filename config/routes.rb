@@ -19,9 +19,8 @@ CodeMonkeys::Application.routes.draw do
         resources :posters, :only => [:update]{
 	        get :judge
 	    }
-        collection { #temporary
-            get :register
-        }
+        
+        get :register
         put :assign
     end
 

@@ -54,6 +54,6 @@ class JudgesController < ApplicationController
 
     #display the form to add name and company name for a specific judge
     def register
-        @judge = Judge.create! #temporary
+        @judge = Judge.find(params[:judge_id])
     end
 end
