@@ -2,7 +2,7 @@
 <h1>Poster #<%= @poster.number %></h1>
 Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being excellent.
 <br><br>
-<%= form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| %>
+<%= form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update", method: "put" do |f| %>
   Novelty (research contribution of the work)<br>
   <%= f.radio_button :novelty, "1" %>1
   <%= f.radio_button :novelty, "2" %>2
