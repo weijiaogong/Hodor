@@ -1,0 +1,47 @@
+<div id="scoring">
+<h1>Poster #<%= @poster.number %></h1>
+Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being excellent.
+<br><br>
+<%= form_for :score, url: judge_poster_path(@poster.id, @judge.id), action: "update", method: "put" do |f| %>
+  Novelty (research contribution of the work)<br>
+  <%= f.radio_button :novelty, "1" %>1
+  <%= f.radio_button :novelty, "2" %>2
+  <%= f.radio_button :novelty, "3" %>3
+  <%= f.radio_button :novelty, "4" %>4
+  <%= f.radio_button :novelty, "5" %>5
+  <br><br>
+  Utility (practical implications of the work)<br>
+  <%= f.radio_button :utility, 1 %>1
+  <%= f.radio_button :utility, 2 %>2
+  <%= f.radio_button :utility, 3 %>3
+  <%= f.radio_button :utility, 4 %>4
+  <%= f.radio_button :utility, 5 %>5
+  <br><br>
+  Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)<br>
+  <%= f.radio_button :difficulty, 1 %>1
+  <%= f.radio_button :difficulty, 2 %>2
+  <%= f.radio_button :difficulty, 3 %>3
+  <%= f.radio_button :difficulty, 4 %>4
+  <%= f.radio_button :difficulty, 5 %>5
+  <br><br>
+  Verbal Presentation<br>
+  <%= f.radio_button :verbal, 1 %>1
+  <%= f.radio_button :verbal, 2 %>2
+  <%= f.radio_button :verbal, 3 %>3
+  <%= f.radio_button :verbal, 4 %>4
+  <%= f.radio_button :verbal, 5 %>5
+  <br><br>
+  Written/Graphical Presentation (the poster itself)<br>
+  <%= f.radio_button :written, 1 %>1
+  <%= f.radio_button :written, 2 %>2
+  <%= f.radio_button :written, 3 %>3
+  <%= f.radio_button :written, 4 %>4
+  <%= f.radio_button :written, 5 %>5
+  <br><br>
+  <%= f.submit "Submit", :disabled =>  %> &nbsp;&nbsp;&nbsp;&nbsp;<%= f.button :'No Show' %>
+  <%if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+<% end %>
+</div>
+
