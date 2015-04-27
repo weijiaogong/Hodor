@@ -13,11 +13,11 @@
         %tbody
                 - @scores.each do |score|
                         %tr
-                                %td= score.poster.number
-                                %td= score.novelty
-                                %td= score.utility
-                                %td= score.difficulty
-                                %td= score.verbal
-                                %td= score.written
+                                %td= score.poster.number == -1 ? '-' : score.poster.number
+                                %td= score.novelty == -1 ? '-' : score.novelty
+                                %td= score.utility == -1 ? '-' : score.utility
+                                %td= score.difficulty == -1 ? '-' : score.difficulty
+                                %td= score.verbal == -1 ? '-' : score.verbal
+                                %td= score.written == -1 ? '-' : score.written
                                 %td= score.no_show ? 'Not Here' : 'Here'
                                 %td= score.judge.name
