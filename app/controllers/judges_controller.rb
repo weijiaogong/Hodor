@@ -43,7 +43,8 @@ class JudgesController < ApplicationController
             Judge.assign_poster(poster.id, @judge.id)
         end
         
-        redirect_to judge_path(params[:judge_id])
+        sign_in @judge
+        redirect_to judge_path(@judge.id)
     end
 
     #display the form to add name and company name for a specific judge

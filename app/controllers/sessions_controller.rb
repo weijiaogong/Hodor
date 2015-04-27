@@ -13,7 +13,11 @@ class SessionsController < ApplicationController
       if admin
         redirect_to admin_root_path
       else
-        redirect_to judge_register_path(judge.id)
+        if judge.name && judge.company_name
+          redirect_to judge_path(judge.id)
+        else
+          redirect_to judge_register_path(judge.id)
+        end
       end
     else
       flash.now[:error] = 'Invalid password'

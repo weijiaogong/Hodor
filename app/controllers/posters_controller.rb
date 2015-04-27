@@ -1,5 +1,5 @@
 class PostersController < ApplicationController
-    
+    before_filter :require_login
     #render the view for judging each poster
     def judge
         @poster = Poster.find(params[:poster_id])
