@@ -19,5 +19,5 @@
                                 %td= score.difficulty
                                 %td= score.verbal
                                 %td= score.written
-                                %td= score.no_show == 1 ? 'Not Here' : 'Here'
+                                %td= score.no_show ? 'Not Here' : 'Here'
                                 %td= score.judge.name
