@@ -8,6 +8,8 @@ CodeMonkeys::Application.routes.draw do
                 delete :clear
             }
         end
+		resources :scores, :only => [:index]
+
 		resources :judges, :only => [:index] do
 			delete :clear, on: :collection
 			post :create, on: :collection
