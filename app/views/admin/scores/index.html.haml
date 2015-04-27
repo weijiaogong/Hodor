@@ -1,0 +1,23 @@
+:javascript
+        setInterval(function() {window.location.reload();}, 5000);
+%table#scores
+        %thead
+                %th Poster #
+                %th Novelty
+                %th Utility
+                %th Difficulty
+                %th Verbal
+                %th Written
+                %th No Show?
+                %th Judge
+        %tbody
+                - @scores.each do |score|
+                        %tr
+                                %td= score.poster.number
+                                %td= score.novelty
+                                %td= score.utility
+                                %td= score.difficulty
+                                %td= score.verbal
+                                %td= score.written
+                                %td= score.no_show == 1 ? 'Not Here' : 'Here'
+                                %td= score.judge.name
