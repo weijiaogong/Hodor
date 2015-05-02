@@ -6,6 +6,7 @@ CodeMonkeys::Application.routes.draw do
             collection { 
                 post :import
                 delete :clear
+                get :rankings
             }
         end
 		resources :scores, :only => [:index]
@@ -14,13 +15,14 @@ CodeMonkeys::Application.routes.draw do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
+		
         root to: "admin#index"
     end
 	
     resources :judges, :only => [:show] do
         resources :posters, :only => [:update]{
 	        get :judge
-                post :no_show
+			post :no_show
 	    }
         
         get :register

@@ -6,19 +6,23 @@ CodeMonkeys::Application.routes.draw do
             collection { 
                 post :import
                 delete :clear
+				get :rankings
             }
         end
+		resources :scores, :only => [:index]
+
 		resources :judges, :only => [:index] do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
+		
         root to: "admin#index"
     end
 	
     resources :judges, :only => [:show] do
         resources :posters, :only => [:update]{
 	        get :judge
-                put :no_show
+			post :no_show
 	    }
         
         get :register

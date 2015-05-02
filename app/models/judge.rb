@@ -10,8 +10,8 @@ class Judge < ActiveRecord::Base
 	    @judge.scores.create!(judge_id: judge_id, poster_id: poster_id, no_show: false, novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1)
 	end
 
-        private
-          def create_remember_token
+    private
+        def create_remember_token
             self.remember_token = SecureRandom.urlsafe_base64
-          end
+        end
 end

@@ -49,3 +49,313 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.haml within layouts/application (0.1ms)
 Completed 200 OK in 1.0ms (Views: 0.9ms | ActiveRecord: 0.0ms)
   [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.9ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:51:49 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 156.5ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:51:49 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.4ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:51:49 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.5ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:51:49 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.5ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:07 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 134.9ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:08 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.4ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:08 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.4ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:08 -0300
+Processing by Admin::PostersController#index as HTML
+Completed 500 Internal Server Error in 0.4ms
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:54 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 284.1ms (Views: 150.8ms | ActiveRecord: 4.2ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb537bf8 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<File:/tmp/RackMultipart20150427-2473-16ule16>>, "commit"=>"Import"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", "Lawrence Rauchwerger"], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (5.6ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", "Tiffani Williams"], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", "Robin Murphy"], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 90.7ms (ActiveRecord: 12.1ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 2.1ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'[0m
+  [1m[35m (6.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 4.2ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xbcbf510 @original_filename="data.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 568\r\n", @tempfile=#<File:/tmp/RackMultipart20150427-2473-yzv0ev>>, "commit"=>"Import"}
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 0.4ms (ActiveRecord: 0.0ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2.6ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 3.5ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Import"}
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 0.4ms (ActiveRecord: 0.0ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2.3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2.8ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", ""], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", ""], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", ""]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", ""], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xbbc8f80 @original_filename="data_update.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data_update.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 214\r\n", @tempfile=#<File:/tmp/RackMultipart20150427-2473-m9c4ry>>, "commit"=>"Import"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mUPDATE "posters" SET "title" = 'Processing Big Data Graphs', "advisors" = 'Lawrence Rauchwerger' WHERE "posters"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 2 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  UPDATE "posters" SET "title" = 'Quartet Distance Computation', "advisors" = 'Tiffani Williams' WHERE "posters"."id" = 2
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "posters" SET "title" = 'Timing Integrity Check', "advisors" = 'Robin Murphy' WHERE "posters"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 7.5ms (ActiveRecord: 0.9ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-27 23:53:55 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 2.0ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Processing Big Data Graphs'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Quartet Distance Computation'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Timing Integrity Check'
+  [1m[36m (3.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 235.8ms (Views: 106.1ms | ActiveRecord: 4.2ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb6ac268 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<File:/tmp/RackMultipart20150428-2593-pceq8b>>, "commit"=>"Import"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", "Lawrence Rauchwerger"], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", "Tiffani Williams"], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", "Robin Murphy"], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 63.8ms (ActiveRecord: 7.0ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 3.0ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'[0m
+  [1m[35m (3.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (5.6ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 8.9ms (Views: 2.6ms | ActiveRecord: 5.6ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xc95822c @original_filename="data.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 568\r\n", @tempfile=#<File:/tmp/RackMultipart20150428-2593-7ampky>>, "commit"=>"Import"}
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 0.4ms (ActiveRecord: 0.0ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 3.1ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 3.1ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Import"}
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 0.3ms (ActiveRecord: 0.0ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 3.0ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2.2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", ""], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)[0m  [["advisors", ""], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", ""]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES (?, ?, ?, ?, ?)  [["advisors", ""], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/admin/posters/import" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xd40d30c @original_filename="data_update.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data_update.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 214\r\n", @tempfile=#<File:/tmp/RackMultipart20150428-2593-v616y9>>, "commit"=>"Import"}
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "posters" SET "title" = 'Processing Big Data Graphs', "advisors" = 'Lawrence Rauchwerger' WHERE "posters"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 2 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  UPDATE "posters" SET "title" = 'Quartet Distance Computation', "advisors" = 'Tiffani Williams' WHERE "posters"."id" = 2
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mUPDATE "posters" SET "title" = 'Timing Integrity Check', "advisors" = 'Robin Murphy' WHERE "posters"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 9.6ms (ActiveRecord: 0.8ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2015-04-28 00:01:20 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 38.3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Processing Big Data Graphs'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Quartet Distance Computation'[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Timing Integrity Check'
+  [1m[36m (3.2ms)[0m  [1mrollback transaction[0m
