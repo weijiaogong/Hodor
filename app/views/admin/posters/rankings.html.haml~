@@ -1,3 +1,4 @@
+= button_to 'Download', download_ranks_admin_posters,method: "get"
 %table#posters
     %thead
         %th Rank
@@ -5,7 +6,7 @@
         %th Title
         %th Avg. Score
     %tbody
-        - i = 0
+        - i = 1
         - @posters.each do |poster|
             %tr
                 %td= i

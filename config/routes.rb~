@@ -6,7 +6,9 @@ CodeMonkeys::Application.routes.draw do
             collection { 
                 post :import
                 delete :clear
-				get :rankings
+                get :rankings
+                get :download
+                namespace :download_ranks
             }
         end
 		resources :scores, :only => [:index]

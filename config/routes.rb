@@ -7,6 +7,8 @@ CodeMonkeys::Application.routes.draw do
                 post :import
                 delete :clear
                 get :rankings
+                get :download
+                get :download_ranks
             }
         end
 		resources :scores, :only => [:index]

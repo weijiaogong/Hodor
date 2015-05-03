@@ -5,7 +5,10 @@
     #notice.message= flash[:notice]
 - elsif flash[:warning]
     #notice.message= flash[:warning]
+
+= button_to "Download", download_admin_posters_path, method: "get"
 = button_to "Clear", clear_admin_posters_path, method: "delete"
+
 %table#posters
     %thead
         %th #
