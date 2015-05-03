@@ -31,17 +31,15 @@ class JudgesController < ApplicationController
         end
         if error_msg != "Missing: "
             flash[:error] = error_msg
-            @judge.destroy
             redirect_to register_judges_path and return
         end
         
         @judge.update_attributes(name: params[:name], company_name: params[:company])
         
-        @posters = Poster.find_least_judged().first(3)
+        @posters = Poster.find_least_judged()
         
         if(@posters.count == 0)
             flash[:error] = "There are no more posters to be assigned."
-            @judge.destroy
             render "/error" and return
         end
         
