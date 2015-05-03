@@ -1,2 +1,0 @@
-- if flash[:error]
-            #notice.message= flash[:error]

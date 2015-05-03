@@ -1,4 +1,0 @@
-= form_tag url: judge_assign_path(@judge.id) do
-    = label_tag :name, "Enter your name: "
-    = text_field_tag :name
-    = submit_tag "Register"

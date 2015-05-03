@@ -1,8 +1,0 @@
-- @posters.each do |poster|
-    = link_to edit_judge_poster_path(poster.id) do
-        %div
-            Poster #: 
-            = poster.judges.size().inspect
-            %br
-            = poster.title.inspect
-        %br
