@@ -1,6 +1,0 @@
-= form_for @judges, url: judge_assign_path(@judge.id), multipart: true do
-    = label_tag :name, "Enter your name: "
-    = text_field_tag :name
-    = label_tag :company, "Enter the name of your company: "
-    = text_field_tag :company
-    = submit_tag "Register"

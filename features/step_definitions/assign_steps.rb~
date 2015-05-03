@@ -14,8 +14,8 @@ end
 
 Then(/^there should be a judge named "(.*?)" with (\d+) assigned posters$/) do |arg1, arg2|
 	@judge = Judge.where(name: arg1).first
-	@judge.posters.count.should equal(arg2.to_i)
-	@judge.scores.count.should equal(arg2.to_i)
+	@judge.posters.count.should equal(arg2)
+	@judge.scores.count.should equal(arg2)
 end
 
 When(/^I fill in Name with "(.*?)"$/) do |arg1|

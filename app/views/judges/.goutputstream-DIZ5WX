@@ -1,7 +1,0 @@
-- @posters.each do |poster|
-    %a {:href => edit_judge_poster_path(poster.id)}
-        %div
-            Poster #: 
-            .poster.number
-            %br
-            .poster.title
