@@ -1,4 +1,4 @@
-= button_to 'Download', download_ranks_admin_posters,method: "get"
+= button_to 'Download', download_ranks_admin_posters_path, method: "get"
 %table#posters
     %thead
         %th Rank

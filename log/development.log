@@ -19437,3 +19437,285 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-02 22:16:26 -0300
 Served asset /jquery.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/admin/" for 127.0.0.1 at 2015-05-03 00:13:09 -0300
+Connecting to database specified by database.yml
+Processing by Admin::AdminController#index as HTML
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered admin/index.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 127.3ms (Views: 127.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:10 -0300
+Served asset /application.css - 200 OK (15ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:10 -0300
+Served asset /sessions.js - 200 OK (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:10 -0300
+Served asset /application.js - 200 OK (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:10 -0300
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:10 -0300
+Served asset /sessions.css - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:10 -0300
+Served asset /jquery.js - 200 OK (10ms)
+
+
+Started GET "/admin/posters" for 127.0.0.1 at 2015-05-03 00:13:14 -0300
+Processing by Admin::PostersController#index as HTML
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 314.9ms (Views: 59.5ms | ActiveRecord: 62.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:15 -0300
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:15 -0300
+Served asset /sessions.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:15 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:15 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:15 -0300
+Served asset /sessions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:15 -0300
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-05-03 00:13:16 -0300
+Processing by Admin::AdminController#index as HTML
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered admin/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 29.6ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:16 -0300
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:16 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:16 -0300
+Served asset /sessions.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:17 -0300
+Served asset /sessions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:17 -0300
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/admin/judges" for 127.0.0.1 at 2015-05-03 00:13:17 -0300
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (2.8ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (9.9ms)
+Completed 200 OK in 99.7ms (Views: 90.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:18 -0300
+Served asset /application.css - 304 Not Modified (43ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:18 -0300
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:18 -0300
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:18 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:18 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:18 -0300
+Served asset /sessions.css - 304 Not Modified (7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Processing by Admin::AdminController#index as HTML
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered admin/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 128.4ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Served asset /application.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:19 -0300
+Served asset /sessions.css - 304 Not Modified (5ms)
+
+
+Started GET "/admin/scores" for 127.0.0.1 at 2015-05-03 00:13:20 -0300
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mScore Load (0.9ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  Rendered admin/scores/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 353.6ms (Views: 98.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:21 -0300
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:21 -0300
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:21 -0300
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:21 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:21 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:21 -0300
+Served asset /sessions.css - 304 Not Modified (5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Processing by Admin::AdminController#index as HTML
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered admin/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 83.9ms (Views: 83.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Served asset /sessions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:22 -0300
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/admin/posters/rankings" for 127.0.0.1 at 2015-05-03 00:13:23 -0300
+Processing by Admin::PostersController#rankings as HTML
+  [1m[35mPoster Load (3.9ms)[0m  SELECT "posters".* FROM "posters" 
+  [1m[36mScore Load (2.9ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  Rendered admin/posters/rankings.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 105.9ms (Views: 93.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:24 -0300
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:24 -0300
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:24 -0300
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:24 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:24 -0300
+Served asset /sessions.css - 304 Not Modified (15ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-05-03 00:13:25 -0300
+Processing by Admin::AdminController#index as HTML
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered admin/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 30.1ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:26 -0300
+Served asset /application.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:26 -0300
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:26 -0300
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:26 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-03 00:13:26 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-05-03 00:13:26 -0300
+Served asset /sessions.css - 304 Not Modified (3ms)

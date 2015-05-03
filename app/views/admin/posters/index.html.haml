@@ -1,3 +1,4 @@
+= button_to "Back", admin_root_path, method: "get"
 = form_tag import_admin_posters_path, multipart: true do
     = file_field_tag :file
     = submit_tag "Import"
