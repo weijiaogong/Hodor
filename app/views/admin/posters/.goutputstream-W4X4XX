@@ -1,0 +1,14 @@
+%table#posters
+    %thead
+        %th #
+        %th Presenter
+        %th Title
+        %th Avg. Score
+    %tbody
+        - @posters.each do |poster|
+            %tr
+                %td= poster.number
+                %td= poster.presenter
+                %td= poster.title
+                %td= @avg_score[poster.number]
+

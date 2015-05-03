@@ -1,0 +1,4 @@
+= button_to "View Posters", admin_posters_path, method: "get"
+= button_to "View Judges", admin_judges_path, method: "get"
+= button_to "View Scores", admin_scores_path, method: "get"
+= button_to "View Poster Rankings", rankings_admin_posters_path, method: "get"
