@@ -21,7 +21,7 @@ class Admin::JudgesController < ApplicationController
     end
 
     def clear
-        Judge.destroy_all
+        Judge.where('id != 1').destroy_all
         redirect_to admin_judges_path
     end
 end

@@ -37210,3 +37210,5 @@ Served asset /application.js - 304 Not Modified (4ms)
 
 Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-05-04 11:12:42 -0300
 Served asset /bootstrap.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
