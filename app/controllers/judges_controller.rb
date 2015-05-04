@@ -1,5 +1,5 @@
 class JudgesController < ApplicationController
-    before_filter :require_login
+    before_filter :require_login, :require_correct_user
 
     #display the posters assigned to a specific judge
     def show

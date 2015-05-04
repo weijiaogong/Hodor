@@ -1,10 +1,33 @@
 %html
   %head
     %title= content_for?(:title) ? yield(:title) : 'CodeMonkeys'
+    %meta{name: "viewport", content: "width= device-width, initial-scale=1"}
     = stylesheet_link_tag    :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
+    :css 
+      .header {
+        background-color: #500000;
+        height: 75px;
+      }
+    :css 
+      .content {
+        background-color: white;
+      }
+    :css 
+      body {
+        background-color: #A9A9A9;
+      }
   %body
-    %div
-      = link_to "Sign out", signout_path, :method => :delete
-    = yield
+    %div{class: "header"}
+      - if current_user
+        = link_to "Sign out", signout_path, :method => :delete
+    %div{:class => "content container"}
+      %br
+      - if flash[:notice]
+        %div{class: "alert alert-sm alert-success"}
+          #notice.message= flash[:notice]
+      - elsif flash[:alert]
+        %div{class: "alert alert-sm alert-danger"}
+          #notice.message= flash[:alert]
+      = yield

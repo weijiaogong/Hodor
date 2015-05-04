@@ -7,21 +7,12 @@ class SessionsController < ApplicationController
   def create
     puts params[:session][:password]
     judge = Judge.where(access_code: params[:session][:password]).first
-    
+
     if judge
       sign_in judge
-      if admin
-        redirect_to admin_root_path
-      else
-        if judge.name && judge.company_name
-          redirect_to judge_path(judge.id)
-        else
-          redirect_to judge_register_path(judge.id)
-        end
-      end
+      main_page(judge)
     else
-      flash.now[:error] = 'Invalid password'
-      render 'new'
+      redirect_to signin_path, :alert => 'Invalid password'
     end
   end
 
