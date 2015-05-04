@@ -1,37 +1,20 @@
-%meta{name: "viewport", content: "width= device-width, initial-scale=1"}
-:css
-    .header {
-        background-color: #500000;
-        height: 75px;
-    }
-    .content {
-        background-color: white;
-    }
-    body {
-        background-color: #A9A9A9;
-    }
+= button_to "Back", admin_root_path, method: "get", class: "btn btn-default"
 
-%div{class: "header"}
-    
-%div{:class => "content container"}
-    %br
-    = button_to "Back", admin_root_path, method: "get", class: "btn btn-default"
-    %br
-    = button_to 'Download', download_ranks_admin_posters_path, method: "get", class: "btn btn-default"
-    %br
-    %table{class: "table table-bordered"}
-        %thead
-            %th Rank
-            %th Presenter
-            %th Title
-            %th Avg. Score
-        %tbody
-            - i = 1
-            - @posters.each do |poster|
-                %tr
-                    %td= i
-                    %td= poster.presenter
-                    %td= poster.title
-                    %td= "%.3f" % @avg_scores[poster.number]
-                - i += 1
+= button_to 'Download', download_ranks_admin_posters_path, method: "get", class: "btn btn-default"
+
+%table{class: "table table-bordered"}
+    %thead
+        %th Rank
+        %th Presenter
+        %th Title
+        %th Avg. Score
+    %tbody
+        - i = 1
+        - @posters.each do |poster|
+            %tr
+                %td= i
+                %td= poster.presenter
+                %td= poster.title
+                %td= "%.3f" % @avg_scores[poster.number]
+            - i += 1
 

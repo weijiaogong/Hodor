@@ -1,6 +1,4 @@
-%br
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default"
-%br
 = form_tag import_admin_posters_path, :class => "form-inline", multipart: true  do
     .form-group
         = file_field_tag :file
@@ -10,7 +8,6 @@
 = button_to "Download", download_admin_posters_path, method: "get", class: "btn btn-default", form: {style: 'display:inline-block'}
     
 = button_to "Clear", clear_admin_posters_path, method: "delete", class: "btn btn-default", form: {style: 'display:inline-block'}
-%br
 %br
 %table{:class => "table table-bordered"}
     %thead

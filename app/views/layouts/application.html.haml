@@ -12,16 +12,22 @@
       }
     :css 
       .content {
+        top: 75px;
         background-color: white;
       }
     :css 
       body {
         background-color: #A9A9A9;
       }
+
+    :css
+      .sign-out {
+        margin: 5px;
+      }
   %body
     %div{class: "header"}
       - if current_user
-        = link_to "Sign out", signout_path, :method => :delete
+        = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large"
     %div{:class => "content container"}
       %br
       - if flash[:notice]
