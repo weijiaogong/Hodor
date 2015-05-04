@@ -1,6 +1,22 @@
-%link{:rel => :stylesheet, :type => :"text/css", :href => "app/assets/stylesheets/bootstrap.css"}
 %meta{name: "viewport", content: "width= device-width, initial-scale=1"}
-%div{:class => "container"}
+:css
+    .header {
+        background-color: #500000;
+        height: 75px;
+    }
+    .content {
+        background-color: white;
+    }
+    body {
+        background-color: #A9A9A9;
+    }
+
+%div{class: "header"}
+    %br
+    %br
+    %br
+    
+%div{:class => "container content"}
     %br
     = button_to "View Posters", admin_posters_path, method: "get", class: "btn btn-lg btn-default btn-block"
     %br
@@ -9,3 +25,4 @@
     = button_to "View Scores", admin_scores_path, method: "get", class: "btn btn-default btn-lg btn-block"
     %br
     = button_to "View Poster Rankings", rankings_admin_posters_path, method: "get", class: "btn btn-default btn-lg btn-block"
+    %br

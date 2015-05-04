@@ -1,12 +1,28 @@
 %meta{name: "viewport", content: "width= device-width, initial-scale=1"}
-%div{:class => "container"}
+:css
+    .header {
+        background-color: #500000;
+        height: 75px;
+    }
+    .content {
+        background-color: white;
+    }
+    body {
+        background-color: #A9A9A9;
+    }
+
+%div{class: "header"}
+    
+%div{:class => "content container"}
+    %br
     = button_to "Back", admin_root_path, method: "get", class: "btn btn-default"
+    %br
     = form_tag import_admin_posters_path, :class => "form-inline", multipart: true  do
         .form-group
             = file_field_tag :file
         .form-group
             = submit_tag "Import", class: "btn btn-default"
-        
+   
     - if flash[:notice]
         %br
         %div{class: "alert alert-sm alert-success"}
@@ -15,7 +31,9 @@
         %br
         %div{class: "alert alert-warning"}
             #notice.message= flash[:warning]
-
+    - else
+        %br
+    
     = button_to "Download", download_admin_posters_path, method: "get", class: "btn btn-default", form: {style: 'display:inline-block'}
     
     = button_to "Clear", clear_admin_posters_path, method: "delete", class: "btn btn-default", form: {style: 'display:inline-block'}
