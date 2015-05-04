@@ -25,7 +25,7 @@ class JudgesController < ApplicationController
         end
         if error_msg != "Missing: "
             flash[:error] = error_msg
-            redirect_to register_judges_path and return
+            redirect_to judge_register_path and return
         end
         
         @judge.update_attributes(name: params[:name], company_name: params[:company])

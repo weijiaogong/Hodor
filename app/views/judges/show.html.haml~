@@ -4,13 +4,13 @@
 %person Judge #{@judge.id}, #{@judge.name} from company #{@judge.company_name}
 %br
 %br
-
+%h3 <strong> Howdy</strong>, #{@judge.name} from #{@judge.company_name}!
+%br
 - @posters.each do |poster|
-	= button_to "Poster #{poster.id}", judge_poster_judge_path(@judge.id, poster.id) do
+	= button_to "Poster ##{poster.number} - #{poster.title}", judge_poster_judge_path(@judge.id, poster.id), method: "get", class: "btn btn-default btn-lg btn-block" do
 		%div
 			Poster #:
 			= poster.number.inspect
-			%br
 			= poster.title.inspect
 		%br
 	%br

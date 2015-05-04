@@ -22,20 +22,28 @@
 
     :css
       .sign-out {
-        float:right;
-        margin: 5px;
-        
+        margin: 10px;
       }
+
   %body
-    %div{class: "header"}
-      - if current_user
-        = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large"
+    %div{class: "header row"}
+      %div{class: "col-lg-3 col-sm-3"}
+        
+      %div{class: "col-lg-9 col-sm-9"}
+        
+      %div{class: "col-lg-3 col-sm-3"}      
+        - if current_user
+          = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large"
     %div{:class => "content container"}
       %br
-      - if flash[:notice]
-        %div{class: "alert alert-sm alert-success"}
-          #notice.message= flash[:notice]
-      - elsif flash[:alert]
-        %div{class: "alert alert-sm alert-danger"}
-          #notice.message= flash[:alert]
+      %div{:class => "col-sm-12 col-lg-12"}
+        - if flash[:notice]
+          %div{class: "alert alert-success"}
+            #notice.message= flash[:notice]
+        - elsif flash[:alert]
+          %div{class: "alert alert-danger"}
+            #notice.message= flash[:alert]
+        - elsif flash[:error]
+          %div{class: "alert alert-danger"}
+            #notice.message= flash[:error]
       = yield
