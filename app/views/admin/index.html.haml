@@ -1,4 +1,10 @@
-= button_to "View Posters", admin_posters_path, method: "get"
-= button_to "View Judges", admin_judges_path, method: "get"
-= button_to "View Scores", admin_scores_path, method: "get"
-= button_to "View Poster Rankings", rankings_admin_posters_path, method: "get"
+%meta{name: "viewport", content: "width= device-width, initial-scale=1"}
+%div{:class => "container"}
+    %br
+    = button_to "View Posters", admin_posters_path, method: "get", class: "btn btn-lg btn-default btn-block"
+    %br
+    = button_to "View Judges", admin_judges_path, method: "get", class: "btn btn-default btn-lg btn-block"
+    %br
+    = button_to "View Scores", admin_scores_path, method: "get", class: "btn btn-default btn-lg btn-block"
+    %br
+    = button_to "View Poster Rankings", rankings_admin_posters_path, method: "get", class: "btn btn-default btn-lg btn-block"

@@ -48,10 +48,12 @@ class Admin::PostersController < ApplicationController
             
             @avg_scores[score.poster.number] = @avg_scores[score.poster.number] + total
         end
-
-        for poster in @posters
-            @avg_scores[poster.number] = (@avg_scores[poster.number])/(poster.scores_count)
-        end
+		
+		if scores.empty? == false
+        	for poster in @posters
+            	@avg_scores[poster.number] = (@avg_scores[poster.number])/(poster.scores_count)
+        	end
+		end
         
         @posters = @posters.sort_by{|poster| @avg_scores[poster.number]}.reverse
 
@@ -64,7 +66,7 @@ class Admin::PostersController < ApplicationController
         CSV.open("app/downloads/posters.csv", "wb") do |csv|
             csv << ["number","presenter","title","advisors"]
             for poster in @posters
-                csv << [poster.number, poster.presenter, poster.title, poster.advisor]
+                csv << [poster.number, poster.presenter, poster.title, poster.advisors]
             end
         end
         send_file("app/downloads/posters.csv")
