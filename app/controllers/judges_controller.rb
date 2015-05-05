@@ -5,6 +5,15 @@ class JudgesController < ApplicationController
     def show
         @judge = Judge.find(params[:id])
         @posters = @judge.posters.find(:all, :order => "number")
+        @posters.sort! {|p| p.number}.reverse!
+        @disable = Array.new
+	
+        for score in @judge.scores
+            sum = (score.novelty + score.utility + score.difficulty + score.verbal + score.written)
+            if score.no_show == true || sum >= 5
+                @disable += [score.poster_id]
+            end
+        end
     end    
     
     #update judge information (name, company name)

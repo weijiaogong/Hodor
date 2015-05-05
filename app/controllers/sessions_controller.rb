@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       sign_in judge
       main_page(judge)
     else
-      redirect_to signin_path, :alert => 'Invalid password'
+      redirect_to(signin_path, :alert => 'Invalid password') and return
     end
   end
 
