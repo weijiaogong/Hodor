@@ -8,7 +8,7 @@ CodeMonkeys::Application.routes.draw do
                 delete :clear
                 get :rankings
                 get :download
-                namespace :download_ranks
+                get :download_ranks
             }
         end
 		resources :scores, :only => [:index]
@@ -17,9 +17,9 @@ CodeMonkeys::Application.routes.draw do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
-		
         root to: "admin#index"
-    end
+		get :reset, controller: 'admin'	 
+	end
 	
     resources :judges, :only => [:show] do
         resources :posters, :only => [:update]{

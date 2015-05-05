@@ -17,9 +17,10 @@ CodeMonkeys::Application.routes.draw do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
-		
         root to: "admin#index"
-    end
+		get :reset, controller: 'admin'
+		put :reset_pw, controller: 'admin'	 
+	end
 	
     resources :judges, :only => [:show] do
         resources :posters, :only => [:update]{
