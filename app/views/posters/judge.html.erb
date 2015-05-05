@@ -1,7 +1,10 @@
 <style type="text/css">
 label{
-  background-color: #CCCCCC;
+  background-color: #FFF;
   padding: 5px 28px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: CCC;
 }
 input[type=radio]{
   display:none;
@@ -11,31 +14,16 @@ input[type=radio]:checked + label{
   color:#FFF;
 }
 
-header{ background: #500000; border-bottom: 1px solid #aaaaaa; float: left; width: 100%; height: 10%; position: fixed; z-index: 10; }
+section.stretch{ float: left; height: 1500px; width: 100%; }
+section.stretch p{ font-size: 30px; color: #969696; text-align: center; position: relative; margin-top: 250px; }
+section.stretch p.bottom{ top: 100%; } 
+header{ background: #500000; border-bottom: 1px solid #aaaaaa; float: left; width: 100%; position: fixed; z-index: 10; }
+header a{ color: #FFFFFF; text-decoration: none; text-transform: uppercase; font-size: 1em; }
 header li{ margin-left: 30px; }
-
-/* Sizes for the bigger menu */
-header.large{ height: 120px; }
-header.large img{ width: 489px; height: 113px; }
-header.large li{ margin-top: 45px; }
-
-/* Sizes for the smaller menu */
-header.small{ height: 50px; }
-header.small img{ width: 287px; height: 69px; margin-top: -10px; }
- header.small li{ margin-top: 17px; } 
-/* Size and center the menu */ nav{ width: 960px; margin: 0 auto;}
 
 </style>
 
 <script>
-
-    $(document).on("scroll",function(){
-        if($(document).scrollTop()>100){
-            $("header").removeClass("large").addClass("small");
-        } else{
-            $("header").removeClass("small").addClass("large");
-        }
-    });
 
     // This is a very dirty, not-DRY method -- should be improved later
 
@@ -96,41 +84,41 @@ header.small img{ width: 287px; height: 69px; margin-top: -10px; }
 <html>
 <div id="scoring">
 <header class=“large”>
-<font color="white"><font size="5">Poster #<%= @poster.number %></font><br>
-Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being excellent.<br></font>
+<font color="white"><font size="5"> Poster #<%= @poster.number %></font><br>
+ Use the following criteria to evaluate the poster.<br> Score 1 - 5, with 5 being excellent.<br></font>
 </header>
 
-<br><br><br><br>
+<br><br><br><br><br>
 <%= form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update", method: "put" do |f| %>
-  Novelty (research contribution of the work)<br><br>
+  Novelty (research contribution of the work)<br>
   <%= f.radio_button :novelty, 1, id: "novelty1" %><label for="novelty1">1</label>
   <%= f.radio_button :novelty, 2, id: "novelty2" %><label for="novelty2">2</label>
   <%= f.radio_button :novelty, 3, id: "novelty3" %><label for="novelty3">3</label>
   <%= f.radio_button :novelty, 4, id: "novelty4" %><label for="novelty4">4</label>
   <%= f.radio_button :novelty, 5, id: "novelty5" %><label for="novelty5">5</label>
   <br><br>
-  Utility (practical implications of the work)<br><br>
+  Utility (practical implications of the work)<br>
   <%= f.radio_button :utility, 1, id: "utility1" %><label for="utility1">1</label>
   <%= f.radio_button :utility, 2, id: "utility2" %><label for="utility2">2</label>
   <%= f.radio_button :utility, 3, id: "utility3" %><label for="utility3">3</label>
   <%= f.radio_button :utility, 4, id: "utility4" %><label for="utility4">4</label>
   <%= f.radio_button :utility, 5, id: "utility5" %><label for="utility5">5</label>
   <br><br>
-  Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)<br><br>
+  Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)<br>
   <%= f.radio_button :difficulty, 1, id: "difficulty1" %><label for="difficulty1">1</label>
   <%= f.radio_button :difficulty, 2, id: "difficulty2" %><label for="difficulty2">2</label>
   <%= f.radio_button :difficulty, 3, id: "difficulty3" %><label for="difficulty3">3</label>
   <%= f.radio_button :difficulty, 4, id: "difficulty4" %><label for="difficulty4">4</label>
   <%= f.radio_button :difficulty, 5, id: "difficulty5" %><label for="difficulty5">5</label>
   <br><br>
-  Verbal Presentation<br><br>
+  Verbal Presentation<br>
   <%= f.radio_button :verbal, 1, id: "verbal1" %><label for="verbal1">1</label>
   <%= f.radio_button :verbal, 2, id: "verbal2" %><label for="verbal2">2</label>
   <%= f.radio_button :verbal, 3, id: "verbal3" %><label for="verbal3">3</label>
   <%= f.radio_button :verbal, 4, id: "verbal4" %><label for="verbal4">4</label>
   <%= f.radio_button :verbal, 5, id: "verbal5" %><label for="verbal5">5</label>
   <br><br>
-  Written/Graphical Presentation (the poster itself)<br><br>
+  Written/Graphical Presentation (the poster itself)<br>
   <%= f.radio_button :written, 1, id: "written1" %><label for="written1">1</label>
   <%= f.radio_button :written, 2, id: "written2" %><label for="written2">2</label>
   <%= f.radio_button :written, 3, id: "written3" %><label for="written3">3</label>
@@ -138,7 +126,8 @@ Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being exc
   <%= f.radio_button :written, 5, id: "written5" %><label for="written5">5</label>
   <br><br>
 
-  <%= f.submit "Submit", :disabled=>true, id: "submit_id" %> <%= button_to 'No Show', url: judge_poster_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post" %> 
+  <%= f.submit "Submit", :disabled=>true, id: "submit_id" %> 
+  <%= button_to 'No Show', url: judge_poster_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block" %> 
 <% end %>
 
 
