@@ -4,7 +4,7 @@ class JudgesController < ApplicationController
     #display the posters assigned to a specific judge
     def show
         @judge = Judge.find(params[:id])
-        @posters = @judge.posters.find(:all)
+        @posters = @judge.posters.find(:all, :order => "number")
     end    
     
     #update judge information (name, company name)
