@@ -14,13 +14,6 @@ input[type=radio]:checked + label{
   color:#FFF;
 }
 
-section.stretch{ float: left; height: 1500px; width: 100%; }
-section.stretch p{ font-size: 30px; color: #969696; text-align: center; position: relative; margin-top: 250px; }
-section.stretch p.bottom{ top: 100%; } 
-header{ background: #500000; border-bottom: 1px solid #aaaaaa; float: left; width: 100%; position: fixed; z-index: 10; }
-header a{ color: #FFFFFF; text-decoration: none; text-transform: uppercase; font-size: 1em; }
-header li{ margin-left: 30px; }
-
 </style>
 
 <script>
@@ -79,16 +72,12 @@ header li{ margin-left: 30px; }
     });
   </script>
 
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-
 <html>
 <div id="scoring">
-<header class=“large”>
-<font color="white"><font size="5"> Poster #<%= @poster.number %></font><br>
- Use the following criteria to evaluate the poster.<br> Score 1 - 5, with 5 being excellent.<br></font>
-</header>
+<font size="5"><b> Poster #<%= @poster.number %></font></b><br>
+ Use the following criteria to evaluate the poster.<br> Score 1 - 5, with 5 being excellent.<br>
 
-<br><br><br><br><br>
+<br><br>
 <%= form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update", method: "put" do |f| %>
   Novelty (research contribution of the work)<br>
   <%= f.radio_button :novelty, 1, id: "novelty1" %><label for="novelty1">1</label>
@@ -126,9 +115,11 @@ header li{ margin-left: 30px; }
   <%= f.radio_button :written, 5, id: "written5" %><label for="written5">5</label>
   <br><br>
 
-  <%= f.submit "Submit", :disabled=>true, id: "submit_id" %> 
-  <%= button_to 'No Show', url: judge_poster_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block" %> 
+<%= f.submit "Submit", :disabled=>true, id: "submit_id", class: "btn-success btn-lg btn-default btn-block" %>
+
 <% end %>
+
+<%= button_to "No Show", url: judge_poster_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block" %> 
 
 
 </div>
