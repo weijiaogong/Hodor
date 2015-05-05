@@ -1,12 +1,5 @@
 class JudgesController < ApplicationController
-    #before_filter :require_login, only: [:show]
-
-    def require_login
-      unless current_user == Judge.find(params[:id])
-        flash[:error] = "You must be logged in to access this action"
-        redirect_to signin_path
-      end
-    end
+    before_filter :require_login, :require_correct_user
 
     #display the posters assigned to a specific judge
     def show
@@ -19,7 +12,8 @@ class JudgesController < ApplicationController
     def assign
         @judge = Judge.find(params[:judge_id])
         error_msg = "Missing: "
-	    if(params[:name].empty?)
+
+	if(params[:name].empty?)
             error_msg += "name"	    
         end
 
@@ -31,7 +25,7 @@ class JudgesController < ApplicationController
         end
         if error_msg != "Missing: "
             flash[:error] = error_msg
-            redirect_to register_judges_path and return
+            redirect_to judge_register_path and return
         end
         
         @judge.update_attributes(name: params[:name], company_name: params[:company])
@@ -47,7 +41,8 @@ class JudgesController < ApplicationController
             Judge.assign_poster(poster.id, @judge.id)
         end
         
-        redirect_to judge_path(params[:judge_id])
+        sign_in @judge
+        redirect_to judge_path(@judge.id)
     end
 
     #display the form to add name and company name for a specific judge

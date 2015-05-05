@@ -1,6 +1,8 @@
 require 'securerandom'
 
 class Admin::JudgesController < ApplicationController
+    before_filter :require_login, :require_admin
+
     def index
         @judges = Judge.find(:all)
     end
@@ -19,7 +21,7 @@ class Admin::JudgesController < ApplicationController
     end
 
     def clear
-        Judge.destroy_all
+        Judge.where('id != 1').destroy_all
         redirect_to admin_judges_path
     end
 end

@@ -1,6 +1,8 @@
 require 'csv'
 
 class Admin::PostersController < ApplicationController
+        before_filter :require_login, :require_admin
+
 	def index
 		@posters = Poster.all
 	end
@@ -40,9 +42,9 @@ class Admin::PostersController < ApplicationController
         @avg_scores = Hash.new(0.0)
 
         for score in scores  
-            score = (score.novelty + score.utility + score.difficulty + score.verbal + score.written)
-            total = score/5.0
-            if(score.no_show || score < 5.0)
+            sum = (score.novelty + score.utility + score.difficulty + score.verbal + score.written)
+            total = sum/5.0
+            if(score.no_show || sum < 5.0)
                 total = 0.0
             end
             
