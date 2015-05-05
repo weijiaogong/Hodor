@@ -53,7 +53,9 @@ class Admin::PostersController < ApplicationController
 		
 		if scores.empty? == false
         	for poster in @posters
-            	@avg_scores[poster.number] = (@avg_scores[poster.number])/(poster.scores_count)
+                if poster.scores_count != 0
+            	    @avg_scores[poster.number] = (@avg_scores[poster.number])/(poster.scores_count)
+                end
         	end
 		end
         
