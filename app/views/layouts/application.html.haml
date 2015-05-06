@@ -8,7 +8,7 @@
     :css 
       .header {
         background-color: #500000;
-        height: 75px;
+        height: 80px;
       }
     :css 
       .content {
@@ -22,13 +22,16 @@
 
     :css
       .sign-out {
-        margin: 10px;
+        position: absolute;
+        right: 10px;
+        top: 35px;
       }
 
   %body
     %div{class: "header"}
       - if current_user
         = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large"
+      %img{:src => "http://i62.tinypic.com/30nj9y9.png", :style => "position: absolute; top: 35px;"}
     %div{:class => "content container"}
       %br
       %div{:class => "col-sm-12 col-lg-12"}
