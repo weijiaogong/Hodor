@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.15'
-ruby '1.9.3'
+#ruby '1.9.3'
+ruby '2.3.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,7 +11,7 @@ ruby '1.9.3'
 group :development, :test do
   	gem 'sqlite3'
 	gem 'rspec-rails', 2.14
-  	gem 'debugger'
+#  	gem 'debugger'
 	gem 'jasmine-rails'
 	gem 'railroady'
 end
