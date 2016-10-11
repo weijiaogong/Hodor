@@ -7,10 +7,12 @@ ruby '2.3.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'pg'	#which we should be using anyhow. fewer errors when moving to production
+
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
 #  	gem 'sqlite3'
-	gem 'pg'	#which we should be using anyhow. fewer errors when moving to production
+	
 	gem 'rspec-rails', 2.14
 #  	gem 'debugger'
 	gem 'jasmine-rails'
@@ -28,7 +30,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
