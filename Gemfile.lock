@@ -305,7 +305,7 @@ DEPENDENCIES
   railroady
   rails (>= 3.2.15)
   rails_12factor
-  rspec-rails (= 2.14)
+  rspec-rails (>= 2.14)
   sass-rails (~> 3.2.3)
   simplecov
   sqlite3

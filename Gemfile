@@ -9,7 +9,7 @@ ruby '>= 1.9.3'
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
   	gem 'sqlite3'
-	gem 'rspec-rails', 2.14
+	gem 'rspec-rails', '>= 2.14'
   	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'

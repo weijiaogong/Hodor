@@ -59655,3 +59655,103 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-05 19:36:13 -0300
 Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 17:05:04 -0500
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Compiled bootstrap.css  (0ms)  (pid 6793)
+Warning. Error encountered while saving cache /media/gwj/home/iaposter/tmp/cache/sass/4d3bca7a33dc69302e193d96640f951a7694fc02/sessions.css.scssc: can't dump anonymous class #<Class:0x005583afc6d058>
+
+Compiled sessions.css  (2ms)  (pid 6793)
+Compiled application.css  (6ms)  (pid 6793)
+Compiled jquery.js  (2ms)  (pid 6793)
+Compiled jquery_ujs.js  (0ms)  (pid 6793)
+Compiled bootstrap.js  (0ms)  (pid 6793)
+Compiled sessions.js  (28ms)  (pid 6793)
+Compiled application.js  (40ms)  (pid 6793)
+Completed 500 Internal Server Error in 86.1ms
+
+ActionView::Template::Error (Could not find table 'judges'):
+    29: 
+    30:   %body
+    31:     %div{class: "header"}
+    32:       - if current_user
+    33:         = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large"
+    34:       %img{:src => "http://i62.tinypic.com/30nj9y9.png", :style => "position: absolute; top: 35px;"}
+    35:     %div{:class => "content container"}
+  app/helpers/sessions_helper.rb:22:in `current_user'
+  app/views/layouts/application.html.haml:32:in `_app_views_layouts_application_html_haml___1832933044142079512_70127258843260'
+
+
+  Rendered /home/gwj/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /home/gwj/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+  Rendered /home/gwj/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (19.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (40.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreatePosters (20150331225810)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "presenter" varchar(255), "title" varchar(255), "advisors" varchar(255), "scores_count" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150331225810')[0m
+  [1m[35m (18.2ms)[0m  commit transaction
+Migrating to CreateScores (20150408035157)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150408035157')[0m
+  [1m[35m (18.0ms)[0m  commit transaction
+Migrating to CreateJudges (20150408035211)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "judges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_name" varchar(255), "access_code" varchar(255), "scores_count" integer DEFAULT 0) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150408035211')[0m
+  [1m[35m (18.8ms)[0m  commit transaction
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "judges" ADD "remember_token" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150420075815')
+  [1m[36m (18.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 50.0ms (Views: 48.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /jquery.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /bootstrap.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /bootstrap.js - 200 OK (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /sessions.css - 200 OK (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /sessions.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-10-11 15:51:18 -0500
+Served asset /application.js - 200 OK (3ms)
