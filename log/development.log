@@ -68336,3 +68336,134 @@ Served asset /sessions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 165.91.12.67 at 2016-10-11 19:37:00 +0000
 Served asset /application.js - 304 Not Modified (8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (19.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (16.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosters (20150331225810)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (18.8ms)[0m  [1mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (2.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150331225810')
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateScores (20150408035157)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (9.1ms)[0m  [1mCREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) [0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408035157')
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJudges (20150408035211)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408035211')
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "judges" ADD COLUMN "remember_token" character varying(255)[0m
+  [1m[35m (6.4ms)[0m  CREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150420075815')[0m
+  [1m[35m (14.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (16.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "bqGTi-bViCQq9i1viqlY6A"], ["scores_count", 0]]
+  [1m[35m (7.3ms)[0m  COMMIT
+
+
+Started GET "/" for 165.91.12.67 at 2016-10-11 19:56:50 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (17.9ms)
+  [1m[36mJudge Load (1.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '4wwPFbXpOh61Af6E9xcv8A' LIMIT 1[0m
+Completed 200 OK in 239.7ms (Views: 212.2ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /sessions.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /sessions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /bootstrap.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /bootstrap.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/logo.png" for 165.91.12.67 at 2016-10-11 19:56:52 +0000
+Served asset /logo.png - 304 Not Modified (2ms)
+
+
+Started POST "/sessions" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2lHuFZABpzpUg47HRjc3m3w6zzYq3gnT+1sXaISh/0=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (29.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://csce606-reflores.c9users.io/admin
+Completed 302 Found in 51.8ms (ActiveRecord: 30.5ms)
+
+
+Started GET "/admin" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'bqGTi-bViCQq9i1viqlY6A' LIMIT 1
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 37.8ms (Views: 33.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 165.91.12.67 at 2016-10-11 19:56:54 +0000
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/logo.png" for 165.91.12.67 at 2016-10-11 19:56:55 +0000
+Served asset /logo.png - 304 Not Modified (0ms)
