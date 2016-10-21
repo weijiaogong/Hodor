@@ -1,20 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.15'
-#ruby '1.9.3'
 ruby '2.3.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'	#which we should be using anyhow. fewer errors when moving to production
+gem 'pg'	#fewer errors when moving to production
 
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
-#  	gem 'sqlite3'
-	
 	gem 'rspec-rails', 2.14
-#  	gem 'debugger'
+#  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
 end
