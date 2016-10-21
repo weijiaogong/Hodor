@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+gem 'rails', '>= 3.2.15'
 ruby '2.3.0'
 
 # Bundle edge Rails instead:
@@ -10,8 +10,8 @@ gem 'pg'	#fewer errors when moving to production
 
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
-	gem 'rspec-rails', 2.14
-#  	gem 'byebug'
+	gem 'rspec-rails', '>= 2.14'
+ 	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
 end
