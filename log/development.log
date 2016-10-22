@@ -1,0 +1,182 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (16.6ms)[0m  [1mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0, "remember_token" character varying(255)) [0m
+  [1m[35m (5.1ms)[0m  CREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")
+  [1m[36m (10.1ms)[0m  [1mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) 
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (4.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150420075815')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150331225810')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035211')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035157')[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "JVJsDaPha07oktGdBZ0m_g"], ["scores_count", 0]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosters (20150331225810)
+Migrating to CreateScores (20150408035157)
+Migrating to CreateJudges (20150408035211)
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.5ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "IOkpeSbocroPpW4ZYBUx0w"], ["scores_count", 0]]
+  [1m[35m (3.0ms)[0m  COMMIT
+
+
+Started GET "/" for 165.91.13.81 at 2016-10-22 20:20:38 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+Compiled jquery.js  (3ms)  (pid 38235)
+Compiled jquery_ujs.js  (0ms)  (pid 38235)
+Compiled application.js  (12ms)  (pid 38235)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 83.4ms (Views: 77.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.13.81 at 2016-10-22 20:20:39 +0000
+Served asset /sessions.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.13.81 at 2016-10-22 20:20:39 +0000
+Served asset /bootstrap.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.13.81 at 2016-10-22 20:20:39 +0000
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.13.81 at 2016-10-22 20:20:39 +0000
+Served asset /bootstrap.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.13.81 at 2016-10-22 20:20:39 +0000
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.13.81 at 2016-10-22 20:20:39 +0000
+Served asset /sessions.js - 200 OK (1ms)
+
+
+Started POST "/sessions" for 165.91.13.81 at 2016-10-22 20:20:47 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v6GNsYeBJFrjbyJO2bnh8ziwFMAyVrZwyzkdnOEEJEg=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (3.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://courseproject-mumair10.c9users.io/admin
+Completed 302 Found in 11.5ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/admin" for 165.91.13.81 at 2016-10-22 20:20:47 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 10.3ms (Views: 8.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/judges" for 165.91.13.81 at 2016-10-22 20:20:50 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 11.6ms (Views: 9.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 165.91.13.81 at 2016-10-22 20:21:16 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 8.1ms (Views: 6.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/posters" for 165.91.13.81 at 2016-10-22 20:21:23 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 15.4ms (Views: 10.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin" for 165.91.13.81 at 2016-10-22 20:21:26 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 8.3ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/judges" for 165.91.13.81 at 2016-10-22 20:21:27 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 8.8ms (Views: 6.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 165.91.13.81 at 2016-10-22 20:21:30 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 8.3ms (Views: 6.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/posters/rankings" for 165.91.13.81 at 2016-10-22 20:21:32 +0000
+Processing by Admin::PostersController#rankings as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  [1m[35mScore Load (0.6ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  Rendered admin/posters/rankings.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 36.6ms (Views: 13.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admin" for 165.91.13.81 at 2016-10-22 20:21:35 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'JVJsDaPha07oktGdBZ0m_g' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 8.1ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 165.91.13.81 at 2016-10-22 20:21:38 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v6GNsYeBJFrjbyJO2bnh8ziwFMAyVrZwyzkdnOEEJEg="}
+Redirected to https://courseproject-mumair10.c9users.io/
+Completed 302 Found in 0.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 165.91.13.81 at 2016-10-22 20:21:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 7.6ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 165.91.13.81 at 2016-10-22 20:50:40 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 68.6ms (Views: 62.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.13.81 at 2016-10-22 20:50:40 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.13.81 at 2016-10-22 20:50:40 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
