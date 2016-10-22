@@ -1,0 +1,670 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (18.1ms)[0m  [1mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0, "remember_token" character varying(255)) [0m
+  [1m[35m (7.6ms)[0m  CREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (7.8ms)[0m  CREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) 
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (6.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150420075815')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035211')[0m
+  [1m[35m (3.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035157')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150331225810')[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "87x0Y6Rk7iSkD_SS1sBqFw"], ["scores_count", 0]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosters (20150331225810)
+Migrating to CreateScores (20150408035157)
+Migrating to CreateJudges (20150408035211)
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "DXJOW1tmqP28LhyXKmNKJA"], ["scores_count", 0]]
+  [1m[35m (4.7ms)[0m  COMMIT
+
+
+Started GET "/" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Compiled jquery.js  (3ms)  (pid 38226)
+Compiled jquery_ujs.js  (0ms)  (pid 38226)
+Compiled application.js  (12ms)  (pid 38226)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 80.5ms (Views: 74.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Served asset /sessions.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Served asset /bootstrap.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Served asset /bootstrap.css - 200 OK (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 20:18:14 +0000
+Served asset /sessions.js - 200 OK (0ms)
+
+
+Started POST "/sessions" for 165.91.12.140 at 2016-10-22 20:18:27 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (3.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin
+Completed 302 Found in 11.3ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 20:18:27 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 13.0ms (Views: 10.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/reset" for 165.91.12.140 at 2016-10-22 20:21:25 +0000
+Processing by Admin::AdminController#reset as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/reset.html.haml within layouts/application (2.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 10.0ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:21:26 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:21:26 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 20:21:32 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 7.8ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:21:32 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:21:32 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 20:21:38 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 14.9ms (Views: 9.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:21:38 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:21:38 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 20:22:04 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 7.9ms (Views: 6.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:04 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:04 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 165.91.12.140 at 2016-10-22 20:22:05 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 10.8ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:05 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:05 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 20:22:26 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 7.9ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:27 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:27 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 165.91.12.140 at 2016-10-22 20:22:28 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 9.5ms (Views: 7.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:28 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:22:28 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 20:35:03 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 9.2ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:35:03 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:35:03 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 20:35:09 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 9.4ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:35:09 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:35:09 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 20:40:43 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 8.6ms (Views: 6.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:40:43 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:40:43 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 20:40:45 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 9.4ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:40:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:40:45 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/posters/import" for 165.91.12.140 at 2016-10-22 20:46:54 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f5010b22a98 @original_filename="PosterEntries.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"PosterEntries.csv\"\r\nContent-Type: text/csv\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161022-38226-4aj3bz>>, "commit"=>"Import"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" IS NULL
+Completed 500 Internal Server Error in 13.0ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: Presenter, Title, Advisor):
+  app/models/poster.rb:13:in `block in import_csv'
+  app/models/poster.rb:7:in `import_csv'
+  app/controllers/admin/posters_controller.rb:15:in `import'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started POST "/admin/posters/import" for 165.91.12.140 at 2016-10-22 20:49:17 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f5010955f58 @original_filename="PosterEntries.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"PosterEntries.csv\"\r\nContent-Type: text/csv\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161022-38226-1ckx6h3>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin/posters
+Completed 302 Found in 2.3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 20:49:17 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 8.7ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:49:17 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:49:17 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 8.9ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 20:49:25 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/posters/import" for 165.91.12.140 at 2016-10-22 20:50:13 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007f50103fd880 @original_filename="PosterEntries.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"PosterEntries.csv\"\r\nContent-Type: text/csv\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161022-38226-tbw783>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" IS NULL[0m
+Completed 500 Internal Server Error in 2.8ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: Presenter, Title, Advisor):
+  app/models/poster.rb:13:in `block in import_csv'
+  app/models/poster.rb:7:in `import_csv'
+  app/controllers/admin/posters_controller.rb:15:in `import'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.7ms)
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+Completed 200 OK in 84.6ms (Views: 77.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:16 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started POST "/sessions" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (3.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin
+Completed 302 Found in 7.5ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (42.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 55.6ms (Views: 10.4ms | ActiveRecord: 43.2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:18 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 21:18:20 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 17.2ms (Views: 11.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:21 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:21 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:21 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:21 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:21 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:21 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/posters/import" for 165.91.12.140 at 2016-10-22 21:18:31 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000001f9d228 @original_filename="PosterEntries.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"PosterEntries.csv\"\r\nContent-Type: text/csv\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161022-38692-1cn2wjh>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin/posters
+Completed 302 Found in 8.6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 21:18:31 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 10.0ms (Views: 7.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:32 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:18:32 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:32 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:32 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:32 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:18:32 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+Completed 200 OK in 12.5ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:17 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 165.91.12.140 at 2016-10-22 21:26:19 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin
+Completed 302 Found in 2.2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 165.91.12.140 at 2016-10-22 21:26:19 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 43.8ms (Views: 42.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:20 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:20 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:20 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:20 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:20 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:20 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.1ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 9.4ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:21 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started POST "/admin/posters/import" for 165.91.12.140 at 2016-10-22 21:26:28 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NTGkg+AA2kp27Jy//u8E1aq0grtIn4jdyCIwUxTWHAc=", "file"=>#<ActionDispatch::Http::UploadedFile:0x007fc67ca1b6d0 @original_filename="PosterEntries.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"PosterEntries.csv\"\r\nContent-Type: text/csv\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161022-38692-5e251q>>, "commit"=>"Import"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Lawrence Rauchwerger"], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Tiffani Williams"], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Robin Murphy"], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal ‰ЫТ Models and Computing Algorithms"]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin/posters
+Completed 302 Found in 26.4ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/admin/posters" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '87x0Y6Rk7iSkD_SS1sBqFw' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 10.5ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.140 at 2016-10-22 21:26:29 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
