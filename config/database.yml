@@ -3,7 +3,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: CodeMonkeys_development
+  database: PosterJudging_development
   pool: 5
   username: 
   password:
@@ -11,7 +11,7 @@ development:
 test: &TEST
   adapter: postgresql
   encoding: utf8
-  database: CodeMonkeys_test
+  database: PosterJudging_test
   pool: 5
   username: 
   password:
@@ -19,7 +19,7 @@ test: &TEST
 production:
   adapter: postgresql
   encoding: utf8
-  database: CodeMonkeys_production
+  database: PosterJudging_production
   pool: 5
   username: 
   password:
