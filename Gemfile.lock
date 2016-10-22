@@ -311,14 +311,7 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
 
 RUBY VERSION
-<<<<<<< HEAD
    ruby 2.3.0p0
 
 BUNDLED WITH
    1.13.2
-=======
-   ruby 2.3.1p112
-
-BUNDLED WITH
-   1.13.1
->>>>>>> 7dd62b622c69fcb0cf0017522c4555c9f2a190b3
