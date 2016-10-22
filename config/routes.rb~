@@ -1,4 +1,4 @@
-CodeMonkeys::Application.routes.draw do
+PosterJudging::Application.routes.draw do
     mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
     namespace :admin do
