@@ -5,6 +5,7 @@ Feature: Assign judge to Posters
     
     Background:
         Given I am on the judge registration page
+        And I am logged in as admin
     
     Scenario: Properly filled out form
 	Given there are 3 posters in the database
