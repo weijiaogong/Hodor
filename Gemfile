@@ -24,6 +24,8 @@ group :test do
 	gem 'autotest-rails'
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
+	gem "capybara"
+  gem "launchy"
 end
 
 group :production do
@@ -47,3 +49,4 @@ gem 'jquery-rails'
 
 # use Haml for templates
 gem 'haml'
+gem 'test-unit'
