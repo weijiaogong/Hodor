@@ -1,5 +1,5 @@
 class Poster < ActiveRecord::Base
-	attr_accessible :number, :presenter, :title, :advisors, :scores_count
+	attr_accessible :number, :presenter, :title, :advisors, :scores_count, :email
 	has_many :scores
 	has_many :judges, through: :scores
 
