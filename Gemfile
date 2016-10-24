@@ -8,6 +8,7 @@ ruby '2.3.0'
 
 gem 'pg'	#fewer errors when moving to production
 
+
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
 	gem 'rspec-rails', '>= 2.14'
@@ -24,6 +25,7 @@ group :test do
 	gem 'autotest-rails'
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
+	gem 'test-unit'
 end
 
 group :production do

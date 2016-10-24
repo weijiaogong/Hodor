@@ -27,7 +27,7 @@ Given(/^I am on the (.*?) page$/) do |arg1|
 		when "admin"
 			visit admin_posters_path
         when "judge registration"
-            visit register_judges #temporary	
+            visit judge_register_path	
         else
 			raise "Could not find #{page}"
 		end
