@@ -46,7 +46,8 @@ module SessionsHelper
   end
 
   def admin?
-    current_user == Judge.find(1)
+    #current_user == Judge.find(1) admin may not be the first record
+    current_user == Judge.find_by_name("admin")
   end
 
   def main_page(judge)
