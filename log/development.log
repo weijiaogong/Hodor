@@ -114,3 +114,792 @@ Served asset /jquery.js - 304 Not Modified (1ms)
 
 Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 20:40:50 +0000
 Served asset /sessions.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (23.3ms)[0m  [1mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0, "remember_token" character varying(255)) [0m
+  [1m[35m (14.9ms)[0m  CREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")
+  [1m[36m (34.2ms)[0m  [1mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (15.7ms)[0m  CREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (8.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150420075815')
+  [1m[36m (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035157')[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150331225810')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035211')[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (11.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "tElJpiuXYNh6KdjBX1gYFQ"], ["scores_count", 0]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosters (20150331225810)
+Migrating to CreateScores (20150408035157)
+Migrating to CreateJudges (20150408035211)
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (11.3ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "UvkGmhEtsN3u8O5PkQxQ8g"], ["scores_count", 0]]
+  [1m[35m (7.2ms)[0m  COMMIT
+
+
+Started GET "/" for 128.194.155.198 at 2016-10-22 20:57:15 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.6ms)
+Compiled bootstrap.css  (0ms)  (pid 38130)
+Warning. Error encountered while saving cache /home/ubuntu/workspace/tmp/cache/sass/e484c03c1fc23420dd9e36aa9a2d1fb77a731879/sessions.css.scssc: can't dump anonymous class #<Class:0x0000000260b178>
+
+Compiled sessions.css  (3ms)  (pid 38130)
+Compiled application.css  (11ms)  (pid 38130)
+Compiled jquery.js  (3ms)  (pid 38130)
+Compiled jquery_ujs.js  (0ms)  (pid 38130)
+Compiled bootstrap.js  (1ms)  (pid 38130)
+Compiled sessions.js  (56ms)  (pid 38130)
+Compiled application.js  (74ms)  (pid 38130)
+  [1m[36mJudge Load (1.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'e5dt5g-odbtfBtKVpH7VUw' LIMIT 1[0m
+Completed 200 OK in 183.1ms (Views: 174.8ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 20:57:16 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 20:57:16 +0000
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:16 +0000
+Served asset /bootstrap.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:16 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:16 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:16 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started POST "/sessions" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PKXZFKUfDlkXiFa53nGG4cf7f3uEE0qHYoFKNSyqs/w=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (3.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://judge-kelly-mitiao.c9users.io/admin
+Completed 302 Found in 10.9ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/admin" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 9.9ms (Views: 7.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 20:57:21 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1
+Completed 200 OK in 7.4ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 21:30:42 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 128.194.155.198 at 2016-10-22 22:05:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PKXZFKUfDlkXiFa53nGG4cf7f3uEE0qHYoFKNSyqs/w=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://judge-kelly-mitiao.c9users.io/admin
+Completed 302 Found in 2.1ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 128.194.155.198 at 2016-10-22 22:05:33 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 87.5ms (Views: 85.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 22:05:34 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 22:05:34 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:34 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:34 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:34 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:34 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 128.194.155.198 at 2016-10-22 22:05:44 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PKXZFKUfDlkXiFa53nGG4cf7f3uEE0qHYoFKNSyqs/w=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://judge-kelly-mitiao.c9users.io/admin
+Completed 302 Found in 2.2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 128.194.155.198 at 2016-10-22 22:05:44 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 7.2ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 22:05:44 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 22:05:44 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:44 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:44 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:45 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 22:05:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (6.2ms)
+Completed 200 OK in 15.6ms (Views: 12.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Served asset /bootstrap.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:35 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PKXZFKUfDlkXiFa53nGG4cf7f3uEE0qHYoFKNSyqs/w=", "number"=>"", "commit"=>"Generate"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://judge-kelly-mitiao.c9users.io/admin/judges
+Completed 302 Found in 2.7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 9.6ms (Views: 6.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Served asset /bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:36 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PKXZFKUfDlkXiFa53nGG4cf7f3uEE0qHYoFKNSyqs/w=", "number"=>"", "commit"=>"Generate"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to https://judge-kelly-mitiao.c9users.io/admin/judges
+Completed 302 Found in 4.6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 9.2ms (Views: 6.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:38 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started POST "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PKXZFKUfDlkXiFa53nGG4cf7f3uEE0qHYoFKNSyqs/w=", "number"=>"6", "commit"=>"Generate"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '9a3a'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "9a3a"], ["company_name", nil], ["name", nil], ["remember_token", "ttrtxOdxSPst82Iw8R0B9A"], ["scores_count", 0]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '5cf6'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "5cf6"], ["company_name", nil], ["name", nil], ["remember_token", "ZFVKbLB71h4j3ihYbbgKOQ"], ["scores_count", 0]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '2ccb'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "2ccb"], ["company_name", nil], ["name", nil], ["remember_token", "lx5Zt1kqkPTBZ9C1KfGS7w"], ["scores_count", 0]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '01d4'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "01d4"], ["company_name", nil], ["name", nil], ["remember_token", "2s8kqHbrjMXpLwm5pVWq7g"], ["scores_count", 0]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '6535'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "6535"], ["company_name", nil], ["name", nil], ["remember_token", "1yzDUrZl37hVS949I8c58A"], ["scores_count", 0]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = '9e0c'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "9e0c"], ["company_name", nil], ["name", nil], ["remember_token", "HVi38geT7dKj5Si51NW3dw"], ["scores_count", 0]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Redirected to https://judge-kelly-mitiao.c9users.io/admin/judges
+Completed 302 Found in 28.7ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/admin/judges" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tElJpiuXYNh6KdjBX1gYFQ' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 8.4ms (Views: 6.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 128.194.155.198 at 2016-10-22 22:06:41 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 128.194.131.138 at 2016-10-24 02:21:17 +0000
+Connecting to database specified by database.yml
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__1898042363372869357__call__2303004989358814003__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+
+
+Started GET "/" for 128.194.131.138 at 2016-10-24 02:21:35 +0000
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__1898042363372869357__call__2303004989358814003__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/" for 128.194.131.138 at 2016-10-24 02:21:49 +0000
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__1898042363372869357__call__2303004989358814003__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/" for 128.194.131.138 at 2016-10-24 02:21:50 +0000
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__1898042363372869357__call__2303004989358814003__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/" for 128.194.131.138 at 2016-10-24 02:23:38 +0000
+Connecting to database specified by database.yml
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__1798349793648159551__call__814824481820033810__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+
+
+Started GET "/" for 128.194.131.138 at 2016-10-24 02:26:42 +0000
+Connecting to database specified by database.yml
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__3675811764447747196__call__569509853260857886__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
