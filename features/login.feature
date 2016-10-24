@@ -4,11 +4,16 @@ Feature: Login
   As an user
   I want restricted access to the system
   
+Background: users in database
+  Given the following user exist:
+    |name  |company_name|access_code|
+    |admin |tamu        |admin      | 
+    
   Scenario: login as admin
-    Given I am currently admin
-    And I fill in "Password" with "admin"
-    And I press "Log in"
-    Then I should see "Admin page"
+    Given I am on the login page
+    When I fill in "session[password]" with "admin"
+    And I press "Sign in"
+    Then I should be on the admin page
   
   #Scenario: Login with invalid password
    # Given I am signed out

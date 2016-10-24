@@ -102,3 +102,292 @@ Completed 500 Internal Server Error in 1.3ms
   [1m[35m (0.2ms)[0m  ROLLBACK
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-24 03:34:45 +0000
+Processing by Admin::PostersController#index as HTML
+PG::UndefinedTable: ERROR:  relation "judges" does not exist
+LINE 5:              WHERE a.attrelid = '"judges"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"judges"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 50.6ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-24 03:34:45 +0000
+Processing by Admin::PostersController#index as HTML
+PG::UndefinedTable: ERROR:  relation "judges" does not exist
+LINE 5:              WHERE a.attrelid = '"judges"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"judges"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 0.7ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-24 03:34:45 +0000
+Processing by Admin::PostersController#index as HTML
+PG::UndefinedTable: ERROR:  relation "judges" does not exist
+LINE 5:              WHERE a.attrelid = '"judges"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"judges"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 0.7ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-24 03:34:45 +0000
+Processing by Admin::PostersController#index as HTML
+PG::UndefinedTable: ERROR:  relation "judges" does not exist
+LINE 5:              WHERE a.attrelid = '"judges"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"judges"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 0.6ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "HAvGr8jYaHn-MUcy8Jb4PQ"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "fc-dsYPpMSffxM5oshk8_A"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/signin" for 127.0.0.1 at 2016-10-24 04:32:23 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 29.2ms (Views: 28.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "uoF6zAtpLjDc6O-LF7_kmQ"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/signin" for 127.0.0.1 at 2016-10-24 04:38:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 28.3ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "SdhO2t6SwyLeTWTQA3EROA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/signin" for 127.0.0.1 at 2016-10-24 04:40:43 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 28.5ms (Views: 27.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "yxFqYXuIa2MDR9Ob32jKiQ"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/signin" for 127.0.0.1 at 2016-10-24 04:42:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.8ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 30.5ms (Views: 29.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "2o3V-CBXSXl6wturCdDxUw"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-24 04:43:53 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 29.8ms (Views: 29.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "eWklU8510LKC7uBAk3hIxw"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-24 04:44:37 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 28.7ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "M2jwMwyjfhOW5F2QCyuYqA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-24 04:52:37 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 29.6ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "wWR-CmrD1KaNuNGhKOrbUw"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-24 05:03:16 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.8ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 29.1ms (Views: 28.5ms | ActiveRecord: 0.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-24 05:03:16 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/admin
+Completed 302 Found in 4.7ms (ActiveRecord: 0.8ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-24 05:03:16 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'wWR-CmrD1KaNuNGhKOrbUw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 6.1ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "i3ql4i8BYCZ6lSogva2CdA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-24 05:07:11 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 34.8ms (Views: 34.0ms | ActiveRecord: 0.5ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-24 05:07:11 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/admin
+Completed 302 Found in 4.7ms (ActiveRecord: 0.8ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-24 05:07:11 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'i3ql4i8BYCZ6lSogva2CdA' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 7.9ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-24 05:07:11 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'i3ql4i8BYCZ6lSogva2CdA' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 5.1ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "Fcb03aVJ0zFS7vpj51da4Q"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-24 05:08:07 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.1ms)
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 36.7ms (Views: 35.6ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-24 05:08:07 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/admin
+Completed 302 Found in 6.6ms (ActiveRecord: 1.1ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-24 05:08:07 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'Fcb03aVJ0zFS7vpj51da4Q' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 8.4ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-24 05:08:07 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'Fcb03aVJ0zFS7vpj51da4Q' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 5.2ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
