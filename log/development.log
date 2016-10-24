@@ -150,3 +150,4 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/bootstrap.css?body=1" for 50.24.126.122 at 2016-10-23 20:00:10 +0000
 Served asset /bootstrap.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
