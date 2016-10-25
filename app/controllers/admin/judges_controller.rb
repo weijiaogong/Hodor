@@ -13,7 +13,7 @@ class Admin::JudgesController < ApplicationController
         while i < num
             code = SecureRandom.hex(2)
             if(Judge.where(access_code: code).size == 0)
-                Judge.create!('access_code' => code)            
+                Judge.create!('access_code' => code, 'role' => 'judge')            
                 i = i + 1
             end
         end
@@ -21,7 +21,7 @@ class Admin::JudgesController < ApplicationController
     end
 
     def clear
-        Judge.where('id != 1').destroy_all
+        Judge.where('id != 1').destroy_all  #TODO destroy all but admin/superadmin?
         redirect_to admin_judges_path
     end
 end
