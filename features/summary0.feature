@@ -7,4 +7,4 @@
  Scenario: No posters exsit
         Given I signed in as admin
         When  I view poster rankings page
-	       Then  I should see empty list
+	       Then  I should see an empty list

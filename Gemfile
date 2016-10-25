@@ -26,6 +26,8 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
 	gem 'test-unit'
+	gem 'capybara-webkit'
+  gem 'headless'
 end
 
 group :production do

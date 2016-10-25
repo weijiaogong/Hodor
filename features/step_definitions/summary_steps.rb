@@ -8,9 +8,6 @@ Given(/^I signed in as admin$/) do
 	click_on  'Sign in'
 end
 
-Then (/^I signed out as admin$/) do
-	click_on 'Sign out'
-end
 
 Given(/^I have poster (\d+) where the presenter is "(.*?)"$/) do |arg1, arg2|
 	Poster.create!(:number => arg1, :title => "", :presenter => arg2, :advisors => "")
@@ -42,8 +39,17 @@ When (/^I view poster rankings page$/) do
       page.should have_content("Rank")
 end
 
+When(/^I(.*?)view scores page$/) do |arg1|
+    visit admin_scores_path
+    page.should have_content("No Show?")
+end
+
+When(/^I click on download button$/) do
+	click_on 'Download'
+end
+
 Then (/^I should see two posters with average score 0.000$/) do
-     rows = page.all("//table/tbody/tr")
+     rows = page.all(".table.table-bordered tbody tr")
 	 rows.size.should eql 2
 	 rows.each do |row|
 	  within row do
@@ -51,15 +57,12 @@ Then (/^I should see two posters with average score 0.000$/) do
 	  end
 	end
 end
-Then (/^I should see empty list$/) do
-	 rows = page.all("//table/tbody/tr")
+Then (/^I should see an empty list$/) do
+	 rows = page.all(".table.table-bordered tbody tr")
 	 rows.size.should eql 0
 end
-Then (/^I should see a presenter named "(.*?)"$/) do |arg1|
-	posters = Poster.where(:presenter => arg1)
-	posters.count.should equal(1)
-end
-Then (/^I should see presenter named "(.*?)" ranked (\d+) with average score (\d+\.\d+)$/) do |arg1, arg2, arg3|
+
+Then (/^I should see presenter named "(.*?)" ranked (\d+) with average score (.*?)$/) do |arg1, arg2, arg3|
 	grade = arg3.to_f
 	poster = Poster.where(:presenter => arg1).first()
 	avg = 0
@@ -73,7 +76,7 @@ Then (/^I should see presenter named "(.*?)" ranked (\d+) with average score (\d
 	avg = avg/count
 	expect(grade).to eq(avg)
 	
-	rows = page.all("//table/tbody/tr")
+	 rows = page.all(".table.table-bordered tbody tr")
 	 rows.size.should eq 2
 	 rows.each do |row|
 	  within row do
@@ -84,8 +87,28 @@ Then (/^I should see presenter named "(.*?)" ranked (\d+) with average score (\d
 	end
 end
 
-When(/^I click on download button$/) do
-	click_on 'Download'
+Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
+	judge = Judge.where(:name => arg1).first()
+	poster = Poster.where(:number => arg2).first()
+    Judge.assign_poster(poster.id, judge.id)
+    score = Score.where(judge_id: judge.id, poster_id: poster.id).first()
+    score.update_attributes(:novelty =>-1, :utility =>-1, :difficulty =>-1, :verbal =>-1, :written =>-1, :no_show => true)	
+end
+
+Then(/^I should see the following scores table:$/) do |expect_table|
+	table_results = page.all('.table.table-bordered tbody tr').map do |row|
+	    row.all('td').map do |cell|
+	        cell.text
+	    end
+    end
+	data = expect_table.raw
+	
+   data.should eq table_results
+
+end
+
+When(/^The page is reloaded$/) do
+    visit admin_scores_path # not sure how to make javascript run in page, wait does not work
 end
 
 Then(/^I see a popup window for download$/) do
