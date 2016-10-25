@@ -14947,3 +14947,20 @@ Connecting to database specified by database.yml
   [1m[35m (2.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035211')
   [1m[36m (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035157')[0m
   [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150331225810')
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (112.5ms)[0m  DROP DATABASE IF EXISTS "PosterJudging_test"
+  [1m[36m (870.9ms)[0m  [1mCREATE DATABASE "PosterJudging_test" ENCODING = 'utf8'[0m
+  [1m[35m (15.1ms)[0m  CREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0, "remember_token" character varying(255), "role" character varying(255)) 
+  [1m[36m (9.2ms)[0m  [1mCREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")[0m
+  [1m[35m (11.7ms)[0m  CREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0, "email" character varying(255)) 
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) [0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (5.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161024193814')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150420075815')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035211')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035157')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20161024193638')[0m
+  [1m[35m (2.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150331225810')
