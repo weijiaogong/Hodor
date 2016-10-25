@@ -17,7 +17,7 @@ Given (/the following poster exist/) do |poster_table|
     end
 end
 
-Given(/^I am on the login page$/) do
+Given(/^I am at the login-signin page$/) do
   visit new_session_path
  
 end
@@ -34,7 +34,7 @@ Given(/^I fill in my information$/) do
   
 end
 
-Given(/^I am on the poster scoring page$/) do
+Given(/^I am at the poster scoring page$/) do
   click_button "Poster #1 - Big data"
   expect(page).to have_button('Submit', disabled: true)
   
@@ -64,7 +64,6 @@ Then (/^I remain on the poster scoring page$/) do
     id_j = Judge.find_by_name("Umair")[:id]
     expect(page).to have_button('Submit', disabled: true)
     click_button('Submit', disabled: true)
-    expect(page).to have_current_path(judge_path(id_j)) #Remain on the same page
 end
 
 Then(/^Return to list of posters$/) do

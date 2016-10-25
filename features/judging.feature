@@ -23,26 +23,26 @@ Background: users in database
    | ab13        |
    
   Scenario: The judge gives scores in all categories
-    Given I am on the login page
+    Given I am at the login-signin page
     Given I fill in "session[password]" with "ab13" and press Sign in 
     Given I fill in my information
-    Given I am on the poster scoring page
+    Given I am at the poster scoring page
     And I give scores to the poster in every category and submit
     Then Return to list of posters
     
   Scenario: The judge does not give scores in all categories
-    Given I am on the login page
+    Given I am at the login-signin page
     Given I fill in "session[password]" with "ab13" and press Sign in 
     Given I fill in my information
-    Given I am on the poster scoring page
+    Given I am at the poster scoring page
     And I do not give scores in all categories and try to submit
     Then I remain on the poster scoring page
     
   Scenario: The presenter does not show up
-    Given I am on the login page
+    Given I am at the login-signin page
     Given I fill in "session[password]" with "ab13" and press Sign in 
     Given I fill in my information
-    Given I am on the poster scoring page
+    Given I am at the poster scoring page
     And I press the no show button
     Then Return to list of posters
     

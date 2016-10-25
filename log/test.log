@@ -12330,3 +12330,1063 @@ Processing by JudgesController#show as HTML
 Completed 200 OK in 9.2ms (Views: 4.1ms | ActiveRecord: 0.9ms)
   [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (8.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePosters (20150331225810)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (9.9ms)[0m  [1mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150331225810')
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateScores (20150408035157)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "no_show" boolean, "poster_id" integer, "judge_id" integer) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408035157')
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJudges (20150408035211)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150408035211')
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddRememberTokenToJudges (20150420075815)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ADD COLUMN "remember_token" character varying(255)[0m
+  [1m[35m (4.4ms)[0m  CREATE INDEX "index_judges_on_remember_token" ON "judges" ("remember_token")
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150420075815')[0m
+  [1m[35m (2.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (5.6ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "gdSCqu2aJrJoPFKPkUDKkQ"], ["scores_count", 0]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "1234"], ["company_name", ""], ["name", ""], ["remember_token", "Kl6FTlr4nASgcpSgj3eZsw"], ["scores_count", 0]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "yGOPeFBqRQmUCmEp7p-NAQ"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "oGPnSS989Iwm6kDtNxdzWA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "p_kS8RFRywoFzL-uu6B-kA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (1.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "eHA5P_ho7I8h5i5Qkpm3Ew"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.6ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 35.1ms (Views: 34.2ms | ActiveRecord: 0.5ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/6/register
+Completed 302 Found in 10.5ms (ActiveRecord: 1.2ms)
+Started GET "/judges/6/register" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"6"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'eHA5P_ho7I8h5i5Qkpm3Ew' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "6"]]
+  Rendered judges/register.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 11.8ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+Started PUT "/judges/6/assign" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"6"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'eHA5P_ho7I8h5i5Qkpm3Ew' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = 'j7W1LxRXaFYaqPF-W-Q0Ew' WHERE "judges"."id" = 6[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE (scores_count < 3)[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 6], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 6
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 6], ["no_show", false], ["novelty", -1], ["poster_id", 2], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 6
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 2
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 6], ["no_show", false], ["novelty", -1], ["poster_id", 3], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 6
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/judges/6
+Completed 302 Found in 22.4ms (ActiveRecord: 6.6ms)
+Started GET "/judges/6" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'j7W1LxRXaFYaqPF-W-Q0Ew' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mPoster Load (0.8ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 6 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 6
+  Rendered judges/show.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 35.5ms (Views: 13.8ms | ActiveRecord: 1.4ms)
+Started GET "/judges/6/posters/1/judge" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"6", "poster_id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'j7W1LxRXaFYaqPF-W-Q0Ew' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  Rendered posters/judge.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 11.0ms (Views: 8.4ms | ActiveRecord: 0.9ms)
+Started PUT "/judges/6/posters/1" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "score"=>{"novelty"=>"3", "utility"=>"1", "difficulty"=>"5", "verbal"=>"5", "written"=>"3"}, "commit"=>"Submit", "judge_id"=>"6", "id"=>"1"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'j7W1LxRXaFYaqPF-W-Q0Ew' LIMIT 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 6 AND "scores"."poster_id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "scores" SET "novelty" = 3, "utility" = 1, "difficulty" = 5, "verbal" = 5, "written" = 3 WHERE "scores"."id" = 3[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/6
+Completed 302 Found in 4.3ms (ActiveRecord: 1.1ms)
+Started GET "/judges/6" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'j7W1LxRXaFYaqPF-W-Q0Ew' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 6 ORDER BY number
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 6[0m
+  Rendered judges/show.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 7.2ms (Views: 2.9ms | ActiveRecord: 1.2ms)
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "XedtfBd_ithxPzx6CV2S0Q"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "VmYNMxajb_c6fP7ULMZa6Q"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "ogy4o22Bt31KgIsrweFJng"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "DEa5PaqdyKhU5ugj-Qfh1g"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "gldlGmpvWquLXIRqDhDZmw"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "0zENBsAy2KknsTVbn-vxBQ"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "5GLrmUKZLOa3EK5QgPpuMQ"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "762Gl2su0ZVhD0zie-kJbA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 5.5ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/14/register
+Completed 302 Found in 2.2ms (ActiveRecord: 0.5ms)
+Started GET "/judges/14/register" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"14"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '762Gl2su0ZVhD0zie-kJbA' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "14"]]
+  Rendered judges/register.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 5.3ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+Started PUT "/judges/14/assign" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"14"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '762Gl2su0ZVhD0zie-kJbA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "14"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = 'EBJbNrEGFv73_Creg8xPAQ' WHERE "judges"."id" = 14[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE (scores_count < 3)[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 14], ["no_show", false], ["novelty", -1], ["poster_id", 8], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 14 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 14
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 8
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 14], ["no_show", false], ["novelty", -1], ["poster_id", 7], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 14 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 14
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 7
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 14], ["no_show", false], ["novelty", -1], ["poster_id", 9], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 14 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 14
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 9
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/judges/14
+Completed 302 Found in 21.1ms (ActiveRecord: 5.5ms)
+Started GET "/judges/14" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'EBJbNrEGFv73_Creg8xPAQ' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "14"]]
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 14 ORDER BY number[0m
+  [1m[35mScore Load (4.0ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 14
+  Rendered judges/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 13.3ms (Views: 4.7ms | ActiveRecord: 4.9ms)
+Started GET "/judges/14/posters/7/judge" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"14", "poster_id"=>"7"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'EBJbNrEGFv73_Creg8xPAQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  Rendered posters/judge.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 12.2ms (Views: 8.8ms | ActiveRecord: 0.9ms)
+Started POST "/judges/14/posters/7/no_show?class=btn+btn-lg+btn-default+btn-block&method=post&url=%2Fjudges%2F14%2Fposters%2F7%2Fno_show" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by PostersController#no_show as HTML
+  Parameters: {"class"=>"btn btn-lg btn-default btn-block", "method"=>"post", "url"=>"/judges/14/posters/7/no_show", "judge_id"=>"14", "poster_id"=>"7"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'EBJbNrEGFv73_Creg8xPAQ' LIMIT 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 14 AND "scores"."poster_id" = 7 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "scores" SET "no_show" = 't' WHERE "scores"."id" = 11[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/14
+Completed 302 Found in 5.2ms (ActiveRecord: 1.1ms)
+Started GET "/judges/14" for 127.0.0.1 at 2016-10-25 16:05:12 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'EBJbNrEGFv73_Creg8xPAQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "14"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "14"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 14 ORDER BY number
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 14[0m
+  Rendered judges/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 9.9ms (Views: 4.1ms | ActiveRecord: 1.3ms)
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "hF4QjImw3ixICTtv00w13w"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "6tv_2nH2pl3kZrZWauAgrA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "qKC8mKHkEZgdSpmng4PFgA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "H8gLURM4K6HsnAVWHXasZw"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.5ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 29.8ms (Views: 28.8ms | ActiveRecord: 0.6ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/18/register
+Completed 302 Found in 6.8ms (ActiveRecord: 1.1ms)
+Started GET "/judges/18/register" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"18"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'H8gLURM4K6HsnAVWHXasZw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "18"]]
+  Rendered judges/register.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 9.8ms (Views: 6.9ms | ActiveRecord: 0.6ms)
+Started PUT "/judges/18/assign" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"18"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'H8gLURM4K6HsnAVWHXasZw' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "18"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = 'nbGxZsiXM1yivOJvbG4dtA' WHERE "judges"."id" = 18[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE (scores_count < 3)[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 18], ["no_show", false], ["novelty", -1], ["poster_id", 10], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 18 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 18
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 10 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 10
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 18], ["no_show", false], ["novelty", -1], ["poster_id", 11], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 18 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 18
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 11 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 11
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 18], ["no_show", false], ["novelty", -1], ["poster_id", 12], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 18 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 18
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 12 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 12
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/judges/18
+Completed 302 Found in 30.6ms (ActiveRecord: 6.6ms)
+Started GET "/judges/18" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'nbGxZsiXM1yivOJvbG4dtA' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "18"]]
+  [1m[36mPoster Load (1.0ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 18 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 18
+  Rendered judges/show.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 47.9ms (Views: 21.1ms | ActiveRecord: 1.6ms)
+Started GET "/judges/18/posters/10/judge" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"18", "poster_id"=>"10"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'nbGxZsiXM1yivOJvbG4dtA' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1  [["id", "10"]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  Rendered posters/judge.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 15.6ms (Views: 11.9ms | ActiveRecord: 1.0ms)
+Started PUT "/judges/18/posters/10" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "score"=>{"novelty"=>"3", "utility"=>"1", "difficulty"=>"5", "verbal"=>"5", "written"=>"3"}, "commit"=>"Submit", "judge_id"=>"18", "id"=>"10"}
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'nbGxZsiXM1yivOJvbG4dtA' LIMIT 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 18 AND "scores"."poster_id" = 10 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "scores" SET "novelty" = 3, "utility" = 1, "difficulty" = 5, "verbal" = 5, "written" = 3 WHERE "scores"."id" = 15[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/18
+Completed 302 Found in 6.0ms (ActiveRecord: 1.3ms)
+Started GET "/judges/18" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'nbGxZsiXM1yivOJvbG4dtA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "18"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "18"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 18 ORDER BY number
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 18[0m
+  Rendered judges/show.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 10.9ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+  [1m[35mJudge Load (1.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "gnS0BMQXR5a2VQos-6mY0w"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "Zu7x4UUXtGneos7TGzGmCg"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "c9Hs3TXu1bVGiRs0czeTrg"], ["scores_count", 0]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "g4xP4xuC7PFhs-k03OYg8w"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "1BEBgOZg91TMJURGjQqTQA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "g841DPS-nwaQK5CfR6EGbA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "-_Gh16dQCJoIvFBvy8DxoQ"], ["scores_count", 0]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "1E8J1MpBOKjF6oTgnFTCug"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 3.4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:05:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/26/register
+Completed 302 Found in 2.5ms (ActiveRecord: 0.6ms)
+Started GET "/judges/26/register" for 127.0.0.1 at 2016-10-25 16:05:52 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"26"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '1E8J1MpBOKjF6oTgnFTCug' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "26"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "26"]]
+  Rendered judges/register.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 6.0ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+Started PUT "/judges/26/assign" for 127.0.0.1 at 2016-10-25 16:05:52 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"26"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '1E8J1MpBOKjF6oTgnFTCug' LIMIT 1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "26"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "26"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = 'RROINGp_Krv7NPfsC4hwHA' WHERE "judges"."id" = 26[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPoster Load (1.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE (scores_count < 3)[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 26], ["no_show", false], ["novelty", -1], ["poster_id", 18], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 26 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 26
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 18 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 18
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 26], ["no_show", false], ["novelty", -1], ["poster_id", 17], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 26 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 26
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 17 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 17
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 26], ["no_show", false], ["novelty", -1], ["poster_id", 16], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 26 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 26
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 16 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 16
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/judges/26
+Completed 302 Found in 22.8ms (ActiveRecord: 7.0ms)
+Started GET "/judges/26" for 127.0.0.1 at 2016-10-25 16:05:52 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'RROINGp_Krv7NPfsC4hwHA' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "26"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "26"]]
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 26 ORDER BY number[0m
+  [1m[35mScore Load (0.3ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 26
+  Rendered judges/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 7.5ms (Views: 3.2ms | ActiveRecord: 1.3ms)
+Started GET "/judges/26/posters/16/judge" for 127.0.0.1 at 2016-10-25 16:05:52 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"26", "poster_id"=>"16"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'RROINGp_Krv7NPfsC4hwHA' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1  [["id", "16"]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "26"]]
+  Rendered posters/judge.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7.9ms (Views: 5.4ms | ActiveRecord: 0.9ms)
+Started POST "/judges/26/posters/16/no_show?class=btn+btn-lg+btn-default+btn-block&method=post&url=%2Fjudges%2F26%2Fposters%2F16%2Fno_show" for 127.0.0.1 at 2016-10-25 16:05:52 +0000
+Processing by PostersController#no_show as HTML
+  Parameters: {"class"=>"btn btn-lg btn-default btn-block", "method"=>"post", "url"=>"/judges/26/posters/16/no_show", "judge_id"=>"26", "poster_id"=>"16"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'RROINGp_Krv7NPfsC4hwHA' LIMIT 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 26 AND "scores"."poster_id" = 16 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "scores" SET "no_show" = 't' WHERE "scores"."id" = 24[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/26
+Completed 302 Found in 3.7ms (ActiveRecord: 1.1ms)
+Started GET "/judges/26" for 127.0.0.1 at 2016-10-25 16:05:52 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'RROINGp_Krv7NPfsC4hwHA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "26"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "26"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 26 ORDER BY number
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 26[0m
+  Rendered judges/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 7.6ms (Views: 3.2ms | ActiveRecord: 1.3ms)
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "72HITJDawCJa0nvtnBqrWA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "XL9f0s34nAfbNgUM_m2Z1A"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "gH39zVZ3AzJIbyF_9iQmsw"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "HD310lC-OU9eGfAqxAfzrA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.5ms)
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 33.5ms (Views: 32.4ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/30/register
+Completed 302 Found in 6.3ms (ActiveRecord: 1.0ms)
+Started GET "/judges/30/register" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"30"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'HD310lC-OU9eGfAqxAfzrA' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "30"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "30"]]
+  Rendered judges/register.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 10.9ms (Views: 8.3ms | ActiveRecord: 0.5ms)
+Started PUT "/judges/30/assign" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"30"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'HD310lC-OU9eGfAqxAfzrA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "30"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "30"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = '2dpzBwyZVtCjeSle3iFCyA' WHERE "judges"."id" = 30[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE (scores_count < 3)[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 30], ["no_show", false], ["novelty", -1], ["poster_id", 21], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 30 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 30
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 21 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 21
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36m (1.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 30], ["no_show", false], ["novelty", -1], ["poster_id", 19], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 30 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 30
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 19 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 19
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 30]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 30], ["no_show", false], ["novelty", -1], ["poster_id", 20], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 30 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 30
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 20 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 20
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/judges/30
+Completed 302 Found in 25.9ms (ActiveRecord: 8.1ms)
+Started GET "/judges/30" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '2dpzBwyZVtCjeSle3iFCyA' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "30"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "30"]]
+  [1m[36mPoster Load (1.2ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 30 ORDER BY number[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 30
+  Rendered judges/show.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 46.0ms (Views: 18.0ms | ActiveRecord: 2.1ms)
+Started GET "/judges/30/posters/19/judge" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"30", "poster_id"=>"19"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '2dpzBwyZVtCjeSle3iFCyA' LIMIT 1[0m
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1  [["id", "19"]]
+  [1m[36mJudge Load (1.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "30"]]
+  Rendered posters/judge.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 16.2ms (Views: 11.7ms | ActiveRecord: 2.2ms)
+Started PUT "/judges/30/posters/19" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "score"=>{"novelty"=>"3", "utility"=>"1", "difficulty"=>"5", "verbal"=>"5", "written"=>"3"}, "commit"=>"Submit", "judge_id"=>"30", "id"=>"19"}
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '2dpzBwyZVtCjeSle3iFCyA' LIMIT 1
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 30 AND "scores"."poster_id" = 19 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "scores" SET "novelty" = 3, "utility" = 1, "difficulty" = 5, "verbal" = 5, "written" = 3 WHERE "scores"."id" = 28[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/30
+Completed 302 Found in 6.0ms (ActiveRecord: 1.4ms)
+Started GET "/judges/30" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mJudge Load (2.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '2dpzBwyZVtCjeSle3iFCyA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "30"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "30"]]
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 30 ORDER BY number
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 30[0m
+  Rendered judges/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 10.8ms (Views: 4.0ms | ActiveRecord: 2.9ms)
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "a4vQTdi8uLFQADson9LS1Q"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "H58T_cq6cRo5CLd8mccYwg"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "w9FWDNsnZN9_KRyRErr4-w"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "tz6wJkfPIwNhrWR7q8j--w"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 3.7ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1
+Redirected to http://www.example.com/judges/34/register
+Completed 302 Found in 2.4ms (ActiveRecord: 0.4ms)
+Started GET "/judges/34/register" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"34"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tz6wJkfPIwNhrWR7q8j--w' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "34"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "34"]]
+  Rendered judges/register.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 6.1ms (Views: 3.7ms | ActiveRecord: 0.8ms)
+Started PUT "/judges/34/assign" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"34"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'tz6wJkfPIwNhrWR7q8j--w' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "34"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "34"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  UPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = 'U8cZmiUXKL3ENmOtW1pjeA' WHERE "judges"."id" = 34
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE (scores_count < 3)
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 34], ["no_show", false], ["novelty", -1], ["poster_id", 22], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 34 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 34[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 22 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 22[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 34], ["no_show", false], ["novelty", -1], ["poster_id", 24], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 34 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 34[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 24[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["difficulty", -1], ["judge_id", 34], ["no_show", false], ["novelty", -1], ["poster_id", 23], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[35mJudge Load (4.9ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 34 LIMIT 1
+  [1m[36mSQL (1.7ms)[0m  [1mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 34[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 23[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/34
+Completed 302 Found in 31.9ms (ActiveRecord: 12.9ms)
+Started GET "/judges/34" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'U8cZmiUXKL3ENmOtW1pjeA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "34"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "34"]]
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 34 ORDER BY number
+  [1m[36mScore Load (2.8ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 34[0m
+  Rendered judges/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 13.7ms (Views: 4.1ms | ActiveRecord: 4.0ms)
+Started GET "/judges/34/posters/22/judge" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"34", "poster_id"=>"22"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'U8cZmiUXKL3ENmOtW1pjeA' LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1[0m  [["id", "22"]]
+  [1m[35mJudge Load (2.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "34"]]
+  Rendered posters/judge.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 13.1ms (Views: 8.1ms | ActiveRecord: 3.1ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1[0m
+Started PUT "/judges/34/posters/22" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by PostersController#update as HTML
+  Parameters: {"utf8"=>"✓", "score"=>{"novelty"=>"3", "utility"=>"1", "difficulty"=>"5"}, "commit"=>"Submit", "judge_id"=>"34", "id"=>"22"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'U8cZmiUXKL3ENmOtW1pjeA' LIMIT 1
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 34 AND "scores"."poster_id" = 22 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "scores" SET "novelty" = 3, "utility" = 1, "difficulty" = 5, "verbal" = 0, "written" = 0 WHERE "scores"."id" = 32[0m
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/34
+Completed 302 Found in 5.5ms (ActiveRecord: 2.2ms)
+Started GET "/judges/34" for 127.0.0.1 at 2016-10-25 16:06:28 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'U8cZmiUXKL3ENmOtW1pjeA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "34"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "34"]]
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 34 ORDER BY number
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 34[0m
+  Rendered judges/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 10.4ms (Views: 5.3ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Walker"], ["number", 1], ["presenter", "John"], ["scores_count", 0], ["title", "Big data"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["advisors", "Thomas"], ["number", 2], ["presenter", "David"], ["scores_count", 0], ["title", "Machine Learning"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posters" ("advisors", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["advisors", "Alex"], ["number", 3], ["presenter", "Alan"], ["scores_count", 0], ["title", "Werables"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "cNeekRStKNXFYsT4zRrITQ"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", ""], ["name", ""], ["remember_token", "M0X1wj9VLWRVzz5riOeclw"], ["scores_count", 0]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "3ynxAHWerH3cFKsGskzISA"], ["scores_count", 0]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "XKLLsRs6xYuGxmU6FUKkTA"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 2], ["no_show", false], ["novelty", -1], ["poster_id", 1], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 4.9ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/38/register
+Completed 302 Found in 2.6ms (ActiveRecord: 0.7ms)
+Started GET "/judges/38/register" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"38"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'XKLLsRs6xYuGxmU6FUKkTA' LIMIT 1
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "38"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "38"]]
+  Rendered judges/register.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 6.3ms (Views: 3.6ms | ActiveRecord: 1.1ms)
+Started PUT "/judges/38/assign" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by JudgesController#assign as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Umair", "company"=>"CSE", "commit"=>"Register", "judge_id"=>"38"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'XKLLsRs6xYuGxmU6FUKkTA' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "38"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "38"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (1.6ms)[0m  [1mUPDATE "judges" SET "name" = 'Umair', "company_name" = 'CSE', "remember_token" = '8tdIhdOjRGdImJE06x8VPw' WHERE "judges"."id" = 38[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE (scores_count < 3)[0m
+  [1m[35mJudge Load (1.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 38], ["no_show", false], ["novelty", -1], ["poster_id", 26], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 38 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 38
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 26 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 26
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 38], ["no_show", false], ["novelty", -1], ["poster_id", 25], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 38 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 38
+  [1m[36mPoster Load (1.1ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 25
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 38]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "scores" ("difficulty", "judge_id", "no_show", "novelty", "poster_id", "utility", "verbal", "written") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["difficulty", -1], ["judge_id", 38], ["no_show", false], ["novelty", -1], ["poster_id", 27], ["utility", -1], ["verbal", -1], ["written", -1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 38 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = 38
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = 27
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/judges/38
+Completed 302 Found in 38.5ms (ActiveRecord: 10.9ms)
+Started GET "/judges/38" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8tdIhdOjRGdImJE06x8VPw' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "38"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "38"]]
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 38 ORDER BY number[0m
+  [1m[35mScore Load (0.3ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 38
+  Rendered judges/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 9.6ms (Views: 3.4ms | ActiveRecord: 1.1ms)
+Started GET "/judges/38/posters/25/judge" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"38", "poster_id"=>"25"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8tdIhdOjRGdImJE06x8VPw' LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT 1  [["id", "25"]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "38"]]
+  Rendered posters/judge.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 14.3ms (Views: 11.4ms | ActiveRecord: 0.7ms)
+Started POST "/judges/38/posters/25/no_show?class=btn+btn-lg+btn-default+btn-block&method=post&url=%2Fjudges%2F38%2Fposters%2F25%2Fno_show" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by PostersController#no_show as HTML
+  Parameters: {"class"=>"btn btn-lg btn-default btn-block", "method"=>"post", "url"=>"/judges/38/posters/25/no_show", "judge_id"=>"38", "poster_id"=>"25"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8tdIhdOjRGdImJE06x8VPw' LIMIT 1
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 38 AND "scores"."poster_id" = 25 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "scores" SET "no_show" = 't' WHERE "scores"."id" = 38[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/judges/38
+Completed 302 Found in 5.8ms (ActiveRecord: 1.1ms)
+Started GET "/judges/38" for 127.0.0.1 at 2016-10-25 16:06:29 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8tdIhdOjRGdImJE06x8VPw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "38"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "38"]]
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 38 ORDER BY number
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 38[0m
+  Rendered judges/show.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 11.8ms (Views: 5.2ms | ActiveRecord: 1.1ms)
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'Umair' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
