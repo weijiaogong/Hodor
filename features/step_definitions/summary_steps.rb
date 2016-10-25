@@ -2,7 +2,6 @@ Given(/^I signed in as admin$/) do
     admin = Judge.create!('name' => 'admin', 'access_code' => 'admin') 
    	admin.id = 1
    	admin.save!
-    admin = Judge.find(1)
 	visit new_session_path
 	fill_in 'session[password]', :with => 'admin'
 	click_on  'Sign in'
