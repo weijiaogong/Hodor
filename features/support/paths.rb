@@ -15,9 +15,15 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    
+    when /^the login\s?page$/
+      signin_path
+      
     when /^the admin\s?page$/
-	admin_posters_path
-    # Add more mappings here.
+	    admin_posters_path
+	    
+    # when /^the judge registration\s?page$/
+    #   judge_register_path(Judge.find_by_access_code(arg2)[:id])    # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i

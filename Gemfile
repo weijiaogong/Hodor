@@ -24,6 +24,8 @@ group :test do
 	gem 'autotest-rails'
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
+	gem 'test-unit'
+
 end
 
 group :production do

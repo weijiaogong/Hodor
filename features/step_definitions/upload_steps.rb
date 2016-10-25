@@ -26,16 +26,27 @@ Given(/^I am on the (.*?) page$/) do |arg1|
 	case arg1
 		when "admin"
 			visit admin_posters_path
-        when "judge registration"
-            visit register_judges #temporary	
+        # when "judge registration"
+        # 	id_j = Judge.find_by_access_code(arg2)[:id]
+        #     visit judge_register_path(id_j) #temporary
+        when "login"
+        	visit root_path
         else
 			raise "Could not find #{page}"
-		end
+	end
+end
+
+Given(/^I am on the judge registration page for "([^"]*)"$/) do |arg2|
+	id_j = Judge.find_by_access_code(arg2)[:id]
+    # puts id_j
+    # puts judge_register_path(id_j)
+    # puts page.current_url
+    visit judge_register_path(id_j)
+    # puts page.body
 end
 
 When(/^I press "(.*?)"$/) do |arg1|
+  	#puts Judge.find(:all)
   	click_button arg1
+  	#puts page.body
 end
-
-
-
