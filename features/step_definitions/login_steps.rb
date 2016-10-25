@@ -2,13 +2,13 @@ Given (/the following user exist/) do |user_table|
     user_table.hashes.each do |user|
         Judge.create!(user)
     end
-end
+end #Other undefined value is null->true
 
 Given (/the following access_code exist/) do |table|
     table.hashes.each do |code|
         Judge.create!('access_code' => code[:access_code])
     end
-end
+end #Other undefined value is nil->false
 
 When (/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in(field, :with => value)
@@ -17,11 +17,9 @@ end
 Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
     case arg
 		when "admin"
-			visit admin_root_path
+			expect(page).to have_current_path(admin_root_path)
 		when "signin"
-		    visit signin_path
-		when "sad_signin"
-		    visit signin_path :alert => 'Invalid password'
+		    expect(page).to have_current_path(signin_path)
         else
             raise "Could not find #{arg}"
     end

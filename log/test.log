@@ -11544,3 +11544,146 @@ Processing by JudgesController#register as HTML
 Completed 200 OK in 10.3ms (Views: 8.3ms | ActiveRecord: 0.5ms)
   [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "H5aSgnn5p7AyPavmfpYGpQ"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab28"], ["company_name", "tamu-cse"], ["name", "kelly"], ["remember_token", "XPAXBDeUiXHZ_ZxkwmHAvw"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "2Evk5MV8RuyyQiCDSE09kg"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "A5JF5gJ14HM0JtzQzaQgdg"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 30.5ms (Views: 29.7ms | ActiveRecord: 0.5ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1
+Redirected to http://www.example.com/admin
+Completed 302 Found in 5.8ms (ActiveRecord: 0.9ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'H5aSgnn5p7AyPavmfpYGpQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 7.1ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "IDZXSrg-E9l9TA_YvxEjvg"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", "tamu-cse"], ["name", "kelly"], ["remember_token", "OEi4RNgCQ_cAlECMVOwjHA"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "5cAG0kMfpb_3Xw0THbDqLw"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "jprtxLDaIUjQvQQPy8Wb9Q"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 3.0ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab28' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/6
+Completed 302 Found in 1.9ms (ActiveRecord: 0.5ms)
+Started GET "/judges/6" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'OEi4RNgCQ_cAlECMVOwjHA' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "6"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "6"]]
+  [1m[36mPoster Load (0.6ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 6 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 6
+  Rendered judges/show.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 43.5ms (Views: 4.8ms | ActiveRecord: 4.2ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'kelly' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "2Ul6-rvUB1DY9ecUNhtHGQ"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab28"], ["company_name", "tamu-cse"], ["name", "kelly"], ["remember_token", "TCqt-bGYfpTpic_5ynrpgw"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "sTRNESNta-eWBREkM6qCEQ"], ["scores_count", 0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "tyPVY2qAJuIGo2xjlHZYfg"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 3.1ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = '1234' LIMIT 1[0m
+Redirected to http://www.example.com/signin
+Completed 302 Found in 1.1ms (ActiveRecord: 0.3ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 3.0ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "VubG8KkRo2CgEyQRR8p99A"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab28"], ["company_name", "tamu-cse"], ["name", "kelly"], ["remember_token", "SPKe3ST5i9cwJjoedAqbIw"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["access_code", "ab12"], ["company_name", nil], ["name", nil], ["remember_token", "eLmaZxx2PcNWhov1Sjb3jg"], ["scores_count", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "scores_count") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["access_code", "ab13"], ["company_name", nil], ["name", nil], ["remember_token", "IFAzWgHJkSOHEs4CIlH_Ew"], ["scores_count", 0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 2.9ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."name" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/16/register
+Completed 302 Found in 2.0ms (ActiveRecord: 0.4ms)
+Started GET "/judges/16/register" for 127.0.0.1 at 2016-10-25 17:23:31 +0000
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"16"}
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'IFAzWgHJkSOHEs4CIlH_Ew' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "16"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "16"]]
+  Rendered judges/register.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 9.1ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'ab13' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
