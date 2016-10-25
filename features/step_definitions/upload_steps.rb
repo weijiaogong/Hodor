@@ -36,6 +36,3 @@ end
 When(/^I press "(.*?)"$/) do |arg1|
   	click_button arg1
 end
-
-
-
