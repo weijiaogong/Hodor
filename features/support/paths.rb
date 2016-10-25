@@ -15,8 +15,9 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the admin\s?page$/
-	admin_posters_path
+    when /^I am on the judge poster page/
+      '/judges/:judge_id/posters/:poster_id/judge'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

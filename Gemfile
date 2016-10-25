@@ -14,6 +14,7 @@ group :development, :test do
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
+	
 end
 
 group :test do
@@ -24,6 +25,8 @@ group :test do
 	gem 'autotest-rails'
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
+	gem 'test-unit'
+	gem "launchy", "~> 2.1.2"
 end
 
 group :production do

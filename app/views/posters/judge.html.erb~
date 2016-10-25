@@ -75,11 +75,11 @@ Use the following criteria to evaluate the poster. Score 1 - 5, with 5 being exc
       c4 = false;
     }
 
-    if(document.getElementById("novelty1").checked == true || document.getElementById("novelty2").checked == true || document.getElementById("novelty3").checked == true || document.getElementById("novelty4").checked == true || document.getElementById("novelty5").checked == true){
-      c1 = true;
+    if(document.getElementById("written1").checked == true || document.getElementById("written2").checked == true || document.getElementById("written3").checked == true || document.getElementById("written4").checked == true || document.getElementById("written5").checked == true){
+      c5 = true;
     }
     else{
-      c1 = false;
+      c5 = false;
     }
 
     if(c1 && c2 && c3 && c4 && c5){
