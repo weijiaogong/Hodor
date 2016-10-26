@@ -1,14 +1,14 @@
-Given (/the following user exist/) do |user_table|
-    user_table.hashes.each do |user|
-        Judge.create!(user)
-    end
-end
+# Given (/the following user exist/) do |user_table|
+#     user_table.hashes.each do |user|
+#         Judge.create!(user)
+#     end
+# end
 
-Given (/the following access_code exist/) do |table|
-    table.hashes.each do |code|
-        Judge.create!('access_code' => code[:access_code])
-    end
-end
+# Given (/the following access_code exist/) do |table|
+#     table.hashes.each do |code|
+#         Judge.create!('access_code' => code[:access_code])
+#     end
+# end
 
 When (/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in(field, :with => value)
