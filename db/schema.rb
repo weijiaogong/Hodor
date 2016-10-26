@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150420075815) do
+ActiveRecord::Schema.define(:version => 20161024193814) do
 
   create_table "judges", :force => true do |t|
     t.string  "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20150420075815) do
     t.string  "access_code"
     t.integer "scores_count",   :default => 0
     t.string  "remember_token"
+    t.string  "role"
   end
 
   add_index "judges", ["remember_token"], :name => "index_judges_on_remember_token"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20150420075815) do
     t.string  "title"
     t.string  "advisors"
     t.integer "scores_count", :default => 0
+    t.string  "email"
   end
 
   create_table "scores", :force => true do |t|
