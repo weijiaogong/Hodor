@@ -61,7 +61,7 @@ Capybara.javascript_driver = :webkit
 
 Capybara::Webkit.configure do |config|
   # Enable debug mode. Prints a log of everything the driver is doing.
-  config.debug = true
+  config.debug = false
 
   # Don't raise errors when SSL certificates can't be validated
   config.ignore_ssl_errors
