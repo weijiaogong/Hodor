@@ -13,7 +13,6 @@ Background: users in database
   
   Given the following user exist:
     | name  | company_name| access_code|
-    | admin | tamu        | admin      | 
     |       |             | ab28       | 
     
   
