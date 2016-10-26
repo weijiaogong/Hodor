@@ -6,9 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-<<<<<<< HEAD
+
 Judge.create!(name: 'admin', company_name: 'tamu', access_code: 'admin', scores_count: 0, role: 'superadmin')
-=======
-Judge.create(name: 'admin', company_name: 'tamu', access_code: 'admin', scores_count: 0)
-Judge.create(name: '', company_name: '', access_code: '1234', scores_count: 0)
->>>>>>> Judge_Poster
+
