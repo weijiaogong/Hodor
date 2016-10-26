@@ -1,4 +1,0 @@
-class AddRememberTokenToJudges < ActiveRecord::Migration
-  def change
-  end
-end
