@@ -3,8 +3,6 @@ Feature: Upload Multiple Posters
 	As an administrator
 	I want to add and/or update multiple posters using an excel file
 
-	Background:
-	  Given I am logged in as admin
 
 	Scenario: Add multiple poster entries
 		Given I logged in as admin
@@ -13,6 +11,7 @@ Feature: Upload Multiple Posters
 		Then I should see the message "Import successful"
 		And I should see a presenter named "Harshvardhan"
 		And I should see a presenter named "Ralph Crosby"
+		
 		
 	Scenario: Try to upload wrong file type
 		Given I logged in as admin
