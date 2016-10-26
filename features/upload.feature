@@ -22,7 +22,7 @@ Feature: Upload Multiple Posters
 	Scenario: File missing on upload
 		Given I logged in as admin
 		Given I clicked on view poster
-		When I press "Import"
+		When I press Import button
 		Then I should see the message "File missing"
 		
 	Scenario: Update existing poster entries
