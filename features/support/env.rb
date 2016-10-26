@@ -71,3 +71,4 @@ Capybara.ignore_hidden_elements = false
   # Don't load images
   config.skip_image_loading
 end
+Capybara.default_wait_time = 5

@@ -31,7 +31,7 @@ Feature: View in-time scores
 		  |Poster #|Novelty|Utility|Difficulty|Verbal|Written|No Show?|Judge  |
 		  |1       |5      |5      |5         |5     |5      |Here    |Sara   |
 		  |2       |-      |-      |-         |-     |-      |Not Here|Sara   |
-	@javascript	   
+	#@javascript	   
 	Scenario: The score page is reloaded automatically
 		Given No posters has been judged
 		Then  I should see an empty list
