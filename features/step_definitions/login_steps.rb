@@ -5,9 +5,9 @@
 # end
 
 # Given (/the following access_code exist/) do |table|
-#     table.hashes.each do |code|
-#         Judge.create!('access_code' => code[:access_code])
-#     end
+#      table.hashes.each do |code|
+#          Judge.create!('access_code' => code[:access_code])
+#      end
 # end
 
 When (/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
@@ -46,8 +46,8 @@ Then (/^(?:|I )should be on the (.*?) page for "([^"]*)"$/) do |arg1, arg2|
     end
 end    
 
-# Then (/^(?:|I )should see "([^"]*)"$/) do |word|
-#     #expect(page).to have_current_path('/signin')
-#     #puts page.body
-#     expect(page).to have_css("#notice.message", text: word)
-#     end
+Then (/^(?:|I )should see "([^"]*)"$/) do |word|
+    #expect(page).to have_current_path('/signin')
+    #puts page.body
+    expect(page).to have_css("#notice.message", text: word)
+end
