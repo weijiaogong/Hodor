@@ -151,3 +151,76 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 Started GET "/assets/bootstrap.css?body=1" for 50.24.126.122 at 2016-10-23 20:00:10 +0000
 Served asset /bootstrap.css - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+
+
+Started GET "/" for 165.91.13.161 at 2016-10-26 00:41:02 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (13.6ms)
+  [1m[36mJudge Load (1.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'XMlcPF4Y9v8nq1c3Xm6zNQ' LIMIT 1[0m
+Completed 200 OK in 194.4ms (Views: 186.3ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.13.161 at 2016-10-26 00:41:03 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:03 +0000
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:03 +0000
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:03 +0000
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:03 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.13.161 at 2016-10-26 00:41:03 +0000
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started POST "/sessions" for 165.91.13.161 at 2016-10-26 00:41:05 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0UEX/dNRbboHAHlho9GcrsTDxKOz1DMZX9q8ztpzDgM=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (11.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 19.8ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/admin" for 165.91.13.161 at 2016-10-26 00:41:05 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'XMlcPF4Y9v8nq1c3Xm6zNQ' LIMIT 1
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered admin/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 18.1ms (Views: 15.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.13.161 at 2016-10-26 00:41:05 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:06 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:06 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:06 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.13.161 at 2016-10-26 00:41:06 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.13.161 at 2016-10-26 00:41:06 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
