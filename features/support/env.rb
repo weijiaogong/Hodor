@@ -7,7 +7,7 @@ require 'simplecov'
 SimpleCov.start
 
 require 'cucumber/rails'
-require 'capybara-webkit'
+require 'capybara/webkit'
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -58,17 +58,15 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.javascript_driver = :webkit
+
 Capybara::Webkit.configure do |config|
   # Enable debug mode. Prints a log of everything the driver is doing.
   config.debug = true
-  # By default, requests to outside domains (anything besides localhost) will
-  # result in a warning. Several methods allow you to change this behavior.
 
-Capybara.ignore_hidden_elements = false
   # Don't raise errors when SSL certificates can't be validated
   config.ignore_ssl_errors
-  
-  # Don't load images
-  config.skip_image_loading
+
 end
-Capybara.default_wait_time = 5
+# to let javascript function run at interval = 5 seconds
+Capybara.default_wait_time = 10
+

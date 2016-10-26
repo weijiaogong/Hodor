@@ -31,14 +31,14 @@ Feature: View in-time scores
 		  |Poster #|Novelty|Utility|Difficulty|Verbal|Written|No Show?|Judge  |
 		  |1       |5      |5      |5         |5     |5      |Here    |Sara   |
 		  |2       |-      |-      |-         |-     |-      |Not Here|Sara   |
-	#@javascript	   
+	@javascript	   
 	Scenario: The score page is reloaded automatically
 		Given No posters has been judged
+		And   I am on view scores page
 		Then  I should see an empty list
 		Given    Judges scored posters as following:
 		  |name  |number |scores   |
           | Kelly| 1     |3,5,3,5,3|
-		When  The page is reloaded
 		Then  I should see the following scores table:
 		  |Poster #|Novelty|Utility|Difficulty|Verbal|Written|No Show?|Judge  |
 		  |1       |3      |5      |3         |5     |3      |Here    |Kelly  |
