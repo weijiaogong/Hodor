@@ -59,7 +59,7 @@ Then (/^I should see two posters with average score 0.000$/) do
 end
 Then (/^I should see an empty list$/) do
 	 rows = page.all(".table.table-bordered tbody tr")
-	 rows.size.should eql 0
+	 expect(rows.size).to eql 0
 end
 
 Then(/^I should see the following ranking table:$/) do |expect_table|
@@ -89,14 +89,15 @@ Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
 end
 
 Then(/^I should see the following scores table:$/) do |expect_table|
+	
 	table_header = page.all('.table.table-bordered thead').map do |row|
 	    row.all('th').map do |cell|
 	        cell.text
 	    end
     end
     
+    # use find first is important for waiting for javascript function to run
     page.find('.table.table-bordered tbody tr', match: :first)
-    
 	table_body = page.all('.table.table-bordered tbody tr').map do |row|
 	    row.all('td').map do |cell|
 	        cell.text
@@ -105,13 +106,8 @@ Then(/^I should see the following scores table:$/) do |expect_table|
     table_results = table_header + table_body
 	data = expect_table.raw
 	
-   data.should eq table_results
+    data.should eq table_results
 
-end
-
-When(/^The page is reloaded$/) do
-    visit admin_scores_path # not sure how to make javascript run in page, wait does not work
-    #page.execute_script('window.location.reload()')
 end
 
 Then(/^I see a popup window for download$/) do
