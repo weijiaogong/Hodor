@@ -32,7 +32,7 @@ Background: users in database
     Given I am on the login page
     When I fill in "session[password]" with "1234"
     And I press "Sign in"
-    Then I should see "Invalid password"
+    Then I should see "Invalid password" password error reminder
   
   Scenario: login as judge at first time
     Given I am on the login page
