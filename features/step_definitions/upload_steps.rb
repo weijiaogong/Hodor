@@ -27,12 +27,20 @@ Given(/^I am on the (.*?) page$/) do |arg1|
 		when "admin"
 			visit admin_posters_path
         when "judge registration"
+
             visit judge_register_path	
+
+        when "login"
+        	visit root_path
+
         else
 			raise "Could not find #{page}"
-		end
+	end
 end
 
 When(/^I press "(.*?)"$/) do |arg1|
+  	#puts Judge.find(:all)
   	click_button arg1
+
 end
+
