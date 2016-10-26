@@ -94,6 +94,9 @@ Then(/^I should see the following scores table:$/) do |expect_table|
 	        cell.text
 	    end
     end
+    
+    page.find('.table.table-bordered tbody tr', match: :first)
+    
 	table_body = page.all('.table.table-bordered tbody tr').map do |row|
 	    row.all('td').map do |cell|
 	        cell.text
