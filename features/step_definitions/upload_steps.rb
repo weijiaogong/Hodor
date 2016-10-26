@@ -24,26 +24,26 @@ Then(/^I should see a poster titled "(.*?)"$/) do |arg1|
 end
 
 
-Given(/^I am on the (.*?) page$/) do |arg1|
-	case arg1
-		when "admin"
-			visit admin_posters_path
-        # when "judge registration"
-        # 	id_j = Judge.find_by_access_code(arg2)[:id]
-        #     visit judge_register_path(id_j) #temporary
-        when "login"
-        	visit root_path
-        when "judge registration"
+# Given(/^I am on the (.*?) page$/) do |arg1|
+# 	case arg1
+# 		when "admin"
+# 			visit admin_posters_path
+#         # when "judge registration"
+#         # 	id_j = Judge.find_by_access_code(arg2)[:id]
+#         #     visit judge_register_path(id_j) #temporary
+#         when "login"
+#         	visit root_path
+#         when "judge registration"
 
-            visit judge_register_path	
+#             visit judge_register_path	
 
-        when "login"
-        	visit root_path
+#         when "login"
+#         	visit root_path
 
-        else
-			raise "Could not find #{page}"
-	end
-end
+#         else
+# 			raise "Could not find #{page}"
+# 	end
+# end
 
 Given(/^I am on the judge registration page for "([^"]*)"$/) do |arg2|
 	id_j = Judge.find_by_access_code(arg2)[:id]

@@ -15,7 +15,6 @@ group :development, :test do
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
-	
 end
 
 group :test do
@@ -55,3 +54,5 @@ gem 'jquery-rails'
 # use Haml for templates
 gem 'haml'
 gem 'test-unit'
+
+
