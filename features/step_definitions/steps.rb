@@ -1,10 +1,9 @@
 Given(/^I am on the (.*?) page$/) do |arg1|
 	
 	case arg1
+	    when "login"
+         	visit root_path
 		when "admin"
-			# visit new_session_path
-   # 		fill_in "session[password]", :with => "admin"
-   # 		click_button "Sign in"
 			visit admin_root_path
 	    when "reset"
 	        visit admin_reset_path
@@ -21,10 +20,10 @@ end
 
 Given(/^I am logged in as admin/) do
     visit new_session_path
-    puts Judge.find(:all)
+    #puts Judge.find(:all)
     fill_in "session[password]", :with => "admin"
     click_button "Sign in"
-    puts page.body
+    #puts page.body
 end
 
 Given(/^I press "(.*?)"$/) do |arg1|
