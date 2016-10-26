@@ -1,6 +1,9 @@
 #when you test scores feature use command
 DISPLAY=localhost:1.0 xvfb-run cucumber features/scores.feature
 
+#or if you want to test all features together run
+DISPLAY=localhost:1.0 xvfb-run cucumber 
+
 #Since I have set waiting time to be 10 seconds, in most time the 
 view scores page can refresh within 5 seconds plus communication time
 between driver and backgroud rails application process. I test over 10 times and

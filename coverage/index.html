@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-26T06:20:27+00:00">2016-10-26T06:20:27+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-26T16:21:59+00:00">2016-10-26T16:21:59+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">83.94%</span></span>
+    (<span class="covered_percent"><span class="yellow">84.27%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.25
+         5.3
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>35</b> files in total.
-    <b>498</b> relevant lines. 
+    <b>496</b> relevant lines. 
     <span class="green"><b>418</b> lines covered</span> and
-    <span class="red"><b>80</b> lines missed </span>
+    <span class="red"><b>78</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -87,7 +87,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -147,7 +147,7 @@
         <td>37</td>
         <td>31</td>
         <td>6</td>
-        <td>28.0</td>
+        <td>28.3</td>
       </tr>
       
       <tr>
@@ -343,11 +343,11 @@
       <tr>
         <td class="strong"><a href="#71ff52e4948d8a93e62d2a8ea74d37fa51c1b68e" class="src_link" title="features/step_definitions/summary_steps.rb">features/step_definitions/summary_steps.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>119</td>
-        <td>72</td>
-        <td>72</td>
+        <td>115</td>
+        <td>70</td>
+        <td>70</td>
         <td>0</td>
-        <td>4.3</td>
+        <td>4.4</td>
       </tr>
       
       <tr>
@@ -372,12 +372,12 @@
       
       <tr>
         <td class="strong"><a href="#7869574d9558cffc805b586d036417a745496dff" class="src_link" title="features/support/hooks.rb">features/support/hooks.rb</a></td>
-        <td class="red strong">50.0 %</td>
+        <td class="red strong">75.0 %</td>
         <td>15</td>
         <td>8</td>
-        <td>4</td>
-        <td>4</td>
-        <td>0.5</td>
+        <td>6</td>
+        <td>2</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -1288,14 +1288,14 @@
           <code class="ruby">	def index</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="4">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="4">
+          <span class="hits">4</span>
           
           <code class="ruby">		@scores = Score.joins(:judge, :poster)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="5">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
           
           <code class="ruby">		@scores = @scores.sort_by{|score| score.poster.number}</code>
         </li>
@@ -2224,8 +2224,8 @@
           <code class="ruby">  def signed_in?</code>
         </li>
       
-        <li class="covered" data-hits="111" data-linenumber="9">
-          <span class="hits">111</span>
+        <li class="covered" data-hits="113" data-linenumber="9">
+          <span class="hits">113</span>
           
           <code class="ruby">    !current_user.nil?</code>
         </li>
@@ -2302,8 +2302,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="362" data-linenumber="22">
-          <span class="hits">362</span>
+        <li class="covered" data-hits="367" data-linenumber="22">
+          <span class="hits">367</span>
           
           <code class="ruby">    @current_user ||= Judge.find_by_remember_token(cookies[:remember_token])</code>
         </li>
@@ -2326,8 +2326,8 @@
           <code class="ruby">  def require_login</code>
         </li>
       
-        <li class="covered" data-hits="111" data-linenumber="26">
-          <span class="hits">111</span>
+        <li class="covered" data-hits="113" data-linenumber="26">
+          <span class="hits">113</span>
           
           <code class="ruby">    unless signed_in?</code>
         </li>
@@ -2368,14 +2368,14 @@
           <code class="ruby">  def require_admin</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="33">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="35" data-linenumber="33">
+          <span class="hits">35</span>
           
           <code class="ruby">    require_login</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="34">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="35" data-linenumber="34">
+          <span class="hits">35</span>
           
           <code class="ruby">    unless admin?</code>
         </li>
@@ -2482,14 +2482,14 @@
           <code class="ruby">  def admin?  #TODO superadmin is more special and does less than admin</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="52">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="60" data-linenumber="52">
+          <span class="hits">60</span>
           
           <code class="ruby">      [&#39;admin&#39;, &#39;superadmin&#39;].include?(current_user[:role])</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="53">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="60" data-linenumber="53">
+          <span class="hits">60</span>
           
           <code class="ruby">      current_user == Judge.find_by_name(&quot;admin&quot;)</code>
         </li>
@@ -6145,8 +6145,8 @@
     <h3>features/step_definitions/summary_steps.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>72</b> relevant lines. 
-      <span class="green"><b>72</b> lines covered</span> and
+      <b>70</b> relevant lines. 
+      <span class="green"><b>70</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6406,14 +6406,14 @@
           <code class="ruby">When(/^I(.*?)view scores page$/) do |arg1|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="43">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="43">
+          <span class="hits">3</span>
           
           <code class="ruby">    visit admin_scores_path</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="44">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="44">
+          <span class="hits">3</span>
           
           <code class="ruby">    page.should have_content(&quot;No Show?&quot;)</code>
         </li>
@@ -6523,7 +6523,7 @@
         <li class="covered" data-hits="3" data-linenumber="62">
           <span class="hits">3</span>
           
-          <code class="ruby">	 rows.size.should eql 0</code>
+          <code class="ruby">	 expect(rows.size).to eql 0</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
@@ -6700,169 +6700,145 @@
           <code class="ruby">Then(/^I should see the following scores table:$/) do |expect_table|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="92">
-          <span class="hits">2</span>
-          
-          <code class="ruby">	table_header = page.all(&#39;.table.table-bordered thead&#39;).map do |row|</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="93">
-          <span class="hits">2</span>
-          
-          <code class="ruby">	    row.all(&#39;th&#39;).map do |cell|</code>
-        </li>
-      
-        <li class="covered" data-hits="16" data-linenumber="94">
-          <span class="hits">16</span>
-          
-          <code class="ruby">	        cell.text</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="95">
-          
-          
-          <code class="ruby">	    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="96">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="98">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    page.find(&#39;.table.table-bordered tbody tr&#39;, match: :first)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="100">
-          <span class="hits">2</span>
-          
-          <code class="ruby">	table_body = page.all(&#39;.table.table-bordered tbody tr&#39;).map do |row|</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="101">
-          <span class="hits">3</span>
-          
-          <code class="ruby">	    row.all(&#39;td&#39;).map do |cell|</code>
-        </li>
-      
-        <li class="covered" data-hits="24" data-linenumber="102">
-          <span class="hits">24</span>
-          
-          <code class="ruby">	        cell.text</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
-          <code class="ruby">	    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="105">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    table_results = table_header + table_body</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="106">
-          <span class="hits">2</span>
-          
-          <code class="ruby">	data = expect_table.raw</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">	</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="108">
+        <li class="covered" data-hits="2" data-linenumber="93">
           <span class="hits">2</span>
           
-          <code class="ruby">   data.should eq table_results</code>
+          <code class="ruby">	table_header = page.all(&#39;.table.table-bordered thead&#39;).map do |row|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="covered" data-hits="2" data-linenumber="94">
+          <span class="hits">2</span>
+          
+          <code class="ruby">	    row.all(&#39;th&#39;).map do |cell|</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="95">
+          <span class="hits">16</span>
+          
+          <code class="ruby">	        cell.text</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">	    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby">    # use find first is important for waiting for javascript function to run</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="100">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    page.find(&#39;.table.table-bordered tbody tr&#39;, match: :first)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="101">
+          <span class="hits">2</span>
+          
+          <code class="ruby">	table_body = page.all(&#39;.table.table-bordered tbody tr&#39;).map do |row|</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="102">
+          <span class="hits">3</span>
+          
+          <code class="ruby">	    row.all(&#39;td&#39;).map do |cell|</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="103">
+          <span class="hits">24</span>
+          
+          <code class="ruby">	        cell.text</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby">	    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="106">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    table_results = table_header + table_body</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="107">
+          <span class="hits">2</span>
+          
+          <code class="ruby">	data = expect_table.raw</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">	</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="109">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    data.should eq table_results</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="112">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="112">
           
-          <code class="ruby">When(/^The page is reloaded$/) do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="113">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit admin_scores_path # not sure how to make javascript run in page, wait does not work</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby">    #page.execute_script(&#39;window.location.reload()&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="115">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="117">
-          <span class="hits">1</span>
-          
           <code class="ruby">Then(/^I see a popup window for download$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
+        <li class="covered" data-hits="1" data-linenumber="114">
           <span class="hits">1</span>
           
           <code class="ruby">	page.response_headers[&#39;Content-Disposition&#39;].should include(&quot;rankings.csv&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="115">
           
           
           <code class="ruby">end</code>
@@ -8807,11 +8783,11 @@
         <div class="source_table" id="7869574d9558cffc805b586d036417a745496dff">
   <div class="header">
     <h3>features/support/hooks.rb</h3>
-    <h4><span class="red">50.0 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
       <b>8</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -8848,8 +8824,8 @@
           <code class="ruby">Before (&#39;@javascript&#39;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
           <code class="ruby">  Capybara.current_driver = :webkit</code>
         </li>
@@ -8866,8 +8842,8 @@
           <code class="ruby">After (&#39;@javascript&#39;) do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
           <code class="ruby">  Capybara.use_default_driver</code>
         </li>
