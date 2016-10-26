@@ -62,6 +62,7 @@ Capybara::Webkit.configure do |config|
   # By default, requests to outside domains (anything besides localhost) will
   # result in a warning. Several methods allow you to change this behavior.
 
+Capybara.ignore_hidden_elements = false
   # Don't raise errors when SSL certificates can't be validated
   config.ignore_ssl_errors
   

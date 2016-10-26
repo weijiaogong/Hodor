@@ -47,8 +47,9 @@ module SessionsHelper
     end
   end
 
-  def admin?
-    current_user == Judge.find_by_name("admin")
+
+  def admin?  #TODO superadmin is more special and does less than admin
+      ['admin', 'superadmin'].include?(current_user.role)
   end
 
   def main_page(judge)

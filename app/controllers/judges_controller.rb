@@ -5,7 +5,7 @@ class JudgesController < ApplicationController
     def show
         @judge = Judge.find(params[:id])
         @posters = @judge.posters.find(:all, :order => "number")
-        @posters.sort! {|p| p.number}.reverse!
+        @posters.sort! {|p| p.number.to_i}.reverse!
         @disable = Array.new
 	
         for score in @judge.scores

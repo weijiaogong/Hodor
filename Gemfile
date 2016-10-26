@@ -27,6 +27,7 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
 	gem 'test-unit'
+
 	gem 'capybara-webkit'
   gem 'headless'
 	gem "launchy", "~> 2.1.2"
@@ -53,3 +54,4 @@ gem 'jquery-rails'
 
 # use Haml for templates
 gem 'haml'
+gem 'test-unit'
