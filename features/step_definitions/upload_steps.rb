@@ -54,8 +54,8 @@ Given(/^I am on the judge registration page for "([^"]*)"$/) do |arg2|
     # puts page.body
 end
 
-When(/^I press "(.*?)"$/) do |arg1|
-  	#puts Judge.find(:all)
-  	click_button arg1
-  	#puts page.body
-end
+# When(/^I press "(.*?)"$/) do |arg1|
+#   	#puts Judge.find(:all)
+#   	click_button arg1
+#   	#puts page.body
+# end
