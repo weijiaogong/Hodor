@@ -1,3 +1,4 @@
+
 When(/^I upload the file "(.*?)"$/) do |arg1|
 	file_path = Rails.root + "spec/fixtures/" + arg1	
 	attach_file('file', file_path)
@@ -23,18 +24,26 @@ Then(/^I should see a poster titled "(.*?)"$/) do |arg1|
 	expect(posters.count).to equal(1)
 end
 
+
 Given(/^I am on the (.*?) page$/) do |arg1|
 	case arg1
 		when "admin"
 			visit admin_posters_path
         when "judge registration"
-            visit register_judges #temporary	
+
+            visit judge_register_path	
+
+        when "login"
+        	visit root_path
+
         else
 			raise "Could not find #{page}"
-		end
+	end
 end
 
+
 When(/^I press "(.*?)"$/) do |arg1|
+  	#puts Judge.find(:all)
   	click_button arg1
 end
 

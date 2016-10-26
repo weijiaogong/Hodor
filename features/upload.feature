@@ -3,6 +3,9 @@ Feature: Upload Multiple Posters
 	As an administrator
 	I want to add and/or update multiple posters using an excel file
 
+	Background:
+	  Given I am logged in as admin
+
 	Scenario: Add multiple poster entries
 		Given I logged in as admin
 		Given I clicked on view poster
