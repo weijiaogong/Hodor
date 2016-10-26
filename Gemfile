@@ -8,12 +8,14 @@ ruby '2.3.0'
 
 gem 'pg'	#fewer errors when moving to production
 
+
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
 	gem 'rspec-rails', '>= 2.14'
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
+	
 end
 
 group :test do
@@ -26,6 +28,9 @@ group :test do
 	gem 'metric_fu'
 	gem 'test-unit'
 
+	gem 'capybara-webkit'
+  gem 'headless'
+	gem "launchy", "~> 2.1.2"
 end
 
 group :production do

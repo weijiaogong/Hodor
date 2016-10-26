@@ -5,7 +5,7 @@
 # files.
 
 require 'cucumber/rails'
-
+require 'capybara-webkit'
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -31,7 +31,7 @@ ActionController::Base.allow_rescue = false
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
-  DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.strategy = :truncation
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
@@ -55,5 +55,17 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+Capybara.javascript_driver = :webkit
+Capybara::Webkit.configure do |config|
+  # Enable debug mode. Prints a log of everything the driver is doing.
+  config.debug = true
+  # By default, requests to outside domains (anything besides localhost) will
+  # result in a warning. Several methods allow you to change this behavior.
 
 Capybara.ignore_hidden_elements = false
+  # Don't raise errors when SSL certificates can't be validated
+  config.ignore_ssl_errors
+  
+  # Don't load images
+  config.skip_image_loading
+end

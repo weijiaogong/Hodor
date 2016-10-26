@@ -24,14 +24,16 @@ module SessionsHelper
 
   def require_login
     unless signed_in?
-      redirect_to signin_path, :notice => 'The page you tried to access requires you to log in'
+      flash[:notice] =  'The page you tried to access requires you to log in'
+      redirect_to(signin_path) and return
     end
   end
 
   def require_admin
     require_login
     unless admin?
-      redirect_to main_page(current_user), :alert => 'The page you tried to access requires administrator privileges'
+      flash[:alert] = 'The page you tried to access requires administrator privileges'  
+      redirect_to(main_page(current_user)) and return
     end
   end
 
@@ -47,17 +49,18 @@ module SessionsHelper
 
   def admin?
     # current_user == Judge.find(1)
+
     current_user == Judge.find_by_name("admin")
   end
 
   def main_page(judge)
     if admin?
-      redirect_to admin_root_path
+      redirect_to(admin_root_path ) and return
     else
       if judge.name && judge.company_name
-        redirect_to judge_path(judge.id)
+        redirect_to(judge_path(judge.id))  and return
       else
-        redirect_to judge_register_path(judge.id)
+        redirect_to(judge_register_path(judge.id) ) and return
       end
     end
   end

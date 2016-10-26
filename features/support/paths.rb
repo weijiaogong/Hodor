@@ -24,6 +24,10 @@ module NavigationHelpers
 	    
     # when /^the judge registration\s?page$/
     #   judge_register_path(Judge.find_by_access_code(arg2)[:id])    # Add more mappings here.
+    when /^I am on the judge poster page/
+      '/judges/:judge_id/posters/:poster_id/judge'
+
+    # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
     #   when /^(.*)'s profile page$/i
