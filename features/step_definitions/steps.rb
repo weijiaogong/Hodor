@@ -1,6 +1,10 @@
 Given(/^I am on the (.*?) page$/) do |arg1|
+	
 	case arg1
 		when "admin"
+			# visit new_session_path
+   # 		fill_in "session[password]", :with => "admin"
+   # 		click_button "Sign in"
 			visit admin_root_path
 	    when "reset"
 	        visit admin_reset_path
@@ -17,10 +21,11 @@ end
 
 Given(/^I am logged in as admin/) do
     visit new_session_path
-    fill_in "session_password", :with => "admin"
+    fill_in "session[password]", :with => "admin"
     click_button "Sign in"
 end
 
 Given(/^I press "(.*?)"$/) do |arg1|
   click_button arg1
 end
+
