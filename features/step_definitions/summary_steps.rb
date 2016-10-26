@@ -111,6 +111,7 @@ end
 
 When(/^The page is reloaded$/) do
     visit admin_scores_path # not sure how to make javascript run in page, wait does not work
+    #page.execute_script('window.location.reload()')
 end
 
 Then(/^I see a popup window for download$/) do
