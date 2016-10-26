@@ -6,20 +6,12 @@ DISPLAY=localhost:1.0 xvfb-run cucumber
 
 
 
-#in case you cannot load capybara-webkit
+#in case you cannot load capybara-webkit during runing bundle install
 #setup system for install capybara-webkit
 #https://www.stefanwienert.de/blog/2015/07/24/how-to-install-capybara-webkit-for-ubuntu-12-dot-04/
 
+#command
 #sudo apt-add-repository ppa:ubuntu-sdk-team/ppa
 #sudo apt-get update
 #sudo apt-get install qt5-default libqt5webkit5-dev qtdeclarative5-dev g++
 #sudo apt-get install xvfb
-
-
-#Since I have set waiting time to be 10 seconds, in most time the 
-view scores page can refresh within 5 seconds plus communication time
-between driver and backgroud rails application process. I test over 10 times and
-it is sucessful. If you see it failed once after run several times that is
-due to the data race, or the system is slow (or crashed) and communication takes a long time 
-and the capybara  stop send request after timeout which is very very very 
-unlikely to happen. Generally speaking, 10 seconds is highly safe.
