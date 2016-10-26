@@ -4,6 +4,11 @@ Feature: Administration Page
     I want a page that shows me these options. 
     
     Background:
+      Given the following user exist:
+    | name  | company_name| access_code|
+    | admin | tamu        | admin      | 
+    | kelly | tamu-cse    | ab28       |
+  
       Given I am logged in as admin
 
     Scenario: See all buttons

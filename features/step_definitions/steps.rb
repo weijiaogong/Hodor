@@ -21,8 +21,10 @@ end
 
 Given(/^I am logged in as admin/) do
     visit new_session_path
+    puts Judge.find(:all)
     fill_in "session[password]", :with => "admin"
     click_button "Sign in"
+    puts page.body
 end
 
 Given(/^I press "(.*?)"$/) do |arg1|
