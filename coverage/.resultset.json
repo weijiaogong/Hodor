@@ -1006,15 +1006,19 @@
         null,
         null,
         null,
-        1,
         null,
         null,
-        1,
+        null,
+        null,
         null
       ],
       "/home/ubuntu/workspace/features/step_definitions/steps.rb": [
         1,
+        null,
         19,
+        null,
+        null,
+        null,
         null,
         2,
         null,
@@ -1038,6 +1042,7 @@
         null,
         1,
         3,
+        null,
         null
       ],
       "/home/ubuntu/workspace/features/step_definitions/summary_steps.rb": [
@@ -1478,6 +1483,6 @@
         null
       ]
     },
-    "timestamp": 1477454663
+    "timestamp": 1477456866
   }
 }

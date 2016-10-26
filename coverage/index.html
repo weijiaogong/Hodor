@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-26T04:04:23+00:00">2016-10-26T04:04:23+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-10-26T04:41:06+00:00">2016-10-26T04:41:06+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">72.18%</span></span>
+    (<span class="covered_percent"><span class="red">72.06%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.67
+         2.68
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>35</b> files in total.
-    <b>496</b> relevant lines. 
-    <span class="green"><b>358</b> lines covered</span> and
+    <b>494</b> relevant lines. 
+    <span class="green"><b>356</b> lines covered</span> and
     <span class="red"><b>138</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -322,18 +322,18 @@
       
       <tr>
         <td class="strong"><a href="#c5e1d63fc32430085a5e2961e9bb58831898957e" class="src_link" title="features/step_definitions/login_steps.rb">features/step_definitions/login_steps.rb</a></td>
-        <td class="red strong">29.41 %</td>
+        <td class="red strong">20.0 %</td>
         <td>53</td>
-        <td>17</td>
-        <td>5</td>
+        <td>15</td>
+        <td>3</td>
         <td>12</td>
-        <td>0.3</td>
+        <td>0.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#a995bc04cde06d31b6cba9b39a5abe255eebd57f" class="src_link" title="features/step_definitions/steps.rb">features/step_definitions/steps.rb</a></td>
         <td class="green strong">92.86 %</td>
-        <td>26</td>
+        <td>31</td>
         <td>14</td>
         <td>13</td>
         <td>1</td>
@@ -5597,10 +5597,10 @@
         <div class="source_table" id="c5e1d63fc32430085a5e2961e9bb58831898957e">
   <div class="header">
     <h3>features/step_definitions/login_steps.rb</h3>
-    <h4><span class="red">29.41 %</span> covered</h4>
+    <h4><span class="red">20.0 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
@@ -5896,34 +5896,34 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="49">
           
-          <code class="ruby">Then (/^(?:|I )should see &quot;([^&quot;]*)&quot;$/) do |word|</code>
+          
+          <code class="ruby"># Then (/^(?:|I )should see &quot;([^&quot;]*)&quot;$/) do |word|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">    #expect(page).to have_current_path(&#39;/signin&#39;)</code>
+          <code class="ruby">#     #expect(page).to have_current_path(&#39;/signin&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">    #puts page.body</code>
+          <code class="ruby">#     #puts page.body</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="52">
           
-          <code class="ruby">    expect(page).to have_css(&quot;#notice.message&quot;, text: word)</code>
+          
+          <code class="ruby">#     expect(page).to have_css(&quot;#notice.message&quot;, text: word)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">#     end</code>
         </li>
       
     </ol>
@@ -5950,154 +5950,184 @@
           <code class="ruby">Given(/^I am on the (.*?) page$/) do |arg1|</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="2">
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">	</code>
+        </li>
+      
+        <li class="covered" data-hits="19" data-linenumber="3">
           <span class="hits">19</span>
           
           <code class="ruby">	case arg1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">		when &quot;admin&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
-          
-          <code class="ruby">			visit admin_root_path</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">	    when &quot;reset&quot;</code>
+          <code class="ruby">			# visit new_session_path</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="6">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">	        visit admin_reset_path</code>
+          
+          <code class="ruby">   # 		fill_in &quot;session[password]&quot;, :with =&gt; &quot;admin&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">	   when &quot;judge add&quot;</code>
+          <code class="ruby">   # 		click_button &quot;Sign in&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
-          <code class="ruby">	       visit admin_judges_path</code>
+          <code class="ruby">			visit admin_root_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">		when &quot;poster add&quot;</code>
+          <code class="ruby">	    when &quot;reset&quot;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="10">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
-          <code class="ruby">			visit admin_posters_path</code>
+          <code class="ruby">	        visit admin_reset_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">        when &quot;judge registration&quot;</code>
+          <code class="ruby">	   when &quot;judge add&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            visit register_judges #temporary	</code>
+          <code class="ruby">	       visit admin_judges_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">        else</code>
+          <code class="ruby">		when &quot;poster add&quot;</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="14">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="4" data-linenumber="14">
+          <span class="hits">4</span>
           
-          <code class="ruby">			raise &quot;Could not find #{page}&quot;</code>
+          <code class="ruby">			visit admin_posters_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">        when &quot;judge registration&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="missed" data-hits="0" data-linenumber="16">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">            visit register_judges #temporary	</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="9" data-linenumber="18">
+          <span class="hits">9</span>
           
-          <code class="ruby">Given(/^I am logged in as admin/) do</code>
+          <code class="ruby">			raise &quot;Could not find #{page}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="19">
-          <span class="hits">10</span>
+        <li class="never" data-hits="" data-linenumber="19">
           
-          <code class="ruby">    visit new_session_path</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="20">
-          <span class="hits">10</span>
           
-          <code class="ruby">    fill_in &quot;session_password&quot;, :with =&gt; &quot;admin&quot;</code>
+          <code class="ruby">	end</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="21">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    click_button &quot;Sign in&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">Given(/^I press &quot;(.*?)&quot;$/) do |arg1|</code>
+          <code class="ruby">Given(/^I am logged in as admin/) do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="25">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="10" data-linenumber="23">
+          <span class="hits">10</span>
           
-          <code class="ruby">  click_button arg1</code>
+          <code class="ruby">    visit new_session_path</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="24">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    fill_in &quot;session[password]&quot;, :with =&gt; &quot;admin&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="25">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    click_button &quot;Sign in&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Given(/^I press &quot;(.*?)&quot;$/) do |arg1|</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="29">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  click_button arg1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
         </li>
       
     </ol>
