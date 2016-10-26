@@ -15,6 +15,7 @@ group :development, :test do
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
+	
 end
 
 group :test do
@@ -28,6 +29,7 @@ group :test do
 	gem 'test-unit'
 	gem 'capybara-webkit'
   gem 'headless'
+	gem "launchy", "~> 2.1.2"
 end
 
 group :production do

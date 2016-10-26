@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
 
   def create
     puts params[:session][:password]
-    judge = Judge.where(access_code: params[:session][:password]).first
-    puts judge.role
+      judge = Judge.find_by_access_code(params[:session][:password])
+     #judge = Judge.where(access_code: params[:session][:password]).first
     if judge
       sign_in judge
       main_page(judge)
