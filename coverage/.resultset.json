@@ -241,7 +241,11 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         6,
+=======
+        113,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null,
         null,
         1,
@@ -254,6 +258,7 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         27,
         null,
         null,
@@ -261,20 +266,34 @@
         6,
         0,
         0,
+=======
+        367,
+        null,
+        null,
+        1,
+        113,
+        4,
+        4,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
+        null,
+        null,
+        null,
+        1,
+<<<<<<< HEAD
+        2,
+        2,
+=======
+        35,
+        35,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
+        0,
+        0,
         null,
         null,
         null,
         1,
         2,
         2,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
         null,
         2,
         0,
@@ -284,8 +303,13 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         5,
         5,
+=======
+        60,
+        60,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null,
         null,
         1,
@@ -460,8 +484,13 @@
         1,
         1,
         1,
+<<<<<<< HEAD
         0,
         0,
+=======
+        4,
+        7,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null,
         null
       ],
@@ -702,10 +731,10 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -1084,8 +1113,13 @@
         null,
         null,
         1,
+<<<<<<< HEAD
         0,
         0,
+=======
+        3,
+        3,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null,
         null,
         1,
@@ -1133,12 +1167,27 @@
         null,
         null,
         1,
+<<<<<<< HEAD
+=======
+        null,
+        2,
+        2,
+        16,
+        null,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null,
         0,
         0,
         0,
         null,
         null,
+<<<<<<< HEAD
+=======
+        2,
+        2,
+        3,
+        24,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null,
         null,
         0,
@@ -1150,12 +1199,17 @@
         0,
         0,
         null,
+<<<<<<< HEAD
         0,
         null,
         null,
         null,
         1,
         0,
+=======
+        1,
+        1,
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
         null
       ],
       "/home/ubuntu/workspace/features/step_definitions/upload_steps.rb": [
@@ -1479,6 +1533,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1477500800
+=======
+    "timestamp": 1477498919
+>>>>>>> 34c3d18cc4541e126820f9d5fce6065c3feac5d6
   }
 }
