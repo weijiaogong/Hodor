@@ -1,0 +1,17 @@
+%h1 Register Poster
+
+= form_tag new_poster_path do
+
+  = label :poster, :title, 'Title'
+  = text_field :poster, 'title'
+  
+  = label :poster, :student, 'Student Name(s)'
+  = text_field :student, 'student'
+  
+  = label :poster, :advisor, 'Advisor\'s Full Name'
+  = text_field :advisor, 'advisor'
+  
+  = label :poster, :email, 'Student e-mail(s)'
+  = text_field :email, 'email'
+
+  = submit_tag 'Register'

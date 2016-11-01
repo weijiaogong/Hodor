@@ -22,3 +22,6 @@
                 %td= poster.presenter
                 %td= poster.title
                 %td= poster.advisors
+                %td= poster.email
+                %td= link_to "Edit", edit_poster_path(poster)
+                %td= link_to "Delete", delete_poster_path(poster)
