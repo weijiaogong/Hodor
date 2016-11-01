@@ -1,3 +1,19 @@
+Given (/^admin in database/) do |user_table|
+     user_table.hashes.each do |user|
+         Judge.create!(user)
+     end
+end
+ 
+Given(/^I log in as admin/) do 
+	visit new_session_path
+	fill_in "session_password", :with => "admin"
+	click_button "Sign in"
+end
+
+Given(/^I clicked on view poster/) do 
+	click_button "View Posters"	
+end
+
 
 When(/^I upload the file "(.*?)"$/) do |arg1|
 	file_path = Rails.root + "spec/fixtures/" + arg1		  
@@ -23,39 +39,6 @@ Then(/^I should see a poster titled "(.*?)"$/) do |arg1|
 	posters.count.should equal(1)
 end
 
-
-# Given(/^I am on the (.*?) page$/) do |arg1|
-# 	case arg1
-# 		when "admin"
-# 			visit admin_posters_path
-#         # when "judge registration"
-#         # 	id_j = Judge.find_by_access_code(arg2)[:id]
-#         #     visit judge_register_path(id_j) #temporary
-#         when "login"
-#         	visit root_path
-#         when "judge registration"
-
-#             visit judge_register_path	
-
-#         when "login"
-#         	visit root_path
-
-#         else
-# 			raise "Could not find #{page}"
-# 	end
-# end
-
-Given(/^I am on the judge registration page for "([^"]*)"$/) do |arg2|
-	id_j = Judge.find_by_access_code(arg2)[:id]
-    # puts id_j
-    # puts judge_register_path(id_j)
-    # puts page.current_url
-    visit judge_register_path(id_j)
-    # puts page.body
+When(/^I wyh press "(.*?)"$/) do |arg1|
+   	click_button arg1
 end
-
-# When(/^I press "(.*?)"$/) do |arg1|
-#   	#puts Judge.find(:all)
-#   	click_button arg1
-#   	#puts page.body
-# end
