@@ -5,7 +5,7 @@ Feature: Administration Page
     
     Background:
       Given the following users exist:
-    | name  | company_name| access_code|role|
+    | name  | company_name| access_code|role  |
     | admin | tamu        | admin      | admin|
     | kelly | tamu-cse    | ab28       | judge|
   

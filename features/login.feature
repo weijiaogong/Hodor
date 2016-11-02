@@ -6,9 +6,9 @@ Feature: Login
   
 Background: users in database
   Given the following users exist:
-    | name  | company_name| access_code|
-    | admin | tamu        | admin      | 
-    | kelly | tamu-cse    | ab28       | 
+    | name  | company_name| access_code|role|
+    | admin | tamu        | admin      | admin|
+    | kelly | tamu-cse    | ab28       | judge|
 
   And the following users exist:
    | access_code |

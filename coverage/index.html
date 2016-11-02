@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-02T22:09:52+00:00">2016-11-02T22:09:52+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-02T22:46:08+00:00">2016-11-02T22:46:08+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">90.13%</span></span>
+    (<span class="covered_percent"><span class="yellow">88.51%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.14
+         5.61
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>34</b> files in total.
-    <b>446</b> relevant lines. 
-    <span class="green"><b>402</b> lines covered</span> and
-    <span class="red"><b>44</b> lines missed </span>
+    <b>35</b> files in total.
+    <b>470</b> relevant lines. 
+    <span class="green"><b>416</b> lines covered</span> and
+    <span class="red"><b>54</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#ee92bac6db77291e6019e1686dfd95395776d29f" class="src_link" title="app/controllers/admin/judges_controller.rb">app/controllers/admin/judges_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>19</td>
-        <td>19</td>
-        <td>0</td>
-        <td>1.4</td>
+        <td class="red strong">74.19 %</td>
+        <td>46</td>
+        <td>31</td>
+        <td>23</td>
+        <td>8</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -123,7 +123,7 @@
       <tr>
         <td class="strong"><a href="#309836c1ed0bd18c52021a2f8c9d42d93b46730e" class="src_link" title="app/controllers/sessions_controller.rb">app/controllers/sessions_controller.rb</a></td>
         <td class="yellow strong">81.82 %</td>
-        <td>24</td>
+        <td>23</td>
         <td>11</td>
         <td>9</td>
         <td>2</td>
@@ -141,13 +141,23 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#9a10758c354df47edd0269749abbe270877cf581" class="src_link" title="app/helpers/judges_helper.rb">app/helpers/judges_helper.rb</a></td>
+        <td class="yellow strong">81.82 %</td>
+        <td>22</td>
+        <td>11</td>
+        <td>9</td>
+        <td>2</td>
+        <td>3.5</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#c9732bc0188eeaefb8eddbcf08df0092db97fc5f" class="src_link" title="app/helpers/sessions_helper.rb">app/helpers/sessions_helper.rb</a></td>
-        <td class="yellow strong">83.78 %</td>
-        <td>67</td>
-        <td>37</td>
-        <td>31</td>
+        <td class="yellow strong">84.21 %</td>
+        <td>70</td>
+        <td>38</td>
+        <td>32</td>
         <td>6</td>
-        <td>33.5</td>
+        <td>28.8</td>
       </tr>
       
       <tr>
@@ -559,11 +569,11 @@
         <div class="source_table" id="ee92bac6db77291e6019e1686dfd95395776d29f">
   <div class="header">
     <h3>app/controllers/admin/judges_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">74.19 %</span> covered</h4>
     <div>
-      <b>19</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>31</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
   
@@ -633,7 +643,7 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">        num = params[:number].to_i</code>
+          <code class="ruby">        admin_num = params[:admin_number].to_i</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
@@ -645,35 +655,35 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">        while i &lt; num</code>
+          <code class="ruby">        while i &lt; admin_num</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
           
           <code class="ruby">            code = SecureRandom.hex(2)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
           
           <code class="ruby">            if(Judge.where(access_code: code).size == 0)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="16">
           
-          <code class="ruby">                judge = Judge.new(&#39;access_code&#39; =&gt; code, &#39;role&#39; =&gt; &#39;judge&#39;)   </code>
+          
+          <code class="ruby">                judge = Judge.new(&#39;access_code&#39; =&gt; code, &#39;role&#39; =&gt; &#39;admin&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="17">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
           
           <code class="ruby">                judge.save!(validate: false)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
           
           <code class="ruby">                i = i + 1</code>
         </li>
@@ -690,55 +700,157 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">        </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">        redirect_to admin_judges_path</code>
+          <code class="ruby">        num = params[:number].to_i</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">        i = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">    def clear</code>
+          <code class="ruby">        while i &lt; num</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="25">
+          <span class="hits">2</span>
           
-          <code class="ruby">        Judge.where(role: &quot;judge&quot;).destroy_all</code>
+          <code class="ruby">            code = SecureRandom.hex(2)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="26">
+          <span class="hits">2</span>
           
-          <code class="ruby">        @judges = Judge.all</code>
+          <code class="ruby">            if(Judge.where(access_code: code).size == 0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
+          
+          <code class="ruby">                judge = Judge.new(&#39;access_code&#39; =&gt; code, &#39;role&#39; =&gt; &#39;judge&#39;)   </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="28">
+          <span class="hits">2</span>
+          
+          <code class="ruby">                judge.save!(validate: false)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
+          
+          <code class="ruby">                i = i + 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">            end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">        redirect_to admin_judges_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def clear</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        Judge.where(role: &quot;judge&quot;).destroy_all</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @judges = Judge.all</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        redirect_to admin_judges_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="42">
+          
+          
+          <code class="ruby">        Judge.destroy(params[:id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">        @judges = Judge.all</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">        redirect_to admin_judges_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">end</code>
@@ -1959,94 +2071,88 @@
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">    #judge = Judge.where(access_code: params[:session][:password]).first</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="11">
+        <li class="covered" data-hits="29" data-linenumber="10">
           <span class="hits">29</span>
           
           <code class="ruby">    if judge</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="12">
+        <li class="covered" data-hits="28" data-linenumber="11">
           <span class="hits">28</span>
           
           <code class="ruby">      sign_in judge</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="13">
+        <li class="covered" data-hits="28" data-linenumber="12">
           <span class="hits">28</span>
           
           <code class="ruby">      main_page(judge)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to(signin_path, :alert =&gt; &#39;Invalid password&#39;) and return</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
           <code class="ruby">    sign_out</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="missed" data-hits="0" data-linenumber="20">
           
           
           <code class="ruby">    redirect_to root_url</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">end</code>
@@ -2086,13 +2192,163 @@
   </pre>
 </div>
       
+        <div class="source_table" id="9a10758c354df47edd0269749abbe270877cf581">
+  <div class="header">
+    <h3>app/helpers/judges_helper.rb</h3>
+    <h4><span class="yellow">81.82 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module  JudgesHelper</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def get_rank(role)</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="3">
+          <span class="hits">12</span>
+          
+          <code class="ruby">        case role.downcase</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">        when &#39;judge&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">             0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">        when &#39;admin&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="7">
+          <span class="hits">9</span>
+          
+          <code class="ruby">        	 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">        when &#39;superadmin&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">        	 2</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">        	-1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def higher_rank?(role)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="15">
+          <span class="hits">6</span>
+          
+          <code class="ruby">        if get_rank(current_user.role) &gt; get_rank(role)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
+          
+          <code class="ruby">           false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
+          
+          <code class="ruby">           true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="c9732bc0188eeaefb8eddbcf08df0092db97fc5f">
   <div class="header">
     <h3>app/helpers/sessions_helper.rb</h3>
-    <h4><span class="yellow">83.78 %</span> covered</h4>
+    <h4><span class="yellow">84.21 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>38</b> relevant lines. 
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
@@ -2226,8 +2482,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="427" data-linenumber="22">
-          <span class="hits">427</span>
+        <li class="covered" data-hits="356" data-linenumber="22">
+          <span class="hits">356</span>
           
           <code class="ruby">    @current_user ||= Judge.find_by_remember_token(cookies[:remember_token])</code>
         </li>
@@ -2391,112 +2647,130 @@
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def superadmin?</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="51">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    current_user.role == &#39;superadmin&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">  def admin?  #TODO superadmin is more special and does less than admin</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="52">
+        <li class="covered" data-hits="80" data-linenumber="55">
           <span class="hits">80</span>
           
           <code class="ruby">      [&#39;admin&#39;, &#39;superadmin&#39;].include?(current_user[:role])</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="53">
-          <span class="hits">80</span>
+        <li class="never" data-hits="" data-linenumber="56">
           
-          <code class="ruby">      current_user == Judge.find_by_name(&quot;admin&quot;)</code>
+          
+          <code class="ruby">      #current_user == Judge.find_by_name(&quot;admin&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">  def main_page(judge)</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="57">
+        <li class="covered" data-hits="28" data-linenumber="60">
           <span class="hits">28</span>
           
           <code class="ruby">    if admin?</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="58">
+        <li class="covered" data-hits="18" data-linenumber="61">
           <span class="hits">18</span>
           
-          <code class="ruby">      redirect_to(admin_root_path ) and return</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="60">
-          <span class="hits">10</span>
-          
-          <code class="ruby">      if judge.name &amp;&amp; judge.company_name</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        redirect_to(judge_path(judge.id))  and return</code>
+          <code class="ruby">      redirect_to(admin_root_path) and return</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="63">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="63">
+          <span class="hits">10</span>
           
-          <code class="ruby">        redirect_to(judge_register_path(judge.id) ) and return</code>
+          <code class="ruby">      if judge.name &amp;&amp; judge.company_name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        redirect_to(judge_path(judge.id))  and return</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="66">
+          <span class="hits">9</span>
+          
+          <code class="ruby">        redirect_to(judge_register_path(judge.id) ) and return</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">end</code>
@@ -4203,7 +4477,7 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">		resources :judges, :only =&gt; [:index] do</code>
+          <code class="ruby">		resources :judges, :only =&gt; [:index, :destroy] do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">

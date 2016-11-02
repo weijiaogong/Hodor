@@ -5,8 +5,8 @@ Feature: Upload Multiple Posters
 
 	Background: admin in database
 		Given the following users exist:
-	    | name  | company_name| access_code| scores_count | role |
-	    | admin | tamu        | admin      | 0			  | superadmin |
+	    | name  | company_name| access_code| scores_count | role  |
+	    | admin | tamu        | admin      | 0			  | admin |
 		
 		Given   I logged in as "admin"
 		Given   I press "View Posters"

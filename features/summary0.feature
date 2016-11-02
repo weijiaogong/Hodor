@@ -6,8 +6,8 @@
 
  Scenario: No posters exsit
         Given the following users exist:
-          |name | company_name| access_code|
-          |admin| TAMU        | admin      |
+          |name | company_name| access_code| role|
+          |admin| TAMU        | admin      | admin|
         Given I logged in as "admin"
         When  I press "View Poster Rankings"
 	       Then  I should see an empty list

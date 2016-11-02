@@ -5,8 +5,8 @@ Feature: View in-time scores
     I want to view the score for each presenter updated in-time.
     Background:
         Given the following users exist:
-          |name | company_name| access_code|
-          |admin| TAMU        | admin      |
+          |name | company_name| access_code| role|
+          |admin| TAMU        | admin      | admin|
         And the following posters exist:
         |number|presenter    |
         | 1    |Harshvardhan |
