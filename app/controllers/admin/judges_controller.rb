@@ -8,6 +8,17 @@ class Admin::JudgesController < ApplicationController
     end
 
     def create
+        admin_num = params[:admin_number].to_i
+        i = 0
+        while i < admin_num
+            code = SecureRandom.hex(2)
+            if(Judge.where(access_code: code).size == 0)
+                judge = Judge.new('access_code' => code, 'role' => 'admin')
+                judge.save!(validate: false)
+                i = i + 1
+            end
+        end
+        
         num = params[:number].to_i
         i = 0
         while i < num

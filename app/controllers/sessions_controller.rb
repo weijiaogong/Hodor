@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
     judge = Judge.find_by_access_code(params[:session][:password])
-    #judge = Judge.where(access_code: params[:session][:password]).first
 
     if judge
       sign_in judge
