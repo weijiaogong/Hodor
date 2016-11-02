@@ -4,21 +4,21 @@ Feature: Overall summary of Presenters
     As a contest administrator
     I want to view the average score that each presenter earned from the judges.
     Background:
-        Given I signed in as admin:
+        Given the following users exist:
           |name | company_name| access_code|
           |admin| TAMU        | admin      |
-        And   I have the following posters:
+        And  the following posters exist:
         |number|presenter    |
         | 1    |Harshvardhan |
         | 2    |Ralph Crosby |
-        And   I have the following judges:
+        And  the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |
         | Kelly| TAMU        | Kelly     |
-   
+        And I logged in as "admin"
     Scenario: No posters has been judged
         Given No posters has been judged
-        When  I view poster rankings page
+        When  I press "View Poster Rankings"
 	    Then  I should see two posters with average score 0.000
 	    
    Scenario: Posters are ranked according to their average score
@@ -27,11 +27,11 @@ Feature: Overall summary of Presenters
         | Sara | 1     |5,5,5,5,5|
         | Sara | 2     |4,4,4,4,4|
 		  
-	    When  I view poster rankings page
+	    When  I press "View Poster Rankings"
 		Then  I should see the following ranking table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Harshvardhan | test  |  5.000     |
-		  | 2  |Ralph Crosby | test  |  4.000     |
+		  | 1  |Harshvardhan |       |  5.000     |
+		  | 2  |Ralph Crosby |       |  4.000     |
 		
 	Scenario: Rankings are updated according to their average score
  	    Given Judges scored posters as following:
@@ -40,17 +40,17 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
         | Kelly| 1     |3,3,3,3,3|
         | Kelly| 2     |5,5,5,5,5|
-	    When  I view poster rankings page
+	    When  I press "View Poster Rankings"
 		Then   I should see the following ranking table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Ralph Crosby |test |  4.500     |
-		  | 2  |Harshvardhan |test |  4.000     |
+		  | 1  |Ralph Crosby |       |  4.500     |
+		  | 2  |Harshvardhan |       |  4.000     |
 
 	Scenario: download the ranking file
 		Given Judges scored posters as following:
 		|name  |number |scores   |
         | Sara | 1     |5,5,5,5,5|
         | Sara | 2     |4,4,4,4,4|
-	    When  I view poster rankings page
-	    And   I click on download button
+	    When  I press "View Poster Rankings"
+	    And   I press "Download"
 		Then   I see a popup window for download

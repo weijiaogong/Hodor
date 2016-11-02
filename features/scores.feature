@@ -4,21 +4,22 @@ Feature: View in-time scores
     As a contest administrator
     I want to view the score for each presenter updated in-time.
     Background:
-        Given I signed in as admin:
+        Given the following users exist:
           |name | company_name| access_code|
           |admin| TAMU        | admin      |
-        And   I have the following posters:
+        And the following posters exist:
         |number|presenter    |
         | 1    |Harshvardhan |
         | 2    |Ralph Crosby |
-        And   I have the following judges:
+        And the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |
         | Kelly| TAMU        | Kelly     |
+        And I logged in as "admin"
    
     Scenario: No posters has been judged
         Given No posters has been judged
-        When  I view scores page
+        When  I press "View Scores"
 	    Then  I should see an empty list
 	    
 	Scenario: The scores table is updated according to scoring time
@@ -26,7 +27,7 @@ Feature: View in-time scores
 		  |name  |number |scores   |
           | Sara | 1     |5,5,5,5,5|
 		And   Judge "Sara" set poster 2 as "no_show"
-	    When  I view scores page
+	   When  I press "View Scores"
 		Then  I should see the following scores table:
 		  |Poster #|Novelty|Utility|Difficulty|Verbal|Written|No Show?|Judge  |
 		  |1       |5      |5      |5         |5     |5      |Here    |Sara   |
@@ -34,7 +35,7 @@ Feature: View in-time scores
 	@javascript	   
 	Scenario: The score page is reloaded automatically
 		Given No posters has been judged
-		And   I am on view scores page
+		When  I press "View Scores"
 		Then  I should see an empty list
 		Given    Judges scored posters as following:
 		  |name  |number |scores   |

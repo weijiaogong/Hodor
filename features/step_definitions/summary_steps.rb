@@ -1,22 +1,3 @@
-Given(/^I signed in as admin:$/) do |table|
-	table.hashes.each do |row|
-	    Judge.create!('name' => row[:name], 'company_name' => row[:company_name], 'access_code' => row['access_code'], 'role' => 'admin') 
-    end
-	visit new_session_path
-	fill_in 'session[password]', :with => 'admin'
-	click_on  'Sign in'
-end
-Given(/^I have the following posters:$/) do |table|
-	table.hashes.each do |poster|
-	    Poster.create!(:number => poster[:number], :email => "test", :title => "test", :presenter =>poster[:presenter], :advisors => "test")
-    end
-end
-Given(/^I have the following judges:$/) do |table|
-	table.hashes.each do |judge|
-         Judge.create!(:name => judge[:name],  'company_name' => judge[:company_name],  :access_code => judge[:access_code], :scores_count => 0)
-   
-    end
-end
 Given (/^Judges scored posters as following:$/) do |table|
 	table.hashes.each do |row|
 		grade = row[:scores].split(',')
@@ -33,20 +14,6 @@ Given(/^No posters has been judged$/) do
     posters.each do |poster|
     	expect(poster.scores_count).to eq 0
     end
-end
-
-When (/^I view poster rankings page$/) do
-      visit rankings_admin_posters_path
-      page.should have_content("Rank")
-end
-
-When(/^I(.*?)view scores page$/) do |arg1|
-    visit admin_scores_path
-    page.should have_content("No Show?")
-end
-
-When(/^I click on download button$/) do
-	click_on 'Download'
 end
 
 Then (/^I should see two posters with average score 0.000$/) do

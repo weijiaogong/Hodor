@@ -5,8 +5,9 @@
   I want to view the average score that each presenter earned from the judges.
 
  Scenario: No posters exsit
-        Given I signed in as admin:
+        Given the following users exist:
           |name | company_name| access_code|
           |admin| TAMU        | admin      |
-        When  I view poster rankings page
+        Given I logged in as "admin"
+        When  I press "View Poster Rankings"
 	       Then  I should see an empty list
