@@ -4,7 +4,7 @@ class Admin::JudgesController < ApplicationController
     before_filter :require_login, :require_admin
 
     def index
-        @judges = Judge.find(:all)
+        @judges = Judge.all
     end
 
     def create

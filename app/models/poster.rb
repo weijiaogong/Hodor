@@ -1,6 +1,6 @@
 class Poster < ActiveRecord::Base
-	attr_accessible :number, :presenter, :title, :advisors, :scores_count, :email
-	has_many :scores
+	#attr_accessible :number, :presenter, :title, :advisors, :scores_count, :email
+	has_many :scores, dependent: :destroy
 	has_many :judges, through: :scores
 
 	def self.import_csv(file)

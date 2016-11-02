@@ -4,8 +4,8 @@ class JudgesController < ApplicationController
     #display the posters assigned to a specific judge
     def show
         @judge = Judge.find(params[:id])
-        @posters = @judge.posters.find(:all, :order => "number")
-        @posters.sort! {|p| p.number.to_i}.reverse!
+        @posters = @judge.posters.order(:number)
+        #@posters.sort! {|p| p.number.to_i}.reverse!
         @disable = Array.new
 	
         for score in @judge.scores
@@ -15,11 +15,11 @@ class JudgesController < ApplicationController
             end
         end
     end    
-    
+
     #update judge information (name, company name)
     #create 2 - 3 new Scores for each poster assigned to this judge
-    def assign
-        @judge = Judge.find(params[:judge_id])
+    def update
+        @judge = Judge.find(params[:id])
         error_msg = "Missing: "
 
 	if(params[:name].empty?)

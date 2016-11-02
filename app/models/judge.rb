@@ -1,6 +1,6 @@
 class Judge < ActiveRecord::Base
-	attr_accessible :name, :company_name, :access_code, :scores_count, :role
-	has_many :scores
+	#attr_accessible :name, :company_name, :access_code, :scores_count, :role
+	has_many :scores, dependent: :destroy
 	has_many :posters, through: :scores
 
         before_save :create_remember_token
