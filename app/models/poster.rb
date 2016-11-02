@@ -16,6 +16,6 @@ class Poster < ActiveRecord::Base
 	end
 
 	def self.find_least_judged()
-		return Poster.where("scores_count < 3").sample(3)
+		return Poster.where("scores_count < 3")
 	end
 end
