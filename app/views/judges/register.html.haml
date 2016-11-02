@@ -1,7 +1,7 @@
 %meta{name: "viewport", content: "width= device-width, initial-scale=1"}
 %div{:class => "container"}
     %div{:class => "col-sm-11 col-lg-11"}
-        = form_for @judge, url: judge_assign_path(@judge.id), multipart: true do
+        = form_for @judge, url: judge_path(@judge), multipart: true do
             .form-group
                 = label_tag :name, "Enter your name: "
                 = text_field_tag :name, "", class: "form-control"
