@@ -11,9 +11,11 @@
         %th Access Code
         %th Name
         %th Company
+        %th manage
     %tbody
         - @judges.each do |judge|
             %tr
                 %td= judge.access_code
                 %td= judge.name
                 %td= judge.company_name
+                %td= button_to "delete", admin_judge_path(judge), :method => :delete, :disabled => higher_rank?(judge.role), data: { confirm: "Are you sure?" } 

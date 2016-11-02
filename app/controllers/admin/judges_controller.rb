@@ -26,4 +26,10 @@ class Admin::JudgesController < ApplicationController
         @judges = Judge.all
         redirect_to admin_judges_path
     end
+    
+    def destroy
+        Judge.destroy(params[:id])
+        @judges = Judge.all
+        redirect_to admin_judges_path
+    end
 end

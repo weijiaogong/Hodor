@@ -13,7 +13,7 @@ PosterJudging::Application.routes.draw do
         end
 		resources :scores, :only => [:index]
 
-		resources :judges, :only => [:index] do
+		resources :judges, :only => [:index, :destroy] do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
