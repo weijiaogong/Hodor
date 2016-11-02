@@ -27,3 +27,4 @@ DISPLAY=localhost:1.0 xvfb-run cucumber
 3. gem install bundler
 4. delete Gemfile.lock
 5. bundle install
+6. sudo service postgresql start 

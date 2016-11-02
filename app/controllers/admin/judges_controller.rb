@@ -13,7 +13,8 @@ class Admin::JudgesController < ApplicationController
         while i < num
             code = SecureRandom.hex(2)
             if(Judge.where(access_code: code).size == 0)
-                Judge.create!('access_code' => code, 'role' => 'judge')            
+                judge = Judge.new('access_code' => code, 'role' => 'judge')   
+                judge.save!(validate: false)
                 i = i + 1
             end
         end

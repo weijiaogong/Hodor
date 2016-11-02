@@ -3,12 +3,8 @@ class Judge < ActiveRecord::Base
 	has_many :scores, dependent: :destroy
 	has_many :posters, through: :scores
 
-        before_save :create_remember_token
-
-	def self.assign_poster(poster_id, judge_id)
-        @judge = Judge.find(judge_id)
-	    @judge.scores.create!(judge_id: judge_id, poster_id: poster_id, no_show: false, novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1)
-	end
+    validates :name, :company_name, presence: true
+    before_save :create_remember_token
 
     private
         def create_remember_token
