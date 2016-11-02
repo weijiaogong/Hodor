@@ -5,16 +5,16 @@ Feature: View in-time scores
     I want to view the score for each presenter updated in-time.
     Background:
         Given I signed in as admin:
-          |name | access_code|
-          |admin| admin      |
+          |name | company_name| access_code|
+          |admin| TAMU        | admin      |
         And   I have the following posters:
         |number|presenter    |
         | 1    |Harshvardhan |
         | 2    |Ralph Crosby |
         And   I have the following judges:
-        |name  |access_code|
-        | Sara | Sara      |
-        | Kelly| Kelly     |
+        |name  | company_name|access_code|
+        | Sara | TAMU        | Sara      |
+        | Kelly| TAMU        | Kelly     |
    
     Scenario: No posters has been judged
         Given No posters has been judged

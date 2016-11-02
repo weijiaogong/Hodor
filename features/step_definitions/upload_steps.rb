@@ -31,7 +31,8 @@ Then(/^I should see the message "(.*?)"$/) do |arg1|
 end
 
 Given(/^I have poster \#(\d+) where the presenter is "(.*?)"$/) do |arg1, arg2|
-	Poster.create!(:number => arg1, :title => "", :presenter => arg2, :advisors => "")
+	poster = Poster.new(:number => arg1, :title => "", :presenter => arg2, :advisors => "")
+	poster.save!(validate: false)
 end
 
 Then(/^I should see a poster titled "(.*?)"$/) do |arg1|

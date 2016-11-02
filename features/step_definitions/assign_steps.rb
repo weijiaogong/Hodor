@@ -2,12 +2,6 @@ Given(/^this is a new judge$/) do
     Judge.create!
 end
 
-Given(/^there are (\d+) posters in the database$/) do |arg1|
-   	arg1.to_i.times do
-		Poster.create!
-	end
-end
-
 When(/^I click on the "(.*?)" button$/) do |arg1|
     click_button arg1
 end
@@ -46,3 +40,7 @@ And(/^I click "(.*?)"$/) do |arg1|
   	click_button arg1
   	#puts page.body
 end
+
+ Given(/^poster database is empty$/) do
+ 	Poster.destroy_all
+ end

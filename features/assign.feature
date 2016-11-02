@@ -11,18 +11,21 @@ Feature: Assign judge to Posters
     
   
         Given the following access_code exist:
-  | access_code |
-  | ab12        |
-  | ab13        |
+          | access_code |
+          | ab12        |
+          | ab13        |
         Given I am on the login page
-        When I fill in "session[password]" with "ab28"
+        When I fill in "session[password]" with "ab12"
         And I press "Sign in"
-        Given I am on the judge registration page for "ab28"
-        # And I am logged in as admin
+        Then I should be on the register page for "ab12"
 
     
     Scenario: Properly filled out form
-	Given there are 3 posters in the database
+	    Given I have the following posters:
+        |number|presenter    |
+        | 1    |Harshvardhan |
+        | 2    |Ralph Crosby |
+        | 3    |Brittany Duncan|
         When I fill in Name with "Steven Bierwagen"
         When I fill in Company Name with "..."
         And I click "Register"
@@ -31,18 +34,19 @@ Feature: Assign judge to Posters
     Scenario: Missing Name
         When I fill in Company Name with "..."
         And I click "Register"
-        Then I should see the message "Missing: name"
+        Then I should see the message "name & company_name cannot be blank"
 
     Scenario: Missing Company Name
         When I fill in Name with "Steven Bierwagen"
         And I click "Register"
-        Then I should see the message "Missing: company"
+        Then I should see the message "name & company_name cannot be blank"
     
     Scenario: Both fields are blank
         And I click "Register"
-        Then I should see the message "Missing: name, company"
+        Then I should see the message "name & company_name cannot be blank"
 
     Scenario: Poster database empty
+        Given poster database is empty
         When I fill in Name with "Steven Bierwagen"
         And I fill in Company Name with "..."
         And I click "Register"

@@ -5,16 +5,16 @@ Feature: Overall summary of Presenters
     I want to view the average score that each presenter earned from the judges.
     Background:
         Given I signed in as admin:
-          |name | access_code|
-          |admin| admin      |
+          |name | company_name| access_code|
+          |admin| TAMU        | admin      |
         And   I have the following posters:
         |number|presenter    |
         | 1    |Harshvardhan |
         | 2    |Ralph Crosby |
         And   I have the following judges:
-        |name  |access_code|
-        | Sara | Sara      |
-        | Kelly| Kelly     |
+        |name  | company_name|access_code|
+        | Sara | TAMU        | Sara      |
+        | Kelly| TAMU        | Kelly     |
    
     Scenario: No posters has been judged
         Given No posters has been judged
@@ -30,8 +30,8 @@ Feature: Overall summary of Presenters
 	    When  I view poster rankings page
 		Then  I should see the following ranking table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Harshvardhan |       |  5.000     |
-		  | 2  |Ralph Crosby |       |  4.000     |
+		  | 1  |Harshvardhan | test  |  5.000     |
+		  | 2  |Ralph Crosby | test  |  4.000     |
 		
 	Scenario: Rankings are updated according to their average score
  	    Given Judges scored posters as following:
@@ -43,8 +43,8 @@ Feature: Overall summary of Presenters
 	    When  I view poster rankings page
 		Then   I should see the following ranking table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Ralph Crosby |       |  4.500     |
-		  | 2  |Harshvardhan |       |  4.000     |
+		  | 1  |Ralph Crosby |test |  4.500     |
+		  | 2  |Harshvardhan |test |  4.000     |
 
 	Scenario: download the ranking file
 		Given Judges scored posters as following:

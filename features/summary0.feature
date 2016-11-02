@@ -6,7 +6,7 @@
 
  Scenario: No posters exsit
         Given I signed in as admin:
-          |name | access_code|
-          |admin| admin      |
+          |name | company_name| access_code|
+          |admin| TAMU        | admin      |
         When  I view poster rankings page
 	       Then  I should see an empty list

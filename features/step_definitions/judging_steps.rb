@@ -1,19 +1,21 @@
 Given (/the following user exist/) do |user_table|
     user_table.hashes.each do |user|
-        Judge.create!(user)
+        judge = Judge.new(user)
+        judge.save!(validate: false)
     end
 end
 
 Given (/the following access_code exist/) do |table|
     table.hashes.each do |code|
-        Judge.create!('access_code' => code[:access_code])
-        Judge.assign_poster(1, 2)
+        judge = Judge.new('access_code' => code[:access_code])
+        judge.save!(validate: false)
     end
 end
 
 Given (/the following poster exist/) do |poster_table|
     poster_table.hashes.each do |poster|
-        Poster.create!(poster)
+        poster = Poster.new(poster)
+        poster.save!(validate: false)
     end
 end
 

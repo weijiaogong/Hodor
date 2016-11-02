@@ -1,6 +1,6 @@
 Given(/^I signed in as admin:$/) do |table|
 	table.hashes.each do |row|
-	    Judge.create!('name' => row[:name], 'access_code' => row['access_code'], 'role' => 'admin') 
+	    Judge.create!('name' => row[:name], 'company_name' => row[:company_name], 'access_code' => row['access_code'], 'role' => 'admin') 
     end
 	visit new_session_path
 	fill_in 'session[password]', :with => 'admin'
@@ -8,12 +8,13 @@ Given(/^I signed in as admin:$/) do |table|
 end
 Given(/^I have the following posters:$/) do |table|
 	table.hashes.each do |poster|
-	    Poster.create!(:number => poster[:number], :title => "", :presenter =>poster[:presenter], :advisors => "")
+	    Poster.create!(:number => poster[:number], :email => "test", :title => "test", :presenter =>poster[:presenter], :advisors => "test")
     end
 end
 Given(/^I have the following judges:$/) do |table|
 	table.hashes.each do |judge|
-         Judge.create!(:name => judge[:name], :company_name => "", :access_code => judge[:access_code], :scores_count => 0)
+         Judge.create!(:name => judge[:name],  'company_name' => judge[:company_name],  :access_code => judge[:access_code], :scores_count => 0)
+   
     end
 end
 Given (/^Judges scored posters as following:$/) do |table|
@@ -21,7 +22,7 @@ Given (/^Judges scored posters as following:$/) do |table|
 		grade = row[:scores].split(',')
 	    judge = Judge.where(:name => row[:name]).first()
 		poster = Poster.where(:number =>row[:number]).first()
-	    Judge.assign_poster(poster.id, judge.id)
+	    Score.assign_poster_to_judge(poster, judge)
 	    score = Score.where(judge_id: judge.id, poster_id: poster.id).first()
 	    score.update_attributes(:novelty =>grade[0], :utility =>grade[1], :difficulty =>grade[2], :verbal =>grade[3], :written =>grade[4], :no_show => false)	
     end
@@ -83,7 +84,7 @@ end
 Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
 	judge = Judge.where(:name => arg1).first()
 	poster = Poster.where(:number => arg2).first()
-    Judge.assign_poster(poster.id, judge.id)
+    Score.assign_poster_to_judge(poster, judge)
     score = Score.where(judge_id: judge.id, poster_id: poster.id).first()
     score.update_attributes(:novelty =>-1, :utility =>-1, :difficulty =>-1, :verbal =>-1, :written =>-1, :no_show => true)	
 end
