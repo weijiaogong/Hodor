@@ -22,7 +22,8 @@ class Admin::JudgesController < ApplicationController
     end
 
     def clear
-        Judge.where('id != 1').destroy_all  #TODO destroy all but admin/superadmin?
+        Judge.where(role: "judge").destroy_all
+        @judges = Judge.all
         redirect_to admin_judges_path
     end
 end
