@@ -1,13 +1,46 @@
 class PostersController < ApplicationController
-    before_filter :require_login
+    before_filter :require_login, :except => [:new, :create]
     #render the view for judging each poster
     def judge
         @poster = Poster.find(params[:poster_id])
         @judge = Judge.find(params[:judge_id])
     end    
     
-    #update the Score associated with a specific poster and a specific judge
+    def new
+    end
+    
+    def create  #what if the admin wants to create a poster? then bulk load from csv
+        @poster = Poster.create!(params[:poster])
+        flash[:notice] = "#{@poster.title} was successfully created."
+        redirect_to root_path
+    end
+
+    def edit
+        @poster = Poster.find params[:id]
+        rescue ActiveRecord::RecordNotFound   #not dry- move to poster model
+            flash[:notice] = "No such poster"
+            redirect_to admin_posters_path and return
+    end
+    
     def update
+        @poster = Poster.find params[:id]
+#        rescue ActiveRecord::RecordNotFound
+#            flash[:notice] = "No such poster"
+#            redirect_to admin_posters_path and return
+        @poster.update_attributes!(params[:poster])
+        flash[:notice] = "#{@poster.title} was successfully updated."
+        redirect_to admin_posters_path
+    end
+    
+    def destroy #TODO how to ensure only admin can delete?
+        @poster = Poster.find(params[:id])
+        @poster.destroy
+        flash[:notice] = "Poster deleted."
+        redirect_to admin_posters_path
+    end
+    
+    #update the Score associated with a specific poster and a specific judge
+    def update_score    #FIXME this method does not fit here. judges submit scores
         #check to make sure all radio buttons are checked
 
         @score = Score.where(judge_id: params[:judge_id], poster_id: params[:id]).first()
