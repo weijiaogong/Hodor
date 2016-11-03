@@ -20,26 +20,46 @@ Feature: View in-time scores
     Scenario: No posters has been judged
         Given No posters has been judged
         When  I press "View Scores"
-	    Then  I should see an empty list
+	    Then  I should see the following scores table:
+	       |Poster #  |Presenter |Title |Average |Detail     |
+	       | 1    |Harshvardhan  |      |-       |See Details|
+           | 2    |Ralph Crosby  |      |-       |See Details|
+        When I follow the #1 "See Details"
+	    Then I should see an empty table
 	    
 	Scenario: The scores table is updated according to scoring time
 		Given  Judges scored posters as following:
 		  |name  |number |scores   |
           | Sara | 1     |5,5,5,5,5|
 		And   Judge "Sara" set poster 2 as "no_show"
-	   When  I press "View Scores"
+	    When  I press "View Scores"
 		Then  I should see the following scores table:
-		  |Poster #|Novelty|Utility|Difficulty|Verbal|Written|No Show?|Judge  |
-		  |1       |5      |5      |5         |5     |5      |Here    |Sara   |
-		  |2       |-      |-      |-         |-     |-      |Not Here|Sara   |
-	@javascript	   
+	       |Poster #  |Presenter |Title |Average |Detail     |
+	       | 1    |Harshvardhan  |      | 5.000  |See Details|
+           | 2    |Ralph Crosby  |      |No Show |See Details|
+        When I follow the #1 "See Details"
+        Then I should see the following scores table:
+          |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit   |
+		  | Sara   |5      |5      |5         |5     |5      |5.000  |  Edit  |
+		  |Average |-      |-      |-         |-     |-      |5.000  |        |
+		When  I am on the view scores page
+		When I follow the #2 "See Details"
+		Then I should see an empty table
+		
+
+	#@javascript	   
 	Scenario: The score page is reloaded automatically
 		Given No posters has been judged
 		When  I press "View Scores"
-		Then  I should see an empty list
+		Then  I should see the following scores table:
+		   |Poster #  |Presenter |Title |Average |Detail     |
+           | 1    |Harshvardhan  |      |-       |See Details|
+           | 2    |Ralph Crosby  |      |-       |See Details|
 		Given    Judges scored posters as following:
 		  |name  |number |scores   |
           | Kelly| 1     |3,5,3,5,3|
+        When  I am on the view scores page
 		Then  I should see the following scores table:
-		  |Poster #|Novelty|Utility|Difficulty|Verbal|Written|No Show?|Judge  |
-		  |1       |3      |5      |3         |5     |3      |Here    |Kelly  |
+		   |Poster #  |Presenter |Title |Average |Detail     |
+	       | 1    |Harshvardhan  |      | 3.800  |See Details|
+           | 2    |Ralph Crosby  |      | -      |See Details|

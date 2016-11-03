@@ -6,12 +6,15 @@ PosterJudging::Application.routes.draw do
             collection { 
                 post :import
                 delete :clear
-                get :rankings
                 get :download
-                get :download_ranks
             }
         end
-		resources :scores, :only => [:index]
+		resources :scores, :only => [:index, :show, :edit, :update, :destroy] do
+		    collection { 
+                 get :rankings
+                 get :download_ranks
+              }
+        end
 
 		resources :judges, :only => [:index, :destroy] do
 			delete :clear, on: :collection
@@ -23,11 +26,12 @@ PosterJudging::Application.routes.draw do
 	end
 	
     resources :judges, :only => [:show, :update] do
-        resources :posters, :only => [:update]{
-	        get :judge
+        resources :posters, :only => []{
+            put  :update_score
 			post :no_show
+			get  :judge
 	    }
-        
+        get :leave
         get :register
     end
 

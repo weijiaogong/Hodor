@@ -19,7 +19,7 @@ Feature: Overall summary of Presenters
     Scenario: No posters has been judged
         Given No posters has been judged
         When  I press "View Poster Rankings"
-	    Then  I should see two posters with average score 0.000
+	    Then  I should see two posters with average score '-'
 	    
    Scenario: Posters are ranked according to their average score
 		Given Judges scored posters as following:

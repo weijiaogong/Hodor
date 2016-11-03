@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -9,37 +8,40 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20161024193814) do
+ActiveRecord::Schema.define(version: 20161103030022) do
 
-  create_table "judges", :force => true do |t|
-    t.string  "name"
-    t.string  "company_name"
-    t.string  "access_code"
-    t.integer "scores_count",   :default => 0
-    t.string  "remember_token"
-    t.string  "role"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "judges", force: :cascade do |t|
+    t.string  "name",           limit: 255
+    t.string  "company_name",   limit: 255
+    t.string  "access_code",    limit: 255
+    t.integer "scores_count",               default: 0
+    t.string  "remember_token", limit: 255
+    t.string  "role",           limit: 255
+    t.boolean "leave",                      default: false
+    t.index ["remember_token"], name: "index_judges_on_remember_token", using: :btree
   end
 
-  add_index "judges", ["remember_token"], :name => "index_judges_on_remember_token"
-
-  create_table "posters", :force => true do |t|
+  create_table "posters", force: :cascade do |t|
     t.integer "number"
-    t.string  "presenter"
-    t.string  "title"
-    t.string  "advisors"
-    t.integer "scores_count", :default => 0
-    t.string  "email"
+    t.string  "presenter",    limit: 255
+    t.string  "title",        limit: 255
+    t.string  "advisors",     limit: 255
+    t.integer "scores_count",             default: 0
+    t.string  "email",        limit: 255
+    t.boolean "no_show",                  default: false
   end
 
-  create_table "scores", :force => true do |t|
+  create_table "scores", force: :cascade do |t|
     t.integer "novelty"
     t.integer "utility"
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
-    t.boolean "no_show"
     t.integer "poster_id"
     t.integer "judge_id"
   end
