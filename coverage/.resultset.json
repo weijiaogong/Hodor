@@ -1,14 +1,14 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/config/environment.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/config/application.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/application.rb": [
         1,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/config/boot.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/boot.rb": [
         1,
         null,
         null,
@@ -86,7 +86,7 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/config/environments/test.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/environments/test.rb": [
         1,
         null,
         null,
@@ -126,7 +126,7 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/config/initializers/backtrace_silencers.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -135,7 +135,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/config/initializers/inflections.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -152,14 +152,14 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/config/initializers/mime_types.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/config/initializers/secret_token.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -168,7 +168,7 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/config/initializers/session_store.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -178,7 +178,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/config/initializers/wrap_parameters.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -194,20 +194,12 @@
         1,
         null
       ],
-<<<<<<< HEAD
       "/home/ubuntu/workspace/CodeMonkeys/config/routes.rb": [
         1,
         1,
         null,
         1,
         1,
-=======
-      "/home/ubuntu/workspace/config/routes.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
         1,
         1,
         1,
@@ -221,7 +213,6 @@
         null,
         null,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         1,
         1,
         1,
@@ -232,21 +223,13 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        null,
-=======
         1,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         1,
         1,
         1,
         null,
         1,
         1,
-<<<<<<< HEAD
-        1,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         1,
@@ -254,23 +237,9 @@
         1,
         null,
         1,
-<<<<<<< HEAD
-        null,
-        null,
-        1,
-        1,
-        1,
-=======
-        null,
-        1,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         1,
         null,
-<<<<<<< HEAD
-        1,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
@@ -325,8 +294,6 @@
         null,
         null,
         null,
-        null,
-<<<<<<< HEAD
         null,
         null,
         null,
@@ -336,21 +303,12 @@
         1,
         0,
         null,
-=======
         null,
-        null
-      ],
-      "/home/ubuntu/workspace/features/support/hooks.rb": [
         1,
         0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         1,
-        1,
-        null,
-        1,
-<<<<<<< HEAD
-        1,
+        0,
         null,
         null,
         1,
@@ -359,20 +317,6 @@
         null
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/support/paths.rb": [
-=======
-        0,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/features/support/paths.rb": [
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
@@ -418,7 +362,6 @@
         0,
         null,
         null,
-<<<<<<< HEAD
         null,
         null,
         null,
@@ -426,14 +369,6 @@
         1
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/support/selectors.rb": [
-=======
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/home/ubuntu/workspace/features/support/selectors.rb": [
         null,
         null,
         null,
@@ -441,60 +376,12 @@
         null,
         1,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
         null,
         null,
         1,
-<<<<<<< HEAD
-=======
-        0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-<<<<<<< HEAD
-        1,
-        0,
-        null,
-        null,
-        0,
-=======
-        null,
-        null,
-        null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-<<<<<<< HEAD
-        null,
-        null,
-        null,
-=======
-        0,
-        null,
-        null,
-        0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        null,
-        null,
-<<<<<<< HEAD
         0,
         null,
         null,
@@ -502,19 +389,27 @@
         null,
         null,
         null,
-=======
-        null,
-        1
-      ],
-      "/home/ubuntu/workspace/features/step_definitions/adminpage_steps.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/features/step_definitions/assign_steps.rb": [
         null,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
         null,
         null,
         1
@@ -527,28 +422,11 @@
       "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/assign_steps.rb": [
         null,
         null,
-        1,
-        4,
-        4,
-        4,
-        4,
-        null
-      ],
-      "/home/ubuntu/workspace/features/step_definitions/judging_steps.rb": [
-        1,
-        3,
-        3,
-        3,
-        3,
+        null,
+        null,
         null,
         null,
         1,
-        3,
-        3,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
         4,
         4,
         4,
@@ -566,7 +444,9 @@
         1,
         3,
         3,
-=======
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -577,20 +457,15 @@
         null,
         1,
         1,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         1,
         1,
         1,
         1,
-<<<<<<< HEAD
-        1,
-=======
         null,
         null,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         1,
         null,
         1,
@@ -598,37 +473,8 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        1,
-        1,
-        1,
-=======
         2,
         2,
-        null
-      ],
-      "/home/ubuntu/workspace/features/step_definitions/register_poster_steps.rb": [
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
         null
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/register_poster_steps.rb": [
@@ -637,19 +483,24 @@
         1,
         null,
         null,
-=======
-        0,
+        1,
+        4,
+        null,
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
-        0,
+        1,
+        null,
+        null,
+        1,
+        2,
         null
       ],
-      "/home/ubuntu/workspace/features/step_definitions/scores_steps.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/scores_steps.rb": [
         1,
         4,
         4,
@@ -699,17 +550,15 @@
         1,
         1,
         1,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         1,
-        4,
-        null,
-<<<<<<< HEAD
-        null,
-        null,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null,
-=======
+        null,
         1,
         1,
         1,
@@ -722,7 +571,6 @@
         null,
         null,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         1,
         1,
@@ -734,31 +582,17 @@
         null,
         null,
         null,
-<<<<<<< HEAD
-        1,
-        2,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/steps.rb": [
         1,
         null,
-<<<<<<< HEAD
-        19,
-=======
-        17,
-        null,
-        9,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        22,
         null,
         10,
         null,
-<<<<<<< HEAD
         1,
         null,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         3,
         null,
         1,
@@ -768,8 +602,6 @@
         0,
         null,
         2,
-        null,
-        0,
         null,
         3,
         null,
@@ -811,40 +643,22 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        23,
-        23,
-        23,
+        24,
+        24,
+        24,
         null,
         null,
         1,
-        38,
-        51,
-        51,
-=======
-        21,
-        21,
-        21,
-        null,
-        null,
-        1,
-        34,
-        47,
-        47,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        17,
         39,
-        39,
-=======
-        13,
-        30,
-        30,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        52,
+        52,
+        null,
+        null,
+        null,
+        1,
+        18,
+        40,
+        40,
         null,
         null,
         1,
@@ -856,20 +670,6 @@
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/summary_steps.rb": [
         1,
-<<<<<<< HEAD
-        5,
-        10,
-        10,
-        10,
-        10,
-        10,
-        10,
-        null,
-        null,
-        null,
-        1,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         3,
         3,
         6,
@@ -885,13 +685,6 @@
         null,
         null,
         null,
-<<<<<<< HEAD
-        1,
-        3,
-        3,
-        null,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         1,
         2,
@@ -913,45 +706,9 @@
         null,
         1,
         1,
-<<<<<<< HEAD
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        2,
-        2,
-        16,
-        null,
-        null,
-        null,
-        null,
-        2,
-        2,
-        3,
-        24,
-        null,
-        null,
-        2,
-        2,
-        null,
-        2,
-        null,
-        null,
-        null,
-        1,
-        1,
         null
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/upload_steps.rb": [
-=======
-        null
-      ],
-      "/home/ubuntu/workspace/features/step_definitions/upload_steps.rb": [
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         1,
         3,
         3,
@@ -970,11 +727,7 @@
       ],
       "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/web_steps.rb": [
         1,
-<<<<<<< HEAD
         38,
-=======
-        35,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
@@ -996,11 +749,7 @@
         null,
         1,
         1,
-<<<<<<< HEAD
-        74,
-=======
-        72,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        77,
         null,
         null
       ],
@@ -1012,19 +761,11 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        33,
+        34,
         null,
+        34,
         33,
-        32,
-        32,
-=======
-        31,
-        null,
-        31,
-        30,
-        30,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        33,
         null,
         1,
         null,
@@ -1083,39 +824,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/ubuntu/workspace/CodeMonkeys/app/helpers/scores_helper.rb": [
-        1,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/helpers/sessions_helper.rb": [
-        1,
-        null,
-        1,
-        37,
-        37,
-        null,
-        null,
-        1,
-        165,
-=======
-      "/home/ubuntu/workspace/app/helpers/scores_helper.rb": [
         1,
         1,
         50,
@@ -1135,17 +844,16 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/helpers/sessions_helper.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
-        35,
-        35,
+        38,
+        38,
         null,
         null,
         1,
-        166,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        186,
         null,
         null,
         1,
@@ -1154,36 +862,23 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        37,
-=======
-        35,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        38,
         null,
         null,
         1,
-        412,
+        460,
         null,
         null,
         1,
-<<<<<<< HEAD
-        165,
-=======
-        166,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        186,
         2,
         2,
         null,
         null,
         null,
         1,
-<<<<<<< HEAD
-        63,
-        63,
-=======
-        64,
-        64,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        72,
+        72,
         0,
         0,
         null,
@@ -1191,10 +886,10 @@
         null,
         null,
         1,
-        27,
-        27,
+        29,
+        29,
         null,
-        27,
+        29,
         0,
         0,
         null,
@@ -1205,22 +900,13 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        95,
-=======
-        97,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        108,
         null,
         null,
         null,
         1,
-<<<<<<< HEAD
-        32,
-        22,
-=======
-        30,
-        20,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        33,
+        23,
         null,
         10,
         1,
@@ -1236,11 +922,7 @@
         1,
         null,
         1,
-<<<<<<< HEAD
-        23,
-=======
-        21,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+        24,
         null,
         null,
         1,
@@ -1307,20 +989,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/ubuntu/workspace/CodeMonkeys/app/models/score.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        23,
-        23,
-        23,
-=======
-      "/home/ubuntu/workspace/app/models/score.rb": [
         1,
         null,
         1,
@@ -1334,20 +1003,15 @@
         24,
         24,
         24,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
         null
       ],
-<<<<<<< HEAD
       "/home/ubuntu/workspace/CodeMonkeys/app/models/poster.rb": [
         1,
         1,
         1,
-=======
-      "/home/ubuntu/workspace/app/models/poster.rb": [
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         1,
         null,
         null,
@@ -1374,24 +1038,6 @@
       ],
       "/home/ubuntu/workspace/CodeMonkeys/app/controllers/judges_controller.rb": [
         1,
-<<<<<<< HEAD
-        1,
-        null,
-        null,
-        1,
-        7,
-        7,
-        null,
-        7,
-        null,
-        7,
-        15,
-        15,
-        1,
-        null,
-        null,
-        null,
-=======
         1,
         null,
         null,
@@ -1434,7 +1080,6 @@
         null,
         null,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         1,
@@ -1472,80 +1117,38 @@
         null,
         1,
         12,
-<<<<<<< HEAD
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/posters_controller.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/scores_controller.rb": [
         1,
-        1,
-        null,
-        1,
-        3,
-        3,
-=======
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        0,
-        null,
-        0,
-        null,
-<<<<<<< HEAD
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        3,
-=======
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        null,
-        3,
-        1,
-<<<<<<< HEAD
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-=======
         null,
         1,
         1,
@@ -1555,51 +1158,19 @@
         18,
         18,
         90,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         18,
         null,
-<<<<<<< HEAD
-        1,
-        null,
-=======
         13,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
-        0,
         null,
-        0,
-        null,
-        0,
-        null,
-<<<<<<< HEAD
-        null,
-=======
         1,
         13,
         13,
         18,
         18,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
-<<<<<<< HEAD
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/posters_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        13,
-=======
         13,
         null,
         null,
@@ -1612,14 +1183,10 @@
         13,
         null,
         11,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
         1,
-<<<<<<< HEAD
-        null,
-=======
         6,
         6,
         6,
@@ -1656,15 +1223,12 @@
         0,
         null,
         0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         1,
         0,
         0,
         null,
-<<<<<<< HEAD
-=======
         0,
         0,
         0,
@@ -1676,7 +1240,6 @@
         null,
         null,
         null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         1,
         5,
@@ -1705,26 +1268,18 @@
         5,
         8,
         8,
-<<<<<<< HEAD
-        8,
-        0,
-=======
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null,
         null,
-<<<<<<< HEAD
-=======
         1,
         1,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/posters_controller.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/posters_controller.rb": [
         1,
         1,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         1,
         3,
@@ -1734,58 +1289,38 @@
         1,
         null,
         null,
-<<<<<<< HEAD
-        13,
-        null,
-        5,
-=======
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        null,
-        null,
-        1,
-        0,
-<<<<<<< HEAD
-        0,
-        0,
-=======
-        null,
-        null,
-        null,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-<<<<<<< HEAD
-        1,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/scores_controller.rb": [
         1,
         1,
         1,
-        4,
-        7,
-=======
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
         null,
         null,
         3,
@@ -1834,14 +1369,14 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/app/controllers/admin/posters_controller.rb": [
+      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/posters_controller.rb": [
         1,
         null,
         1,
         1,
         null,
         1,
-        8,
+        13,
         null,
         null,
         1,
@@ -1871,15 +1406,10 @@
         null,
         null,
         0,
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
         null,
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1478197301
-=======
-    "timestamp": 1478197870
->>>>>>> 43d32bf0b667cc0c4376913213ed3bf0901f77ea
+    "timestamp": 1478198500
   }
 }
