@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103004948) do
+ActiveRecord::Schema.define(version: 20161103030022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20161103004948) do
     t.string  "advisors",     limit: 255
     t.integer "scores_count",             default: 0
     t.string  "email",        limit: 255
+    t.boolean "no_show",                  default: false
   end
 
   create_table "scores", force: :cascade do |t|
@@ -41,7 +42,6 @@ ActiveRecord::Schema.define(version: 20161103004948) do
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
-    t.boolean "no_show"
     t.integer "poster_id"
     t.integer "judge_id"
   end

@@ -19,5 +19,5 @@
                                 %td= poster.number
                                 %td= poster.presenter
                                 %td= poster.title
-                                %td= show_score(@avgs[poster.id])
-                                %td= link_to 'See Details', admin_score_path(poster)
+                                %td= show_avg(poster.no_show, @avgs[poster.id])
+                                %td= link_to "See Details", admin_score_path(poster)

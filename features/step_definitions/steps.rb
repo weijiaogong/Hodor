@@ -12,7 +12,9 @@ Given(/^I am on the (.*?) page$/) do |arg1|
 		when "poster add"
 			visit admin_posters_path
         when "judge registration"
-            visit register_judges #temporary	
+            visit register_judges #temporary
+        when "view scores" 
+            visit admin_scores_path
         else
 			raise "Could not find #{page}"
 	end
@@ -42,6 +44,9 @@ Then (/^(?:|I )should be on the (.*?) page for "([^"]*)"$/) do |arg1, arg2|
         when "register"
             judge = Judge.find_by_access_code(arg2)
             expect(page).to have_current_path(judge_register_path(judge))
+        when "show scores"
+            poster = Poster.find(arg2.to_i)
+            expect(page).to have_current_path(admin_score_path(poster))
         else
             raise "Could not find page #{arg1}"
     end

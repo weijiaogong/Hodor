@@ -1,9 +1,15 @@
+require 'csv'
+
 class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
   def avg_per_judge(scores)
       avgs_per_judge = Hash.new
       scores.each do |score|
-         avgs_per_judge[score.judge_id] = (score.novelty + score.utility + score.difficulty + score.verbal + score.written)/5.0
+        avgs_per_judge[score.judge_id] = 0
+        @score_terms.each do |term|
+          avgs_per_judge[score.judge_id] += score.send(term)
+        end
+        avgs_per_judge[score.judge_id] /= 5.0
       end
       return avgs_per_judge
   end
@@ -20,7 +26,7 @@ class Admin::ScoresController < ApplicationController
 
   def avg_per_poster(poster)
     if poster.scores_count > 0
-      @scores = poster.scores
+      @scores = poster.scores.sort_by {|score| score.judge.name}
       @avgs_per_judge = avg_per_judge(@scores)
       @avg_per_poster = sum_judge_avg(@avgs_per_judge)
       @avg_per_poster /= poster.scores_count.to_f
@@ -34,9 +40,9 @@ class Admin::ScoresController < ApplicationController
     keywords = params[:searchquery] || ""
     keywords = keywords.gsub(/[^a-z0-9\s]/i, " ")
     if keywords.empty? || keywords.match(/^\s+$/)
-      @posters = Poster.all
+      @posters = Poster.all.order(:number)
     else
-      @posters = Poster.find_by_keywords(keywords)
+      @posters = Poster.find_by_keywords(keywords).order(:number)
     end
 		
     @avgs = Hash.new

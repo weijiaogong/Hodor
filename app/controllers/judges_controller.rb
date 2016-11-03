@@ -3,6 +3,7 @@ class JudgesController < ApplicationController
 
     #display the posters assigned to a specific judge
     def show
+        @score_terms = Score.score_terms
         @judge = Judge.find(params[:id])
         if @judge.leave
             begin
@@ -15,7 +16,7 @@ class JudgesController < ApplicationController
         end
         
         @posters = @judge.posters.order(:number)
-        #@posters.sort! {|p| p.number.to_i}.reverse!
+        #@posters.sort_by{|p| p.number.to_i}.reverse!
         no_notice = true 
         if flash[:notice]
             no_notice = false
@@ -27,11 +28,15 @@ class JudgesController < ApplicationController
                flash[:notice] = nil
            end
         end
+        
         @disable = Array.new
 	
         for score in @judge.scores
-            sum = (score.novelty + score.utility + score.difficulty + score.verbal + score.written)
-            if score.no_show == true || sum >= 5
+            sum = 0
+            @score_terms.each do |term|
+               sum += score.send(term)
+            end
+            if  score.poster.no_show || sum >= 5
                 @disable += [score.poster_id]
             end
         end
