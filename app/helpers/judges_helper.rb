@@ -1,24 +1,23 @@
 module  JudgesHelper
 
     def get_rank(role)
-        case role.downcase
+        case role
         when 'superadmin'
              2
         when 'admin'
              1
         when 'judge'
-        	0
+        	 0
         else
         	-1
         end
     end
     def higher_rank?(role)
-        if get_rank(current_user.role)> get_rank(role)
-           false
+        if  get_rank(role) >= get_rank(current_user.role)
+           return true
         else
-           true
+           return false
         end
-
     end
 
 end
