@@ -4,9 +4,10 @@
      links[n].click
  end
  
- Then (/^I should see an empty list$/) do
-	 rows = page.all(".table.table-bordered tbody tr")
-	 expect(rows.size).to eql 0
+ Then (/^I should see an empty table$/) do
+     rows = page.all(".table.table-bordered tbody tr")
+     expect(rows.size).to eql 0
+    	 
 end
 Then(/^I should see the following scores table:$/) do |expect_table|
 	

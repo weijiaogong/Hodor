@@ -67,5 +67,5 @@ Capybara::Webkit.configure do |config|
 
 end
 # to let javascript function run at interval = 5 seconds
-Capybara.default_wait_time = 10
+Capybara.default_max_wait_time = 10
 

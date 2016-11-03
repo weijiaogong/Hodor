@@ -25,8 +25,9 @@ class Admin::ScoresController < ApplicationController
   end
 
   def avg_per_poster(poster)
+    @scores = poster.scores
     if poster.scores_count > 0
-      @scores = poster.scores.sort_by {|score| score.judge.name}
+      @scores =  @scores.sort_by {|score| score.judge.name}
       @avgs_per_judge = avg_per_judge(@scores)
       @avg_per_poster = sum_judge_avg(@avgs_per_judge)
       @avg_per_poster /= poster.scores_count.to_f
@@ -91,6 +92,7 @@ class Admin::ScoresController < ApplicationController
 
 
   def rankings
+        @score_terms = Score.score_terms
         @posters = Poster.all
         @avg_scores = Hash.new
         @posters.each do |poster|

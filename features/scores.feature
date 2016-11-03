@@ -25,7 +25,7 @@ Feature: View in-time scores
 	       | 1    |Harshvardhan  |      |-       |See Details|
            | 2    |Ralph Crosby  |      |-       |See Details|
         When I follow the #1 "See Details"
-	    Then I should see an empty list
+	    Then I should see an empty table
 	    
 	Scenario: The scores table is updated according to scoring time
 		Given  Judges scored posters as following:
@@ -44,7 +44,7 @@ Feature: View in-time scores
 		  |Average |-      |-      |-         |-     |-      |5.000  |        |
 		When  I am on the view scores page
 		When I follow the #2 "See Details"
-		Then I should see an empty list
+		Then I should see an empty table
 		
 
 	#@javascript	   

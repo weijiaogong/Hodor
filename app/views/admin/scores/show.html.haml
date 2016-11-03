@@ -20,10 +20,10 @@ title: #{@poster.title}
           %td= show_score(score.send(term))
         %td= show_score(@avgs_per_judge[score.judge_id])
         %td= link_to 'Edit', edit_admin_score_path(score), method: :get
-    
-    %tr
-      %td Average
-      - @score_terms.each do |term|
-        %td -
-      %td= show_score(@avg_per_poster)
-      %td
+    - unless @scores.empty?
+      %tr
+        %td Average
+        - @score_terms.each do |term|
+          %td -
+        %td= show_score(@avg_per_poster)
+        %td
