@@ -1,14 +1,14 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/CodeMonkeys/config/environment.rb": [
+      "/home/ubuntu/workspace/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/application.rb": [
+      "/home/ubuntu/workspace/config/application.rb": [
         1,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/boot.rb": [
+      "/home/ubuntu/workspace/config/boot.rb": [
         1,
         null,
         null,
@@ -86,7 +86,7 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/environments/test.rb": [
+      "/home/ubuntu/workspace/config/environments/test.rb": [
         1,
         null,
         null,
@@ -126,7 +126,7 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/backtrace_silencers.rb": [
+      "/home/ubuntu/workspace/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -135,154 +135,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/inflections.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/mime_types.rb": [
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/secret_token.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/session_store.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/initializers/wrap_parameters.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/home/ubuntu/workspace/CodeMonkeys/config/routes.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+      "/home/ubuntu/workspace/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -299,67 +152,14 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/support/hooks.rb": [
-        1,
-        0,
+      "/home/ubuntu/workspace/config/initializers/mime_types.rb": [
         null,
         null,
-        1,
-        0,
         null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/support/paths.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+      "/home/ubuntu/workspace/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -368,7 +168,207 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/support/selectors.rb": [
+      "/home/ubuntu/workspace/config/initializers/session_store.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/config/routes.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/features/support/hooks.rb": [
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/features/support/paths.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/home/ubuntu/workspace/features/support/selectors.rb": [
         null,
         null,
         null,
@@ -414,12 +414,12 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/adminpage_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/adminpage_steps.rb": [
         1,
         1,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/assign_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/assign_steps.rb": [
         null,
         null,
         null,
@@ -433,7 +433,7 @@
         4,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/judging_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/judging_steps.rb": [
         1,
         3,
         3,
@@ -477,7 +477,7 @@
         2,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/register_poster_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/register_poster_steps.rb": [
         1,
         1,
         1,
@@ -500,7 +500,7 @@
         2,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/scores_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/scores_steps.rb": [
         1,
         4,
         4,
@@ -584,7 +584,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/steps.rb": [
         1,
         null,
         22,
@@ -668,7 +668,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/summary_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/summary_steps.rb": [
         1,
         3,
         3,
@@ -708,7 +708,7 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/upload_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/upload_steps.rb": [
         1,
         3,
         3,
@@ -725,7 +725,7 @@
         3,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/features/step_definitions/web_steps.rb": [
+      "/home/ubuntu/workspace/features/step_definitions/web_steps.rb": [
         1,
         38,
         null,
@@ -738,7 +738,7 @@
         12,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/models/judge.rb": [
+      "/home/ubuntu/workspace/app/models/judge.rb": [
         1,
         null,
         1,
@@ -753,7 +753,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/sessions_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -784,7 +784,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/application_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -795,11 +795,11 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/helpers/application_helper.rb": [
+      "/home/ubuntu/workspace/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/helpers/judges_helper.rb": [
+      "/home/ubuntu/workspace/app/helpers/judges_helper.rb": [
         1,
         null,
         1,
@@ -824,7 +824,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/helpers/scores_helper.rb": [
+      "/home/ubuntu/workspace/app/helpers/scores_helper.rb": [
         1,
         1,
         50,
@@ -844,7 +844,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/helpers/sessions_helper.rb": [
+      "/home/ubuntu/workspace/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
@@ -917,7 +917,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/admin_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/admin/admin_controller.rb": [
         1,
         1,
         null,
@@ -941,7 +941,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/judges_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/admin/judges_controller.rb": [
         1,
         null,
         1,
@@ -989,7 +989,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/models/score.rb": [
+      "/home/ubuntu/workspace/app/models/score.rb": [
         1,
         null,
         1,
@@ -1008,7 +1008,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/models/poster.rb": [
+      "/home/ubuntu/workspace/app/models/poster.rb": [
         1,
         1,
         1,
@@ -1036,7 +1036,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/judges_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/judges_controller.rb": [
         1,
         1,
         null,
@@ -1147,7 +1147,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/scores_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/admin/scores_controller.rb": [
         1,
         null,
         1,
@@ -1277,7 +1277,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/posters_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/posters_controller.rb": [
         1,
         1,
         null,
@@ -1369,7 +1369,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/CodeMonkeys/app/controllers/admin/posters_controller.rb": [
+      "/home/ubuntu/workspace/app/controllers/admin/posters_controller.rb": [
         1,
         null,
         1,
@@ -1410,6 +1410,6 @@
         null
       ]
     },
-    "timestamp": 1478198500
+    "timestamp": 1478198746
   }
 }
