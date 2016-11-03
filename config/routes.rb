@@ -13,7 +13,7 @@ PosterJudging::Application.routes.draw do
         end
 		resources :scores, :only => [:index]
 
-		resources :judges, :only => [:index] do
+		resources :judges, :only => [:index, :destroy] do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
@@ -22,18 +22,17 @@ PosterJudging::Application.routes.draw do
 		put :reset_pw, controller: 'admin'	 
 	end
 	
-    resources :judges, :only => [:show] do
+    resources :judges, :only => [:show, :update] do
         resources :posters, :only => [:update]{
 	        get :judge
 			post :no_show
 	    }
         
         get :register
-        put :assign
     end
 
     resources :sessions, only: [:new, :create, :destroy]
-    match '/signin', to: 'sessions#new'
+    match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
 
     root :to => 'sessions#new'

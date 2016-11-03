@@ -1,7 +1,7 @@
 # PosterJudging
 CSCE 431 Project - TAMU Poster Judging
 
-
+########################## test #######################################
 #when you test scores feature use command
 DISPLAY=localhost:1.0 xvfb-run cucumber features/scores.feature
 
@@ -18,3 +18,13 @@ DISPLAY=localhost:1.0 xvfb-run cucumber
 #sudo apt-get update
 #sudo apt-get install qt5-default libqt5webkit5-dev qtdeclarative5-dev g++
 #sudo apt-get install xvfb
+
+
+##########################  if you have trouble in bundle install #######################################
+
+1. gem cleanup --dryrun
+2. gem uninstall -aIx
+3. gem install bundler
+4. delete Gemfile.lock
+5. bundle install
+6. sudo service postgresql start 

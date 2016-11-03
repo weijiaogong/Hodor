@@ -46,16 +46,19 @@ module SessionsHelper
       main_page(current_user)
     end
   end
-
+  
+  def superadmin?
+    current_user.role == 'superadmin'
+  end
 
   def admin?  #TODO superadmin is more special and does less than admin
       ['admin', 'superadmin'].include?(current_user[:role])
-      current_user == Judge.find_by_name("admin")
+      #current_user == Judge.find_by_name("admin")
   end
 
   def main_page(judge)
     if admin?
-      redirect_to(admin_root_path ) and return
+      redirect_to(admin_root_path) and return
     else
       if judge.name && judge.company_name
         redirect_to(judge_path(judge.id))  and return

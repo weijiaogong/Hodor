@@ -38,7 +38,7 @@ class Admin::PostersController < ApplicationController
 
 	def rankings
         scores = Score.joins(:judge, :poster)
-        @posters = Poster.find(:all)
+        @posters = Poster.all
         @avg_scores = Hash.new(0.0)
 
         for score in scores  
@@ -66,7 +66,7 @@ class Admin::PostersController < ApplicationController
 
     def download
         File.delete("app/downloads/posters.csv") if File.exists?("app/downloads/posters.csv")
-        @posters = Poster.find(:all)
+        @posters = Poster.all
         CSV.open("app/downloads/posters.csv", "wb") do |csv|
             csv << ["number","presenter","title","advisors"]
             for poster in @posters

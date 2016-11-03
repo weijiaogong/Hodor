@@ -1,27 +1,9 @@
-Given(/^I signed in as admin:$/) do |table|
-	table.hashes.each do |row|
-	    Judge.create!('name' => row[:name], 'access_code' => row['access_code'], 'role' => 'admin') 
-    end
-	visit new_session_path
-	fill_in 'session[password]', :with => 'admin'
-	click_on  'Sign in'
-end
-Given(/^I have the following posters:$/) do |table|
-	table.hashes.each do |poster|
-	    Poster.create!(:number => poster[:number], :title => "", :presenter =>poster[:presenter], :advisors => "")
-    end
-end
-Given(/^I have the following judges:$/) do |table|
-	table.hashes.each do |judge|
-         Judge.create!(:name => judge[:name], :company_name => "", :access_code => judge[:access_code], :scores_count => 0)
-    end
-end
 Given (/^Judges scored posters as following:$/) do |table|
 	table.hashes.each do |row|
 		grade = row[:scores].split(',')
 	    judge = Judge.where(:name => row[:name]).first()
 		poster = Poster.where(:number =>row[:number]).first()
-	    Judge.assign_poster(poster.id, judge.id)
+	    Score.assign_poster_to_judge(poster, judge)
 	    score = Score.where(judge_id: judge.id, poster_id: poster.id).first()
 	    score.update_attributes(:novelty =>grade[0], :utility =>grade[1], :difficulty =>grade[2], :verbal =>grade[3], :written =>grade[4], :no_show => false)	
     end
@@ -32,20 +14,6 @@ Given(/^No posters has been judged$/) do
     posters.each do |poster|
     	expect(poster.scores_count).to eq 0
     end
-end
-
-When (/^I view poster rankings page$/) do
-      visit rankings_admin_posters_path
-      page.should have_content("Rank")
-end
-
-When(/^I(.*?)view scores page$/) do |arg1|
-    visit admin_scores_path
-    page.should have_content("No Show?")
-end
-
-When(/^I click on download button$/) do
-	click_on 'Download'
 end
 
 Then (/^I should see two posters with average score 0.000$/) do
@@ -83,7 +51,7 @@ end
 Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
 	judge = Judge.where(:name => arg1).first()
 	poster = Poster.where(:number => arg2).first()
-    Judge.assign_poster(poster.id, judge.id)
+    Score.assign_poster_to_judge(poster, judge)
     score = Score.where(judge_id: judge.id, poster_id: poster.id).first()
     score.update_attributes(:novelty =>-1, :utility =>-1, :difficulty =>-1, :verbal =>-1, :written =>-1, :no_show => true)	
 end

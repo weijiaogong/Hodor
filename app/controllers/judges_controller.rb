@@ -4,8 +4,8 @@ class JudgesController < ApplicationController
     #display the posters assigned to a specific judge
     def show
         @judge = Judge.find(params[:id])
-        @posters = @judge.posters.find(:all, :order => "number")
-        @posters.sort! {|p| p.number.to_i}.reverse!
+        @posters = @judge.posters.order(:number)
+        #@posters.sort! {|p| p.number.to_i}.reverse!
         @disable = Array.new
 	
         for score in @judge.scores
@@ -15,45 +15,33 @@ class JudgesController < ApplicationController
             end
         end
     end    
-    
+
     #update judge information (name, company name)
-    #create 2 - 3 new Scores for each poster assigned to this judge
-    def assign
-        @judge = Judge.find(params[:judge_id])
-        error_msg = "Missing: "
-
-	if(params[:name].empty?)
-            error_msg += "name"	    
+    def update
+        @judge = Judge.find(params[:id])
+        res = @judge.update_attributes(name: params[:name], company_name: params[:company])
+        unless res
+          flash[:error] = "name & company_name cannot be blank"
+          redirect_to judge_register_path(@judge) and return
         end
-
-        if(params[:company].empty?)
-            if error_msg != "Missing: "
-                error_msg += ", "
-            end
-            error_msg += "company"
-        end
-        if error_msg != "Missing: "
-            flash[:error] = error_msg
-            redirect_to judge_register_path and return
-        end
-        
-        @judge.update_attributes(name: params[:name], company_name: params[:company])
-        
-        @posters = Poster.find_least_judged()
-        
-        if(@posters.count == 0)
-            flash[:error] = "There are no more posters to be assigned."
-            render "/error" and return
-        end
-        
-        @posters.each do |poster| 
-            Judge.assign_poster(poster.id, @judge.id)
-        end
-        
         sign_in @judge
-        redirect_to judge_path(@judge.id)
+        assign(3)
     end
-
+    
+    #create 2 - 3 new Scores for each poster assigned to this judge
+    def assign(n)
+        #create 2 - 3 new Scores for each poster assigned to this judge
+        posters = Poster.find_least_judged().sample(n)
+        if posters.empty?
+            flash[:notice] = "There are no more posters to be assigned."
+            redirect_to judge_path(@judge) and return
+        end
+        
+        posters.each do |poster| 
+            Score.assign_poster_to_judge(poster, @judge)
+        end
+        redirect_to judge_path(@judge) and return
+    end
     #display the form to add name and company name for a specific judge
     def register
         @judge = Judge.find(params[:judge_id])
