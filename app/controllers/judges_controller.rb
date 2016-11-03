@@ -46,4 +46,5 @@ class JudgesController < ApplicationController
     def register
         @judge = Judge.find(params[:judge_id])
     end
+    
 end

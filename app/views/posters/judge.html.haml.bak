@@ -1,0 +1,106 @@
+!!!
+%html
+  %head
+    :css
+      label{
+        background-color: #FFF;
+        padding: 5px 28px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: CCC;
+      }
+      input[type=radio]{
+        display:none;
+      }
+      input[type=radio]:checked + label{
+        background-color:#500000;
+        color:#FFF;
+      }
+    :javascript
+      // This is a very dirty, not-DRY method -- should be improved later
+
+      $(document).on("change", 'input[type="radio"]', function(){
+      var c1 = false;
+      var c2 = false;
+      var c3 = false;
+      var c4 = false;
+      var c5 = false;
+
+      if(document.getElementById("novelty1").checked == true || document.getElementById("novelty2").checked == true || document.getElementById("novelty3").checked == true || document.getElementById("novelty4").checked == true || document.getElementById("novelty5").checked == true){
+        c1 = true;
+      }
+
+      if(document.getElementById("utility1").checked == true || document.getElementById("utility2").checked == true || document.getElementById("utility3").checked == true || document.getElementById("utility4").checked == true || document.getElementById("utility5").checked == true){
+        c2 = true;
+      }
+
+      if(document.getElementById("difficulty1").checked == true || document.getElementById("difficulty2").checked == true || document.getElementById("difficulty3").checked == true || document.getElementById("difficulty4").checked == true || document.getElementById("difficulty5").checked == true){
+        c3 = true;
+      }
+
+      if(document.getElementById("verbal1").checked == true || document.getElementById("verbal2").checked == true || document.getElementById("verbal3").checked == true || document.getElementById("verbal4").checked == true || document.getElementById("verbal5").checked == true){
+        c4 = true;
+      }
+
+      if(document.getElementById("written1").checked == true || document.getElementById("written2").checked == true || document.getElementById("written3").checked == true || document.getElementById("written4").checked == true || document.getElementById("written5").checked == true){
+        c5 = true;
+      }
+
+      if(c1 && c2 && c3 && c4 && c5){
+        document.getElementById("submit_id").disabled=false;
+      }
+      else{
+        document.getElementById("submit_id").disabled=true;
+      }
+
+      });
+  %body
+    #scoring
+      %font{:size => "5"}
+        %b
+          Poster ##{@poster.id}
+      %br/
+      Use the following criteria to evaluate the poster.
+      %br/
+      Score 1 - 5, with 5 being excellent.
+      %br/
+      %br/
+      %br/
+      = form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update_score", method: "put" do |f|
+        Novelty (research contribution of the work)
+        %br/
+        - (1..5).to_a.each do |value|
+          = f.radio_button :novelty, value, id: "novelty#{value}"
+          %label{:for => "novelty#{value}"}= value
+        %br/
+        %br/
+        Utility (practical implications of the work)
+        %br/
+        - (1..5).to_a.each do |value|
+          = f.radio_button :utility, value, id: "utility#{value}"
+          %label{:for => "utility#{value}"}= value
+        %br/
+        %br/
+        Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)
+        %br/
+        - (1..5).to_a.each do |value|
+          = f.radio_button :difficulty, value, id: "difficulty#{value}"
+          %label{:for => "difficulty#{value}"}= value
+        %br/
+        %br/
+        Verbal Presentation
+        %br/
+        - (1..5).to_a.each do |value|
+          = f.radio_button :verbal, value, id: "verbal#{value}"
+          %label{:for => "verbal#{value}"}= value
+        %br/
+        %br/
+        Written/Graphical Presentation (the poster itself)
+        %br/
+        - (1..5).to_a.each do |value|
+          = f.radio_button :written, value, id: "written#{value}"
+          %label{:for => "written#{value}"}= value
+        %br/
+        %br/
+        = f.submit "Submit", :disabled=>true, id: "submit_id", class: "btn-success btn-lg btn-default btn-block"
+      = button_to "No Show", url: judge_poster_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block"
