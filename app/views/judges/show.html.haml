@@ -4,5 +4,5 @@
 	- is_disabled = false
 	- if @disable.include?(poster.id)
 		- is_disabled = true
-	= button_to "Poster ##{poster.number} - #{poster.title}", judge_poster_judge_path(@judge.id, poster.id), method: "get", disabled: is_disabled, class: "btn btn-default btn-lg btn-block"
+	= button_to "Poster ##{poster.number} - #{poster.title}", edit_judge_poster_path(@judge.id, poster.id), method: "get", disabled: is_disabled, class: "btn btn-default btn-lg btn-block"
 	%br

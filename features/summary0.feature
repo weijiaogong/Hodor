@@ -10,4 +10,4 @@
           |admin| TAMU        | admin      | admin|
         Given I logged in as "admin"
         When  I press "View Poster Rankings"
-	       Then  I should see an empty list
+	       Then  I should see an empty table
