@@ -78,7 +78,7 @@ input[type=radio]:checked + label{
  Use the following criteria to evaluate the poster.<br> Score 1 - 5, with 5 being excellent.<br>
 
 <br><br>
-<%= form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update", method: "put" do |f| %>
+<%= form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update_score", method: "put" do |f| %>
   Novelty (research contribution of the work)<br>
   <%= f.radio_button :novelty, 1, id: "novelty1" %><label for="novelty1">1</label>
   <%= f.radio_button :novelty, 2, id: "novelty2" %><label for="novelty2">2</label>

@@ -1,4 +1,4 @@
 /tmp
 /spec/tmp
-/coverage
-/log
+/coverage/*
+/log/*
