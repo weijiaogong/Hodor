@@ -26,8 +26,10 @@ PosterJudging::Application.routes.draw do
 	end
 	
     resources :judges, :only => [:show, :update] do
-        resources :posters, :only => [:edit, :update]{
+        resources :posters, :only => []{
+            put  :update_score
 			post :no_show
+			get  :judge
 	    }
         get :leave
         get :register

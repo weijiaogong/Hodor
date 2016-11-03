@@ -1,8 +1,8 @@
 class PostersController < ApplicationController
     before_filter :require_login, :except => [:new, :create]
     #render the view for judging each poster
-    def edit
-        @poster = Poster.find(params[:id])
+    def judge
+        @poster = Poster.find(params[:poster_id])
         @judge = Judge.find(params[:judge_id])
     end    
     
@@ -44,7 +44,7 @@ class PostersController < ApplicationController
         #check to make sure all radio buttons are checked
         
         judge_id  = params[:judge_id]
-        poster_id = params[:id]
+        poster_id = params[:poster_id]
         @score = Score.where(judge_id: judge_id, poster_id: poster_id).first()
         score = params[:score]
         score = score.map {|k,v| k, v = k.to_sym, v.to_i}.to_h

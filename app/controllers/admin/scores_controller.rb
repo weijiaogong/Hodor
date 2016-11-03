@@ -63,7 +63,7 @@ class Admin::ScoresController < ApplicationController
     score   = Score.find(params[:id])
     @poster = score.poster
     @judge  = score.judge
-    render 'posters/edit'
+    render 'posters/judge'
   end
 
   def score_params(score_id)
