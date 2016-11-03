@@ -67,7 +67,7 @@
       %br/
       %br/
       = form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update_score", method: "put" do |f|
-        [["Novelty (research contribution of the work)", :novelty], ["Utility (practical implications of the work)", :utility], ["Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)", :difficulty], ["Verbal Presentation", :verbal], ["Written/Graphical Presentation (the poster itself)", :written]]
+        -arr = [["Novelty (research contribution of the work)", :novelty], ["Utility (practical implications of the work)", :utility], ["Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)", :difficulty], ["Verbal Presentation", :verbal], ["Written/Graphical Presentation (the poster itself)", :written]]
         - arr.each do |(description,name)|
           = description
           %br/
@@ -77,36 +77,5 @@
           %br/
           %br/
         end
-      
-        
-        
-        Utility (practical implications of the work)
-        %br/
-        - (1..5).to_a.each do |value|
-          = f.radio_button :utility, value, id: "utility#{value}"
-          %label{:for => "utility#{value}"}= value
-        %br/
-        %br/
-        Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)
-        %br/
-        - (1..5).to_a.each do |value|
-          = f.radio_button :difficulty, value, id: "difficulty#{value}"
-          %label{:for => "difficulty#{value}"}= value
-        %br/
-        %br/
-        Verbal Presentation
-        %br/
-        - (1..5).to_a.each do |value|
-          = f.radio_button :verbal, value, id: "verbal#{value}"
-          %label{:for => "verbal#{value}"}= value
-        %br/
-        %br/
-        Written/Graphical Presentation (the poster itself)
-        %br/
-        - (1..5).to_a.each do |value|
-          = f.radio_button :written, value, id: "written#{value}"
-          %label{:for => "written#{value}"}= value
-        %br/
-        %br/
         = f.submit "Submit", :disabled=>true, id: "submit_id", class: "btn-success btn-lg btn-default btn-block"
       = button_to "No Show", url: judge_poster_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block"

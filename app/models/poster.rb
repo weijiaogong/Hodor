@@ -4,7 +4,6 @@ class Poster < ActiveRecord::Base
 	validates :presenter, :email, :title, :advisors, presence: true
 	#validates :number, uniqueness: true # not sure whether the number should be unique
 	
-	attr_accessible :number, :presenter, :title, :advisors, :scores_count, :email
 	
 	def self.import_csv(file)
 		CSV.foreach(file.path, headers: true, encoding: 'windows-1251:utf-8') do |row|

@@ -32,8 +32,9 @@ module SessionsHelper
   def require_admin
     require_login
     unless admin?
-      flash[:alert] = 'The page you tried to access requires administrator privileges'  
-      redirect_to(main_page(current_user)) and return
+      flash[:alert] = 'The page you tried to access requires administrator privileges'
+      redirect_to(root_path) and return
+      #redirect_to(main_page(current_user)) and return
     end
   end
 

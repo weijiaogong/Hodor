@@ -5,12 +5,12 @@ Feature: Poster Registration
     
   Background:
     Given the following posters exist:
-      |number|presenter    |
-      | 1    |Harshvardhan |
-      | 2    |Ralph Crosby |
+      |number|presenter    |title|advisors|
+      | 1    |Harshvardhan |a|a|
+      | 2    |Ralph Crosby |b|b|
     And the following users exist:
-    | name  | company_name| access_code|
-    | admin | tamu        | admin      |
+    | name  | company_name| access_code|role|
+    | admin | tamu        | admin      |admin|
 
   Scenario: Register from Index
     Given I am on the login page
