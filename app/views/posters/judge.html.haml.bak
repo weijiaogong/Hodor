@@ -58,7 +58,7 @@
     #scoring
       %font{:size => "5"}
         %b
-          Poster ##{@poster.id}
+          Poster ##{@poster.number}
       %br/
       Use the following criteria to evaluate the poster.
       %br/
@@ -67,13 +67,19 @@
       %br/
       %br/
       = form_for :score, url: judge_poster_path(@judge.id, @poster.id), action: "update_score", method: "put" do |f|
-        Novelty (research contribution of the work)
-        %br/
-        - (1..5).to_a.each do |value|
-          = f.radio_button :novelty, value, id: "novelty#{value}"
-          %label{:for => "novelty#{value}"}= value
-        %br/
-        %br/
+        [["Novelty (research contribution of the work)", :novelty], ["Utility (practical implications of the work)", :utility], ["Difficulty (the research depth and practical difficulty in getting the results - e.g. data gathering or system building)", :difficulty], ["Verbal Presentation", :verbal], ["Written/Graphical Presentation (the poster itself)", :written]]
+        - arr.each do |(description,name)|
+          = description
+          %br/
+          - (1..5).to_a.each do |value|
+            = f.radio_button name, value, id: "#{name}#{value}"
+            %label{:for => "#{name}#{value}"}= value
+          %br/
+          %br/
+        end
+      
+        
+        
         Utility (practical implications of the work)
         %br/
         - (1..5).to_a.each do |value|

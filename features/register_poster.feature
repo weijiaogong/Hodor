@@ -4,11 +4,11 @@ Feature: Poster Registration
   So that I can compete in the poster competition
     
   Background:
-    Given I have the following posters:
+    Given the following posters exist:
       |number|presenter    |
       | 1    |Harshvardhan |
       | 2    |Ralph Crosby |
-    And the following user exist:
+    And the following users exist:
     | name  | company_name| access_code|
     | admin | tamu        | admin      |
 
@@ -27,7 +27,7 @@ Feature: Poster Registration
     Then I see "Title was successfully created."
     
   Scenario: Modify poster
-    Given I log in as admin
+    Given I logged in as "admin"
     And I am on the poster add page
     And I edit poster 1
     And I fill in "poster[email]" with "e-mail@example.com"
@@ -36,12 +36,12 @@ Feature: Poster Registration
     And I see "e-mail@example.com" as "email" for poster 1
     
   Scenario: Modify non-existent poster
-    Given I log in as admin
+    Given I logged in as "admin"
     And I edit poster 3
     Then I see "No such poster"
   
   Scenario: Delete poster
-    Given I log in as admin
+    Given I logged in as "admin"
     And I am on the poster add page
     And I delete poster 1
     Then I see "Poster deleted"
