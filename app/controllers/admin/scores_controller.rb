@@ -2,17 +2,6 @@ require 'csv'
 
 class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
-  def avg_per_judge(scores)
-      avgs_per_judge = Hash.new
-      scores.each do |score|
-        avgs_per_judge[score.judge_id] = 0
-        @score_terms.each do |term|
-          avgs_per_judge[score.judge_id] += score.send(term)
-        end
-        avgs_per_judge[score.judge_id] /= 5.0
-      end
-      return avgs_per_judge
-  end
 
   def sum_judge_avg(avgs_per_judge)
       sum_judge_avg = 0
@@ -23,7 +12,19 @@ class Admin::ScoresController < ApplicationController
       end
       return sum_judge_avg
   end
-
+  
+  def avg_per_judge(scores)
+      avgs_per_judge = Hash.new
+      scores.each do |score|
+        avgs_per_judge[score.judge_id] = 0
+        @score_terms.each do |term|
+          avgs_per_judge[score.judge_id] += score.send(term)
+        end
+        avgs_per_judge[score.judge_id] /=  @score_terms.size
+      end
+      return avgs_per_judge
+  end
+  
   def avg_per_poster(poster)
     @scores = poster.scores
     if poster.scores_count > 0
@@ -36,17 +37,30 @@ class Admin::ScoresController < ApplicationController
     end
   end
 
+  def is_i?(str)
+    !str.match(/^[-+]?[0-9]+$/).nil?
+  end
+  
+  def get_posters_by_keywords(keywords)
+      keywords =  keywords || ""
+      keywords = keywords.gsub(/[^a-z0-9\s]/i, " ")
+      posters = []
+      if keywords.empty? || keywords.match(/^\s+$/)
+        posters = Poster.all.order(:number)
+      elsif is_i?(keywords)
+        posters = Poster.where(number: keywords.to_i)
+      else
+        posters = Poster.find_by_keywords(keywords).order(:number)
+      end
+      return posters
+  end
+  
   def index
     @score_terms = Score.score_terms
-    keywords = params[:searchquery] || ""
-    keywords = keywords.gsub(/[^a-z0-9\s]/i, " ")
-    if keywords.empty? || keywords.match(/^\s+$/)
-      @posters = Poster.all.order(:number)
-    else
-      @posters = Poster.find_by_keywords(keywords).order(:number)
-    end
-		
+    @posters = get_posters_by_keywords(params[:searchquery])
     @avgs = Hash.new
+    
+    # calcualte average score for each poster
     @posters.each do |poster|
 		   @avgs[poster.id] = avg_per_poster(poster)
     end
@@ -93,17 +107,12 @@ class Admin::ScoresController < ApplicationController
 
   def rankings
         @score_terms = Score.score_terms
-        @posters = Poster.all
+        @posters = Poster.all_scored
         @avg_scores = Hash.new
         @posters.each do |poster|
           poster_avg = avg_per_poster(poster)
-          if poster_avg > 0
-             @avg_scores[poster.id] = poster_avg
-          else
-             @posters.delete(poster)
-          end
+          @avg_scores[poster.id] = poster_avg
         end
-     
         @posters = @posters.sort_by{|poster| @avg_scores[poster.id]}.reverse
         @posters = @posters.take(3)
 
