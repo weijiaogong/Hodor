@@ -640,3 +640,1452 @@ Completed 200 OK in 9.1ms (Views: 6.2ms | ActiveRecord: 0.7ms)
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Quartet Distance Computation'[0m
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Timing Integrity Check'
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Connecting to database specified by database.yml
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:32:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (14.1ms)
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 124.7ms (Views: 115.2ms | ActiveRecord: 9.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:32:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.9ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/signin
+Completed 302 Found in 3.5ms (ActiveRecord: 0.9ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:32:02 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 6.9ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (54.5ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  [1m[36mJudge Load (1.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 8.8ms (Views: 6.9ms | ActiveRecord: 1.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/signin
+Completed 302 Found in 2.5ms (ActiveRecord: 0.6ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 5.8ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (42.3ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 7.3ms (Views: 6.1ms | ActiveRecord: 0.9ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/signin
+Completed 302 Found in 2.6ms (ActiveRecord: 0.7ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 6.9ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (43.2ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mJudge Load (1.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 7.1ms (Views: 5.9ms | ActiveRecord: 1.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/signin
+Completed 302 Found in 2.5ms (ActiveRecord: 0.7ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:32:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 7.5ms (Views: 6.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (42.8ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (7.2ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "V4XMuat3sqMJJx1xGK7voQ"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[35m (8.1ms)[0m  COMMIT
+Connecting to database specified by database.yml
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (24.7ms)
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 105.7ms (Views: 96.5ms | ActiveRecord: 8.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/admin
+Completed 302 Found in 12.8ms (ActiveRecord: 0.8ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'V4XMuat3sqMJJx1xGK7voQ' LIMIT 1[0m
+  Rendered admin/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 10.6ms (Views: 8.6ms | ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'V4XMuat3sqMJJx1xGK7voQ' LIMIT 1
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 19.3ms (Views: 12.5ms | ActiveRecord: 3.1ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000005724638 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-27056-h8xo5t>>, "commit"=>"Import"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'V4XMuat3sqMJJx1xGK7voQ' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (7.9ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", "Lawrence Rauchwerger"], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[35m (3.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", "Tiffani Williams"], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[35m (2.6ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", "Robin Murphy"], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[35m (3.1ms)[0m  COMMIT
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 56.7ms (ActiveRecord: 20.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'V4XMuat3sqMJJx1xGK7voQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 8.6ms (Views: 5.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.6ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (32.5ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 6.5ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/signin
+Completed 302 Found in 2.1ms (ActiveRecord: 0.6ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 5.0ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (30.3ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.4ms (Views: 3.5ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/signin
+Completed 302 Found in 1.9ms (ActiveRecord: 0.6ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.3ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (31.8ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.9ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/signin
+Completed 302 Found in 1.9ms (ActiveRecord: 0.7ms)
+Started GET "/signin" for 127.0.0.1 at 2016-10-26 04:33:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.3ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (30.2ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (14.5ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "z6iVjsSPJ4--Y9oKiPhmXw"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (4.2ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (11.7ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (39.4ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "ZIGDGBfj4TeA1UZTxzsdJA"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (29.6ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "pujLN7o5lh37f88cgS6amA"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (31.6ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "vSOVC1WFiCL4GqgJadlV1A"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (30.9ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "6S5lWBQ3m6VVDyj-4K-Kyg"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (35.9ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "PkBIKmOsqwipeReQx4Bs1Q"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (32.4ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "9MHg_YZAB1iMAydPX0LP4Q"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (31.5ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "Ax7nAMrhUgQ0a6tH7eujlA"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (35.0ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.4ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "EsYr6r0B_IzD3BRIPsnXwQ"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:25:30 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (14.2ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 65.2ms (Views: 64.1ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:25:30 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 8.0ms (ActiveRecord: 0.9ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:25:30 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'EsYr6r0B_IzD3BRIPsnXwQ' LIMIT 1
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (1.0ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.3ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 82.5ms (Views: 11.7ms | ActiveRecord: 7.3ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (42.9ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "LBzCefeGyCA18RFPMuhEiQ"], ["role", nil], ["scores_count", 0]]
+  [1m[35m (3.2ms)[0m  COMMIT
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:25:30 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 6.4ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:25:30 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 2.7ms (ActiveRecord: 0.6ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:25:30 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'LBzCefeGyCA18RFPMuhEiQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (1.1ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 11.3ms (Views: 2.9ms | ActiveRecord: 2.2ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (33.9ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "83vo_hnES5o4jXiqMqfkVw"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.8ms)
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 37.2ms (Views: 36.2ms | ActiveRecord: 0.6ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 6.1ms (ActiveRecord: 0.9ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '83vo_hnES5o4jXiqMqfkVw' LIMIT 1
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.8ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.3ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 65.0ms (Views: 6.9ms | ActiveRecord: 7.1ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (29.2ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "iYfIHL39xRMHspqelZcb6w"], ["role", nil], ["scores_count", 0]]
+  [1m[35m (6.8ms)[0m  COMMIT
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 5.1ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 2.0ms (ActiveRecord: 0.6ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'iYfIHL39xRMHspqelZcb6w' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 7.9ms (Views: 2.4ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (30.0ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "gdeQ9dg_3Bopvve2g3XjYg"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 1.7ms (ActiveRecord: 0.4ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:26:40 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'gdeQ9dg_3Bopvve2g3XjYg' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 6.9ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (29.5ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "qicEW8j1_bMPYh_naw2wYA"], ["role", nil], ["scores_count", 0]]
+  [1m[35m (2.7ms)[0m  COMMIT
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:26:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 4.1ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:26:41 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 1.8ms (ActiveRecord: 0.4ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:26:41 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'qicEW8j1_bMPYh_naw2wYA' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 7.8ms (Views: 2.9ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (33.2ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "TxogB9GkjWwGAFJyZim1RQ"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:27:17 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (11.7ms)
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 52.5ms (Views: 51.1ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:27:17 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (1.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 6.3ms (ActiveRecord: 1.1ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'TxogB9GkjWwGAFJyZim1RQ' LIMIT 1
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.9ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 67.7ms (Views: 6.8ms | ActiveRecord: 7.4ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.3ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (33.9ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "YkPIG12Mc3jIJjuWJXOlgQ"], ["role", nil], ["scores_count", 0]]
+  [1m[35m (2.8ms)[0m  COMMIT
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 5.0ms (Views: 4.1ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 2.7ms (ActiveRecord: 0.5ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'YkPIG12Mc3jIJjuWJXOlgQ' LIMIT 1[0m
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.8ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 8.7ms (Views: 3.2ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (32.3ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "RsBQNEAUkuJ3ArjM5A-wOQ"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.8ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 2.1ms (ActiveRecord: 0.5ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'RsBQNEAUkuJ3ArjM5A-wOQ' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 7.4ms (Views: 2.6ms | ActiveRecord: 1.4ms)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (30.9ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "4T7fgnfZeNa1NYdNbTSTnA"], ["role", nil], ["scores_count", 0]]
+  [1m[35m (2.9ms)[0m  COMMIT
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 6.4ms (Views: 5.5ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 2.7ms (ActiveRecord: 0.6ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:27:18 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '4T7fgnfZeNa1NYdNbTSTnA' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPoster Load (0.8ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number
+  [1m[36mScore Load (0.3ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1[0m
+  Rendered judges/show.html.haml within layouts/application (0.2ms)
+Completed 200 OK in 10.5ms (Views: 3.6ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (32.0ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "q-KR4nf7f-EfccJFOCWkMA"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:31:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.8ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 40.2ms (Views: 39.0ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:31:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 5.4ms (ActiveRecord: 0.8ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:31:39 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'q-KR4nf7f-EfccJFOCWkMA' LIMIT 1
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (1.1ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.3ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 58.0ms (Views: 6.9ms | ActiveRecord: 7.7ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (29.6ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.8ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "B70zZcWUW96fT1MBUKQ8ag"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:39:21 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.9ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 42.5ms (Views: 41.4ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:39:21 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/judges/1
+Completed 302 Found in 5.5ms (ActiveRecord: 0.8ms)
+Started GET "/judges/1" for 127.0.0.1 at 2016-10-26 23:39:21 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'B70zZcWUW96fT1MBUKQ8ag' LIMIT 1
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.9ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.3ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 61.1ms (Views: 6.7ms | ActiveRecord: 6.9ms)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (50.4ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "qGlZByoFrvWANCgnN9qTig"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.3ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (30.6ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "65VKCe8mk_e8cfAuWjNczQ"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:42:25 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (11.2ms)
+  [1m[35mJudge Load (0.9ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 53.1ms (Views: 51.7ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.6ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (91.6ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "8kgTBMznLKPO-YS04UKrvg"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:44:32 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.7ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 42.4ms (Views: 41.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.2ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.3ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (32.5ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (8.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (5.1ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "e65sQjAXdnZITmQJQpcrYA"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[35m (3.0ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.0ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "rfidYlKgi8jTFQ3fPnIQEg"], ["role", nil], ["scores_count", 0]]
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:45:54 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (13.0ms)
+  [1m[35mJudge Load (2.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 67.4ms (Views: 64.5ms | ActiveRecord: 2.3ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:45:54 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (1.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 8.4ms (ActiveRecord: 1.1ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:45:54 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'e65sQjAXdnZITmQJQpcrYA' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 13.1ms (Views: 10.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (35.9ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (8.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "gptt-V29CxyJiZ9yH5PxOg"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:47:49 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (10.2ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 51.5ms (Views: 50.3ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:47:49 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (1.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 7.1ms (ActiveRecord: 1.1ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:47:49 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'gptt-V29CxyJiZ9yH5PxOg' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 12.1ms (Views: 9.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m   SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.4ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'PosterJudging_test'[0m
+  [1m[35m (40.2ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "pOu11XS75e3fMvNCxKnn0w"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:48:31 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.0ms)
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 39.9ms (Views: 38.7ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:48:31 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 5.2ms (ActiveRecord: 0.8ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:48:31 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'pOu11XS75e3fMvNCxKnn0w' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 9.0ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:31 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'pOu11XS75e3fMvNCxKnn0w' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 14.8ms (Views: 9.4ms | ActiveRecord: 2.9ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:48:31 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000006ac4940 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5188-cgagh4>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'pOu11XS75e3fMvNCxKnn0w' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Lawrence Rauchwerger"], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Tiffani Williams"], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Robin Murphy"], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 49.1ms (ActiveRecord: 13.2ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:32 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'pOu11XS75e3fMvNCxKnn0w' LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 6.9ms (Views: 4.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.5ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.0ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (31.3ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "rZ1NwaW3mPVdLqtHBLlbQw"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.9ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 41.4ms (Views: 40.4ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 5.1ms (ActiveRecord: 0.8ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'rZ1NwaW3mPVdLqtHBLlbQw' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 9.8ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'rZ1NwaW3mPVdLqtHBLlbQw' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 17.6ms (Views: 12.2ms | ActiveRecord: 2.8ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000005bd4a98 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5195-1wk87zd>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'rZ1NwaW3mPVdLqtHBLlbQw' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Lawrence Rauchwerger"], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Tiffani Williams"], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Robin Murphy"], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 45.2ms (ActiveRecord: 16.2ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'rZ1NwaW3mPVdLqtHBLlbQw' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 10.4ms (Views: 6.4ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.6ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (38.0ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "UYC9MilabzlJldMxHxu8DQ"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 5.6ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 3.0ms (ActiveRecord: 0.6ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'UYC9MilabzlJldMxHxu8DQ' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 5.6ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'UYC9MilabzlJldMxHxu8DQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 6.4ms (Views: 4.1ms | ActiveRecord: 0.9ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000038f2458 @original_filename="data.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 568\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5195-xrqu04>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'UYC9MilabzlJldMxHxu8DQ' LIMIT 1[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 2.5ms (ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'UYC9MilabzlJldMxHxu8DQ' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 6.6ms (Views: 4.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (33.5ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "WvadhED-T81_F2MjSQKjLA"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mJudge Load (1.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 7.3ms (Views: 6.1ms | ActiveRecord: 1.0ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (1.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 3.4ms (ActiveRecord: 1.1ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'WvadhED-T81_F2MjSQKjLA' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 8.1ms (Views: 5.7ms | ActiveRecord: 0.8ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'WvadhED-T81_F2MjSQKjLA' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 8.2ms (Views: 5.3ms | ActiveRecord: 1.1ms)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (33.3ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "8eH4gCW-cCq-kmobjgxUkg"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[35m (2.8ms)[0m  COMMIT
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 5.7ms (Views: 4.8ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.3ms (ActiveRecord: 0.4ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8eH4gCW-cCq-kmobjgxUkg' LIMIT 1[0m
+  Rendered admin/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 6.0ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8eH4gCW-cCq-kmobjgxUkg' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 7.3ms (Views: 5.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", ""], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", ""]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", ""], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", ""], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", ""]]
+  [1m[35m (2.5ms)[0m  COMMIT
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000003e429d0 @original_filename="data_update.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data_update.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 214\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5195-e07jou>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8eH4gCW-cCq-kmobjgxUkg' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE "posters" SET "title" = 'Processing Big Data Graphs', "advisors" = 'Lawrence Rauchwerger' WHERE "posters"."id" = 1[0m
+  [1m[35m (2.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE "posters" SET "title" = 'Quartet Distance Computation', "advisors" = 'Tiffani Williams' WHERE "posters"."id" = 2
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE "posters" SET "title" = 'Timing Integrity Check', "advisors" = 'Robin Murphy' WHERE "posters"."id" = 3[0m
+  [1m[35m (2.6ms)[0m  COMMIT
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 23.7ms (ActiveRecord: 11.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:48:43 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8eH4gCW-cCq-kmobjgxUkg' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 7.8ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Processing Big Data Graphs'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Quartet Distance Computation'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Timing Integrity Check'[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (34.8ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "jqZyTquhy5_TGYK5tFoEEw"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.2ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 40.9ms (Views: 39.8ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 6.1ms (ActiveRecord: 0.8ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'jqZyTquhy5_TGYK5tFoEEw' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 10.1ms (Views: 8.1ms | ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'jqZyTquhy5_TGYK5tFoEEw' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 16.8ms (Views: 10.6ms | ActiveRecord: 3.0ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000005ef5510 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5231-1rv07an>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'jqZyTquhy5_TGYK5tFoEEw' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Lawrence Rauchwerger"], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Tiffani Williams"], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Robin Murphy"], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 39.6ms (ActiveRecord: 14.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'jqZyTquhy5_TGYK5tFoEEw' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 7.6ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (33.0ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "p4mopaB4CgUc5fAV8WVQKA"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.1ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.9ms (Views: 4.0ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.4ms (ActiveRecord: 0.6ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'p4mopaB4CgUc5fAV8WVQKA' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (1.4ms)
+Completed 200 OK in 5.1ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'p4mopaB4CgUc5fAV8WVQKA' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 6.4ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000042d5a88 @original_filename="data.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 568\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5231-1uuyyhg>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'p4mopaB4CgUc5fAV8WVQKA' LIMIT 1[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 2.5ms (ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'p4mopaB4CgUc5fAV8WVQKA' LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 6.6ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (33.3ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "9PbKbYXNrIV_uJbv-XWsgQ"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mJudge Load (0.9ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 4.9ms (Views: 3.8ms | ActiveRecord: 0.9ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.4ms (ActiveRecord: 0.6ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '9PbKbYXNrIV_uJbv-XWsgQ' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 5.8ms (Views: 4.0ms | ActiveRecord: 0.8ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '9PbKbYXNrIV_uJbv-XWsgQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.5ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 7.1ms (Views: 4.4ms | ActiveRecord: 1.2ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Import"}
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '9PbKbYXNrIV_uJbv-XWsgQ' LIMIT 1[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 2.3ms (ActiveRecord: 0.8ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '9PbKbYXNrIV_uJbv-XWsgQ' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 8.0ms (Views: 5.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (36.8ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "gF31_mvXOF0HCZqh8eD6nw"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 5.2ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.4ms (ActiveRecord: 0.5ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'gF31_mvXOF0HCZqh8eD6nw' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 6.1ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'gF31_mvXOF0HCZqh8eD6nw' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 7.9ms (Views: 5.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", ""], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", ""], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", ""]]
+  [1m[35m (2.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", ""], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000042ea528 @original_filename="data_update.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data_update.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 214\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161026-5231-1vl0nlc>>, "commit"=>"Import"}
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'gF31_mvXOF0HCZqh8eD6nw' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE "posters" SET "title" = 'Processing Big Data Graphs', "advisors" = 'Lawrence Rauchwerger' WHERE "posters"."id" = 1
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE "posters" SET "title" = 'Quartet Distance Computation', "advisors" = 'Tiffani Williams' WHERE "posters"."id" = 2[0m
+  [1m[35m (2.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE "posters" SET "title" = 'Timing Integrity Check', "advisors" = 'Robin Murphy' WHERE "posters"."id" = 3
+  [1m[36m (2.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 26.3ms (ActiveRecord: 13.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-26 23:49:33 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'gF31_mvXOF0HCZqh8eD6nw' LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 8.6ms (Views: 5.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Processing Big Data Graphs'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Quartet Distance Computation'[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Timing Integrity Check'
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (33.2ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "-Qd9_W4K7idVYotUmeo_OQ"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (11.1ms)
+  [1m[35mJudge Load (1.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 44.7ms (Views: 43.3ms | ActiveRecord: 1.1ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.9ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 5.8ms (ActiveRecord: 0.9ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '-Qd9_W4K7idVYotUmeo_OQ' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 8.8ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '-Qd9_W4K7idVYotUmeo_OQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 15.3ms (Views: 9.1ms | ActiveRecord: 3.0ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x000000066d6e28 @original_filename="data.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 323\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161027-6369-1j5gkhp>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '-Qd9_W4K7idVYotUmeo_OQ' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Lawrence Rauchwerger"], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", "Processing Big Data Graphs on Memory-Restricted Systems"]]
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Tiffani Williams"], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", "Quartet Distance Computation for sets of Heterogeneous Trees"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", "Robin Murphy"], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", "Timing Integrity Check of GPS Signal – Models and Computing Algorithms"]]
+  [1m[36m (2.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 37.4ms (ActiveRecord: 12.0ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '-Qd9_W4K7idVYotUmeo_OQ' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 8.2ms (Views: 5.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Harshvardhan'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."presenter" = 'Ralph Crosby'[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (1.2ms)[0m  [1m SELECT schemaname || '.' || tablename
+ FROM pg_tables
+ WHERE
+ tablename !~ '_prt_' AND
+ tablename <> 'schema_migrations' AND
+ schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  select table_name from information_schema.views where table_schema = 'PosterJudging_test'
+  [1m[36m (33.8ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "doyJqIHPG6kuj99PnGuaGQ"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mJudge Load (0.8ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 5.1ms (Views: 4.1ms | ActiveRecord: 0.8ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.7ms (ActiveRecord: 0.7ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'doyJqIHPG6kuj99PnGuaGQ' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 7.7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'doyJqIHPG6kuj99PnGuaGQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 7.5ms (Views: 4.8ms | ActiveRecord: 1.2ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x00000004b38748 @original_filename="data.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data.txt\"\r\nContent-Type: text/plain\r\nContent-Length: 568\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161027-6369-1fpc49e>>, "commit"=>"Import"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'doyJqIHPG6kuj99PnGuaGQ' LIMIT 1[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 2.0ms (ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'doyJqIHPG6kuj99PnGuaGQ' LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 7.3ms (Views: 5.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (35.8ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "AMG9zuVYvSt7zfIlIoVq9A"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 5.2ms (Views: 4.3ms | ActiveRecord: 0.7ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.6ms (ActiveRecord: 0.6ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'AMG9zuVYvSt7zfIlIoVq9A' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 5.5ms (Views: 4.1ms | ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'AMG9zuVYvSt7zfIlIoVq9A' LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 8.0ms (Views: 5.5ms | ActiveRecord: 0.9ms)
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "commit"=>"Import"}
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'AMG9zuVYvSt7zfIlIoVq9A' LIMIT 1[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 2.3ms (ActiveRecord: 0.6ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'AMG9zuVYvSt7zfIlIoVq9A' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 10.2ms (Views: 6.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL
+  [1m[36m (35.7ms)[0m  [1mTRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "N4vQHtDyWd2j3_mzbafkrQ"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1
+Completed 200 OK in 6.7ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+Started POST "/sessions" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1[0m
+Redirected to http://www.example.com/admin
+Completed 302 Found in 2.5ms (ActiveRecord: 0.5ms)
+Started GET "/admin" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'N4vQHtDyWd2j3_mzbafkrQ' LIMIT 1
+  Rendered admin/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 6.2ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'N4vQHtDyWd2j3_mzbafkrQ' LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 9.3ms (Views: 6.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", ""], ["email", nil], ["number", 1], ["presenter", "Harshvardhan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["advisors", ""], ["email", nil], ["number", 2], ["presenter", "Ralph Crosby"], ["scores_count", 0], ["title", ""]]
+  [1m[35m (2.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posters" ("advisors", "email", "number", "presenter", "scores_count", "title") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["advisors", ""], ["email", nil], ["number", 3], ["presenter", "Brittany Duncan"], ["scores_count", 0], ["title", ""]]
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+Started POST "/admin/posters/import" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0x0000000477d310 @original_filename="data_update.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"data_update.csv\"\r\nContent-Type: text/csv\r\nContent-Length: 214\r\n", @tempfile=#<Tempfile:/tmp/RackMultipart20161027-6369-5c0k19>>, "commit"=>"Import"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'N4vQHtDyWd2j3_mzbafkrQ' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE "posters" SET "title" = 'Processing Big Data Graphs', "advisors" = 'Lawrence Rauchwerger' WHERE "posters"."id" = 1
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 2
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."number" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "posters" SET "title" = 'Quartet Distance Computation', "advisors" = 'Tiffani Williams' WHERE "posters"."id" = 2[0m
+  [1m[35m (2.9ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."number" = 3[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."number" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  UPDATE "posters" SET "title" = 'Timing Integrity Check', "advisors" = 'Robin Murphy' WHERE "posters"."id" = 3
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://www.example.com/admin/posters
+Completed 302 Found in 28.2ms (ActiveRecord: 12.8ms)
+Started GET "/admin/posters" for 127.0.0.1 at 2016-10-27 00:21:14 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'N4vQHtDyWd2j3_mzbafkrQ' LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 8.6ms (Views: 5.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Processing Big Data Graphs'
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Quartet Distance Computation'[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "posters" WHERE "posters"."title" = 'Timing Integrity Check'
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "judges" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "posters" DISABLE TRIGGER ALL;ALTER TABLE "scores" DISABLE TRIGGER ALL[0m
+  [1m[35m (35.5ms)[0m  TRUNCATE TABLE "public"."judges", "public"."posters", "public"."scores" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "judges" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "posters" ENABLE TRIGGER ALL;ALTER TABLE "scores" ENABLE TRIGGER ALL[0m

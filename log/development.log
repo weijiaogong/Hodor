@@ -256,3 +256,557 @@ Served asset /bootstrap.js - 304 Not Modified (1ms)
 
 Started GET "/assets/sessions.js?body=1" for 165.91.13.161 at 2016-10-26 00:50:55 +0000
 Served asset /sessions.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (8.0ms)[0m  [1mINSERT INTO "judges" ("access_code", "company_name", "name", "remember_token", "role", "scores_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["access_code", "admin"], ["company_name", "tamu"], ["name", "admin"], ["remember_token", "KuK4cu6sKLyslT0oTjvYfw"], ["role", "superadmin"], ["scores_count", 0]]
+  [1m[35m (3.7ms)[0m  COMMIT
+
+
+Started GET "/" for 165.91.12.84 at 2016-10-26 23:27:51 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (13.6ms)
+Compiled bootstrap.css  (1ms)  (pid 2474)
+Warning. Error encountered while saving cache /home/ubuntu/workspace/tmp/cache/sass/e484c03c1fc23420dd9e36aa9a2d1fb77a731879/sessions.css.scssc: can't dump anonymous class #<Class:0x000000037b8740>
+
+Compiled sessions.css  (7ms)  (pid 2474)
+Compiled application.css  (26ms)  (pid 2474)
+Compiled jquery.js  (4ms)  (pid 2474)
+Compiled jquery_ujs.js  (0ms)  (pid 2474)
+Compiled bootstrap.js  (1ms)  (pid 2474)
+Compiled sessions.js  (103ms)  (pid 2474)
+Compiled application.js  (151ms)  (pid 2474)
+  [1m[36mJudge Load (6.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1[0m
+Completed 200 OK in 417.6ms (Views: 327.0ms | ActiveRecord: 90.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:52 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:27:52 +0000
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:52 +0000
+Served asset /sessions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:52 +0000
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:27:52 +0000
+Served asset /bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:52 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started POST "/sessions" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/+qsAAyhN2unIvmKsl7yw08wA0H+OPqXlZ/+0FNd/nA=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 7.2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1[0m
+  Rendered admin/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 31.3ms (Views: 28.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:27:55 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:31:51 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:31:51 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for 165.91.12.84 at 2016-10-26 23:31:51 +0000
+Served asset /bootstrap.css.map - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.css.map"):
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (14.2ms)
+  [1m[36mJudge Load (2.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1[0m
+Completed 200 OK in 165.3ms (Views: 152.1ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Served asset /bootstrap.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Served asset /jquery.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:51 +0000
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started POST "/sessions" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/+qsAAyhN2unIvmKsl7yw08wA0H+OPqXlZ/+0FNd/nA=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 7.0ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1[0m
+  Rendered admin/index.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 18.6ms (Views: 16.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:37:54 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+  [1m[36mJudge Load (1.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1[0m
+Completed 200 OK in 102.4ms (Views: 94.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Served asset /bootstrap.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Served asset /sessions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:43:15 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:43:20 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:43:20 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for 165.91.12.84 at 2016-10-26 23:43:21 +0000
+Served asset /bootstrap.css.map - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.css.map"):
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/sessions" for 165.91.12.84 at 2016-10-26 23:49:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/+qsAAyhN2unIvmKsl7yw08wA0H+OPqXlZ/+0FNd/nA=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.7ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 6.2ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 165.91.12.84 at 2016-10-26 23:49:03 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1[0m
+  Rendered admin/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 17.4ms (Views: 14.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /bootstrap.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for 165.91.12.84 at 2016-10-26 23:49:04 +0000
+Served asset /bootstrap.css.map - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.css.map"):
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/admin/posters" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = '8pWA26llKx9aTSM-SZ8gFg' LIMIT 1
+  [1m[36mPoster Load (2.4ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 29.4ms (Views: 16.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css.map" for 165.91.12.84 at 2016-10-26 23:49:05 +0000
+Served asset /bootstrap.css.map - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap.css.map"):
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 165.91.12.100 at 2016-10-27 18:12:52 +0000
+Connecting to database specified by database.yml
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__1599942662414879108__call__3865842374159882673__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.9ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-04 19:51:25 +0000
+Connecting to database specified by database.yml
+
+PG::ConnectionBad (could not connect to server: Connection refused
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:1222:in `connect'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:324:in `initialize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.22.5) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.22.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `_run__4232178017376639269__call__2297645118506692954__callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.22.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.22.5) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.22.5) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.22.5) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.22.5) lib/action_dispatch/middleware/static.rb:83:in `call'
+  railties (3.2.22.5) lib/rails/engine.rb:484:in `call'
+  railties (3.2.22.5) lib/rails/application.rb:231:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.22.5) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.7) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.22.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.6ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-04 19:53:30 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.3ms)
+  [1m[36mJudge Load (5.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 255.5ms (Views: 164.3ms | ActiveRecord: 90.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
+Served asset /sessions.css - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
+Served asset /bootstrap.css - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
+Served asset /bootstrap.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
+Served asset /sessions.js - 200 OK (2ms)
