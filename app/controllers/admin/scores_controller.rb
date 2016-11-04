@@ -20,7 +20,7 @@ class Admin::ScoresController < ApplicationController
         @score_terms.each do |term|
           avgs_per_judge[score.judge_id] += score.send(term)
         end
-        avgs_per_judge[score.judge_id] /=  @score_terms.size
+        avgs_per_judge[score.judge_id] /=  @score_terms.size.to_f
       end
       return avgs_per_judge
   end
