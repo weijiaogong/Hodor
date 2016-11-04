@@ -3,35 +3,26 @@ require 'csv'
 class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
 
-  def sum_judge_avg(avgs_per_judge)
-      sum_judge_avg = 0
-      avgs_per_judge.each do |judge, avg|
-         if avg > 0
-           sum_judge_avg += avg
-         end
-      end
-      return sum_judge_avg
+  def avg_per_score(id)
+      avg_per_score = Score.get_score_sum().find(id)
+      avg_per_score /= @score_terms.size.to_f 
+      return  avg_per_score
   end
   
-  def avg_per_judge(scores)
-      avgs_per_judge = Hash.new
+  def avg_by_judge(scores)
+      avgs_by_judge = Hash.new
       scores.each do |score|
-        avgs_per_judge[score.judge_id] = 0
-        @score_terms.each do |term|
-          avgs_per_judge[score.judge_id] += score.send(term)
-        end
-        avgs_per_judge[score.judge_id] /=  @score_terms.size.to_f
+        avgs_by_judge[score.judge_id] = avg_per_score(score.id)
       end
-      return avgs_per_judge
+      return avgs_by_judge
   end
   
   def avg_per_poster(poster)
     @scores = poster.scores
     if poster.scores_count > 0
       @scores =  @scores.sort_by {|score| score.judge.name}
-      @avgs_per_judge = avg_per_judge(@scores)
-      @avg_per_poster = sum_judge_avg(@avgs_per_judge)
-      @avg_per_poster /= poster.scores_count.to_f
+      @avgs_by_judge = avg_by_judge(@scores)
+      @avg_per_poster = Score.get_poster_avg(poster)
     else
       @avg_per_poster = -1
     end

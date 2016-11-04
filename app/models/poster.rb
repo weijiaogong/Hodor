@@ -21,7 +21,7 @@ class Poster < ActiveRecord::Base
 	end
 
 	def self.find_least_judged()
-		Poster.where("scores_count < 3")
+		Poster.where("no_show = false AND scores_count < 3")
 	end
 	
 	def self.all_scored
