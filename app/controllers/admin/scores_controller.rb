@@ -101,6 +101,9 @@ class Admin::ScoresController < ApplicationController
       end
   end
 
+  def assign
+     
+  end
 
   def rankings
         @score_terms = Score.score_terms

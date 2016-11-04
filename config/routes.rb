@@ -10,7 +10,7 @@ PosterJudging::Application.routes.draw do
             }
         end
 		resources :scores, :only => [:index, :show, :edit, :update, :destroy] do
-		    collection { 
+		    collection {
                  get :rankings
                  get :download_ranks
               }
