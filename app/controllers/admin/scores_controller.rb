@@ -4,27 +4,33 @@ class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
 
   def avg_per_score(id)
-      avg_per_score = Score.get_score_sum().find(id)
+      avg_per_score = Score.get_score_sum().find(id).score_sum
       avg_per_score /= @score_terms.size.to_f 
       return  avg_per_score
   end
   
-  def avg_by_judge(scores)
-      avgs_by_judge = Hash.new
+  def avgs_by_judge(scores)
+      judge_avgs = Hash.new
       scores.each do |score|
-        avgs_by_judge[score.judge_id] = avg_per_score(score.id)
+        judge_avgs[score.judge_id] = avg_per_score(score.id)
       end
-      return avgs_by_judge
+      return judge_avgs
   end
-  
   def avg_per_poster(poster)
+        poster_sum = Score.get_poster_sum.find_by(poster_id: poster.id).poster_sum
+        puts poster_sum.to_s
+        poster_avg = poster_sum/poster.judges.size.to_f
+        poster_avg /= @score_terms.size.to_f
+        return poster_avg
+  end
+  def get_poster_avg(poster)
     @scores = poster.scores
     if poster.scores_count > 0
       @scores =  @scores.sort_by {|score| score.judge.name}
-      @avgs_by_judge = avg_by_judge(@scores)
-      @avg_per_poster = Score.get_poster_avg(poster)
+      @judge_avgs = avgs_by_judge(@scores)
+      @poster_avg = avg_per_poster(poster)
     else
-      @avg_per_poster = -1
+      @poster_avg = -1
     end
   end
 
@@ -49,11 +55,11 @@ class Admin::ScoresController < ApplicationController
   def index
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
-    @avgs = Hash.new
+    @poster_avgs = Hash.new
     
     # calcualte average score for each poster
     @posters.each do |poster|
-		   @avgs[poster.id] = avg_per_poster(poster)
+		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
   end
 
@@ -61,7 +67,7 @@ class Admin::ScoresController < ApplicationController
     @score_terms = Score.score_terms
     poster_id = params[:id]
     @poster = Poster.find(poster_id)
-    avg_per_poster(@poster)
+    get_poster_avg(@poster)
   end
 
   def edit
@@ -99,15 +105,15 @@ class Admin::ScoresController < ApplicationController
   def rankings
         @score_terms = Score.score_terms
         @posters = Poster.all_scored
-        @avg_scores = Hash.new
+        @poster_avgs = Hash.new
         @posters.each do |poster|
-          poster_avg = avg_per_poster(poster)
-          @avg_scores[poster.id] = poster_avg
+          poster_avg = get_poster_avg(poster)
+          @poster_avgs[poster.id] = poster_avg
         end
-        @posters = @posters.sort_by{|poster| @avg_scores[poster.id]}.reverse
+        @posters = @posters.sort_by{|poster| @poster_avgs[poster.id]}.reverse
         @posters = @posters.take(3)
 
-        create_rank_file(@posters, @avg_scores)
+        create_rank_file(@posters, @poster_avgs)
   end
 
   def create_rank_file(posters, scores)
