@@ -12,6 +12,23 @@ class Score < ActiveRecord::Base
         poster.scores << score
         score.save!
     end
-end
 
+    def self.get_score_sum
+        str = ""
+        score_terms.each do |term|
+             str += term + "+"
+        end
+        str.gsub(/\+$/, " ")
+        str += "as score_sum"
+        Score.select(str)
+    end
+
+    def self.get_poster_avg(poster)
+        score_sum = Score.get_score_sum.where(poster_id: poster.id)
+        poster_sum = score_sum.group(:poster_id).sum(:score_sum)
+        poster_avg = poster_sum/poster.judges.size.to_f
+        poster_avg /= score_terms.size.to_f
+        return poster_avg
+    end
+end
 
