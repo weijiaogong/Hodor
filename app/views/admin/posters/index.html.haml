@@ -12,9 +12,12 @@
 %table{:class => "table table-bordered"}
     %thead
         %th #
-        %th Presenter
+        %th Presenter(s)
         %th Title
-        %th Advisor(s)
+        %th Advisor
+        %th E-mail(s)
+        %th
+        %th
     %tbody
         - @posters.each do |poster|
             %tr
@@ -22,3 +25,6 @@
                 %td= poster.presenter
                 %td= poster.title
                 %td= poster.advisors
+                %td= poster.email
+                %td= link_to "Edit", edit_poster_path(poster)
+                %td= link_to "Delete",  poster_path(poster), data: { confirm: 'Are you sure?' }, method: :delete, id: "delete#{poster.id}"

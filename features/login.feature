@@ -5,37 +5,33 @@ Feature: Login
   I want restricted access to the system
   
 Background: users in database
-  Given the following user exist:
-    | name  | company_name| access_code|
-    | admin | tamu        | admin      | 
-    | kelly | tamu-cse    | ab28       | 
-    
-  
-  Given the following access_code exist:
+  Given the following users exist:
+    | name  | company_name| access_code|role|
+    | admin | tamu        | admin      | admin|
+    | kelly | tamu-cse    | ab28       | judge|
+
+  And the following users exist:
    | access_code |
    | ab12        |
    | ab13        |
-
+    
+  And I am on the login page
   Scenario: login as admin
-    Given I am on the login page
     When I fill in "session[password]" with "admin"
     And I press "Sign in"
     Then I should be on the admin page
   
   Scenario: login as judge after first time
-    Given I am on the login page
     When I fill in "session[password]" with "ab28"
     And I press "Sign in"
     Then I should be on the judge page for "kelly"
   
-  Scenario: invaild password-sadpass  
-    Given I am on the login page
+  Scenario: invaild password-sadpass
     When I fill in "session[password]" with "1234"
     And I press "Sign in"
+    #Then I should see "Invalid password" password error reminder
     Then I should see "Invalid password"
-  
   Scenario: login as judge at first time
-    Given I am on the login page
     When I fill in "session[password]" with "ab13"
     And I press "Sign in"
     Then I should be on the register page for "ab13"

@@ -4,44 +4,32 @@ Feature: Judge a Poster
 
   
 Background: users in database
-  Given the following poster exist:
+   Given the following posters exist:
    | number | presenter |   title            | advisors |
    | 1      | John      |   Big data         | Walker   |
    | 2      | David     |   Machine Learning | Thomas   |
    | 3      | Alan      |   Werables         | Alex     |
-  
-  
-  Given the following user exist:
-    | name  | company_name| access_code|
-    |       |             | ab28       | 
-    
-  
-  Given the following access_code exist:
+   And the following users exist:
    | access_code |
-   | ab12        |
    | ab13        |
+  And   I logged in as "ab13"
+  And   I register with my information
+  |name  |company_name|
+  | Umair| CSE        |
+  Then  I should see 3 posters "Big data", "Machine Learning", "Werables" assigned to "Umair"
    
   Scenario: The judge gives scores in all categories
-    Given I am at the login-signin page
-    Given I fill in "session[password]" with "ab13" and press Sign in 
-    Given I fill in my information
-    Given I am at the poster scoring page
-    And I give scores to the poster in every category and submit
-    Then Return to list of posters
+    When  I judge "Poster #1 - Big data"
+    And   I give scores to the poster in every category and submit
+    Then  Return to list of posters
     
   Scenario: The judge does not give scores in all categories
-    Given I am at the login-signin page
-    Given I fill in "session[password]" with "ab13" and press Sign in 
-    Given I fill in my information
-    Given I am at the poster scoring page
+    When  I judge "Poster #1 - Big data"
     And I do not give scores in all categories and try to submit
     Then I remain on the poster scoring page
     
   Scenario: The presenter does not show up
-    Given I am at the login-signin page
-    Given I fill in "session[password]" with "ab13" and press Sign in 
-    Given I fill in my information
-    Given I am at the poster scoring page
+    When  I judge "Poster #1 - Big data"
     And I press the no show button
     Then Return to list of posters
     
