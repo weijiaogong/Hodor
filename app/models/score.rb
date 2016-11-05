@@ -12,6 +12,27 @@ class Score < ActiveRecord::Base
         poster.scores << score
         score.save!
     end
-end
 
+    def self.get_score_sum
+        str = "("
+        score_terms.each do |term|
+             str += term + "+"
+        end
+        str = str.gsub(/\+\z/, ") ")
+        str += "as score_sum"
+        return Score.select(str)
+    end
+    
+    def self.get_poster_sum
+        str = "SUM("
+        score_terms.each do |term|
+             str += term + "+"
+        end
+        str = str.gsub(/\+\z/, ") ")
+        str += "as poster_sum"
+        return Score.select(str)
+    end
+
+   
+end
 

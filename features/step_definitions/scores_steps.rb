@@ -26,7 +26,7 @@ Then(/^I should see the following scores table:$/) do |expect_table|
     end
     table_results = table_header + table_body
 	   data = expect_table.raw
-    data.should eq table_results
+	   expect(table_results).to eq data
 end
 
 Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
@@ -45,7 +45,7 @@ Given (/^Judges scored posters as following:$/) do |table|
 end
 
 When (/^I change scores to (.*?)$/) do |grade|
-     expect(page).to have_content("Poster #1")
+    expect(page).to have_content("Poster #")
     score = grade.split(",")
     expect(page).to have_button('Submit', disabled: true)
     choose("novelty#{score[0]}")

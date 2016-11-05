@@ -2,53 +2,64 @@ require 'csv'
 
 class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
-  def avg_per_judge(scores)
-      avgs_per_judge = Hash.new
+
+  def avg_per_score(id)
+      avg_per_score = Score.get_score_sum().find(id).score_sum
+      avg_per_score /= @score_terms.size.to_f 
+      return  avg_per_score
+  end
+  
+  def avgs_by_judge(scores)
+      judge_avgs = Hash.new
       scores.each do |score|
-        avgs_per_judge[score.judge_id] = 0
-        @score_terms.each do |term|
-          avgs_per_judge[score.judge_id] += score.send(term)
-        end
-        avgs_per_judge[score.judge_id] /= 5.0
+        judge_avgs[score.judge_id] = avg_per_score(score.id)
       end
-      return avgs_per_judge
+      return judge_avgs
   end
-
-  def sum_judge_avg(avgs_per_judge)
-      sum_judge_avg = 0
-      avgs_per_judge.each do |judge, avg|
-         if avg > 0
-           sum_judge_avg += avg
-         end
-      end
-      return sum_judge_avg
-  end
-
   def avg_per_poster(poster)
+        poster_sum = Score.get_poster_sum.find_by(poster_id: poster.id).poster_sum
+        puts poster_sum.to_s
+        poster_avg = poster_sum/poster.judges.size.to_f
+        poster_avg /= @score_terms.size.to_f
+        return poster_avg
+  end
+  def get_poster_avg(poster)
     @scores = poster.scores
     if poster.scores_count > 0
       @scores =  @scores.sort_by {|score| score.judge.name}
-      @avgs_per_judge = avg_per_judge(@scores)
-      @avg_per_poster = sum_judge_avg(@avgs_per_judge)
-      @avg_per_poster /= poster.scores_count.to_f
+      @judge_avgs = avgs_by_judge(@scores)
+      @poster_avg = avg_per_poster(poster)
     else
-      @avg_per_poster = -1
+      @poster_avg = -1
     end
   end
 
+  def is_i?(str)
+    !str.match(/^[-+]?[0-9]+$/).nil?
+  end
+  
+  def get_posters_by_keywords(keywords)
+      keywords =  keywords || ""
+      keywords = keywords.gsub(/[^a-z0-9\s]/i, " ")
+      posters = []
+      if keywords.empty? || keywords.match(/^\s+$/)
+        posters = Poster.all.order(:number)
+      elsif is_i?(keywords)
+        posters = Poster.where(number: keywords.to_i)
+      else
+        posters = Poster.find_by_keywords(keywords).order(:number)
+      end
+      return posters
+  end
+  
   def index
     @score_terms = Score.score_terms
-    keywords = params[:searchquery] || ""
-    keywords = keywords.gsub(/[^a-z0-9\s]/i, " ")
-    if keywords.empty? || keywords.match(/^\s+$/)
-      @posters = Poster.all.order(:number)
-    else
-      @posters = Poster.find_by_keywords(keywords).order(:number)
-    end
-		
-    @avgs = Hash.new
+    @posters = get_posters_by_keywords(params[:searchquery])
+    @poster_avgs = Hash.new
+    
+    # calcualte average score for each poster
     @posters.each do |poster|
-		   @avgs[poster.id] = avg_per_poster(poster)
+		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
   end
 
@@ -56,7 +67,7 @@ class Admin::ScoresController < ApplicationController
     @score_terms = Score.score_terms
     poster_id = params[:id]
     @poster = Poster.find(poster_id)
-    avg_per_poster(@poster)
+    get_poster_avg(@poster)
   end
 
   def edit
@@ -93,21 +104,16 @@ class Admin::ScoresController < ApplicationController
 
   def rankings
         @score_terms = Score.score_terms
-        @posters = Poster.all
-        @avg_scores = Hash.new
+        @posters = Poster.all_scored
+        @poster_avgs = Hash.new
         @posters.each do |poster|
-          poster_avg = avg_per_poster(poster)
-          if poster_avg > 0
-             @avg_scores[poster.id] = poster_avg
-          else
-             @posters.delete(poster)
-          end
+          poster_avg = get_poster_avg(poster)
+          @poster_avgs[poster.id] = poster_avg
         end
-     
-        @posters = @posters.sort_by{|poster| @avg_scores[poster.id]}.reverse
+        @posters = @posters.sort_by{|poster| @poster_avgs[poster.id]}.reverse
         @posters = @posters.take(3)
 
-        create_rank_file(@posters, @avg_scores)
+        create_rank_file(@posters, @poster_avgs)
   end
 
   def create_rank_file(posters, scores)

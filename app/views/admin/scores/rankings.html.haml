@@ -1,3 +1,6 @@
+-#:javascript
+-#        setInterval(function() {window.location.reload();}, 5000);
+
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default"
 
 = button_to 'Download', download_ranks_admin_scores_path, method: "get", class: "btn btn-default"
@@ -15,4 +18,4 @@
                 %td= i = i + 1
                 %td= poster.presenter
                 %td= poster.title
-                %td= show_score(@avg_scores[poster.id])
+                %td= show_score(@poster_avgs[poster.id])

@@ -46,6 +46,7 @@ class JudgesController < ApplicationController
     def update
         @judge = Judge.find(params[:id])
         res = @judge.update_attributes(name: params[:name], company_name: params[:company])
+        # this validation should be down in js
         unless res
           flash[:error] = "name & company_name cannot be blank"
           redirect_to judge_register_path(@judge) and return
