@@ -810,3 +810,99 @@ Served asset /jquery_ujs.js - 200 OK (3ms)
 
 Started GET "/assets/sessions.js?body=1" for 50.24.126.122 at 2016-11-04 19:53:31 +0000
 Served asset /sessions.js - 200 OK (2ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:23:58 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.6ms)
+  [1m[36mJudge Load (1.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'sINYa0LVx9hdgYLGzv4dpw' LIMIT 1[0m
+Completed 200 OK in 145.3ms (Views: 136.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 50.24.126.122 at 2016-11-05 20:23:58 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 50.24.126.122 at 2016-11-05 20:23:58 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 50.24.126.122 at 2016-11-05 20:23:58 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 50.24.126.122 at 2016-11-05 20:23:58 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 50.24.126.122 at 2016-11-05 20:23:58 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 50.24.126.122 at 2016-11-05 20:23:59 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:26:01 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.1ms)
+  [1m[36mJudge Load (1.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'sINYa0LVx9hdgYLGzv4dpw' LIMIT 1[0m
+Completed 200 OK in 102.6ms (Views: 94.6ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 50.24.126.122 at 2016-11-05 20:26:02 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 50.24.126.122 at 2016-11-05 20:26:02 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 50.24.126.122 at 2016-11-05 20:26:02 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 50.24.126.122 at 2016-11-05 20:26:02 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 50.24.126.122 at 2016-11-05 20:26:02 +0000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 50.24.126.122 at 2016-11-05 20:26:02 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/posters" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.6ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'sINYa0LVx9hdgYLGzv4dpw' LIMIT 1
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 27.2ms (Views: 14.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 50.24.126.122 at 2016-11-05 20:27:26 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
