@@ -1,43 +1,13 @@
-Given (/the following user exist/) do |user_table|
-    user_table.hashes.each do |user|
-        Judge.create!(user)
-    end
+Given(/^I register with my information$/) do |table|
+    info = table.hashes[0]
+    fill_in('name', :with => info[:name])
+    fill_in('company', :with => info[:company_name])
+    click_button "Register"
 end
 
-Given (/the following access_code exist/) do |table|
-    table.hashes.each do |code|
-        Judge.create!('access_code' => code[:access_code])
-        Judge.assign_poster(1, 2)
-    end
-end
-
-Given (/the following poster exist/) do |poster_table|
-    poster_table.hashes.each do |poster|
-        Poster.create!(poster)
-    end
-end
-
-Given(/^I am at the login-signin page$/) do
-  visit new_session_path
- 
-end
-
-Given (/^(?:|I )fill in "([^"]*)" with "([^"]*)" and press Sign in$/) do |field, value|
-  fill_in(field, :with => value)
-  click_button "Sign in"
-end
-
-Given(/^I fill in my information$/) do
-  fill_in('name', :with => "Umair")
-  fill_in('company', :with => "CSE")
-  click_button "Register"
-  
-end
-
-Given(/^I am at the poster scoring page$/) do
-  click_button "Poster #1 - Big data"
+When (/^I judge "([^"]*)"$/) do |arg1|
+  click_button arg1
   expect(page).to have_button('Submit', disabled: true)
-  
 end
 
 And(/^I give scores to the poster in every category and submit$/) do
@@ -61,12 +31,12 @@ And(/^I do not give scores in all categories and try to submit$/) do
 end
 
 Then (/^I remain on the poster scoring page$/) do
-    id_j = Judge.find_by_name("Umair")[:id]
+   # id_j = Judge.find_by_name("Umair")[:id]
     expect(page).to have_button('Submit', disabled: true)
     click_button('Submit', disabled: true)
 end
 
 Then(/^Return to list of posters$/) do
-   id_j = Judge.find_by_name("Umair")[:id]
-   expect(page).to have_current_path(judge_path(id_j))
+   judge = Judge.find_by_name("Umair")
+   expect(page).to have_current_path(judge_path(judge))
 end

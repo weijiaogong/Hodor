@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '>= 3.2.15'
+gem 'rails', '5.0.0'
 ruby '2.3.0'
 
 # Bundle edge Rails instead:
@@ -11,11 +11,10 @@ gem 'pg'	#fewer errors when moving to production
 
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
-	gem 'rspec-rails', '>= 2.14'
+	gem 'rspec-rails'
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
-	
 end
 
 group :test do
@@ -30,7 +29,7 @@ group :test do
 
 	gem 'capybara-webkit'
   gem 'headless'
-	gem "launchy", "~> 2.1.2"
+	gem "launchy"
 end
 
 group :production do
@@ -41,17 +40,19 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
 
 # use Haml for templates
 gem 'haml'
-gem 'test-unit'
+#gem 'test-unit'
+
+

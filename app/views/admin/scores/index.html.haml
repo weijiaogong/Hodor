@@ -1,25 +1,21 @@
-:javascript
-        setInterval(function() {window.location.reload();}, 5000);
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default btn"
 
+= form_tag admin_scores_path, :class => "navbar-search pull-left", :method => :get do
+        = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
+        = submit_tag "Search", class: "btn btn-success btn-md"
+        
 %table{class: "table table-bordered"}
         %thead
                 %th Poster #
-                %th Novelty
-                %th Utility
-                %th Difficulty
-                %th Verbal
-                %th Written
-                %th No Show?
-                %th Judge
+                %th Presenter
+                %th Title
+                %th Average
+                %th Detail
         %tbody
-                - @scores.each do |score|
+                - @posters.each do |poster|
                         %tr
-                                %td= score.poster.number == -1 ? '-' : score.poster.number
-                                %td= score.novelty == -1 ? '-' : score.novelty
-                                %td= score.utility == -1 ? '-' : score.utility
-                                %td= score.difficulty == -1 ? '-' : score.difficulty
-                                %td= score.verbal == -1 ? '-' : score.verbal
-                                %td= score.written == -1 ? '-' : score.written
-                                %td= score.no_show ? 'Not Here' : 'Here'
-                                %td= score.judge.name
+                                %td= poster.number
+                                %td= poster.presenter
+                                %td= poster.title
+                                %td= show_avg(poster.no_show, @poster_avgs[poster.id])
+                                %td= link_to "See Details", admin_score_path(poster)

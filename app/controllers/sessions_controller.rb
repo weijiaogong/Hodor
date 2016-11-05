@@ -5,9 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts params[:session][:password]
     judge = Judge.find_by_access_code(params[:session][:password])
-    #judge = Judge.where(access_code: params[:session][:password]).first
 
     if judge
       sign_in judge
@@ -18,6 +16,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    if current_user.role == "judge"
+       unless current_user.leave
+          redirect_to judge_leave_path(current_user)
+          return
+       end
+    end
     sign_out
     redirect_to root_url
   end
