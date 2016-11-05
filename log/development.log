@@ -44,3 +44,821 @@ Processing by Admin::JudgesController#index as HTML
 Completed 200 OK in 223ms (Views: 48.5ms | ActiveRecord: 171.5ms)
 
 
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from validate_secret_key_config! at /usr/local/rvm/gems/ruby-2.3.0/gems/railties-5.0.0/lib/rails/application.rb:509)
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:33:48 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (42.2ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+Completed 200 OK in 861ms (Views: 559.4ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:36:33 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (6.8ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE "judges"."role" = $1[0m  [["role", "judge"]]
+  Rendered admin/judges/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 61ms (Views: 29.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:38:00 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = NULL)[0m
+  Rendered admin/judges/index.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 66ms (Views: 36.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:38:02 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = NULL)[0m
+  Rendered admin/judges/index.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 168ms (Views: 163.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:38:08 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = NULL)[0m
+  Rendered admin/judges/index.html.haml within layouts/application (8.0ms)
+Completed 200 OK in 60ms (Views: 36.4ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:38:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i8QicWuw4tpKVONV2CegbRToOIsub0iJnX9Gq66KYnVd4hL+HOresZdq9QBUZSgqrjrVUbqDvg0C86R4rwbywg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:38:12 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:38:13 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'admin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (123.8ms)
+Completed 200 OK in 154ms (Views: 149.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:38:21 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i8QicWuw4tpKVONV2CegbRToOIsub0iJnX9Gq66KYnVd4hL+HOresZdq9QBUZSgqrjrVUbqDvg0C86R4rwbywg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.7ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "super admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/signin
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/signin" for 50.24.126.122 at 2016-11-05 20:38:22 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.6ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sINYa0LVx9hdgYLGzv4dpw"], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:38:26 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"05WCb9AmMRxBIsgL7k8T5sgkKCqy8bcz+u8gtYceArYFs7Lgp3wNd5wc3l5iDZuhcvbF8CYdQbdlY8JmhpKSAQ==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (56.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 61ms (ActiveRecord: 56.3ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:38:26 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "K-7_s0E0wqUXnMRTrYZkag"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:38:28 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "K-7_s0E0wqUXnMRTrYZkag"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 136ms (Views: 130.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5009.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "PosterJudging_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (122.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "PosterJudging_development"[0m
+  [1m[35m (116.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "PosterJudging_test"[0m
+  [1m[35m (1093.8ms)[0m  [1m[35mCREATE DATABASE "PosterJudging_development" ENCODING = 'utf8'[0m
+  [1m[35m (1010.8ms)[0m  [1m[35mCREATE DATABASE "PosterJudging_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (22.0ms)[0m  [1m[35mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0, "remember_token" character varying(255), "role" character varying(255), "leave" boolean DEFAULT 'f')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_judges_on_remember_token" ON "judges" USING btree ("remember_token")[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0, "email" character varying(255), "no_show" boolean DEFAULT 'f')[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "poster_id" integer, "judge_id" integer)[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20161103030022')[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20161103025709'), ('20150331225810'), ('20150420075815'), ('20161024193814'), ('20150408035211'), ('20150408035157'), ('20161024193638'), ('20161103004948');
+
+[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-05 20:40:40 UTC], ["updated_at", 2016-11-05 20:40:40 UTC]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "judges" ("id" serial primary key, "name" character varying(255), "company_name" character varying(255), "access_code" character varying(255), "scores_count" integer DEFAULT 0, "remember_token" character varying(255), "role" character varying(255), "leave" boolean DEFAULT 'f')[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE  INDEX  "index_judges_on_remember_token" ON "judges" USING btree ("remember_token")[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "posters" ("id" serial primary key, "number" integer, "presenter" character varying(255), "title" character varying(255), "advisors" character varying(255), "scores_count" integer DEFAULT 0, "email" character varying(255), "no_show" boolean DEFAULT 'f')[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "scores" ("id" serial primary key, "novelty" integer, "utility" integer, "difficulty" integer, "verbal" integer, "written" integer, "poster_id" integer, "judge_id" integer)[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20161103030022')[0m
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20161103025709'), ('20150331225810'), ('20150420075815'), ('20161024193814'), ('20150408035211'), ('20150408035157'), ('20161024193638'), ('20161103004948');
+
+[0m
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-05 20:40:40 UTC], ["updated_at", 2016-11-05 20:40:40 UTC]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "judges" ("name", "company_name", "access_code", "remember_token", "role") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "superadmin"], ["company_name", "tamu"], ["access_code", "superadmin"], ["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["role", "superadmin"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "judges" ("name", "company_name", "access_code", "remember_token", "role") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["company_name", "tamu"], ["access_code", "admin"], ["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["role", "admin"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from validate_secret_key_config! at /usr/local/rvm/gems/ruby-2.3.0/gems/railties-5.0.0/lib/rails/application.rb:509)
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:40:49 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (33.7ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "K-7_s0E0wqUXnMRTrYZkag"], ["LIMIT", 1]]
+Completed 200 OK in 829ms (Views: 540.7ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:40:53 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATuD5TmadyWUrZnGbEKdITXsqhp5Lu2qEUi6qRdqE43XHbNqTsBLTkmTj5PgABVmjz5HwO3CGy6OxFh6FuaDOg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 15ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:40:53 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:40:54 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'admin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 125ms (Views: 121.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:41:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ATuD5TmadyWUrZnGbEKdITXsqhp5Lu2qEUi6qRdqE43XHbNqTsBLTkmTj5PgABVmjz5HwO3CGy6OxFh6FuaDOg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:41:01 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:02 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:08 +0000
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kug2baRtP3ET/qm9NQEenrLi4lCC4eU6mEP1sOFjZUhEzgbi0zcDGs7Av+i5Q5bZCDAPihYNE74Hzxdj4O/1/w==", "admin_number"=>"2", "number"=>"", "commit"=>"Generate"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = $1[0m  [["access_code", "ffe3"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "judges" ("access_code", "remember_token", "role") VALUES ($1, $2, $3) RETURNING "id"[0m  [["access_code", "ffe3"], ["remember_token", "MqZSrQ0ZDZvhHkdMwQBQvw"], ["role", "admin"]]
+  [1m[35m (189.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = $1[0m  [["access_code", "7b70"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "judges" ("access_code", "remember_token", "role") VALUES ($1, $2, $3) RETURNING "id"[0m  [["access_code", "7b70"], ["remember_token", "usXcRkXE4jDSMr4Uj4_lJQ"], ["role", "admin"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://hordor1-wyhjerry.c9users.io/admin/judges
+Completed 302 Found in 204ms (ActiveRecord: 195.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:08 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:10 +0000
+Processing by Admin::JudgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"95xEOmYlX/gHRQ35JoKa5Gmx+bKscs+vA6B6gdzzzkIhunS1EX9jk9p7G6yqwBKj02MUaDieOSucLJhS3X9e9Q==", "admin_number"=>"", "number"=>"2", "commit"=>"Generate"}
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = $1[0m  [["access_code", "36ba"]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "judges" ("access_code", "remember_token", "role") VALUES ($1, $2, $3) RETURNING "id"[0m  [["access_code", "36ba"], ["remember_token", "6l1lhznpFmzS4uPJftxiIA"], ["role", "judge"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "judges" WHERE "judges"."access_code" = $1[0m  [["access_code", "66df"]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "judges" ("access_code", "remember_token", "role") VALUES ($1, $2, $3) RETURNING "id"[0m  [["access_code", "66df"], ["remember_token", "evUt-M8TlfA1JbTF-DM9Xw"], ["role", "judge"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://hordor1-wyhjerry.c9users.io/admin/judges
+Completed 302 Found in 67ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:10 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:41:35 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"okxxUEniiX6jUphVuxq0CJ3bISqxa/8+IHwGbKphNQ10akHfPri1FX5sjgA3WDxPJwnM8CWHCbq/8OS/q+2lug=="}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:41:35 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (6.5ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:41:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD8iN7LFVFmeSMv5jPrg4l0l7pPRodsp0QfosrjFlA1SGRK4xZ9oMkN23awAuGil5/cDSUVNLa1OiwphuUkEug==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:41:39 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (82.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 120ms (Views: 36.4ms | ActiveRecord: 82.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:40 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:41:48 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD8iN7LFVFmeSMv5jPrg4l0l7pPRodsp0QfosrjFlA1SGRK4xZ9oMkN23awAuGil5/cDSUVNLa1OiwphuUkEug==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:41:48 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (37.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 66ms (Views: 27.1ms | ActiveRecord: 37.2ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:41:49 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.7ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'admin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 126ms (Views: 119.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:42:46 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD8iN7LFVFmeSMv5jPrg4l0l7pPRodsp0QfosrjFlA1SGRK4xZ9oMkN23awAuGil5/cDSUVNLa1OiwphuUkEug==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:42:46 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:42:47 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (23.2ms)
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:43:25 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD8iN7LFVFmeSMv5jPrg4l0l7pPRodsp0QfosrjFlA1SGRK4xZ9oMkN23awAuGil5/cDSUVNLa1OiwphuUkEug==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 83ms (ActiveRecord: 64.7ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:43:25 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:43:26 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.7ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'superadmin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (135.2ms)
+Completed 200 OK in 164ms (Views: 159.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:44:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD8iN7LFVFmeSMv5jPrg4l0l7pPRodsp0QfosrjFlA1SGRK4xZ9oMkN23awAuGil5/cDSUVNLa1OiwphuUkEug==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:44:13 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:44:14 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (112.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (122.7ms)
+Completed 200 OK in 162ms (Views: 45.8ms | ActiveRecord: 113.0ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:44:44 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hD8iN7LFVFmeSMv5jPrg4l0l7pPRodsp0QfosrjFlA1SGRK4xZ9oMkN23awAuGil5/cDSUVNLa1OiwphuUkEug==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 59ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:44:44 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:44:45 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (160.4ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'admin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (168.6ms)
+Completed 200 OK in 202ms (Views: 37.9ms | ActiveRecord: 161.0ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:44:47 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/T1jpP6U8AadbsAuzXsXOsqVhd9awk09zddFTrdvAlcrG1Mric7MbUBQ1ntBOZ99cEdoBc4uu7lSW6edtuOS4A=="}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:44:47 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.2ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:44:50 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5GMgW/8SwcWvHdm4JxTr36rEX0/znFgQUmZpCSTWg/5t7wOGKZ3bMuCYTNs3tvoxHn8p6sih+TexXt3JR/KuA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 178ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:44:50 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:44:51 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (57.8ms)
+Completed 200 OK in 87ms (Views: 83.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:45:00 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5GMgW/8SwcWvHdm4JxTr36rEX0/znFgQUmZpCSTWg/5t7wOGKZ3bMuCYTNs3tvoxHn8p6sih+TexXt3JR/KuA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "36ba"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/judges/5/register
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/5/register" for 50.24.126.122 at 2016-11-05 20:45:00 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#register as HTML
+  Parameters: {"judge_id"=>"5"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6l1lhznpFmzS4uPJftxiIA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering judges/register.html.haml within layouts/application
+  Rendered judges/register.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 46ms (Views: 39.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/judges/5" for 50.24.126.122 at 2016-11-05 20:45:04 +0000
+Processing by JudgesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B+EvGR4iLJxeMbP2VnweaBV5Ncz9LJrpEQBhp9NJ5GzRxx+WaXgQ94MPpaPaPpYvr6vYFmnAbG2OjIN00sV02w==", "name"=>"1", "company"=>"1", "commit"=>"Register", "id"=>"5"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6l1lhznpFmzS4uPJftxiIA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "judges" SET "name" = $1, "company_name" = $2, "remember_token" = $3 WHERE "judges"."id" = $4[0m  [["name", "1"], ["company_name", "1"], ["remember_token", "-3sxu5ri9l9VU3udIPiO2A"], ["id", 5]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+Redirected to https://hordor1-wyhjerry.c9users.io/judges/5
+Completed 302 Found in 97ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/judges/5" for 50.24.126.122 at 2016-11-05 20:45:04 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "-3sxu5ri9l9VU3udIPiO2A"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 5]]
+  Rendering judges/show.html.haml within layouts/application
+  [1m[36mPoster Load (0.8ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 5]]
+  Rendered judges/show.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 110ms (Views: 27.1ms | ActiveRecord: 5.5ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:45:09 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CeE0KCwgxsrzO2b9M3hVlxhE8j8ffRcXj4c3tB+FKATfxwSnW3r6oS4FcKi/Ot3QopYf5YuR4ZMQC9VnHgm4sw=="}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "-3sxu5ri9l9VU3udIPiO2A"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/judges/5/leave
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/5/leave" for 50.24.126.122 at 2016-11-05 20:45:10 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"5"}
+  [1m[36mJudge Load (84.8ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "-3sxu5ri9l9VU3udIPiO2A"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "6EaICiwgKjowfhphIM10rg"], ["id", 5]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 5]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 97ms (ActiveRecord: 89.3ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:45:10 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.1ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:45:13 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCgDFAojITrgPqUr5YpHn2k+Hp4wQ40tG5tIc0LIb7u+DjObfXkdUT0As35pyM/Y0+zzRKSve6mEF6qgQ0T/DA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:45:13 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:45:14 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (59.1ms)
+Completed 200 OK in 87ms (Views: 83.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:45:22 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3ucvRgg9sn8kro784DJPVMeICPQ0BVvFGVKoLHNa50kIwR/Jf2eOFPmQmKlscMcTfVrlLqDprUGG3kr/ctZ3/g=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:45:22 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.1ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posters/new" for 50.24.126.122 at 2016-11-05 20:45:23 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:PostersController> at /home/ubuntu/workspace/app/controllers/posters_controller.rb:2)
+Processing by PostersController#new as HTML
+  Rendering posters/new.html.haml within layouts/application
+  Rendered posters/new.html.haml within layouts/application (4.5ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:45:27 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZ8ztJCVC1mXWPrL9JjG9Lka7PG/fUNPf6tUEhAJhwtbuQM75883Mkpm7J542k6zA8gBKyuRtcvgJ7bBEYUXvA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "ffe3"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:45:27 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (88.7ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "MqZSrQ0ZDZvhHkdMwQBQvw"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 127ms (Views: 36.3ms | ActiveRecord: 88.7ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:45:28 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "MqZSrQ0ZDZvhHkdMwQBQvw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "ffe3"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'ffe3')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 158ms (Views: 154.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:45:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZ8ztJCVC1mXWPrL9JjG9Lka7PG/fUNPf6tUEhAJhwtbuQM75883Mkpm7J542k6zA8gBKyuRtcvgJ7bBEYUXvA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "super admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/signin
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/signin" for 50.24.126.122 at 2016-11-05 20:45:36 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (88.6ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "MqZSrQ0ZDZvhHkdMwQBQvw"], ["LIMIT", 1]]
+Completed 200 OK in 117ms (Views: 114.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:45:40 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8cH+stZr6M+ou2idCF2DwjZo8JWSsIFwoxFWyzJlwFon5849oTHUpHWFfsiEHwuFjLodTwZcd/Q8nbQYM+lQ7Q==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:45:40 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:45:42 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:47:00 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7PWIiOqq3Mp3zY+p3lY0VTM/SOrrFgt8qIemvoPgc6Q607gHnfDgoarzmfxSFLwSie2lMH/6/fg3C0RtgmzjEw=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 34ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:47:00 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.4ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:47:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5pOEqnyclnGnbVtr4r21nqe7VdbnFVndMqIoT4w5RLQwtbQlC8aqGnpTTT5u/z3ZHWm4DHP5r1mtLsqcjbXUAw==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:47:03 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:47:04 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "superadmin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 68ms (Views: 62.6ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:47:11 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uF6XSXMqPHUHjN8XrIryMXR0SI928UDdHOu7M3vKy6RueKfGBHAAHtqyyUIgyHp2zqalVeIdtlmDZ1ngekZbEw=="}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EMWuQt7WeDNuR-0MasS0xQ"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:47:11 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (64.4ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 88.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.126.122 at 2016-11-05 20:47:14 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sRSmu7WOqnkIzegb2rUggFmwpfGYWtePDBJtu0W2PppnMpY0wtSWEtXz/k5W96jH42JIKwy2IQuTno9oRDquLQ==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 50.24.126.122 at 2016-11-05 20:47:14 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.126.122 at 2016-11-05 20:47:15 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT "judges".* FROM "judges" WHERE (role = 'judge' or access_code = 'admin')[0m
+  Rendered admin/judges/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/signout" for 50.24.126.122 at 2016-11-05 20:47:17 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k4uMCBu57gAVKGyxqsuJPZZ16CLYFZwY/Vmot01BGdNFrbyHbOPSa8gWeuQmiQF6LKcF+Ez5apxi1UpkTM2JZA=="}
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Ahheu83sdfAxPcvbbNNflg"], ["LIMIT", 1]]
+Redirected to https://hordor1-wyhjerry.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 50.24.126.122 at 2016-11-05 20:47:17 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.5ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.6ms)
+
+
