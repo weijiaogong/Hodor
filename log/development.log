@@ -12709,3 +12709,1580 @@ Connecting to database specified by database.yml
   [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150408035211')
   [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150408035157')[0m
   [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150331225810')
+
+
+Started GET "/" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.7ms)
+Compiled bootstrap.css  (0ms)  (pid 17389)
+Warning. Error encountered while saving cache /home/ubuntu/workspace/Hodor/tmp/cache/sass/dcfef89b221160600ed3eb87d76b843922871eca/sessions.css.scssc: can't dump anonymous class #<Class:0x00000002e5f1a8>
+
+Compiled sessions.css  (4ms)  (pid 17389)
+Compiled application.css  (11ms)  (pid 17389)
+Compiled jquery.js  (3ms)  (pid 17389)
+Compiled jquery_ujs.js  (0ms)  (pid 17389)
+Compiled bootstrap.js  (0ms)  (pid 17389)
+Compiled sessions.js  (46ms)  (pid 17389)
+Compiled application.js  (67ms)  (pid 17389)
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 169.1ms (Views: 159.9ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Served asset /bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:47 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started POST "/sessions" for 165.91.12.190 at 2016-11-05 17:05:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lT7vS7TAZT/yRQ4ZuWYmzkx1scL53JqG2Xs6dfW00xo=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.9ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (4.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin
+Completed 302 Found in 14.2ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:05:51 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 10.7ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:52 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:52 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:05:52 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:52 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:05:52 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 165.91.12.190 at 2016-11-05 17:05:58 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" 
+  Rendered admin/judges/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 11.7ms (Views: 8.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:05:58 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:05:58 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:58 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:58 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:05:58 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:08:01 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 8.2ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:08:01 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:08:01 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:08:01 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:08:01 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:08:01 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.190 at 2016-11-05 17:08:04 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 19.0ms (Views: 10.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:08:04 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:08:04 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:08:04 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:08:04 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:08:04 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 165.91.12.190 at 2016-11-05 17:18:55 +0000
+Connecting to database specified by database.yml
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+Completed 200 OK in 68.3ms (Views: 63.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:18:56 +0000
+Served asset /bootstrap.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:18:56 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:18:56 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:18:56 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:18:56 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started POST "/sessions" for 165.91.12.190 at 2016-11-05 17:18:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lT7vS7TAZT/yRQ4ZuWYmzkx1scL53JqG2Xs6dfW00xo=", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."access_code" = 'admin' LIMIT 1
+  [1m[36mJudge Load (4.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to https://iap-poster-project-rw-rockywhitely.c9users.io/admin
+Completed 302 Found in 8.5ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:18:59 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 16.6ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:18:59 +0000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:18:59 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:18:59 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:18:59 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:18:59 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.190 at 2016-11-05 17:19:03 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 20.1ms (Views: 11.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:19:04 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:19:04 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:19:04 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:19:04 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:19:04 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:20:24 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 9.4ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:20:25 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:25 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:20:25 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:25 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:25 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 165.91.12.190 at 2016-11-05 17:20:27 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 12.0ms (Views: 9.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:27 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:20:27 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:27 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:27 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:20:27 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/judges/8" for 165.91.12.190 at 2016-11-05 17:20:51 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "8"]]
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "8"]]
+  [1m[35mPoster Load (0.6ms)[0m  SELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 8 ORDER BY number
+  [1m[36mScore Load (0.1ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 8[0m
+  Rendered judges/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 199.9ms (Views: 10.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:51 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:20:51 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:51 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:20:51 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:20:51 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/judges/1" for 165.91.12.190 at 2016-11-05 17:21:20 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 1 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 1
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 10.9ms (Views: 6.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:21:20 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:21:20 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:21:20 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:21:20 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:21:20 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/2" for 165.91.12.190 at 2016-11-05 17:21:26 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "2"]]
+Completed 404 Not Found in 1.7ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=2):
+  app/helpers/sessions_helper.rb:42:in `require_correct_user'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/judges/3" for 165.91.12.190 at 2016-11-05 17:21:33 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mJudge Load (0.7ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 3 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 3
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 12.3ms (Views: 6.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:21:33 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:21:33 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:21:33 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:21:33 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:21:33 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/4" for 165.91.12.190 at 2016-11-05 17:23:28 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "4"]]
+Completed 404 Not Found in 1.9ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=4):
+  app/helpers/sessions_helper.rb:42:in `require_correct_user'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/judges/5" for 165.91.12.190 at 2016-11-05 17:23:34 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "5"]]
+Completed 404 Not Found in 1.8ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=5):
+  app/helpers/sessions_helper.rb:42:in `require_correct_user'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/judges/6" for 165.91.12.190 at 2016-11-05 17:23:40 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "6"]]
+Completed 404 Not Found in 2.0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Judge with id=6):
+  app/helpers/sessions_helper.rb:42:in `require_correct_user'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+
+
+Started GET "/judges/7" for 165.91.12.190 at 2016-11-05 17:23:45 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "7"]]
+  [1m[36mPoster Load (0.5ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 7 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 7
+  Rendered judges/show.html.haml within layouts/application (0.1ms)
+Completed 200 OK in 12.1ms (Views: 7.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:23:45 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:23:45 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:45 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:45 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:45 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/8" for 165.91.12.190 at 2016-11-05 17:23:51 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "8"]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "8"]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 8 ORDER BY number[0m
+  [1m[35mScore Load (3.1ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 8
+  Rendered judges/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 14.6ms (Views: 7.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:23:51 +0000
+Served asset /bootstrap.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:23:51 +0000
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:51 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:51 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:51 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/judges/9" for 165.91.12.190 at 2016-11-05 17:23:58 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "9"]]
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", "9"]]
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = 9 ORDER BY number[0m
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = 9
+  Rendered judges/show.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 12.6ms (Views: 7.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:58 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:58 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:23:58 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:23:58 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:23:58 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:24:19 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.1ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 9.8ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:19 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:19 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:19 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:19 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:19 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.190 at 2016-11-05 17:24:27 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" [0m
+  Rendered admin/posters/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 13.3ms (Views: 9.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:27 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:27 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:27 +0000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:27 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:27 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters/rankings" for 165.91.12.190 at 2016-11-05 17:24:47 +0000
+Processing by Admin::PostersController#rankings as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.8ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" 
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  Rendered admin/posters/rankings.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 30.4ms (Views: 12.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:47 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:47 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:47 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:47 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:47 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters" for 165.91.12.190 at 2016-11-05 17:24:54 +0000
+Processing by Admin::PostersController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" 
+  Rendered admin/posters/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 21.9ms (Views: 13.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:54 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:54 +0000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:54 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:54 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:24:54 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/judges" for 165.91.12.190 at 2016-11-05 17:24:59 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" [0m
+  Rendered admin/judges/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 11.4ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:24:59 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:00 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:00 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:00 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:00 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:04 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (10.1ms)
+Completed 200 OK in 28.3ms (Views: 17.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:05 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:05 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:05 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:05 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:05 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 20.7ms (Views: 12.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:10 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:15 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.5ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 26.9ms (Views: 15.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:16 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:16 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:16 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:16 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:16 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:16 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.7ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 25.9ms (Views: 15.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Served asset /bootstrap.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:21 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:26 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.6ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (1.0ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 24.6ms (Views: 13.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:27 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:27 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:27 +0000
+Served asset /sessions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:27 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:27 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:27 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.6ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 22.4ms (Views: 13.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:32 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.5ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.9ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 27.6ms (Views: 15.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:37 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.5ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 18.4ms (Views: 10.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:43 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 10.4ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:45 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/posters/rankings" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Processing by Admin::PostersController#rankings as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" 
+  [1m[36mScore Load (0.5ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  Rendered admin/posters/rankings.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 155.3ms (Views: 144.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:47 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/reset" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Processing by Admin::AdminController#reset as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.1ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/reset.html.haml within layouts/application (3.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 12.9ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:25:58 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 10.2ms (Views: 8.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Served asset /bootstrap.js - 304 Not Modified (89ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:00 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.9ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (5.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 36.2ms (Views: 18.3ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Served asset /bootstrap.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:03 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.5ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 21.7ms (Views: 12.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Served asset /bootstrap.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:09 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.8ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.4ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 19.6ms (Views: 10.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Served asset /bootstrap.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:14 +0000
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:19 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.5ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.1ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 19.2ms (Views: 10.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:20 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:20 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:20 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:20 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:20 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:20 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.5ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 17.9ms (Views: 10.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:25 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[35mJudge Load (0.4ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mScore Load (0.7ms)[0m  SELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1[0m
+  [1m[35mPoster Load (0.4ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1
+  [1m[36mPoster Load (0.3ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1[0m
+  [1m[35mPoster Load (0.2ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1
+  [1m[36mJudge Load (0.3ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  Rendered admin/scores/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 23.7ms (Views: 14.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:30 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/scores" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Processing by Admin::ScoresController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mScore Load (0.7ms)[0m  [1mSELECT "scores".* FROM "scores" INNER JOIN "judges" ON "judges"."id" = "scores"."judge_id" INNER JOIN "posters" ON "posters"."id" = "scores"."poster_id"[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 23 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 9 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 25 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 27 LIMIT 1[0m
+  [1m[35mPoster Load (0.3ms)[0m  SELECT "posters".* FROM "posters" WHERE "posters"."id" = 7 LIMIT 1
+  [1m[36mPoster Load (0.2ms)[0m  [1mSELECT "posters".* FROM "posters" WHERE "posters"."id" = 8 LIMIT 1[0m
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  [1m[35mJudge Load (0.2ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = 9 LIMIT 1[0m
+  Rendered admin/scores/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 25.2ms (Views: 13.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Served asset /sessions.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:36 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 165.91.12.190 at 2016-11-05 17:26:40 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[35mJudge Load (0.3ms)[0m  SELECT "judges".* FROM "judges" WHERE "judges"."remember_token" = 'zRK4aXS6rNmRTFKbbE1iiw' LIMIT 1
+  [1m[36mJudge Load (0.2ms)[0m  [1mSELECT "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308)
+  Rendered admin/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 10.5ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:41 +0000
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:41 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:41 +0000
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:41 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 165.91.12.190 at 2016-11-05 17:26:41 +0000
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 165.91.12.190 at 2016-11-05 17:26:41 +0000
+Served asset /sessions.css - 304 Not Modified (0ms)
