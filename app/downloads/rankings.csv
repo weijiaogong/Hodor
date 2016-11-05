@@ -1,4 +1,5 @@
 rank,presenter,title,score
+<<<<<<< HEAD
 1,Harshvardhan,Processing Big Data Graphs on Memory-Restricted Systems,4.4
 2,Ralph Crosby,Quartet Distance Computation for sets of Heterogeneous Trees,3.0
 3,Vijay Rajanna,Step Up Ufe: A Context Aware Health Assistant,3.0
@@ -20,3 +21,7 @@ rank,presenter,title,score
 19,Troy McMahon,Sampling Based Motion Planning With Reachable Volumes: Application to Manipulators and Closed Chains,0.0
 20,Sampath Jayarathna,"You might also like ..."" from Everyday Applications to Recommendations",0.0
 21,Michael Fu,Timing Integrity Check of GPSSignal - Models and Computing Algorithm,0.0
+=======
+1,Harshvardhan,,5.0
+2,Ralph Crosby,,4.0
+>>>>>>> 175c0cbaf9ff4404f1a83b2b64d6b1c8ad7d12f0

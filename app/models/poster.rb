@@ -1,21 +1,34 @@
 class Poster < ActiveRecord::Base
-	attr_accessible :number, :presenter, :title, :advisors, :scores_count
-	has_many :scores
+	has_many :scores, dependent: :destroy
 	has_many :judges, through: :scores
-
+	validates :presenter, :email, :title, :advisors, presence: true
+	#validates :number, uniqueness: true # not sure whether the number should be unique
+	
+	
 	def self.import_csv(file)
 		CSV.foreach(file.path, headers: true, encoding: 'windows-1251:utf-8') do |row|
-			poster = Poster.where(number: row['number'])
+			posters = Poster.where(number: row['number'])
 			row_hash = row.to_hash
-			if poster.count == 1
-				poster.first.update_attributes(row_hash)
+			if posters.count == 1
+			   poster = posters.first
+			   poster.assign_attributes(row_hash)
+               poster.save!(validate: false)
 			else
-				Poster.create(row_hash)
+				newposter = Poster.new(row_hash)
+				newposter.save!(validate: false)
 			end
 		end
 	end
 
 	def self.find_least_judged()
-		return Poster.where("scores_count < 3").sample(3)
+		Poster.where("no_show = false AND scores_count < 3")
+	end
+	
+	def self.all_scored
+	  Poster.where("no_show = false AND scores_count > 0")
+	end
+	def self.find_by_keywords(keywords)
+			keywords = keywords.gsub(/^/, '%').gsub(/$/, '%')
+	        Poster.where('title LIKE ?', keywords)
 	end
 end

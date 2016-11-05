@@ -1,0 +1,15 @@
+%title 'Sign in'
+:css
+  label {
+    color: #FFF;
+  }
+%h1 IAP Research Poster Competition
+%br
+Welcome! Please sign in:
+.row
+  .span6.offset3
+    = form_for(:session, url: sessions_path) do |f|
+      = f.label :'..'
+      = f.password_field :password
+      = f.submit "Sign in", class: "btn btn-large btn-primary"
+    = button_to "Register", new_poster_path, method: "get", class: "btn btn-default"

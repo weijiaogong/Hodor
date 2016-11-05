@@ -1,8 +1,38 @@
 class Score < ActiveRecord::Base
-	attr_accessible :novelty, :utility, :difficulty, :verbal, :written, :no_show
+	#attr_accessible :novelty, :utility, :difficulty, :verbal, :written, :no_show
 	belongs_to :judge, counter_cache: true
 	belongs_to :poster, counter_cache: true
-	attr_accessible :judge_id, :poster_id
-end
+	#attr_accessible :judge_id, :poster_id
+    def self.score_terms
+       %w(novelty utility difficulty verbal written)
+    end
+    
+    def self.assign_poster_to_judge(poster, judge)
+        score = judge.scores.build(novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1)
+        poster.scores << score
+        score.save!
+    end
 
+    def self.get_score_sum
+        str = "("
+        score_terms.each do |term|
+             str += term + "+"
+        end
+        str = str.gsub(/\+\z/, ") ")
+        str += "as score_sum"
+        return Score.select(str)
+    end
+    
+    def self.get_poster_sum
+        str = "SUM("
+        score_terms.each do |term|
+             str += term + "+"
+        end
+        str = str.gsub(/\+\z/, ") ")
+        str += "as poster_sum"
+        return Score.select(str)
+    end
+
+   
+end
 

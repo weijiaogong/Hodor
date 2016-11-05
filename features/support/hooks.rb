@@ -1,17 +1,15 @@
-begin
-  require 'database_cleaner'
-  require 'database_cleaner/cucumber'
-  DatabaseCleaner.strategy = :truncation
-
-rescue NameError
-  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
-
+Before ('@summary @scores') do
+  DatabaseCleaner.start
 end
 
-Before ('@summary') do 
- DatabaseCleaner.start
+Before ('@javascript') do
+  Capybara.current_driver = :webkit
+end
+After ('@javascript') do
+  Capybara.use_default_driver
 end
 
-After ('@summary') do 
+After ('@summary @scores') do
   DatabaseCleaner.clean
+  
 end

@@ -4,31 +4,41 @@ Feature: Assign judge to Posters
     I want to be assigned 2 - 3 posters randomly
     
     Background:
-        Given I am on the judge registration page
-    
+        Given the following users exist:
+        | access_code|
+        | ab28       |
+        Given I am on the login page
+        When I fill in "session[password]" with "ab28"
+        And I press "Sign in"
+        Then I should be on the register page for "ab28"
+
     Scenario: Properly filled out form
-	Given there are 3 posters in the database
-        When I fill in Name with "Steven Bierwagen"
-        And I fill in Company Name with "..."
-        And I click on the "Register" button
-        Then there should be a judge named "Steven Bierwagen" with 3 assigned posters
-    
+	    Given the following posters exist:
+        |number|presenter    | title   |
+        | 1    |Harshvardhan | Big data|
+        | 2    |Ralph Crosby |Machine Learning|
+        | 3    |Brittany Duncan|Werables|
+        When I fill in "name" with "Steven Bierwagen"
+        When I fill in "company" with "..."
+        And I press "Register"
+        #Then there should be a judge named "Steven Bierwagen" with 3 assigned posters
+        Then I should see 3 posters "Big data", "Machine Learning", "Werables" assigned to "Steven Bierwagen"
     Scenario: Missing Name
-        When I fill in Company Name with "..."
-        And I click on the "Register" button
-        Then I should see the message "Missing: name"
+        When I fill in "company" with "..."
+        And I press "Register"
+        Then I should see "name & company_name cannot be blank"
 
     Scenario: Missing Company Name
-        When I fill in Name with "Steven Bierwagen"
-        And I click on the "Register" button
-        Then I should see the message "Missing: company"
+        When I fill in "name" with "Steven Bierwagen"
+        And I press "Register"
+        Then I should see "name & company_name cannot be blank"
     
     Scenario: Both fields are blank
-        When I click on the "Register" button
-        Then I should see the message "Missing: name, company"
+        And I press "Register"
+        Then I should see "name & company_name cannot be blank"
 
     Scenario: Poster database empty
-        When I fill in Name with "Steven Bierwagen"
-        And I fill in Company Name with "..."
-        And I click on the "Register" button
-        Then I should see the message "There are no more posters to be assigned."
+        When I fill in "name" with "Steven Bierwagen"
+        And I fill in "company" with "..."
+        And I press "Register"
+        Then I should see "There are no more posters to be assigned."
