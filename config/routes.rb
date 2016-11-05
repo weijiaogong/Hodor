@@ -6,14 +6,17 @@ PosterJudging::Application.routes.draw do
             collection { 
                 post :import
                 delete :clear
-                get :rankings
                 get :download
-                get :download_ranks
             }
         end
-		resources :scores, :only => [:index]
+		resources :scores, :only => [:index, :show, :edit, :update, :destroy] do
+		    collection { 
+                 get :rankings
+                 get :download_ranks
+              }
+        end
 
-		resources :judges, :only => [:index] do
+		resources :judges, :only => [:index, :destroy] do
 			delete :clear, on: :collection
 			post :create, on: :collection
 		end
@@ -22,21 +25,23 @@ PosterJudging::Application.routes.draw do
 		put :reset_pw, controller: 'admin'	 
 	end
 	
-    resources :judges, :only => [:show] do
-        resources :posters, :only => [:update]{
-	        get :judge
+    resources :judges, :only => [:show, :update] do
+        resources :posters, :only => []{
+            put  :update_score
 			post :no_show
+			get  :judge
 	    }
-        
+        get :leave
         get :register
-        put :assign
     end
 
     resources :sessions, only: [:new, :create, :destroy]
-    match '/signin', to: 'sessions#new'
+    match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
 
     root :to => 'sessions#new'
+    
+    resources :posters
 	
 
   # The priority is based upon order of creation:

@@ -58,7 +58,6 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.javascript_driver = :webkit
-
 Capybara::Webkit.configure do |config|
   # Enable debug mode. Prints a log of everything the driver is doing.
   config.debug = false
@@ -68,5 +67,5 @@ Capybara::Webkit.configure do |config|
 
 end
 # to let javascript function run at interval = 5 seconds
-Capybara.default_wait_time = 10
+Capybara.default_max_wait_time = 10
 
