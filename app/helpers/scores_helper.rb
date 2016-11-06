@@ -20,4 +20,11 @@ module  ScoresHelper
        return @filter.eql?(state)
     end
 
+    def no_show_msg
+        msg = "are you sure?"
+        unless @no_show
+            msg = "This poster is scored by other judges, please contact administrator for help"
+        end
+        return msg
+    end
 end

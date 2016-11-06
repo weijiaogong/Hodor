@@ -135,4 +135,4 @@
       %br/
       %br/
       = f.submit "Submit", :disabled=>true, id: "submit_id", class: "btn-success btn-lg btn-default btn-block"
-    = button_to "No Show", judge_score_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block"
+    = button_to "No Show", judge_score_no_show_path(@judge.id, @poster.id), action: "no_show", method: "post", class: "btn btn-lg btn-default btn-block", data: { confirm: no_show_msg}

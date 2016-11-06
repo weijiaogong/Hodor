@@ -4,6 +4,7 @@ class ScoresController < ApplicationController
     def edit
         @poster = Poster.find(params[:poster_id])
         @judge = Judge.find(params[:judge_id])
+        @no_show = decide_no_show
     end
     
     #update the Score associated with a specific poster and a specific judge
@@ -36,13 +37,11 @@ class ScoresController < ApplicationController
    
     def decide_no_show
         no_show = true
-        score_terms = Score.score_terms
         @poster.scores.each do |score|
-            score_terms.each do |term|
-                if score[term] > 0
-                    no_show = false
-                    break
-                end
+            sum = Score.get_score_sum.find(score.id).score_sum
+            if sum > 0
+               no_show = false
+               break
             end
         end
         return no_show
