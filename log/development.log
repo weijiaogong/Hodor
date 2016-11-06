@@ -15080,3 +15080,1420 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.5ms)
 
 
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from validate_secret_key_config! at /usr/local/rvm/gems/ruby-2.3.0/gems/railties-5.0.0/lib/rails/application.rb:509)
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:46:42 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (30.7ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 759ms (Views: 498.0ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:46:44 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ep7dQ0d/HNU17earnBLMoOQ8IGE6qtlspG3f7ATxDUsY5pF5uuCy2ZlOvE8rwk+YCyucy0gnLauCr4mtc6x6w==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/admin
+Completed 302 Found in 36ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/admin" for 50.24.180.182 at 2016-11-06 15:46:44 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/judges" for 50.24.180.182 at 2016-11-06 15:46:47 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:46:51 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BrDLdQL0rJmJuRg8Bh/10ila/CNyZqJZ0hFS5nMQknbTOSpF6QLSIbsLlVeUwLfeyuai0duslYrOilu/ds3nqA=="}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:46:51 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (2.9ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:46:55 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dmq+zkL1jGXLSbl9vCutFYE74vb6m56YycPbM4o0qZnb41/+qQPy3fn7NBYu9O8ZYoe8BFNRqUvVWNJqj+ncRw==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 15:46:55 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "SA0NO4bi3xbfQZtW7IbqFg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "YUEqjDTH2g1NkM51cICE7w"], ["id", 46]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 30], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 30]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 134ms (Views: 23.3ms | ActiveRecord: 20.4ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:46:58 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wKnr+wC9CAI3ydoG/aBR6MO2Hn5DMx/rY0M4PJmensEVIArL60t2ugV7V21vfxPkIApAjOr5KDh/2DFlnEPrHw=="}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "YUEqjDTH2g1NkM51cICE7w"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 35ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 15:46:58 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.8ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "YUEqjDTH2g1NkM51cICE7w"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "pocovHE11LqYX7LbTO96XA"], ["id", 46]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 129], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 129]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 30]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 130], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 130]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 32ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:46:58 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (2.9ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:47:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sdKHdztEUErZW1G+4p+CufQK/bfROgmcInBdoI0yZFZkW2ZH0LIu8uvp3NVwQMC1F7ajRXjwPk8+61T5iO8RiA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 15:47:02 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "pocovHE11LqYX7LbTO96XA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "EzpCmv3aMcVQdUTcBrrXFg"], ["id", 46]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (11.0ms)
+Completed 200 OK in 78ms (Views: 29.6ms | ActiveRecord: 19.0ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:52:59 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xegz7x5h+FxLCssH9V/NSgmNQwRhitf7tpHjo40HEVcQYdLf9ZeG5Hm4RmxngI9G6jEd9shA4CiqCur6iNpkiQ=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EzpCmv3aMcVQdUTcBrrXFg"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 146ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 15:53:00 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "EzpCmv3aMcVQdUTcBrrXFg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "b091A8__50Z_ffm64SJ7ew"], ["id", 46]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 131], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 131]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 132], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 132]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 41ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:53:00 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.4ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:53:44 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QYxe4D6krD/QHlfHJROAhdxAd8P5TKr4LjJb1noVLCSUBb/Q1VLSh+Ks2qy3zMKJP/wpMVCGnSsyqVKPf8hZ+g==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `role' for nil:NilClass):
+  
+app/controllers/application_controller.rb:14:in `sign_out_check'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.3ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.8ms)
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:55:02 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xegz7x5h+FxLCssH9V/NSgmNQwRhitf7tpHjo40HEVcQYdLf9ZeG5Hm4RmxngI9G6jEd9shA4CiqCur6iNpkiQ=="}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `role' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:18:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:55:15 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xegz7x5h+FxLCssH9V/NSgmNQwRhitf7tpHjo40HEVcQYdLf9ZeG5Hm4RmxngI9G6jEd9shA4CiqCur6iNpkiQ=="}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `role' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:18:in `destroy'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.0ms)
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:55:36 +0000
+Processing by SessionsController#new as HTML
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (64.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 92.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:55:37 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmIWvI8/qzONZVfa2nuoZKSbov3H2fOHrAokw3dQt5+f6/eMZMnVi7/X2rFIpOpoRyf8D24TxFSwkS2aco3CQQ==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/admin
+Completed 302 Found in 14ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/admin" for 50.24.180.182 at 2016-11-06 15:55:38 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/judges" for 50.24.180.182 at 2016-11-06 15:55:39 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:55:45 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KlH1BEOCdGI/ZclhtOplBuXOiJHIPZEYLM97ARdSTgz/2BQ0qHQK2g3XRAomNScKBnLWY2H3psswVHJYEo870g=="}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:55:45 +0000
+Processing by SessionsController#new as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:55:48 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a263r/p9w7vYQMM8aD8ZbD0RXiVBSG4aSDaXUWsitza+51afEYu9A+ryTlf64Ftg3q0A1+iCWclUrZ4Ibv/C6A==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 15:55:48 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "b091A8__50Z_ffm64SJ7ew"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "3XKznG3Fm30uI_wxT9Alvw"], ["id", 46]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 30], ["judge_id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 30]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (1.9ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.6ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 136ms (Views: 37.4ms | ActiveRecord: 23.1ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:55:51 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Z8Bp+vIo62MvaRRdC/6bNWbUpvW+3dt85nF7fMq8tICySYjKGd6V2x3bmTaZIdk5hWj4BxcX7K/66nIlz2HBXg=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "3XKznG3Fm30uI_wxT9Alvw"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.1ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.6ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[36mScore Load (1.9ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 43ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 15:55:52 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "3XKznG3Fm30uI_wxT9Alvw"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "KVXQUqhOPkh75Uv8YlgiCg"], ["id", 46]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 133]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 30]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 134]]
+  [1m[36mJudge Load (0.7ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 48ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:55:52 +0000
+Processing by SessionsController#new as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:55:57 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVfHYd6ZfzoZw1NDTdJUXD9neOH5PfTL4z9H4AUN3vZI3iZRNW8Bgitx3ijfDRZQ3NsmE1D3wxj/pE65ANCrKA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/admin
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/admin" for 50.24.180.182 at 2016-11-06 15:55:57 +0000
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/judges" for 50.24.180.182 at 2016-11-06 15:55:59 +0000
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (7.8ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:56:06 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVfHYd6ZfzoZw1NDTdJUXD9neOH5PfTL4z9H4AUN3vZI3iZRNW8Bgitx3ijfDRZQ3NsmE1D3wxj/pE65ANCrKA==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (189.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3245"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/signin
+Completed 302 Found in 192ms (ActiveRecord: 189.2ms)
+
+
+Started GET "/signin" for 50.24.180.182 at 2016-11-06 15:56:07 +0000
+Processing by SessionsController#new as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:56:13 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eGWjTHrkkXCOgu/27JA2CUOZ5fCp+UAXXlsjSo2UIk2t7EJ8kRLvyLwwYp1+T3QFoCW7AgAzd8RCwCoTiElXkw==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 15:56:13 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "KVXQUqhOPkh75Uv8YlgiCg"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.1ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "BYn9vuzEqLyj-I6xPwpjGA"], ["id", 46]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 68ms (Views: 24.7ms | ActiveRecord: 14.3ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:57:01 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MTzGNBNXaCQbkuQktf4HfY2kdegEbWA/0JhJmOPLepzktScE+KEWnCkgaU8nIUVxbhgrGq2nV+zMA0DB5hYPQg=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "BYn9vuzEqLyj-I6xPwpjGA"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 176ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 15:57:01 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "BYn9vuzEqLyj-I6xPwpjGA"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "7NoZWwTy0I6fw6CvakcZeA"], ["id", 46]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 135]]
+  [1m[36mJudge Load (0.1ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 136]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 36ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:57:01 +0000
+Processing by SessionsController#new as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 15:58:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HkNgX5QrXfsiepxLZEemLov4IfBbEgin9cY6UmtEdrzLyoFvf90jQxDIESD2mOQiaER/AvLYP3TpXTMLbpkDYg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 13ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 15:58:58 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "7NoZWwTy0I6fw6CvakcZeA"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "nAjX3idZrUSYHxw6mp8gaw"], ["id", 46]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.5ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 101ms (Views: 24.7ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/judges/46/posters/27/judge" for 50.24.180.182 at 2016-11-06 15:58:59 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:PostersController> at /home/ubuntu/workspace/app/controllers/posters_controller.rb:2)
+Processing by PostersController#judge as HTML
+  Parameters: {"judge_id"=>"46", "poster_id"=>"27"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "nAjX3idZrUSYHxw6mp8gaw"], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  Rendering posters/judge.html.erb within layouts/application
+  Rendered posters/judge.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 170ms (Views: 164.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 15:59:15 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IMMdemJY+rQsnVzs+Zp0AIKU5nVMYYmelbmfEQCg8sH1SvxKia6EDB4v0YdrRTYMYSi4h+Wrvk2JIpZIBX2HHw=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "nAjX3idZrUSYHxw6mp8gaw"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 14ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 15:59:15 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "nAjX3idZrUSYHxw6mp8gaw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "yIJRteLDOF3W5XAqWnw_UA"], ["id", 46]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 137]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 138]]
+  [1m[36mJudge Load (0.1ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 55ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 15:59:15 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.6ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:00:32 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8wc/9FDa0O9yc8uECvqohfhA4B2To63TZLqtGH5hWhKRf3POrUV+497QkWC9Kiu9F1dct+EuWRRCePtZCTwtg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 16:00:32 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "yIJRteLDOF3W5XAqWnw_UA"], ["LIMIT", 1]]
+  [1m[36mScore Load (0.1ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "wLzW-U9U0L5rrR3lsWzLLA"], ["id", 46]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 72ms (Views: 24.6ms | ActiveRecord: 14.9ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:00:35 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"l40x0SV/Fz9ELxZQ5e6aqN9CexSQdAf+ryAprSkhfrFCBNDhzolph3admzt3MdikPP4l5jm+MC2zuyD0LPwLbw=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "wLzW-U9U0L5rrR3lsWzLLA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 16:00:35 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "wLzW-U9U0L5rrR3lsWzLLA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "I9sTBB3KYbJ0D3Qks5AzSg"], ["id", 46]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 139]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 140], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 140]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 35ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:00:35 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.8ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:01:53 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oC2AEa5rwyEXg6Ann8VjVASiZae+Dqnt3UOwTKSoj3t1pGEhRZ29mSUxLUwNGiFY5x47VRfEnj7B2LkVoXX6pQ==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 14ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 16:01:53 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "I9sTBB3KYbJ0D3Qks5AzSg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "JDKV00Br67Lnxx-Tkde1gQ"], ["id", 46]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 105ms (Views: 35.2ms | ActiveRecord: 18.5ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:02:15 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Uqx7udjcwa/3IrPJbCj/ZWA/KHdh5RTHu+dYi19qcL+HJZqJMyq/F8WQPqL+971pg4N2hcgvIxSnfFHSWrcFYQ=="}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "JDKV00Br67Lnxx-Tkde1gQ"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 16:02:15 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "JDKV00Br67Lnxx-Tkde1gQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "JTLSssuH5gqOelx_X5rtOQ"], ["id", 46]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 141]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 142], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 142]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 39ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:02:15 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.3ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:02:34 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PGZ1i9Xxk+ip2RteNnn4qeI8K9EuWz3oCP83pUPSdJjp75S7PgftUJtrljWkprqlAYB1I4eRCjsUZD78Rg8BRg==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/admin
+Completed 302 Found in 19ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/admin" for 50.24.180.182 at 2016-11-06 16:02:34 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (16.4ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/judges" for 50.24.180.182 at 2016-11-06 16:02:37 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (10.2ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:02:39 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RhO6MRclfButJyRRSHPYlXTwmmj9/Uoy1jGXkIqJAH6TmlsB/NMCo5+VqTrarJqZl0zEmlQ3feHKqp7Jj1R1oA=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:02:39 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.3ms)
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:02:45 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S2eIi6ycGgqQfMzfWGAFVORrErY9Dg2qllxPix8wgpGe7mm7R2pksqLOQbTKv0dYB9dMRJTEOnmKx0bSGu33Tw==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 17ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 16:02:46 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "JTLSssuH5gqOelx_X5rtOQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "VaKChtO-98Fvf7dEt-nXAA"], ["id", 46]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 29], ["judge_id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 98ms (Views: 24.7ms | ActiveRecord: 18.8ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:06:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S2eIi6ycGgqQfMzfWGAFVORrErY9Dg2qllxPix8wgpGe7mm7R2pksqLOQbTKv0dYB9dMRJTEOnmKx0bSGu33Tw==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/admin
+Completed 302 Found in 14ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/admin" for 50.24.180.182 at 2016-11-06 16:06:51 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/judges" for 50.24.180.182 at 2016-11-06 16:06:53 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:06:59 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/65DtcevCYcfHT6eSpDAefzDiLecg9OAOvUK2hg6LJMqJ6KFLFl3Py2vs/XYT4J1H3/WRTVJ5FMmbgODHedZTQ=="}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:06:59 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (4.0ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:07:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9+Nd46hpXogo/N3Id31fU/edHjDnr41B+yODjNG5p4ciarzTQ58gMBpOUKPloh1fFCFAwk5lupLnuIrV1GTSWQ==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3e4a"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/45
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/judges/45" for 50.24.180.182 at 2016-11-06 16:07:01 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sIfx2dSXSpeRxEHoekcsMg"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.1ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "ofxswKL7dsY3IBWDmonOhA"], ["id", 45]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.1ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 45]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 105], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 104], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 106], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 45]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `judge' for #<#<Class:0x007f55ba652680>:0x007f55ba6510a0>
+Did you mean?  @judge):
+    30:   %body
+    31:     %div{class: "header"}
+    32:       - if current_user
+    33:         = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large", data: {confirm: sign_out_msg()}
+    34:       =image_tag('logo.png', style: "position: absolute; top: 35px;")
+    35:       
+    36:     %div{:class => "content container"}
+  
+app/helpers/sessions_helper.rb:20:in `sign_out_msg'
+app/views/layouts/application.html.haml:33:in `_app_views_layouts_application_html_haml___216350824130410761_70003088015860'
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.8ms)
+Started GET "/judges/45" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/judges_controller.rb:2)
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sIfx2dSXSpeRxEHoekcsMg"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/signin
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/signin" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (5.0ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sIfx2dSXSpeRxEHoekcsMg"], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-27f004bb902952dbbaad25f0f28c312f29ffee315c94fa51dea6b5ec6dc993e6.css?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/scores.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/bootstrap.self-8c0a18ef497d6248739c038ca99120e435b9d0ac33120bf065cd090558f70e73.css?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/bootstrap.self-2bbd2c0465f01b1f8270958ddfc2e62a08915f295a35d22df2971eb936cf3c64.js?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/application.self-763edc40ac487adacabb9d8ff726cd3e8d38c640ad7af95ff25fde0f4dbdfe7c.js?body=1" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started GET "/assets/logo-265df0e36b4cc3c0217ad01078dac698c7590096e937300019edcb9f4ef0a0a3.png" for 50.24.180.182 at 2016-11-06 16:07:23 +0000
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:07:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IrP0YZX0axQ5icVWLvpsceP1IyMAD/z8Bfww1TVSpD/3OhVRfgIVrAs7SD28JS59AEl90anFyy8ZZzmMMI/R4Q==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3e4e"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/signin
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/signin" for 50.24.180.182 at 2016-11-06 16:07:34 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.9ms)
+  [1m[36mJudge Load (1.1ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "sIfx2dSXSpeRxEHoekcsMg"], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:07:39 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bb4lycaxuMSRuBS0OIDtPy9vbwFQmU51IvLiHSzAigzQN8T5LUfGfKMKmd+qX68zzNMx8/lTeaY+aetEKR3/0g==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "admin"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/admin
+Completed 302 Found in 10ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/admin" for 50.24.180.182 at 2016-11-06 16:07:39 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:AdminController> at /home/ubuntu/workspace/app/controllers/admin/admin_controller.rb:2)
+Processing by Admin::AdminController#index as HTML
+  [1m[36mJudge Load (0.9ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/index.html.haml within layouts/application
+  Rendered admin/index.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/judges" for 50.24.180.182 at 2016-11-06 16:07:40 +0000
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:JudgesController> at /home/ubuntu/workspace/app/controllers/admin/judges_controller.rb:4)
+Processing by Admin::JudgesController#index as HTML
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+  Rendering admin/judges/index.html.haml within layouts/application
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT "judges".* FROM "judges"[0m
+  Rendered admin/judges/index.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:07:47 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6ZUC1gwj7LRwwGKsWqQTdxpefZZX8+oA74oDOvTiYE88HOPm59WSDEJy78fIe1F7+eIjZP453dPzEQpj8T8VkQ=="}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "6_qERBEnEP4Mz-B6S8pPIA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:07:47 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.4ms)
+  [1m[36mJudge Load (0.6ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:07:50 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eFOB85H7Lcs3fDrgb5N1bx//JVh10PCVJ/BPjyoi2Amt2mDDeg1TcwXOt4v9TDdj/EN7qtwax0Y7a0bWL/+t1w==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "024a"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/44
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/judges/44" for 50.24.180.182 at 2016-11-06 16:07:50 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "Mrr4uvHvPtE_7IWDqi2aeQ"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "qDCa-gQtRTVs45QWYgs3zA"], ["id", 44]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 44]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 124], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.5ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 44]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 124], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 36.2ms | ActiveRecord: 14.7ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:07:52 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yDb0oMUmwvVj+1/VUwcChkHWGbwfCQG63HkKIbLvie0dvxWQLtC8TVFJ0r7B2ECKompHTrbDNmnA4gN4tzL8Mw=="}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "qDCa-gQtRTVs45QWYgs3zA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/44/leave
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/judges/44/leave" for 50.24.180.182 at 2016-11-06 16:07:53 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"44"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "qDCa-gQtRTVs45QWYgs3zA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "o_Gtua9s1_Ltv2OdqHAj1g"], ["id", 44]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 44]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 124], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 100], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:07:53 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.2ms)
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:07:57 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5NwfTYcW0++NUg0SZQkxu02XY2K9+YKqYxvD0+RMUTYxVf59bOCtV7/ggHn31nO3ris9kBQztXl/gMqK4ZEk6A==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.5ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 16:07:57 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "VaKChtO-98Fvf7dEt-nXAA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.5ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 24.9ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/signout" for 50.24.180.182 at 2016-11-06 16:08:03 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GWfsyCOcIFLXJ8r/f9BIGigq/4XlLg1ZIZ/rV5nVNc3M7g34yGpe6uWVR5TtDwoWy5ahd0zkOoo9BOIOnAhAEw=="}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "VaKChtO-98Fvf7dEt-nXAA"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46/leave
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/judges/46/leave" for 50.24.180.182 at 2016-11-06 16:08:04 +0000
+Processing by JudgesController#leave as HTML
+  Parameters: {"judge_id"=>"46"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "VaKChtO-98Fvf7dEt-nXAA"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", true], ["remember_token", "C-kHQHGqjD6b3-ntVbliaw"], ["id", 46]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 143], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 143]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 29]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  "scores".* FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "scores" WHERE "scores"."id" = $1[0m  [["id", 144]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) - 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/
+Completed 302 Found in 32ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/" for 50.24.180.182 at 2016-11-06 16:08:04 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.haml within layouts/application
+  Rendered sessions/new.html.haml within layouts/application (3.5ms)
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 50.24.180.182 at 2016-11-06 16:08:08 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CvuTy3J8Knq0ILetkT7Ae8CPR0mjHWk1aKf3vtq3GZ/fcnL7mYpUwoaSOsYD4YJ3IzMZuwrXXuZ0PP7n32psQQ==", "session"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mJudge Load (0.4ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."access_code" = $1 LIMIT $2[0m  [["access_code", "3242"], ["LIMIT", 1]]
+Redirected to https://hodor-iap-weijiaogong.c9users.io/judges/46
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/judges/46" for 50.24.180.182 at 2016-11-06 16:08:08 +0000
+Processing by JudgesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mJudge Load (0.3ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "C-kHQHGqjD6b3-ntVbliaw"], ["LIMIT", 1]]
+  [1m[36mJudge Load (0.2ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "judges".* FROM "judges" WHERE "judges"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "leave" = $1, "remember_token" = $2 WHERE "judges"."id" = $3[0m  [["leave", false], ["remember_token", "ZiGA-04K1YESTvy3J53Sqg"], ["id", 46]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 29], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 27], ["LIMIT", 1]]
+  [1m[36mPoster Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 AND "posters"."id" = $2 LIMIT $3[0m  [["judge_id", 46], ["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 27], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 27]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "scores" ("novelty", "utility", "difficulty", "verbal", "written", "poster_id", "judge_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["novelty", -1], ["utility", -1], ["difficulty", -1], ["verbal", -1], ["written", -1], ["poster_id", 30], ["judge_id", 46]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "judges" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "judges"."id" = $1[0m  [["id", 46]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posters" SET "scores_count" = COALESCE("scores_count", 0) + 1 WHERE "posters"."id" = $1[0m  [["id", 30]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."judge_id" = $1[0m  [["judge_id", 46]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT  "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE (no_show = false AND scores_count < 3)[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" INNER JOIN "scores" ON "posters"."id" = "scores"."poster_id" WHERE "scores"."judge_id" = $1 ORDER BY "posters"."number" ASC[0m  [["judge_id", 46]]
+  Rendering judges/show.html.haml within layouts/application
+  Rendered judges/show.html.haml within layouts/application (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  (novelty+utility+difficulty+verbal+written) as score_sum FROM "scores" WHERE "scores"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 23.8ms | ActiveRecord: 15.0ms)
+
+
