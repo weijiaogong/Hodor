@@ -74,7 +74,7 @@ class Admin::ScoresController < ApplicationController
     score   = Score.find(params[:id])
     @poster = score.poster
     @judge  = score.judge
-    render 'posters/judge'
+    render 'scores/edit'
   end
 
   def score_params(score_id)
@@ -101,6 +101,9 @@ class Admin::ScoresController < ApplicationController
       end
   end
 
+  def assign
+     
+  end
 
   def rankings
         @score_terms = Score.score_terms

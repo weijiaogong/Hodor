@@ -23,7 +23,7 @@ class Admin::PostersController < ApplicationController
 		Poster.destroy_all
 		redirect_to admin_posters_path
 	end
-
+    
     def download
         File.delete("app/downloads/posters.csv") if File.exists?("app/downloads/posters.csv")
         @posters = Poster.all

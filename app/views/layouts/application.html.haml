@@ -5,32 +5,10 @@
     = stylesheet_link_tag    :application, :media => "all"
     = javascript_include_tag :application
     = csrf_meta_tags
-    :css 
-      .header {
-        background-color: #500000;
-        height: 80px;
-      }
-    :css 
-      .content {
-        top: 75px;
-        background-color: white;
-      }
-    :css 
-      body {
-        background-color: #A9A9A9;
-      }
-
-    :css
-      .sign-out {
-        position: absolute;
-        right: 10px;
-        top: 35px;
-      }
-
   %body
     %div{class: "header"}
       - if current_user
-        = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large"
+        = button_to "Sign out", signout_path, :method => :delete, class: "sign-out btn btn-default btn-large", data: {confirm: sign_out_msg()}
       =image_tag('logo.png', style: "position: absolute; top: 35px;")
       
     %div{:class => "content container"}
