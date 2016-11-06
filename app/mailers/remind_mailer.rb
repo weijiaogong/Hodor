@@ -1,0 +1,2 @@
+class RemindMailer < ApplicationMailer
+end
