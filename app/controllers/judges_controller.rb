@@ -86,11 +86,7 @@ class JudgesController < ApplicationController
     def release_unscored_posters(judge)
         score_terms = Score.score_terms
         judge.scores.each do |score|
-            sum = 0
-            score_terms.each do |term|
-                sum += score.send(term)
-            end
-
+            sum = Score.get_score_sum.find(score.id).score_sum
             next if sum >= 5
 
             Score.destroy(score.id)

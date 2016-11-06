@@ -1,5 +1,19 @@
 class SessionsController < ApplicationController
+  before_filter :sign_out_msg, only: [:destroy]
 
+  def sign_out_msg
+    @unscored = false
+    if current_user.role == "judge"
+      scores = current_user.scores
+      scores.each do |score|
+        sum = Score.get_score_sum().find(score.id).score_sum
+        if sum < 0
+           @unscored = true
+        end
+      end
+    end
+  end
+  
   def new
 
   end
