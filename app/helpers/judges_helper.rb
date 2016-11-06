@@ -19,5 +19,12 @@ module  JudgesHelper
            return false
         end
     end
-
+    def sign_out_confirm()
+        cf = nil
+        if current_user.role == "judge"
+            cf = "Do you agree to release you assignments to other judges?"
+        end
+        return cf
+    end
+    
 end
