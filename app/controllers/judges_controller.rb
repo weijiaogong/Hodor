@@ -79,7 +79,6 @@ class JudgesController < ApplicationController
         @judge = Judge.find(params[:judge_id])
     end
     def release_unscored_posters(judge)
-        score_terms = Score.score_terms
         judge.scores.each do |score|
             sum = Score.get_score_sum.find(score.id).score_sum
             next if sum >= 5
