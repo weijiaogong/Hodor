@@ -51,44 +51,12 @@ class Admin::ScoresController < ApplicationController
       end
       return posters
   end
-=begin
-  #for checkbox
-  def filter(status)
-    if status
-        session[:status] = status.keys.join("")
-    end
-    case session[:status]
-      when "no_show"
-        @posters = @posters.select {|p| p.no_show }
-      when "scored"
-        @posters = @posters.select {|p| p.scores_count > 0}
-      when "unscored"
-        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
-    end
-    @filter = session[:status] || ""
-  end
-=end 
-def filter(status)
-    if status
-        session[:status] = status
-    end
-    case session[:status]
-      when "no_show"
-        @posters = @posters.select {|p| p.no_show }
-      when "scored"
-        @posters = @posters.select {|p| p.scores_count > 0}
-      when "unscored"
-        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
-    end
-    @filter = session[:status] || ""
-end
-
-
+  
   def index
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
-    filter(params[:status])
     @poster_avgs = Hash.new
+    
     # calcualte average score for each poster
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
@@ -106,7 +74,7 @@ end
     score   = Score.find(params[:id])
     @poster = score.poster
     @judge  = score.judge
-    render 'posters/judge'
+    render 'scores/edit'
   end
 
   def score_params(score_id)
@@ -131,6 +99,10 @@ end
           flash[:notice] = invalid
           redirect_to judge_poster_judge_path(judge_id, poster_id)
       end
+  end
+
+  def assign
+     
   end
 
   def rankings
@@ -161,5 +133,5 @@ end
   def download_ranks
         send_file("app/downloads/rankings.csv", :filename => "rankings.csv")
   end
-  
+
 end
