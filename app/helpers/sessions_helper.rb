@@ -14,6 +14,13 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
+  def sign_out_msg()
+        cf = nil
+        if @unscored
+            cf = "Do you agree to assign your unjudged posters to other judges?"
+        end
+        return cf
+    end
   def current_user=(user)
     @current_user = user
   end
