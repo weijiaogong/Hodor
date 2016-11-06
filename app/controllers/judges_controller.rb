@@ -2,10 +2,12 @@ class JudgesController < ApplicationController
     before_filter :require_login, :require_correct_user
 
     def comeback_assign()
+        puts "comeback_assign"
         no_notice = flash[:notice]? false : true
-        num = 3 - @judge.posters.size
+        num = 3 - @judge.scores_count
         if num >= 1
            res = assign(num)
+           puts res
            if res == 0 && no_notice
                flash[:notice] = nil
            end
@@ -38,6 +40,7 @@ class JudgesController < ApplicationController
         end
         comeback_assign()
         @posters = @judge.posters.order(:number)
+        puts @posters.size
         set_disable()
         
          #unscored posters
@@ -64,20 +67,15 @@ class JudgesController < ApplicationController
         posters = Poster.find_least_judged()
         if posters.empty?
             flash[:notice] = "There are no more posters to be assigned."
+            puts flash[:notice]
             return 0
         end
-        
-        i = 0
+        posters = posters.reject {|p| @judge.posters.include?(p)}
+        posters = posters.sample(n)
         posters.each do |poster|
-            unless @judge.posters.include?(poster)
-               Score.assign_poster_to_judge(poster, @judge)
-               i += 1
-               if i == n
-                   break
-               end
-            end
+            Score.assign_poster_to_judge(poster, @judge)
         end
-        return i
+        return posters.size
     end
     #display the form to add name and company name for a specific judge
     def register
