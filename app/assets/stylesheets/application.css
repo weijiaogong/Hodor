@@ -11,3 +11,23 @@
  *= require_self
  *= require_tree .
  */
+
+.header {
+background-color: #500000;
+height: 80px;
+}
+
+.content {
+top: 75px;
+background-color: white;
+}
+
+body {
+background-color: #A9A9A9;
+}
+
+.sign-out {
+position: absolute;
+right: 10px;
+top: 35px;
+}

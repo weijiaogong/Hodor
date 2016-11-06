@@ -20,7 +20,7 @@ module SessionsHelper
         current_user.scores.each do |score|
           sum = Score.get_score_sum.find(score.id).score_sum
           if sum < 0
-            cf = "Note: signing out will release unjudged assignments to available judges"
+            cf = "Note: Do you want to release your unjudged assignments?"
           end
         end
     end
