@@ -2,12 +2,10 @@ class JudgesController < ApplicationController
     before_filter :require_login, :require_correct_user
 
     def comeback_assign()
-        puts "comeback_assign"
         no_notice = flash[:notice]? false : true
         num = 3 - @judge.scores_count
         if num >= 1
            res = assign(num)
-           puts res
            if res == 0 && no_notice
                flash[:notice] = nil
            end
@@ -40,7 +38,6 @@ class JudgesController < ApplicationController
         end
         comeback_assign()
         @posters = @judge.posters.order(:number)
-        puts @posters.size
         set_disable()
         
          #unscored posters
@@ -84,11 +81,7 @@ class JudgesController < ApplicationController
     def release_unscored_posters(judge)
         score_terms = Score.score_terms
         judge.scores.each do |score|
-            sum = 0
-            score_terms.each do |term|
-                sum += score.send(term)
-            end
-
+            sum = Score.get_score_sum.find(score.id).score_sum
             next if sum >= 5
 
             Score.destroy(score.id)

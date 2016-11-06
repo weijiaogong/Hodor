@@ -14,6 +14,18 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
+  def sign_out_msg()
+    cf = nil
+    if current_user.role == "judge"
+        current_user.scores.each do |score|
+          sum = Score.get_score_sum.find(score.id).score_sum
+          if sum < 0
+            cf = "Note: signing out will release unjudged assignments to available judges"
+          end
+        end
+    end
+    return cf
+  end
   def current_user=(user)
     @current_user = user
   end
