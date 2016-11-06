@@ -30,6 +30,7 @@ PosterJudging::Application.routes.draw do
             put  :update_score
 			post :no_show
 			get  :judge
+            get  :accept
 	    }
         get :leave
         get :register
