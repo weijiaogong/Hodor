@@ -22,7 +22,12 @@ module  JudgesHelper
     def sign_out_confirm()
         cf = nil
         if current_user.role == "judge"
-            cf = "Do you agree to assign your unjudged posters to other judges?"
+            judge = current_user
+            puts judge.posters.size
+            puts judge.scores_count
+            if judge.posters.size > judge.scores_count
+                cf = "Do you agree to assign your unjudged posters to other judges?"
+            end
         end
         return cf
     end
