@@ -15,4 +15,9 @@ module  ScoresHelper
             show_score(avg)
         end
     end
+
+    def filter(state)
+       return @filter.eql?(state)
+    end
+
 end

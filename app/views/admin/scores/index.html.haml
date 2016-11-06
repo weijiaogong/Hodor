@@ -1,9 +1,38 @@
+%body
+
+-#        $(document).on("change", 'input[type="checkbox"]', function(){
+-#                document.getElementById("status_form").submit();
+-#        });
+:javascript
+        $(document).on("change", 'input[type="radio"]', function(){
+                document.getElementById("status_form").submit();
+        });
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default btn"
 
-= form_tag admin_scores_path, :class => "navbar-search pull-left", :method => :get do
+-#= form_tag admin_scores_path, :id => "status_form", :class => "pull-left", :method => :get do
+-#        = label_tag 'No Show'
+-#        = check_box_tag "status[no_show]", id: "status_no_show"
+-#        = label_tag 'Unscored'
+-#        = check_box_tag "status[unscored]", id: "status_unscored"
+-#        = label_tag 'Scored'
+-#        = check_box_tag "status[scored]", id: "status_scored"
+
+= form_tag admin_scores_path, :id => "status_form", :class => "pull-left", :method => :get do
+        = label_tag 'All'
+        = radio_button_tag "status","all",  filter("all"),id: "status_all"
+        = label_tag 'No Show'
+        = radio_button_tag "status", "no_show", filter("no_show"), id: "status_no_show"
+        = label_tag 'Unscored'
+        = radio_button_tag "status","unscored", filter("unscored"), id: "status_unscored"
+        = label_tag 'Scored'
+        = radio_button_tag "status","scored",  filter("scored"),id: "status_scored"
+
+        
+= form_tag admin_scores_path, :class => "navbar-search pull-right", :method => :get do
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
         = submit_tag "Search", class: "btn btn-success btn-md"
-        
+
+
 %table{class: "table table-bordered"}
         %thead
                 %th Poster #
