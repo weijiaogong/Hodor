@@ -1,6 +1,28 @@
 class JudgesController < ApplicationController
     before_filter :require_login, :require_correct_user
 
+    def comeback_assign()
+        no_notice = flash[:notice]? false : true
+        num = 3 - @judge.posters.size
+        if num >= 1
+           res = assign(num)
+           if res == 0 && no_notice
+               flash[:notice] = nil
+           end
+        end
+    end
+    
+    def set_disable()
+        @disable = Array.new
+	
+        for score in @judge.scores
+            sum = Score.get_score_sum.find(score.id).score_sum
+            if  score.poster.no_show || sum >= 5
+                @disable += [score.poster_id]
+            end
+        end
+    end
+    
     #display the posters assigned to a specific judge
     def show
         @score_terms = Score.score_terms
@@ -14,32 +36,13 @@ class JudgesController < ApplicationController
               redirect_to root_url and return
             end
         end
-        
+        comeback_assign()
         @posters = @judge.posters.order(:number)
-        #@posters.sort_by{|p| p.number.to_i}.reverse!
-        no_notice = true 
-        if flash[:notice]
-            no_notice = false
-        end
-        num = 3 - @posters.size
-        if num >= 1
-           res = assign(num)
-           if res == 0 && no_notice
-               flash[:notice] = nil
-           end
-        end
+        set_disable()
         
-        @disable = Array.new
-	
-        for score in @judge.scores
-            sum = 0
-            @score_terms.each do |term|
-               sum += score.send(term)
-            end
-            if  score.poster.no_show || sum >= 5
-                @disable += [score.poster_id]
-            end
-        end
+         #unscored posters
+        @orphan_posters = Poster.find_least_judged()
+        @orphan_posters = @orphan_posters.reject {|p| @posters.include?(p)}
     end    
 
     #update judge information (name, company name)

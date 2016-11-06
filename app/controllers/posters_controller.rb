@@ -87,4 +87,15 @@ class PostersController < ApplicationController
         @poster.update_attribute(:no_show, decide_no_show)
         redirect_to judge_path(params[:judge_id])
     end
+    
+    
+	
+    def accept
+        judge_id  = params[:judge_id]
+        poster_id = params[:poster_id]
+        poster = Poster.find(poster_id)
+        @judge = Judge.find(judge_id)
+        Score.assign_poster_to_judge(poster, @judge)
+        redirect_to judge_poster_judge_path(judge_id, poster_id)
+    end
 end
