@@ -1,0 +1,14 @@
+:javascript
+  $(document).on('keydown', function(e){
+    var ENTER = 13;
+    key = e.which;
+    if(key == ENTER){
+      $('#yes_button').click();
+    }
+  });
+%body
+  %h2.page Do you want to keep your unscored assignments?
+  %h4.page press "no" will release unscored assignments
+  %div{class: "pull-center"}
+    = button_to "Yes", signout_path, :method => :delete, id: "yes_button", class: "btn btn-primary pull-left"
+    = button_to "No", judge_leave_path(@judge), class: "btn btn-default"
