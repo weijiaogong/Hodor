@@ -14,6 +14,7 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
+=begin
   def sign_out_msg()
     cf = nil
     if current_user.role == "judge"
@@ -26,6 +27,8 @@ module SessionsHelper
     end
     return cf
   end
+=end
+  
   def current_user=(user)
     @current_user = user
   end
