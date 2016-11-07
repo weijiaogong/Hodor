@@ -83,7 +83,6 @@ def filter(status)
     @filter = session[:status] || ""
 end
 
-
   def index
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
