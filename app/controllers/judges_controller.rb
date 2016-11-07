@@ -1,6 +1,28 @@
 class JudgesController < ApplicationController
     before_filter :require_login, :require_correct_user
 
+    def comeback_assign()
+        no_notice = flash[:notice]? false : true
+        num = 3 - @judge.scores_count
+        if num >= 1
+           res = assign(num)
+           if res == 0 && no_notice
+               flash[:notice] = nil
+           end
+        end
+    end
+    
+    def set_disable()
+        @disable = Array.new
+	
+        for score in @judge.scores
+            sum = Score.get_score_sum.find(score.id).score_sum
+            if  score.poster.no_show || sum >= 5
+                @disable += [score.poster_id]
+            end
+        end
+    end
+    
     #display the posters assigned to a specific judge
     def show
         @score_terms = Score.score_terms
@@ -14,32 +36,13 @@ class JudgesController < ApplicationController
               redirect_to root_url and return
             end
         end
-        
+        comeback_assign()
         @posters = @judge.posters.order(:number)
-        #@posters.sort_by{|p| p.number.to_i}.reverse!
-        no_notice = true 
-        if flash[:notice]
-            no_notice = false
-        end
-        num = 3 - @posters.size
-        if num >= 1
-           res = assign(num)
-           if res == 0 && no_notice
-               flash[:notice] = nil
-           end
-        end
+        set_disable()
         
-        @disable = Array.new
-	
-        for score in @judge.scores
-            sum = 0
-            @score_terms.each do |term|
-               sum += score.send(term)
-            end
-            if  score.poster.no_show || sum >= 5
-                @disable += [score.poster_id]
-            end
-        end
+         #unscored posters
+        @orphan_posters = Poster.find_least_judged()
+        @orphan_posters = @orphan_posters.reject {|p| @posters.include?(p)}
     end    
 
     #update judge information (name, company name)
@@ -61,33 +64,23 @@ class JudgesController < ApplicationController
         posters = Poster.find_least_judged()
         if posters.empty?
             flash[:notice] = "There are no more posters to be assigned."
+            puts flash[:notice]
             return 0
         end
-        
-        i = 0
+        posters = posters.reject {|p| @judge.posters.include?(p)}
+        posters = posters.sample(n)
         posters.each do |poster|
-            unless @judge.posters.include?(poster)
-               Score.assign_poster_to_judge(poster, @judge)
-               i += 1
-               if i == n
-                   break
-               end
-            end
+            Score.assign_poster_to_judge(poster, @judge)
         end
-        return i
+        return posters.size
     end
     #display the form to add name and company name for a specific judge
     def register
         @judge = Judge.find(params[:judge_id])
     end
     def release_unscored_posters(judge)
-        score_terms = Score.score_terms
         judge.scores.each do |score|
-            sum = 0
-            score_terms.each do |term|
-                sum += score.send(term)
-            end
-
+            sum = Score.get_score_sum.find(score.id).score_sum
             next if sum >= 5
 
             Score.destroy(score.id)

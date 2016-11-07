@@ -56,4 +56,4 @@ gem 'jquery-rails'
 gem 'haml'
 #gem 'test-unit'
 
-
+gem 'rqrcode_png'
