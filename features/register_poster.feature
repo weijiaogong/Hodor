@@ -14,7 +14,7 @@ Feature: Poster Registration
 
   Scenario: Register from Index
     Given I am on the login page
-    When I press "Register"
+    When I follow "Register"
     Then I am on the new poster page
     
   Scenario: Register new poster
