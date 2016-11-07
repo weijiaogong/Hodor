@@ -15,4 +15,16 @@ module  ScoresHelper
             show_score(avg)
         end
     end
+
+    def filter(state)
+       return @filter.eql?(state)
+    end
+
+    def no_show_msg
+        msg = "are you sure?"
+        unless @no_show
+            msg = "This poster is scored by other judges, please contact administrator for help"
+        end
+        return msg
+    end
 end

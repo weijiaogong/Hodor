@@ -8,9 +8,12 @@ class Score < ActiveRecord::Base
     end
     
     def self.assign_poster_to_judge(poster, judge)
-        score = judge.scores.build(novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1)
-        poster.scores << score
-        score.save!
+        score = Score.find_by(poster_id: poster.id, judge_id: judge.id)
+        unless score
+            score = judge.scores.build(novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1)
+            poster.scores << score
+            score.save!
+        end
     end
 
     def self.get_score_sum
@@ -22,7 +25,7 @@ class Score < ActiveRecord::Base
         str += "as score_sum"
         return Score.select(str)
     end
-    
+=begin    
     def self.get_poster_sum
         str = "SUM("
         score_terms.each do |term|
@@ -32,7 +35,7 @@ class Score < ActiveRecord::Base
         str += "as poster_sum"
         return Score.select(str)
     end
-
+=end
    
 end
 

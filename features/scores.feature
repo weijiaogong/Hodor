@@ -41,7 +41,7 @@ Feature: View in-time scores
         Then I should see the following scores table:
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit   |
 		  | Sara   |5      |5      |5         |5     |5      |5.000  |  Edit  |
-		  |Average |-      |-      |-         |-     |-      |5.000  |        |
+		  |Average |5.000  |5.000  |5.000     |5.000 |5.000  |5.000  |        |
 		When  I am on the view scores page
 		When I follow the #2 "See Details"
 		Then I should see an empty table
