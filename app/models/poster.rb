@@ -11,10 +11,10 @@ class Poster < ActiveRecord::Base
 			row_hash = row.to_hash
 			if posters.count == 1
 			   poster = posters.first
-			   poster.assign_attributes(row_hash)
+			   poster.assign_attributes(row_hash)	#FIXME ensure attributes are valid
                poster.save!(validate: false)
 			else
-				newposter = Poster.new(row_hash)
+				newposter = Poster.new(row_hash)	#FIXME ensure attributes are valid
 				newposter.save!(validate: false)
 			end
 		end
