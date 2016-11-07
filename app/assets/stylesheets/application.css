@@ -11,28 +11,35 @@
  *= require_self
  *= require_tree .
  */
-
+.row{
+    display: flex;
+	justify-content: center;
+}
 .header {
-background-color: #500000;
-height: 80px;
+    background-color: #500000;
+    height: 80px;
 }
 
 .content {
-top: 75px;
-background-color: white;
+    top: 75px;
+    background-color: white;
 }
 
 body {
-background-color: #A9A9A9;
+    background-color: #A9A9A9;
 }
 
 .sign-out {
-position: absolute;
-right: 10px;
-top: 35px;
-font-size: large;
-color: white;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    font-size: large;
+    color: white;
 }
 .pull-center{
     text-align: center;
+}
+.qrcode {
+    display: flex;
+	justify-content: center;
 }

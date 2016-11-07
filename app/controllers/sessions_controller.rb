@@ -1,6 +1,9 @@
+require 'rqrcode_png'
 class SessionsController < ApplicationController
   def new
-
+    qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
+    @qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
+    qr.save("downloads/QRcode.png")
   end
 
   def create
@@ -36,4 +39,7 @@ class SessionsController < ApplicationController
     end
   end
   
+  def download
+        send_file("downloads/QRcode.png")
+  end
 end
