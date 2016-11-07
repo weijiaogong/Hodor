@@ -57,12 +57,43 @@ class Admin::ScoresController < ApplicationController
       end
       return posters
   end
-  
+=begin
+  #for checkbox
+  def filter(status)
+    if status
+        session[:status] = status.keys.join("")
+    end
+    case session[:status]
+      when "no_show"
+        @posters = @posters.select {|p| p.no_show }
+      when "scored"
+        @posters = @posters.select {|p| p.scores_count > 0}
+      when "unscored"
+        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
+    end
+    @filter = session[:status] || ""
+  end
+=end 
+def filter(status)
+    if status
+        session[:status] = status
+    end
+    case session[:status]
+      when "no_show"
+        @posters = @posters.select {|p| p.no_show }
+      when "scored"
+        @posters = @posters.select {|p| p.scores_count > 0}
+      when "unscored"
+        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
+    end
+    @filter = session[:status] || ""
+end
+
   def index
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
     @poster_avgs = Hash.new
-    
+    filter(params[:status])
     # calcualte average score for each poster
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
