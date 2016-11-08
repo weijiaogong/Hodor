@@ -1,4 +1,5 @@
 class Poster < ActiveRecord::Base
+
 	has_many :scores, dependent: :destroy
 	has_many :judges, through: :scores
 	validates :presenter, :email, :title, :advisors, presence: true
