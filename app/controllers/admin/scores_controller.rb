@@ -2,36 +2,41 @@ require 'csv'
 
 class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
-
-  def avg_per_score(id)
-      avg_per_score = Score.get_score_sum().find(id).score_sum
-      avg_per_score /= @score_terms.size.to_f 
-      return  avg_per_score
-  end
   
-  def avgs_by_judge(scores)
-      judge_avgs = Hash.new
-      scores.each do |score|
-        judge_avgs[score.judge_id] = avg_per_score(score.id)
-      end
-      return judge_avgs
-  end
-  def avg_per_poster(poster)
-        poster_sum = Score.get_poster_sum.find_by(poster_id: poster.id).poster_sum
-        puts poster_sum.to_s
-        poster_avg = poster_sum/poster.judges.size.to_f
-        poster_avg /= @score_terms.size.to_f
-        return poster_avg
-  end
   def get_poster_avg(poster)
     @scores = poster.scores
-    if poster.scores_count > 0
-      @scores =  @scores.sort_by {|score| score.judge.name}
-      @judge_avgs = avgs_by_judge(@scores)
-      @poster_avg = avg_per_poster(poster)
-    else
-      @poster_avg = -1
+    @poster_avg = -1
+    @term_avgs = Hash.new()
+    @score_terms.each do |term|
+      @term_avgs[term] = -1
     end
+    if poster.scores_count > 0
+      @judge_avgs = Hash.new
+      @poster_avg = 0
+      @term_avgs = @term_avgs.map {|k,v| k,v = k, 0}.to_h
+      count = 0
+      @scores.each do |score|
+        score_sum = Score.get_score_sum().find(score.id).score_sum
+        if score_sum > 0
+          @judge_avgs[score.judge_id] = score_sum/@score_terms.size.to_f
+          @poster_avg += @judge_avgs[score.judge_id]
+          count += 1
+          @score_terms.each do |term|
+            @term_avgs[term] += score[term]
+          end
+        end
+      end
+      if count > 0
+        @poster_avg /= count.to_f
+        @term_avgs = @term_avgs.map {|k,v| k,v = k,v/count.to_f}.to_h
+      else
+        @term_avgs = @term_avgs.map {|k,v| k,v = k, -1}.to_h
+        @poster_avg = -1
+      end
+    end
+    
+    @scores =  @scores.sort_by {|score| score.judge.name}
+    return @poster_avg
   end
 
   def is_i?(str)
@@ -51,12 +56,43 @@ class Admin::ScoresController < ApplicationController
       end
       return posters
   end
-  
+=begin
+  #for checkbox
+  def filter(status)
+    if status
+        session[:status] = status.keys.join("")
+    end
+    case session[:status]
+      when "no_show"
+        @posters = @posters.select {|p| p.no_show }
+      when "scored"
+        @posters = @posters.select {|p| p.scores_count > 0}
+      when "unscored"
+        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
+    end
+    @filter = session[:status] || ""
+  end
+=end 
+def filter(status)
+    if status
+        session[:status] = status
+    end
+    case session[:status]
+      when "no_show"
+        @posters = @posters.select {|p| p.no_show }
+      when "scored"
+        @posters = @posters.select {|p| p.scores_count > 0}
+      when "unscored"
+        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
+    end
+    @filter = session[:status] || ""
+end
+
   def index
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
     @poster_avgs = Hash.new
-    
+    filter(params[:status])
     # calcualte average score for each poster
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
@@ -74,18 +110,8 @@ class Admin::ScoresController < ApplicationController
     score   = Score.find(params[:id])
     @poster = score.poster
     @judge  = score.judge
-    render 'posters/judge'
+    render 'scores/edit'
   end
-
-  def score_params(score_id)
-  	@score_terms = Score.score_terms
-    score_params = Hash.new
-    @score_terms.each do |term|
-       score_params[term.to_sym] = params[term]
-    end
-    return score_params
-  end
-  
   def update
       score_id = params[:id]
       @score = Score.find(score_id)
@@ -101,6 +127,9 @@ class Admin::ScoresController < ApplicationController
       end
   end
 
+  def assign
+     
+  end
 
   def rankings
         @score_terms = Score.score_terms

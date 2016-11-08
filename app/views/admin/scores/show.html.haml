@@ -24,6 +24,6 @@ title: #{@poster.title}
       %tr
         %td Average
         - @score_terms.each do |term|
-          %td -
+          %td= show_score(@term_avgs[term])
         %td= show_score(@poster_avg)
         %td

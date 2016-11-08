@@ -12,8 +12,8 @@ class Admin::PostersController < ApplicationController
 		if @file.blank?
 			redirect_to admin_posters_path, :notice => "File missing"
 		elsif File.extname(@file.original_filename) == ".csv"
-			Poster.import_csv(@file)
-			redirect_to admin_posters_path, :notice => "Import successful"
+			message = Poster.import_csv(@file)
+			redirect_to admin_posters_path, :notice => message
 		else
 			redirect_to admin_posters_path, :notice => "Invalid file extension"
 		end
@@ -23,7 +23,7 @@ class Admin::PostersController < ApplicationController
 		Poster.destroy_all
 		redirect_to admin_posters_path
 	end
-
+    
     def download
         File.delete("app/downloads/posters.csv") if File.exists?("app/downloads/posters.csv")
         @posters = Poster.all

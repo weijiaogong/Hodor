@@ -10,7 +10,7 @@ PosterJudging::Application.routes.draw do
             }
         end
 		resources :scores, :only => [:index, :show, :edit, :update, :destroy] do
-		    collection { 
+		    collection {
                  get :rankings
                  get :download_ranks
               }
@@ -26,19 +26,20 @@ PosterJudging::Application.routes.draw do
 	end
 	
     resources :judges, :only => [:show, :update] do
-        resources :posters, :only => []{
-            put  :update_score
+        resources :scores, path: :posters, param: :poster_id, :only => [:edit, :update]{
 			post :no_show
-			get  :judge
+            get  :accept
 	    }
         get :leave
         get :register
     end
 
-    resources :sessions, only: [:new, :create, :destroy]
+    resources :sessions, only: [:new, :create, :destroy] do
+        get :signout, on: :collection
+        get :download, on: :collection
+    end
     match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
-
     root :to => 'sessions#new'
     
     resources :posters
