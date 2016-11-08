@@ -27,6 +27,7 @@ class Poster < ActiveRecord::Base
 	def self.all_scored
 	  Poster.where("no_show = false AND scores_count > 0")
 	end
+	
 	def self.find_by_keywords(keywords)
 			keywords = keywords.gsub(/^/, '%').gsub(/$/, '%')
 	        Poster.where('title LIKE ?', keywords)

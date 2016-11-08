@@ -34,6 +34,7 @@ Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
             expect(current_path).to eq signin_path
         else
             raise "Could not find #{arg}"
+        
     end
 end
 
