@@ -35,3 +35,7 @@ Feature: Upload Multiple Posters
 		Then   I should see a poster titled "Processing Big Data Graphs"
 		And   I should see a poster titled "Quartet Distance Computation"
 		And   I should see a poster titled "Timing Integrity Check"
+	
+	Scenario: Upload malformed file
+		When I upload the file "data_wrong.csv"
+		Then I should see "Invalid column header"
