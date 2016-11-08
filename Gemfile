@@ -7,7 +7,7 @@ ruby '2.3.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'	#fewer errors when moving to production
-
+gem 'rqrcode_png'
 
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do

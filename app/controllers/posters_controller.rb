@@ -5,7 +5,7 @@ class PostersController < ApplicationController
     end
     
     def create  #what if the admin wants to create a poster? then bulk load from csv
-        @poster = Poster.create(params[:poster].permit(:number, :presenter, :title, :advisors, :scores_count, :email))
+        @poster = Poster.create(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
         if @poster.errors.messages.empty?
             flash[:notice] = "#{@poster.title} was successfully created."
             redirect_to root_path and return
@@ -27,7 +27,7 @@ class PostersController < ApplicationController
 #        rescue ActiveRecord::RecordNotFound    #situation in which this occurs: poster delete between clicking edit and update
 #            flash[:notice] = "No such poster"
 #            redirect_to admin_posters_path and return
-        @poster.update_attributes(params[:poster].permit(:number, :presenter, :title, :advisors, :scores_count, :email))
+        @poster.update_attributes(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
         if @poster.errors.messages.empty?
             flash[:notice] = "#{@poster.title} was successfully updated."
             redirect_to admin_posters_path and return
