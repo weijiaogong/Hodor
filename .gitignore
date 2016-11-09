@@ -2,3 +2,4 @@
 /spec/tmp
 /coverage/*
 /log/*
+.bundle/

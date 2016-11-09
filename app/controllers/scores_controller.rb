@@ -8,7 +8,7 @@ class ScoresController < ApplicationController
     end
     
     #update the Score associated with a specific poster and a specific judge
-    def update    #FIXME this method does not fit here. judges submit scores
+    def update
         #check to make sure all radio buttons are checked
         
         judge_id  = params[:judge_id]

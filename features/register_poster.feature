@@ -14,7 +14,7 @@ Feature: Poster Registration
 
   Scenario: Register from Index
     Given I am on the login page
-    When I press "Register"
+    When I follow "Register"
     Then I am on the new poster page
     
   Scenario: Register new poster
@@ -26,6 +26,12 @@ Feature: Poster Registration
     And I press "Register"
     Then I see "Title was successfully created."
     
+  Scenario: Register part of poster
+    Given I am on the new poster page
+    When I fill in "poster[title]" with "Title"
+    And I press "Register"
+    Then I see "Please correct the following fields: presenter, email, advisors"
+    
   Scenario: Modify poster
     Given I logged in as "admin"
     And I am on the poster add page
@@ -34,6 +40,14 @@ Feature: Poster Registration
     And I press "Save changes"
     Then I see "was successfully updated."
     And I see "e-mail@example.com" as "email" for poster 1
+    
+  Scenario: Modify part of poster
+    Given I logged in as "admin"
+    And I am on the poster add page
+    And I edit poster 1
+    And I fill in "poster[email]" with ""
+    And I press "Save changes"
+    Then I see "Please correct the following fields: email"
     
   Scenario: Modify non-existent poster
     Given I logged in as "admin"

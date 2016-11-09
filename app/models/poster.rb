@@ -7,17 +7,20 @@ class Poster < ActiveRecord::Base
 	
 	def self.import_csv(file)
 		CSV.foreach(file.path, headers: true, encoding: 'windows-1251:utf-8') do |row|
-			posters = Poster.where(number: row['number'])
-			row_hash = row.to_hash
-			if posters.count == 1
-			   poster = posters.first
-			   poster.assign_attributes(row_hash)
-               poster.save!(validate: false)
-			else
-				newposter = Poster.new(row_hash)
-				newposter.save!(validate: false)
+			if row.to_hash.keys.any? {|k| not ["number", "presenter", "title", "advisors", "email"].include?(k)}	#TODO DRY this out
+				return "Invalid column header- valid options are number, presenter, title, advisors, email"
 			end
+			poster = Poster.where(number: row['number']).first
+			row_hash = row.to_hash.keep_if {|k,v| ["number", "presenter", "title", "advisors", "email"].include?(k)}
+
+			if not poster.nil?
+				poster.update_attributes(row_hash)
+			else
+				poster = Poster.create(row_hash)
+			end
+
 		end
+		return "Import successful"
 	end
 
 	def self.find_least_judged()
@@ -27,6 +30,7 @@ class Poster < ActiveRecord::Base
 	def self.all_scored
 	  Poster.where("no_show = false AND scores_count > 0")
 	end
+	
 	def self.find_by_keywords(keywords)
 			keywords = keywords.gsub(/^/, '%').gsub(/$/, '%')
 	        Poster.where('title LIKE ?', keywords)

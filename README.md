@@ -1,6 +1,17 @@
 # PosterJudging
 CSCE 431 Project - TAMU Poster Judging
 
+########################## Installation #######################################
+Run `rake secret` to generate a new token.
+
+Now create config/initializers/secret_token.rb with the following contents:
+
+`PosterJudging::Application.config.secret_key_base = '<token>'`
+
+Replace <token> with the one you just generated.
+
+*Do not commit this file to the repo*
+
 ########################## test #######################################
 #when you test scores feature use command
 DISPLAY=localhost:1.0 xvfb-run cucumber features/scores.feature

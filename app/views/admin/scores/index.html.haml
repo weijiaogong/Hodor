@@ -1,3 +1,4 @@
+-# in app/views/admin/scores/index.html.haml
 %body
 
 -#        $(document).on("change", 'input[type="checkbox"]', function(){
@@ -39,6 +40,8 @@
                 %th Presenter
                 %th Title
                 %th Average
+                %th # of Judges Assigned
+                %th # of Posters Scored by Judge
                 %th Detail
         %tbody
                 - @posters.each do |poster|
@@ -47,4 +50,6 @@
                                 %td= poster.presenter
                                 %td= poster.title
                                 %td= show_avg(poster.no_show, @poster_avgs[poster.id])
+                                %td= poster.scores_count
+                                %td= poster.scores_count - poster.scores.where(novelty: '-1').count
                                 %td= link_to "See Details", admin_score_path(poster)

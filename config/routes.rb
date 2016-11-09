@@ -34,10 +34,12 @@ PosterJudging::Application.routes.draw do
         get :register
     end
 
-    resources :sessions, only: [:new, :create, :destroy]
+    resources :sessions, only: [:new, :create, :destroy] do
+        get :signout, on: :collection
+        get :download, on: :collection
+    end
     match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
-
     root :to => 'sessions#new'
     
     resources :posters

@@ -1,3 +1,14 @@
+:javascript
+  $('input[value|="Register"]').click(function() {
+    var empty = $(this).parent().find("input").filter(function() {
+            return this.value === "";
+        });
+        if(empty.length) {
+            //At least one input is empty
+            alert("empty!");
+        }
+  });
+
 %h1 Edit Poster
 
 = form_tag poster_path(@poster), :method => :put do

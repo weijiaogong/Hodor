@@ -26,7 +26,7 @@ Feature: Edit scores
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  |
           | Kelly  |3      |5      |3         |5     |3      |3.800  | Edit  |
 		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  |
-		  |Average |-      |-      |-         |-     |-      |4.100  |       |
+		  |Average |3.500  |5.000  |3.500     |5.000 |3.500  |4.100  |       |
 		When   I edit the scores of poster #1
 		And I edit the scores given by judge "Kelly"
  	    And I change scores to 5,5,5,4,4
@@ -35,4 +35,4 @@ Feature: Edit scores
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  |
           | Kelly  |5      |5      |5         |4     |4      |4.600  | Edit  |
 		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  |
-		  |Average |-      |-      |-         |-     |-      |4.500  |       |
+		  |Average |4.500  |5.000  |4.500     |4.500 |4.000  |4.500  |       |
