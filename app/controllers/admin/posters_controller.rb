@@ -12,8 +12,11 @@ class Admin::PostersController < ApplicationController
 		if @file.blank?
 			redirect_to admin_posters_path, :notice => "File missing"
 		elsif File.extname(@file.original_filename) == ".csv"
-			message = Poster.import_csv(@file)
-			redirect_to admin_posters_path, :notice => message
+			Poster.import_csv(@file)
+			redirect_to admin_posters_path, :notice => "Import successful"
+		#	Poster.find_each do |poster|
+    	#		RemindMailer.remind_email(poster).deliver_now
+    	#	end
 		else
 			redirect_to admin_posters_path, :notice => "Invalid file extension"
 		end
