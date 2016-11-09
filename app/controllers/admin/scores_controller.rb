@@ -1,3 +1,4 @@
+# in /app/controllers/admin/scores_controller.rb
 require 'csv'
 
 class Admin::ScoresController < ApplicationController
@@ -17,6 +18,7 @@ class Admin::ScoresController < ApplicationController
       count = 0
       @scores.each do |score|
         score_sum = Score.get_score_sum().find(score.id).score_sum
+        @temp_score = [score_sum, score.id]
         if score_sum > 0
           @judge_avgs[score.judge_id] = score_sum/@score_terms.size.to_f
           @poster_avg += @judge_avgs[score.judge_id]

@@ -39,3 +39,8 @@ Feature: Upload Multiple Posters
 	Scenario: Upload malformed file
 		When I upload the file "data_wrong.csv"
 		Then I should see "Invalid column header"
+		
+	Scenario: Clear posters
+	  When I press "Clear"
+	  Then I should be on the admin poster page
+	  And I should see 0 rows in the table

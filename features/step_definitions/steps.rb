@@ -32,6 +32,9 @@ Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
 		    #visit signin_path
 		    current_path = URI.parse(current_url).path
             expect(current_path).to eq signin_path
+        when "admin poster"
+            current_path = URI.parse(current_url).path
+            expect(current_path).to eq admin_posters_path
         else
             raise "Could not find #{arg}"
         
