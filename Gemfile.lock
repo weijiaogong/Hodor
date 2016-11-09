@@ -204,7 +204,7 @@ GEM
     phantomjs (2.1.1.0)
     power_assert (0.3.1)
     procto (0.0.3)
-    public_suffix (2.0.3)
+    public_suffix (2.0.4)
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
