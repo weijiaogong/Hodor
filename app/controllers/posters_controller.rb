@@ -1,13 +1,18 @@
 class PostersController < ApplicationController
     before_filter :require_login, :except => [:new, :create]
-    #render the view for judging each poster
+
     def new
     end
     
     def create  #what if the admin wants to create a poster? then bulk load from csv
-        @poster = Poster.create!(params[:poster].permit(:number, :presenter, :title, :advisors, :scores_count, :email))
-        flash[:notice] = "#{@poster.title} was successfully created."
-        redirect_to root_path
+        @poster = Poster.create(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
+        if @poster.errors.messages.empty?
+            flash[:notice] = "#{@poster.title} was successfully created."
+            redirect_to root_path and return
+        else
+            flash[:error] = "Please correct the following fields: #{@poster.errors.messages.keys.join(', ')}"
+            render :action => 'new' #and now the css breaks :(
+        end
     end
 
     def edit
@@ -19,12 +24,17 @@ class PostersController < ApplicationController
     
     def update
         @poster = Poster.find params[:id]
-#        rescue ActiveRecord::RecordNotFound
+#        rescue ActiveRecord::RecordNotFound    #situation in which this occurs: poster delete between clicking edit and update
 #            flash[:notice] = "No such poster"
 #            redirect_to admin_posters_path and return
-        @poster.update_attributes!(params[:poster].permit(:number, :presenter, :title, :advisors, :scores_count, :email))
-        flash[:notice] = "#{@poster.title} was successfully updated."
-        redirect_to admin_posters_path
+        @poster.update_attributes(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
+        if @poster.errors.messages.empty?
+            flash[:notice] = "#{@poster.title} was successfully updated."
+            redirect_to admin_posters_path and return
+        else
+            flash[:error] = "Please correct the following fields: #{@poster.errors.messages.keys.join(', ')}"
+            render :action => 'edit'
+        end
     end
     
     def destroy #TODO how to ensure only admin can delete?
