@@ -82,7 +82,7 @@ module SessionsHelper
       if judge.name && judge.company_name
         redirect_to(admin_root_path) and return
       else 
-        redirect_to(admin_register_path) and return
+        redirect_to(admin_register_path(judge.id)) and return
       end
     elsif superadmin?
       redirect_to(admin_root_path) and return
@@ -90,7 +90,7 @@ module SessionsHelper
       if judge.name && judge.company_name
         redirect_to(judge_path(judge.id))  and return
       else
-        redirect_to(judge_register_path(judge.id) ) and return
+        redirect_to(judge_register_path(judge.id)) and return
       end
     end
   end

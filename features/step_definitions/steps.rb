@@ -53,6 +53,9 @@ Then (/^(?:|I )should be on the (.*?) page for "([^"]*)"$/) do |arg1, arg2|
         when "show scores"
             poster = Poster.find(arg2.to_i)
             expect(page).to have_current_path(admin_score_path(poster))
+        when "admin_registeration"
+            judge = Judge.find_by_access_code(arg2)
+            expect(page).to have_current_path(admin_register_path(judge))
         else
             raise "Could not find page #{arg1}"
     end
