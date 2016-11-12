@@ -99,6 +99,14 @@ end
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
+    #@judges_nums = poster.scores_count - poster.scores.where("@score_terms[0] = -1").count
+
+  end
+
+  # separate method from index
+  # used to count # of times a poster is scored = # of scoring judges
+  def self.get_actual_scores_count(poster)
+      return (poster.scores_count - poster.scores.where("#{Score.score_terms[0]} = -1").count)
   end
 
   def show
