@@ -43,4 +43,6 @@ class SessionsController < ApplicationController
   def download
         send_file("downloads/QRcode.png")
   end
+  
+  
 end

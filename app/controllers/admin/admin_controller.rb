@@ -42,4 +42,21 @@ class Admin::AdminController < ApplicationController
 		end
 		redirect_to admin_reset_path
 	end
+	
+	def register
+        @judge = Judge.find(params[:judge_id])
+        render 'admin/register.html'
+    end
+    
+    def registerup
+    	@judge = Judge.find(params[:judge_id])
+        res = @judge.update_attributes(name: params[:name], company_name: params[:company])
+        # this validation should be down in js
+        unless res
+          flash[:error] = "name & company_name cannot be blank"
+          redirect_to admin_register_path(@judge) and return
+        end
+        sign_in @judge
+        redirect_to admin_root_path
+    end
 end
