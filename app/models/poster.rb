@@ -29,6 +29,6 @@ class Poster < ActiveRecord::Base
 	end
 	def self.find_by_keywords(keywords)
 			keywords = keywords.gsub(/^/, '%').gsub(/$/, '%')
-	        Poster.where('title LIKE ?', keywords)
+	        Poster.where('lower(title) LIKE ?', keywords.downcase)
 	end
 end

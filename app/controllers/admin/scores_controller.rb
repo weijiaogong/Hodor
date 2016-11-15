@@ -95,9 +95,33 @@ def filter(status)
       when "no_show"
         @posters = @posters.select {|p| p.no_show }
       when "scored"
-        @posters = @posters.select {|p| p.scores_count > 0}
+        @posters = @posters.reject {|p| p.scores_count < 0 or p.no_show }
+        @posters.each do |poster|
+          scores = poster.scores
+          scored = false
+          scores.each do |score|
+            if score.send(Score.score_terms[0]) > 0
+              scored = true
+              break
+            end
+          end
+          @posters = @posters.reject {|p| p.id == poster.id} unless scored
+        end
       when "unscored"
-        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
+        @posters = @posters.reject {|p| p.scores_count < 0 or p.no_show }
+        @posters.each do |poster|
+          scores = poster.scores
+          scored = false
+          scores.each do |score|
+            if score.send(Score.score_terms[0]) > 0
+              scored = true
+              break
+            end
+          end
+          if scored
+            @posters = @posters.reject {|p| p.id == poster.id}
+          end
+      end
     end
     @filter = session[:status] || ""
 end
@@ -151,7 +175,11 @@ end
         @poster_avgs = Hash.new
         @posters.each do |poster|
           poster_avg = get_poster_avg(poster)
-          @poster_avgs[poster.id] = poster_avg
+          if poster_avg < 0
+            @posters = @posters.reject {|p| p.id == poster.id}
+          else
+            @poster_avgs[poster.id] = poster_avg
+          end
         end
         @posters = @posters.sort_by{|poster| @poster_avgs[poster.id]}.reverse
         @posters = @posters.take(3)
