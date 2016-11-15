@@ -3,39 +3,53 @@ require 'csv'
 class Admin::ScoresController < ApplicationController
   before_filter :require_login, :require_admin
   
-  def get_poster_avg(poster)
-    @scores = poster.scores
-    @poster_avg = -1
+    
+  def avgs_init
+    @judge_avgs = Hash.new
+    @poster_avg = 0
     @term_avgs = Hash.new()
     @score_terms.each do |term|
-      @term_avgs[term] = -1
+      @term_avgs[term] = 0
     end
-    if poster.scores_count > 0
-      @judge_avgs = Hash.new
-      @poster_avg = 0
-      @term_avgs = @term_avgs.map {|k,v| k,v = k, 0}.to_h
-      count = 0
-      @scores.each do |score|
-        score_sum = Score.get_score_sum().find(score.id).score_sum
-        if score_sum > 0
-          @judge_avgs[score.judge_id] = score_sum/@score_terms.size.to_f
-          @poster_avg += @judge_avgs[score.judge_id]
-          count += 1
-          @score_terms.each do |term|
-            @term_avgs[term] += score[term]
-          end
-        end
-      end
-      if count > 0
+  end
+  
+  def avgs_final(count)
+    if count > 0
         @poster_avg /= count.to_f
         @term_avgs = @term_avgs.map {|k,v| k,v = k,v/count.to_f}.to_h
-      else
+    else
         @term_avgs = @term_avgs.map {|k,v| k,v = k, -1}.to_h
         @poster_avg = -1
+    end
+  end
+  
+  def cal_poster_avg
+    avgs_init
+    count = 0
+    @scores.each do |score|
+      score_sum = Score.get_score_sum().find(score.id).score_sum
+      if score_sum > 0
+        @judge_avgs[score.judge_id] = score_sum/@score_terms.size.to_f
+        @poster_avg += @judge_avgs[score.judge_id]
+        count += 1
+        @score_terms.each do |term|
+          @term_avgs[term] += score[term]
+        end
       end
     end
     
-    @scores =  @scores.sort_by {|score| score.judge.name}
+    avgs_final(count)
+    return count
+  end
+
+  def get_poster_avg(poster)
+    @scores = poster.scores.sort_by {|score| score.judge.name}
+    @poster_avg = -1
+    
+    if poster.scores_count > 0
+      cal_poster_avg
+    end
+    
     return @poster_avg
   end
 
@@ -127,10 +141,6 @@ end
       end
   end
 
-  def assign
-     
-  end
-
   def rankings
         @score_terms = Score.score_terms
         @posters = Poster.all_scored
@@ -146,8 +156,8 @@ end
   end
 
   def create_rank_file(posters, scores)
-        File.delete("app/downloads/rankings.csv") if File.exists?("app/downloads/rankings.csv")
-        CSV.open("app/downloads/rankings.csv", "wb") do |csv|
+        File.delete("downloads/rankings.csv") if File.exists?("downloads/rankings.csv")
+        CSV.open("downloads/rankings.csv", "wb") do |csv|
             csv << ["rank", "presenter", "title", "score"]
             rank = 1
             for poster in posters
@@ -157,7 +167,7 @@ end
         end
   end
   def download_ranks
-        send_file("app/downloads/rankings.csv", :filename => "rankings.csv")
+        send_file("downloads/rankings.csv", :filename => "rankings.csv")
   end
 
 end
