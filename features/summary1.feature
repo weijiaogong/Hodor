@@ -53,4 +53,4 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
 	    When  I press "View Poster Rankings"
 	    And   I press "Download"
-		Then   I see a popup window for download
+		Then   I see a popup window for download "rankings.csv"

@@ -106,11 +106,15 @@ end
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
     @poster_avgs = Hash.new
+     @judge_nums  = Hash.new
     filter(params[:status])
     # calcualte average score for each poster
     @posters.each do |poster|
+      @judge_nums[poster.id] = poster.scores_count
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
+   
+    
   end
 
   def show
