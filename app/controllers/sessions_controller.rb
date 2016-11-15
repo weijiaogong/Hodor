@@ -1,17 +1,11 @@
 #require 'rqrcode_png'
 class SessionsController < ApplicationController
   def new
-<<<<<<< HEAD
     unless File.exists?("app/assets/images/qrcode.png")
       qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
       #@qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
       qr.save("app/assets/images/qrcode.png")
     end
-=======
-#    qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
-#    @qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
-#    qr.save("downloads/QRcode.png")
->>>>>>> 272b9c741b9674b3f1b1313c0c2174d0e10d3f2e
   end
 
   def create
