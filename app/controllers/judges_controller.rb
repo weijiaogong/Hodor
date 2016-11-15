@@ -82,7 +82,7 @@ class JudgesController < ApplicationController
         judge.scores.each do |score|
             #sum = Score.get_score_sum.find(score.id).score_sum
             first = Score.find(score.id)[0]
-            next if first >= 0
+            next if first > 0
             #no show should not be deleted for later
             Score.destroy(score.id)
         end
