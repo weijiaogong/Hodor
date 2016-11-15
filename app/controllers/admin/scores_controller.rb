@@ -1,3 +1,4 @@
+# in /app/controllers/admin/scores_controller.rb
 require 'csv'
 
 class Admin::ScoresController < ApplicationController

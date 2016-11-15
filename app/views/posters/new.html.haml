@@ -1,3 +1,9 @@
+:javascript
+  $("form").submit(function(e){
+                alert('submit intercepted');
+                e.preventDefault(e);
+            });
+
 %h1 Register Poster
 
 = form_tag posters_path do

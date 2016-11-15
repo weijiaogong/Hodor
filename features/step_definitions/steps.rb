@@ -32,8 +32,12 @@ Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
 		    #visit signin_path
 		    current_path = URI.parse(current_url).path
             expect(current_path).to eq signin_path
+        when "admin poster"
+            current_path = URI.parse(current_url).path
+            expect(current_path).to eq admin_posters_path
         else
             raise "Could not find #{arg}"
+        
     end
 end
 
@@ -49,6 +53,9 @@ Then (/^(?:|I )should be on the (.*?) page for "([^"]*)"$/) do |arg1, arg2|
         when "show scores"
             poster = Poster.find(arg2.to_i)
             expect(page).to have_current_path(admin_score_path(poster))
+        when "admin_registeration"
+            judge = Judge.find_by_access_code(arg2)
+            expect(page).to have_current_path(admin_register_path(judge))
         else
             raise "Could not find page #{arg1}"
     end

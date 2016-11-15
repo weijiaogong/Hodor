@@ -13,3 +13,4 @@ Then(/^I should see a poster titled "(.*?)"$/) do |arg1|
 	posters = Poster.where(:title => arg1)
 	posters.count.should equal(1)
 end
+

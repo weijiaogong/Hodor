@@ -21,8 +21,12 @@ PosterJudging::Application.routes.draw do
 			post :create, on: :collection
 		end
         root to: "admin#index"
-		get :reset, controller: 'admin'
-		put :reset_pw, controller: 'admin'	 
+        
+		get :reset, controller: 'admin'  
+		put :reset_pw, controller: 'admin'
+		
+		get "/register/:judge_id", to: 'admin#register', as: 'register'
+		put "/register/:judge_id", to: 'admin#registerup', as: 'registerup'
 	end
 	
     resources :judges, :only => [:show, :update] do
