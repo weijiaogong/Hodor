@@ -15,6 +15,6 @@
     New presenters?
     = link_to "Register", new_poster_path, method: "get"
 .qrcode
-  = image_tag @qrcode
+  = image_tag "qrcode.png"
 .pull-center
   = button_to 'download QR code', download_sessions_path, method: "get"
