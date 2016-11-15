@@ -5,9 +5,10 @@ class Poster < ActiveRecord::Base
 	#validates :number, uniqueness: true # not sure whether the number should be unique
 	
 	
-	def self.import_csv(file)
-		CSV.foreach(file.path, headers: true, encoding: 'windows-1251:utf-8') do |row|
-			if row.to_hash.keys.any? {|k| not ["number", "presenter", "title", "advisors", "email"].include?(k)}	#TODO DRY this out
+	def self.import(data)
+		data.each do |row|
+			#FIXME DRY by getting attrs?
+			if row.to_hash.keys.any? {|k| not(["number", "presenter", "title", "advisors", "email"].include?(k))}	#TODO DRY this out
 				return "Invalid column header- valid options are number, presenter, title, advisors, email"
 			end
 			poster = Poster.where(number: row['number']).first

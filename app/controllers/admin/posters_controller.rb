@@ -12,7 +12,7 @@ class Admin::PostersController < ApplicationController
 		if @file.blank?
 			redirect_to admin_posters_path, :notice => "File missing"
 		elsif File.extname(@file.original_filename) == ".csv"
-			message = Poster.import_csv(@file)
+			message = Poster.import(CSV.read(@file.path, headers: true, encoding: 'windows-1251:utf-8'))
 			redirect_to admin_posters_path, :notice => message
 		else
 			redirect_to admin_posters_path, :notice => "Invalid file extension"

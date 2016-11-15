@@ -15,4 +15,9 @@ describe Poster do
             end
         end
     end
+    
+    describe "import_csv" do
+        it "rejects unknown parameters" do
+        end
+    end
 end
