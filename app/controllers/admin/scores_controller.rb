@@ -85,41 +85,38 @@ class Admin::ScoresController < ApplicationController
     @filter = session[:status] || ""
   end
 =end 
-def filter(status)
+
+	def select_posters(origin_posters, filter)
+	  unassigned_posters = origin_posters.select {|p| p.scores_count == 0 }
+	  posters = []
+	  #unassigned posters are part of unscored posters
+	  posters = unassigned_posters if filter == "unscored"
+	  assigned_posters = origin_posters - unassigned_posters
+	  #among assigned posters, there are three type: unscored, no_show, scored
+    assigned_posters.each do |poster|
+      scores = poster.scores
+      type = "unscored"
+      no_show = true
+      scores.each do |score|
+        if score.send(Score.score_terms[0]) > 0
+          type = "scored" # the poster is scored if only scored once
+          break
+        end
+        no_show = false unless score.no_show # the poster is no show only if its scores are all no show
+      end
+      no_show = false if type == "scored"
+      type = "no_show" if no_show
+      posters << poster if filter == type
+    end
+    return posters
+	end
+
+def filter_posters(status)
     if status
         session[:status] = status
     end
-    case session[:status]
-      when "no_show"
-        @posters = @posters.select {|p| p.no_show }
-      when "scored"
-        @posters = @posters.reject {|p| p.scores_count < 0 or p.no_show }
-        @posters.each do |poster|
-          scores = poster.scores
-          scored = false
-          scores.each do |score|
-            if score.send(Score.score_terms[0]) > 0
-              scored = true
-              break
-            end
-          end
-          @posters = @posters.reject {|p| p.id == poster.id} unless scored
-        end
-      when "unscored"
-        @posters = @posters.reject {|p| p.scores_count < 0 or p.no_show }
-        @posters.each do |poster|
-          scores = poster.scores
-          scored = false
-          scores.each do |score|
-            if score.send(Score.score_terms[0]) > 0
-              scored = true
-              break
-            end
-          end
-          if scored
-            @posters = @posters.reject {|p| p.id == poster.id}
-          end
-      end
+    unless session[:status] == "all"
+      @posters = select_posters(@posters, session[:status])
     end
     @filter = session[:status] || ""
 end
@@ -128,13 +125,11 @@ end
     @score_terms = Score.score_terms
     @posters = get_posters_by_keywords(params[:searchquery])
     @poster_avgs = Hash.new
-    filter(params[:status])
+    filter_posters( params[:status])
     # calcualte average score for each poster
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
-   
-    
   end
 
   def show

@@ -18,7 +18,7 @@ title: #{@poster.title}
         %td= score.judge.name
         - @score_terms.each do |term|
           %td= show_score(score.send(term))
-        %td= show_score(@judge_avgs[score.judge_id])
+        %td= show_avg(score.no_show, @judge_avgs[score.judge_id])
         %td= link_to 'Edit', edit_admin_score_path(score), method: :get
     - unless @scores.empty?
       %tr

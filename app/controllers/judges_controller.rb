@@ -17,7 +17,7 @@ class JudgesController < ApplicationController
 	
         for score in @judge.scores
             first = Score.find(score.id).send(Score.score_terms[0])
-            if  score.poster.no_show || first >= 0
+            if  score.no_show || first >= 0
                 @disable += [score.poster_id]
             end
         end
@@ -26,8 +26,12 @@ class JudgesController < ApplicationController
   def get_judge_avgs
     @judge_avgs = Hash.new
     @judge.scores.each do |score|
-        score_sum = Score.get_score_sum().find(score.id).score_sum
-        @judge_avgs[score.poster_id] = score_sum/@score_terms.size.to_f
+        if score.no_show
+            @judge_avgs[score.poster_id] = "no_show"
+        else
+            score_sum = Score.get_score_sum().find(score.id).score_sum
+            @judge_avgs[score.poster_id] = score_sum/@score_terms.size.to_f
+        end
     end
   end
     #display the posters assigned to a specific judge
@@ -89,10 +93,10 @@ class JudgesController < ApplicationController
     def release_unscored_posters(judge)
         judge.scores.each do |score|
             #sum = Score.get_score_sum.find(score.id).score_sum
-            first = Score.find(score.id)[0]
-            next if first > 0
+            first_score = score.send(Score.score_terms[0])
+            next if first_score > 0
             #no show should not be deleted for later
-            Score.destroy(score.id)
+            Score.destroy(score.id) unless score.no_show
         end
     end
      # reasign all unscored posters to other available judgers

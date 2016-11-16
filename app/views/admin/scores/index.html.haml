@@ -49,7 +49,7 @@
                                 %td= poster.number
                                 %td= poster.presenter
                                 %td= poster.title
-                                %td= show_avg(poster.no_show, @poster_avgs[poster.id])
+                                %td= show_poster_avg(poster, @poster_avgs[poster.id])
                                 %td= poster.scores_count
                                 %td= poster.scores_count - poster.scores.where(novelty: '-1').count
                                 %td= link_to "See Details", admin_score_path(poster)
