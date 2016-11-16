@@ -55,5 +55,3 @@ gem 'jquery-rails'
 # use Haml for templates
 gem 'haml'
 #gem 'test-unit'
-
-gem 'rqrcode_png'

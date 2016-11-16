@@ -40,7 +40,7 @@
                 %th Presenter
                 %th Title
                 %th Average
-                %th # of Judge's Scores
+                %th # of Judges Scoring
                 %th Detail
         %tbody
                 - @posters.each do |poster|
@@ -50,5 +50,5 @@
                                 %td= poster.title
                                 %td= show_avg(poster.no_show, @poster_avgs[poster.id])
                                 -# counts total number of actually scored posters = judges
-                                %td= Admin::ScoresController.get_actual_scores_count(poster)
+                                %td= get_actual_scores_count(poster)
                                 %td= link_to "See Details", admin_score_path(poster)
