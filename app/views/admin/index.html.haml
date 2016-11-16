@@ -17,6 +17,6 @@
 %br 
 %br
 = form_tag admin_root_path, :method => :get do 
-  = date_select("event", "date", :default => Date.today) 
+  = date_select("event", "date", :default => Date.today, :) 
   %br
   = submit_tag 'Update Date'
