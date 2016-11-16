@@ -4,3 +4,4 @@
 /log/*
 .bundle/
 README.MD
+config/initializers/secret_token.rb
