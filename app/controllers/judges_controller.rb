@@ -16,13 +16,20 @@ class JudgesController < ApplicationController
         @disable = Array.new
 	
         for score in @judge.scores
-            sum = Score.get_score_sum.find(score.id).score_sum
-            if  score.poster.no_show || sum >= 5
+            first = Score.find(score.id).send(Score.score_terms[0])
+            if  score.poster.no_show || first >= 0
                 @disable += [score.poster_id]
             end
         end
     end
-    
+      
+  def get_judge_avgs
+    @judge_avgs = Hash.new
+    @judge.scores.each do |score|
+        score_sum = Score.get_score_sum().find(score.id).score_sum
+        @judge_avgs[score.poster_id] = score_sum/@score_terms.size.to_f
+    end
+  end
     #display the posters assigned to a specific judge
     def show
         @score_terms = Score.score_terms
@@ -39,10 +46,11 @@ class JudgesController < ApplicationController
         comeback_assign()
         @posters = @judge.posters.order(:number)
         set_disable()
-        
+        get_judge_avgs
          #unscored posters
         @orphan_posters = Poster.find_least_judged()
         @orphan_posters = @orphan_posters.reject {|p| @posters.include?(p)}
+
     end    
 
     #update judge information (name, company name)
