@@ -155,6 +155,7 @@ end
     @judge  = score.judge
     render 'scores/edit'
   end
+=begin  
   def update
       score_id = params[:id]
       @score = Score.find(score_id)
@@ -169,7 +170,7 @@ end
           redirect_to judge_poster_judge_path(judge_id, poster_id)
       end
   end
-
+=end
   def rankings
         @score_terms = Score.score_terms
         @posters = Poster.all_scored
