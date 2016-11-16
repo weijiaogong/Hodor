@@ -84,7 +84,7 @@ Feature: View scores
 		   |Poster #  |Presenter     |Title            |Average |# of Judges Assigned|# of Posters Scored by Judge|Detail     |
            | 1        |Harshvardhan  | Big Data        |5.000   |1                   |1                           |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0                   |0                           |See Details|
-           | 3        |Bill Gwen     | Wireless Network|-       |0                   |0                           |See Details|
+           | 3        |Bill Gwen     | Wireless Network|-       |1                   |0                           |See Details|
         When I choose "status_no_show"
 		Then  I should see the following scores table:
 		   |Poster #  |Presenter     |Title           |Average |# of Judges Assigned|# of Posters Scored by Judge|Detail     |
@@ -131,3 +131,22 @@ Feature: View scores
            | 1        |Harshvardhan  | Big Data        |5.000   |1                   |1                           |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0                   |0                           |See Details|
            | 3        |Bill Gwen     | Wireless Network|-       |1                   |0                           |See Details|    
+
+
+	Scenario: Admin edit score
+		Given  Judges scored posters as following:
+		  |name  |number |scores   |
+          | Sara | 1     |5,5,5,5,5|
+	    When  I press "View Scores"
+		Then  I should see the following scores table:
+	       |Poster #  |Presenter     |Title            |Average |# of Judges Assigned|# of Posters Scored by Judge|Detail     |
+	       | 1        |Harshvardhan  | Big Data        | 5.000  |1                   |1                           |See Details|
+           | 2        |Ralph Crosby  | Graph Theory    |-       |0                   |0                           |See Details|
+           | 3        |Bill Gwen     | Wireless Network|-       |0                   |0                           |See Details|
+
+        When I follow the #1 "See Details"
+        Then I should see the following scores table:
+          |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit   |
+		  | Sara   |5      |5      |5         |5     |5      |5.000  |  Edit  |
+		  |Average |5.000  |5.000  |5.000     |5.000 |5.000  |5.000  |        |
+		When  I follow "Edit"
