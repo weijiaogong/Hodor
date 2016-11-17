@@ -33,6 +33,13 @@ Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
 	poster = Poster.where(:number => arg2).first()
     poster.update_attribute(:no_show, true)
 end
+
+
+Given (/^Judge "(.*?)" has not scored assigned poster (\d)$/) do |arg1, arg2|
+    poster = Poster.where(:number => arg2).first()
+    judge = Judge.where(:name => arg1).first()
+    Score.assign_poster_to_judge(poster, judge)
+end
 Given (/^Judges scored posters as following:$/) do |table|
 	  table.hashes.each do |row|
 		   grade = row[:scores].split(',')
@@ -48,11 +55,12 @@ When (/^I change scores to (.*?)$/) do |grade|
     expect(page).to have_content("Poster #")
     score = grade.split(",")
     expect(page).to have_button('Submit', disabled: true)
-    choose("novelty#{score[0]}")
-    choose("utility#{score[1]}")
-    choose("difficulty#{score[2]}")
-    choose("verbal#{score[3]}")
-    choose("written#{score[4]}")
+    score_terms = Score.score_terms
+    i = 0
+    score_terms.each do |term|
+        choose(term+"#{score[i]}")
+        i = i+1
+    end
     click_button('Submit', disabled: true)
 end
 
@@ -80,3 +88,5 @@ When (/^I edit the scores of poster #(\d+)$/) do |number|
  	       end
       end
 end
+
+

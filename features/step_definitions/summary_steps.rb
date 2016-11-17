@@ -33,6 +33,6 @@ Then(/^I should see the following ranking table:$/) do |expect_table|
 end
 
 
-Then(/^I see a popup window for download$/) do
-	page.response_headers['Content-Disposition'].should include("rankings.csv")
+Then(/^I see a popup window for download "(.*?)"$/) do |arg1|
+	page.response_headers['Content-Disposition'].should include(arg1)
 end

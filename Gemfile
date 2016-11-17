@@ -25,11 +25,12 @@ group :test do
 	gem 'autotest-rails'
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
+	gem "capybara"
+  gem "launchy"
 	gem 'test-unit'
 
 	gem 'capybara-webkit'
   gem 'headless'
-	gem "launchy"
 end
 
 group :production do

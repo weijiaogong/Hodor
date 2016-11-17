@@ -53,4 +53,14 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
 	    When  I press "View Poster Rankings"
 	    And   I press "Download"
-		Then   I see a popup window for download
+		Then   I see a popup window for download "rankings.csv"
+    
+	Scenario: Only scored Posters shown in the ranking list
+		Given Judges scored posters as following:
+		|name  |number |scores   |
+        | Sara | 1     |5,5,5,5,5|
+		And   Judge "Kelly" has not scored assigned poster 2
+	    When  I press "View Poster Rankings"
+		Then  I should see the following ranking table:
+		  |Rank| 	Presenter| 	Title| 	Avg. Score|
+		  | 1  |Harshvardhan |       |  5.000     |

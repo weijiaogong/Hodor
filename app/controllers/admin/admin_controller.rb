@@ -7,13 +7,18 @@ class Admin::AdminController < ApplicationController
 		 
 			event_date = params[:event]
 			if (Event.exists?)
-		 		stored_date = Event.find(1)
-		 		stored_date.update_attributes(:day => event_date["date(3i)"], :month => event_date["date(2i)"], :year => event_date["date(1i)"] )
-		 		@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
+				@event_date_set = Date.strptime(event_date[:date], '%Y-%m-%d')
+				stored_date = Event.find(1)
+				stored_date.update_attributes(:day => @event_date_set.mday, :month => @event_date_set.mon, :year => @event_date_set.year )
+
+		 		#stored_date = Event.find(1)
+		 		#stored_date.update_attributes(:day => event_date["date(3i)"], :month => event_date["date(2i)"], :year => event_date["date(1i)"] )
+		 		#@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
 
 			else
-				stored_date = Event.create(:day => event_date["date(3i)"], :month => event_date["date(2i)"], :year => event_date["date(1i)"] )
-				@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
+				@event_date_set = Date.strptime(event_date[:date], '%Y-%m-%d')
+				stored_date = Event.create(:day => @event_date_set.mday, :month => @event_date_set.mon, :year => @event_date_set.year )
+				#@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
 			end
 		
 		else
@@ -42,4 +47,21 @@ class Admin::AdminController < ApplicationController
 		end
 		redirect_to admin_reset_path
 	end
+	
+	def register
+        @judge = Judge.find(params[:judge_id])
+        render 'admin/register.html'
+    end
+    
+    def registerup
+    	@judge = Judge.find(params[:judge_id])
+        res = @judge.update_attributes(name: params[:name], company_name: params[:company])
+        # this validation should be down in js
+        unless res
+          flash[:error] = "name & company_name cannot be blank"
+          redirect_to admin_register_path(@judge) and return
+        end
+        sign_in @judge
+        redirect_to admin_root_path
+    end
 end
