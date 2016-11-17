@@ -115,7 +115,7 @@ def filter_posters(status)
     if status
         session[:status] = status
     end
-    unless session[:status] == "all"
+    if session[:status] && session[:status] != "all"
       @posters = select_posters(@posters, session[:status])
     end
     @filter = session[:status] || ""

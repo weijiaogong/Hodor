@@ -19,17 +19,17 @@ Background: users in database
   Then  I should see 3 posters "Big data", "Machine Learning", "Werables" assigned to "Umair"
    
   Scenario: The judge gives scores in all categories
-    When  I judge "Poster #1 - Big data"
+    When  I judge poster #1
     And   I give scores to the poster in every category and submit
     Then  Return to list of posters
     
   Scenario: The judge does not give scores in all categories
-    When  I judge "Poster #1 - Big data"
+    When  I judge poster #1
     And I do not give scores in all categories and try to submit
     Then I remain on the poster scoring page
     
   Scenario: The presenter does not show up
-    When  I judge "Poster #1 - Big data"
+    When  I judge poster #1
     And I press the no show button
     Then Return to list of posters
     

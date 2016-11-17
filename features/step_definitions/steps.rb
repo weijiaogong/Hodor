@@ -76,8 +76,8 @@ Given (/the following users exist/) do |user_table|
 end
 
 Given(/^the following posters exist:$/) do |table|
-	table.hashes.each do |poster|
-	   poster = Poster.new(:number => poster[:number], :email => poster[:email], :title => poster[:title], :presenter =>poster[:presenter], :advisors =>  poster[:advisors])
+	table.hashes.each do |row|
+	   poster = Poster.new(:number => row[:number], :email => row[:email], :title => row[:title], :presenter =>row[:presenter], :advisors =>  row[:advisors])
        poster.save!(validate: false)
     end
 end

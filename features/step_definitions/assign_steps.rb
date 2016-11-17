@@ -6,7 +6,7 @@ end
 =end
 Then (/^I should see 3 posters "([^"]*)", "([^"]*)", "([^"]*)" assigned to "([^"]*)"$/) do |t1,t2,t3,name|
     expect(page).to have_content(name)
-    expect(page).to have_button("Poster #1 - #{t1}")
-    expect(page).to have_button("Poster #2 - #{t2}")
-    expect(page).to have_button("Poster #3 - #{t3}")
+    expect(page).to have_content(t1)
+    expect(page).to have_content(t2)
+    expect(page).to have_content(t3)
 end
