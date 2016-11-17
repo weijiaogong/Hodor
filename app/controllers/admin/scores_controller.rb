@@ -2,7 +2,7 @@
 require 'csv'
 
 class Admin::ScoresController < ApplicationController
-  before_filter :require_login, :require_admin
+  before_action :require_login, :require_admin
   
     
   def avgs_init

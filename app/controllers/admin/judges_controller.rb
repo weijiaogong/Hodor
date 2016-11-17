@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class Admin::JudgesController < ApplicationController
-    before_filter :require_login, :require_admin
+    before_action :require_login, :require_admin
 
     def index
         role = Judge.find_by_access_code(session[:password]).role
