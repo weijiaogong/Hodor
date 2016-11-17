@@ -31,6 +31,8 @@ Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
             expect(current_path).to eq signin_path
         when "poster add"
             expect(current_path).to eq admin_posters_path
+        when "admin poster"
+            expect(current_path).to eq admin_posters_path
         when "login"
             expect(current_path).to eq root_path
         else
