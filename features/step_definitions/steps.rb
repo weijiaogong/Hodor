@@ -78,14 +78,14 @@ Given (/the following users exist/) do |user_table|
 end
 
 Given(/^the following posters exist:$/) do |table|
-	table.hashes.each do |poster|
-	   poster = Poster.new(:number => Poster.count + 1, :email => poster[:email], :title => poster[:title], :presenter =>poster[:presenter], :advisors =>  poster[:advisors])
+	table.hashes.each do |row|
+	   poster = Poster.new(:number => Poster.count + 1, :email => row[:email], :title => row[:title], :presenter =>row[:presenter], :advisors =>  row[:advisors])
        poster.save!(validate: false)
     end
 end
 Given(/^the following judges exist:$/) do |table|
-	table.hashes.each do |judge|
-        judge = Judge.new(:name => judge[:name],  'company_name' => judge[:company_name],  :access_code => judge[:access_code], :role => judge[:role])
+	table.hashes.each do |row|
+        judge = Judge.new(:name =>row[:name],  'company_name' => row[:company_name],  :access_code => row[:access_code], :role => row[:role])
         judge.save!(validate: false)
     end
 end
