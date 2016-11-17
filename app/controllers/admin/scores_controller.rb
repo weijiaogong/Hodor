@@ -137,6 +137,7 @@ end
     @posters.each do |poster|
       @judge_nums[poster.id] = poster.scores_count
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
+		  puts poster.inspect
     end
    
     
