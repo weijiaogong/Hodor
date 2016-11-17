@@ -35,4 +35,4 @@
         %tr
           %td= poster.number
           %td= poster.title
-          %td= button_to 'Accept', judge_score_accept_path(@judge.id,poster.id), method: :get
+          %td= button_to 'Accept', judge_score_accept_path(@judge.id,poster.id), method: :get, data: {confirm: "Are you sure?"}
