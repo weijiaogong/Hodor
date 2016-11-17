@@ -20,8 +20,13 @@
  Then (/^I should see an empty table$/) do
      rows = page.all(".table.table-bordered tbody tr")
      expect(rows.size).to eql 0
-    	 
 end
+
+Then (/^I should see an empty table "(.*?)"$/) do |arg1|
+     rows = page.all(arg1 + " tbody tr")
+     expect(rows.size).to eql 0
+end
+
 Then(/^I should see the following table:$/) do |expect_table|
 	
 	table_header = page.all('.table.table-bordered thead').map do |row|

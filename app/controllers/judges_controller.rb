@@ -1,6 +1,6 @@
 class JudgesController < ApplicationController
     before_action :require_login, :require_correct_user
-
+=begin
     def comeback_assign()
         no_notice = flash[:notice]? false : true
         num = 3 - @judge.scores_count
@@ -11,7 +11,7 @@ class JudgesController < ApplicationController
            end
         end
     end
-    
+=end    
     def set_disable()
         @disable = Array.new
 	
@@ -47,7 +47,7 @@ class JudgesController < ApplicationController
               redirect_to root_url and return
             end
         end
-        comeback_assign()
+        #comeback_assign() #no come back assign
         @posters = @judge.posters.order(:number)
         set_disable()
         get_judge_avgs
