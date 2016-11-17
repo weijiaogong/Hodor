@@ -42,6 +42,31 @@ Then(/^I should see the following table:$/) do |expect_table|
 	   expect(table_results).to eq data
 end
 
+
+Then(/^I should see the following table "(.*?)":$/) do |arg1, expect_table|
+	
+	table_header = page.all(arg1 + " thead").map do |row|
+	    row.all('th').map do |cell|
+	        cell.text
+	    end
+    end
+    
+    # use find first is important for waiting for javascript function to run
+    page.find(arg1 +  " tbody tr", match: :first)
+	table_body = page.all(arg1 +  " tbody tr").map do |row|
+	    row.all('td').map do |cell|
+	        cell.text
+	    end
+    end
+    table_results = table_header + table_body
+	   data = expect_table.raw
+	   expect(table_results).to eq data
+end
+
+
+
+
+
 Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
     judge = Judge.find_by(name: arg1)
 	poster = Poster.find_by(:number => arg2)
@@ -67,7 +92,7 @@ Given (/^Judges scored posters as following:$/) do |table|
     end
 end
 
-When (/^I change scores to (.*?)$/) do |grade|
+When (/^I give new scores (.*?)$/) do |grade|
     expect(page).to have_content("Poster #")
     score = grade.split(",")
     expect(page).to have_button('Submit', disabled: true)
@@ -105,4 +130,7 @@ When (/^I edit the scores of poster #(\d+)$/) do |number|
       end
 end
 
-
+Then (/^Judge "(.*?)" should have no scores$/) do |name|
+    judge = Judge.find_by(name: name)
+    expect(judge.scores.size).to eq 0
+end

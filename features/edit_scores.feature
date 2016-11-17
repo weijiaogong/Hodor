@@ -29,7 +29,7 @@ Feature: Edit scores
 		  |Average |3.500  |5.000  |3.500     |5.000 |3.500  |4.100  |       |
 		When   I edit the scores of poster #1
 		And I edit the scores given by judge "Kelly"
- 	    And I change scores to 5,5,5,4,4
+ 	    And I give new scores 5,5,5,4,4
         Then I should be on the show scores page for "1"
        Then I should see the following table:
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  |

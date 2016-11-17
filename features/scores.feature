@@ -5,7 +5,7 @@ Feature: View scores
     I want to view the score for each presenter
     Background:
         Given the following users exist:
-          |name | company_name| access_code| role|
+          |name | company_name| access_code| role |
           |admin| TAMU        | admin      | admin|
         And the following posters exist:
         |number|presenter    | title           |

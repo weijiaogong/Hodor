@@ -6,7 +6,7 @@
 - if @posters.empty?
   %p None
 - else
-  %table{class: "table table-bordered"}
+  %table{class: "table table-bordered", id: "assigned_posters_table"}
     %thead
       %tr
         %th Poster #
@@ -24,10 +24,10 @@
 - if @orphan_posters.empty?
   %p None
 - else
-  %table{class: "table table-bordered"}
+  %table{class: "table table-hover table-bordered", id: "orphan_posters_table"}
     %thead
       %tr
-        %th Number
+        %th Poster #
         %th Title
         %th Accept
     %tbody
