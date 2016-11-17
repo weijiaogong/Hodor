@@ -17,7 +17,7 @@ Feature: Assignments of judges
         And  Judge "Sara" has not scored assigned poster 3
         And  I logged in as "Sara"
    
-    Scenario: Judge who released their unscored posters will be assigned with new posters when coming back 
+    Scenario: Judge who released their unscored posters will not be assigned with new posters when coming back 
         When I follow "Sign out"
         Then I should be on the signout confirm page for "Sara"
         When I press "No"
@@ -26,6 +26,6 @@ Feature: Assignments of judges
         Then  I should see an empty table "#assigned_posters_table"
         Then  I should see the following table "#orphan_posters_table":
           |Poster #|Title           |Accept|
-		  | 1      |Big Data        |     |
-		  | 2      |Graph Theory    |     |
-		  | 3      |Wireless Network|     |
+		  | 1      |Big Data        |      |
+		  | 2      |Graph Theory    |      |
+		  | 3      |Wireless Network|      |
