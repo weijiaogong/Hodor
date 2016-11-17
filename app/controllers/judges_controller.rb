@@ -49,7 +49,7 @@ class JudgesController < ApplicationController
         end
         #comeback_assign() #no come back assign
         @posters = @judge.posters.order(:number)
-        set_disable()
+        #set_disable() #judge can edit their score later
         get_judge_avgs
          #unscored posters
         @orphan_posters = Poster.find_least_judged()
