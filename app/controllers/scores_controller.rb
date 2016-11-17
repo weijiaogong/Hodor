@@ -71,8 +71,12 @@ class ScoresController < ApplicationController
         judge_id  = params[:judge_id]
         poster_id = params[:score_poster_id]
         poster = Poster.find(poster_id)
-        @judge = Judge.find(judge_id)
-        Score.assign_poster_to_judge(poster, @judge)
-        redirect_to edit_judge_score_path(judge_id, poster_id)
+        if poster.scores_count >= 3
+            @notice = "Sorry, this poster is not available anymore"
+        else
+            @judge = Judge.find(judge_id)
+            Score.assign_poster_to_judge(poster, @judge)
+            redirect_to edit_judge_score_path(judge_id, poster_id)
+        end
     end
 end
