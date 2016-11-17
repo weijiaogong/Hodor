@@ -1,5 +1,5 @@
 class ScoresController < ApplicationController
-    before_filter :require_login
+    before_action :require_login
     #render the view for judging each poster
     def edit
         @poster = Poster.find(params[:poster_id])

@@ -1,14 +1,20 @@
 class PostersController < ApplicationController
-    before_filter :require_login, :except => [:new, :create]
+    before_action :require_login, :except => [:new, :create]
+    before_action :require_admin, :only => [:destroy]
 
     def new
     end
     
-    def create  #what if the admin wants to create a poster? then bulk load from csv
-        @poster = Poster.create(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
+    def create
+        @poster = Poster.create(params[:poster].merge({:number => Poster.count + 1}).permit(:number, :presenter, :title, :advisors, :email))
         if @poster.errors.messages.empty?
             flash[:notice] = "#{@poster.title} was successfully created."
-            redirect_to root_path and return
+            if admin?
+                redirect_to admin_posters_path
+            else
+                redirect_to root_path
+            end
+            return
         else
             flash[:error] = "Please correct the following fields: #{@poster.errors.messages.keys.join(', ')}"
             render :action => 'new' #and now the css breaks :(
@@ -27,7 +33,7 @@ class PostersController < ApplicationController
 #        rescue ActiveRecord::RecordNotFound    #situation in which this occurs: poster delete between clicking edit and update
 #            flash[:notice] = "No such poster"
 #            redirect_to admin_posters_path and return
-        @poster.update_attributes(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
+        @poster.update_attributes(params[:poster].merge({:number => Poster.count + 1}).permit(:number, :presenter, :title, :advisors, :email))
         if @poster.errors.messages.empty?
             flash[:notice] = "#{@poster.title} was successfully updated."
             redirect_to admin_posters_path and return
@@ -37,9 +43,10 @@ class PostersController < ApplicationController
         end
     end
     
-    def destroy #TODO how to ensure only admin can delete?
+    def destroy
         @poster = Poster.find(params[:id])
         @poster.destroy
+        Poster.where("number > ?", @poster.number).update_all("number = number - 1")
         flash[:notice] = "Poster deleted."
         redirect_to admin_posters_path
     end

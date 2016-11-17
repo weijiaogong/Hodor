@@ -36,12 +36,13 @@ Background: users in database
     And I press "Sign in"
     Then I should be on the register page for "ab13"
     
-  #Scenario: Login with invalid password
-   # Given I am signed out
-  #  When I log in with invalid user credentials
-  #  Then I should get an error message
-  
-  #Scenario: Login with valid password
-   # Given I am signed out
-    #When I log in with valid credentials
-    #Then I should be greeted 
+  Scenario: Redirect to admin page
+    Given I logged in as "admin"
+    And I am on the login page
+    Then I should be on the admin page
+    
+#  Scenario: Logout
+#    Given I logged in as "admin"
+#    And I am on the login page
+#    And I press "Sign out"
+#    Then I should be on the login page

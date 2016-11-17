@@ -6,6 +6,11 @@ class SessionsController < ApplicationController
       #@qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
       qr.save("app/assets/images/qrcode.png")
     end
+    
+    if not current_user.nil? and admin?
+      redirect_to admin_root_path and return
+    end
+
   end
 
   def create

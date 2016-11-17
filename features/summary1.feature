@@ -8,9 +8,9 @@ Feature: Overall summary of Presenters
           |name | company_name| access_code| role|
           |admin| TAMU        | admin      | admin|
         And  the following posters exist:
-        |number|presenter    |
-        | 1    |Harshvardhan |
-        | 2    |Ralph Crosby |
+        |presenter    |
+        |Harshvardhan |
+        |Ralph Crosby |
         And  the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |

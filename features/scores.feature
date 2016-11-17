@@ -8,10 +8,9 @@ Feature: View scores
           |name | company_name| access_code| role |
           |admin| TAMU        | admin      | admin|
         And the following posters exist:
-        |number|presenter    | title           |
-        | 1    |Harshvardhan | Big Data        |
-        | 2    |Ralph Crosby | Graph Theory    |
-        | 3    |Bill Gwen    | Wireless Network|
+        |presenter    |
+        |Harshvardhan |
+        |Ralph Crosby |
         And the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |
@@ -50,10 +49,8 @@ Feature: View scores
 		When I follow poster #3 "See Details"
 		Then I should see an empty table
 		
-
-	#@javascript	   
-	Scenario: Scores are updated after the page is reloaded
-        Given No posters has been judged
+	Scenario: The score page is reloaded automatically
+		Given No posters has been judged
 		When  I press "View Scores"
 		Then  I should see the following table:
 		   |Poster #  |Presenter     |Title            |Average |# of Judges Assigned|# of Posters Scored by Judge|Detail     |

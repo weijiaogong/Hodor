@@ -6,11 +6,11 @@ end
 
 Then(/^I should see a presenter named "(.*?)"$/) do |arg1|
 	posters = Poster.where(:presenter => arg1)
-	posters.count.should equal(1)
+	expect(posters.count).to eq(1)
 end
 
 Then(/^I should see a poster titled "(.*?)"$/) do |arg1|
 	posters = Poster.where(:title => arg1)
-	posters.count.should equal(1)
+	expect(posters.count).to eq(1)
 end
 

@@ -23,18 +23,16 @@ Given(/^I am on the (.*?) page$/) do |arg1|
 end
 
 Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
+    current_path = URI.parse(current_url).path
     case arg
 		when "admin"
-		  #visit admin_root_path
-		  current_path = URI.parse(current_url).path
           expect(current_path).to eq admin_root_path
 		when "signin"
-		    #visit signin_path
-		    current_path = URI.parse(current_url).path
             expect(current_path).to eq signin_path
-        when "admin poster"
-            current_path = URI.parse(current_url).path
+        when "poster add"
             expect(current_path).to eq admin_posters_path
+        when "login"
+            expect(current_path).to eq root_path
         else
             raise "Could not find #{arg}"
         
@@ -80,8 +78,8 @@ Given (/the following users exist/) do |user_table|
 end
 
 Given(/^the following posters exist:$/) do |table|
-	table.hashes.each do |row|
-	   poster = Poster.new(:number => row[:number], :email => row[:email], :title => row[:title], :presenter =>row[:presenter], :advisors =>  row[:advisors])
+	table.hashes.each do |poster|
+	   poster = Poster.new(:number => Poster.count + 1, :email => poster[:email], :title => poster[:title], :presenter =>poster[:presenter], :advisors =>  poster[:advisors])
        poster.save!(validate: false)
     end
 end
