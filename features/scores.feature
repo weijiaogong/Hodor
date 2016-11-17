@@ -8,9 +8,10 @@ Feature: View scores
           |name | company_name| access_code| role|
           |admin| TAMU        | admin      | admin|
         And the following posters exist:
-        |presenter    |
-        |Harshvardhan |
-        |Ralph Crosby |
+        |number|presenter    | title           |
+        | 1    |Harshvardhan | Big Data        |
+        | 2    |Ralph Crosby | Graph Theory    |
+        | 3    |Bill Gwen    | Wireless Network|
         And the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |
