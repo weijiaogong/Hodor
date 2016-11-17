@@ -5,9 +5,9 @@ Feature: Poster Registration
     
   Background:
     Given the following posters exist:
-      |number|presenter    |title|advisors|
-      | 1    |Harshvardhan |a|a|
-      | 2    |Ralph Crosby |b|b|
+      |presenter    |title|advisors|
+      |Harshvardhan |a|a|
+      |Ralph Crosby |b|b|
     And the following users exist:
     | name  | company_name| access_code|role|
     | admin | tamu        | admin      |admin|
@@ -40,6 +40,17 @@ Feature: Poster Registration
     And I press "Save changes"
     Then I see "was successfully updated."
     And I see "e-mail@example.com" as "email" for poster 1
+    
+  Scenario: Add poster as admin
+    Given I logged in as "admin"
+    And I am on the new poster page
+    When I fill in "poster[title]" with "Title"
+    And I fill in "poster[presenter]" with "Student"
+    And I fill in "poster[advisors]" with "Advisor"
+    And I fill in "poster[email]" with "e-mail@example.com"
+    And I press "Register"
+    Then I see "Title was successfully created."
+    And I should be on the poster add page
     
   Scenario: Modify part of poster
     Given I logged in as "admin"

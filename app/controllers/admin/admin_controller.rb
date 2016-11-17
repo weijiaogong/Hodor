@@ -1,5 +1,5 @@
 class Admin::AdminController < ApplicationController
-    before_filter :require_login, :require_admin
+    before_action :require_login, :require_admin
 
 	def index
 		render 'admin/index.html'
@@ -7,7 +7,6 @@ class Admin::AdminController < ApplicationController
 
 	def reset 
 		render 'admin/reset.html'
-		@judge = Judge.find(1)			
 	end
 
 	def reset_pw

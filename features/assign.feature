@@ -14,10 +14,10 @@ Feature: Assign judge to Posters
 
     Scenario: Properly filled out form
 	    Given the following posters exist:
-        |number|presenter    | title   |
-        | 1    |Harshvardhan | Big data|
-        | 2    |Ralph Crosby |Machine Learning|
-        | 3    |Brittany Duncan|Werables|
+        |presenter    | title   |
+        |Harshvardhan | Big data|
+        |Ralph Crosby |Machine Learning|
+        |Brittany Duncan|Werables|
         When I fill in "name" with "Steven Bierwagen"
         When I fill in "company" with "..."
         And I press "Register"

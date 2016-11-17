@@ -18,6 +18,10 @@ describe Poster do
     
     describe "import_csv" do
         it "rejects unknown parameters" do
+            expect(Poster.import([{:bad => :bad}])).to eq "Invalid column header- valid options are number, presenter, title, advisors, email"
         end
+        
+        it "expects all needed parameters" do
+            
     end
 end

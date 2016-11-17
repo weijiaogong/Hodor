@@ -5,10 +5,10 @@ Feature: Judge a Poster
   
 Background: users in database
    Given the following posters exist:
-   | number | presenter |   title            | advisors |
-   | 1      | John      |   Big data         | Walker   |
-   | 2      | David     |   Machine Learning | Thomas   |
-   | 3      | Alan      |   Werables         | Alex     |
+   | presenter |   title            | advisors |
+   | John      |   Big data         | Walker   |
+   | David     |   Machine Learning | Thomas   |
+   | Alan      |   Werables         | Alex     |
    And the following users exist:
    | access_code |
    | ab13        |

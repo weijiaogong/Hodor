@@ -1,6 +1,9 @@
 #require 'rqrcode_png'
 class SessionsController < ApplicationController
   def new
+    if not current_user.nil? and admin?
+      redirect_to admin_root_path and return
+    end
 #    qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
 #    @qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
 #    qr.save("downloads/QRcode.png")

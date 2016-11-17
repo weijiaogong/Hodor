@@ -8,9 +8,9 @@ Feature: View in-time scores
           |name | company_name| access_code| role|
           |admin| TAMU        | admin      | admin|
         And the following posters exist:
-        |number|presenter    |
-        | 1    |Harshvardhan |
-        | 2    |Ralph Crosby |
+        |presenter    |
+        |Harshvardhan |
+        |Ralph Crosby |
         And the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |
@@ -46,8 +46,6 @@ Feature: View in-time scores
 		When I follow the #2 "See Details"
 		Then I should see an empty table
 		
-
-	#@javascript	   
 	Scenario: The score page is reloaded automatically
 		Given No posters has been judged
 		When  I press "View Scores"

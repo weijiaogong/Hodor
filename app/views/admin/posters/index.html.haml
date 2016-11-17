@@ -7,6 +7,8 @@
     
 = button_to "Download", download_admin_posters_path, method: "get", class: "btn btn-default", form: {style: 'display:inline-block'}
     
+= button_to "Add new poster", new_poster_path, method: "get", class: "btn btn-default", form: {style: 'display:inline-block'}
+    
 = button_to "Clear", clear_admin_posters_path, method: "delete", class: "btn btn-default", form: {style: 'display:inline-block'}
 %br
 %table{:class => "table table-bordered"}

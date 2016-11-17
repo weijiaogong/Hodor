@@ -49,7 +49,6 @@ module SessionsHelper
     unless admin?
       flash[:alert] = 'The page you tried to access requires administrator privileges'
       redirect_to(root_path) and return
-      #redirect_to(main_page(current_user)) and return
     end
   end
 
@@ -66,10 +65,9 @@ module SessionsHelper
   def superadmin?
     current_user.role == 'superadmin'
   end
-
-  def admin?  #TODO superadmin is more special and does less than admin
-      ['admin', 'superadmin'].include?(current_user[:role])
-      #current_user == Judge.find_by_name("admin")
+  
+  def admin?
+      not current_user.nil? and ['admin', 'superadmin'].include?(current_user[:role])
   end
 
   def main_page(judge)

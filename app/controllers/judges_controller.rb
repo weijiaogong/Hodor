@@ -1,5 +1,5 @@
 class JudgesController < ApplicationController
-    before_filter :require_login, :require_correct_user
+    before_action :require_login, :require_correct_user
 
     def comeback_assign()
         no_notice = flash[:notice]? false : true

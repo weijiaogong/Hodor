@@ -1,5 +1,5 @@
 class ScoresController < ApplicationController
-    before_filter :require_login
+    before_action :require_login
     #render the view for judging each poster
     def edit
         @poster = Poster.find(params[:poster_id])
@@ -8,14 +8,14 @@ class ScoresController < ApplicationController
     end
     
     #update the Score associated with a specific poster and a specific judge
-    def update    #FIXME this method does not fit here. judges submit scores
+    def update
         #check to make sure all radio buttons are checked
         
         judge_id  = params[:judge_id]
         poster_id = params[:poster_id]
         @score = Score.where(judge_id: judge_id, poster_id: poster_id).first()
         score = params[:score]
-        score = score.map {|k,v| k, v = k.to_sym, v.to_i}.to_h
+        score = score.map {|k,v| k, v = k.to_sym, v.to_i}.to_h  #FIXME deprecated (can we use transform_values()?)
         poster = Poster.find(poster_id)
         begin
             if poster.no_show
