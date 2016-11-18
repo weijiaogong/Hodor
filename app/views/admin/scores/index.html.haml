@@ -33,7 +33,6 @@
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
         = submit_tag "Search", class: "btn btn-success btn-md"
 
-
 %table{class: "table table-bordered"}
         %thead
                 %th Poster #
@@ -49,7 +48,7 @@
                                 %td= poster.number
                                 %td= poster.presenter
                                 %td= poster.title
-                                %td= show_avg(poster.no_show, @poster_avgs[poster.id])
+                                %td= show_poster_avg(poster, @poster_avgs[poster.id])
                                 %td= poster.scores_count
                                 %td= poster.scores_count - poster.scores.where(novelty: '-1').count
                                 %td= link_to "See Details", admin_score_path(poster)

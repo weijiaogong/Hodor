@@ -20,3 +20,9 @@
   = date_field("event", "date",:default => Date.today) 
   %br
   = submit_tag 'Update Date'
+
+
+.qrcode
+  = image_tag "qrcode.png"
+.pull-center
+  = button_to 'download QR code', download_sessions_path, method: "get"

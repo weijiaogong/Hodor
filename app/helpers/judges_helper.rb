@@ -20,5 +20,9 @@ module  JudgesHelper
         end
     end
     
+    def volunteer_msg
+        msg = @notice ? @notice : "Are you sure?"
+        return msg
+    end
     
 end

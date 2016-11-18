@@ -15,24 +15,6 @@ Then (/^I should see two posters with average score '-'$/) do
 	end
 end
 
-Then(/^I should see the following ranking table:$/) do |expect_table|
-	table_header = page.all('.table.table-bordered thead').map do |row|
-	    row.all('th').map do |cell|
-	        cell.text
-	    end
-    end
-
-   table_body = page.all('.table.table-bordered tbody tr').map do |row|
-	    row.all('td').map do |cell|
-	        cell.text
-	    end
-    end
-    table_results = table_header + table_body
-    data = expect_table.raw
-    data.should eq table_results
-end
-
-
 Then(/^I see a popup window for download "(.*?)"$/) do |arg1|
 	page.response_headers['Content-Disposition'].should include(arg1)
 end

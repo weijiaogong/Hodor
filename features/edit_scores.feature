@@ -21,17 +21,17 @@ Feature: Edit scores
           | Sara | 1     |4,5,4,5,4|
 	Scenario: Edit score successfully
 		Given I am on the view scores page
-		When I follow the #1 "See Details"
-		Then I should see the following scores table:
+		When I follow poster #1 "See Details"
+		Then I should see the following table:
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  |
           | Kelly  |3      |5      |3         |5     |3      |3.800  | Edit  |
 		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  |
 		  |Average |3.500  |5.000  |3.500     |5.000 |3.500  |4.100  |       |
 		When   I edit the scores of poster #1
 		And I edit the scores given by judge "Kelly"
- 	    And I change scores to 5,5,5,4,4
+ 	    And I give new scores 5,5,5,4,4
         Then I should be on the show scores page for "1"
-       Then I should see the following scores table:
+       Then I should see the following table:
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  |
           | Kelly  |5      |5      |5         |4     |4      |4.600  | Edit  |
 		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  |

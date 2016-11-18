@@ -28,7 +28,7 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
 		  
 	    When  I press "View Poster Rankings"
-		Then  I should see the following ranking table:
+		Then  I should see the following table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Harshvardhan |       |  5.000     |
 		  | 2  |Ralph Crosby |       |  4.000     |
@@ -41,7 +41,7 @@ Feature: Overall summary of Presenters
         | Kelly| 1     |3,3,3,3,3|
         | Kelly| 2     |5,5,5,5,5|
 	    When  I press "View Poster Rankings"
-		Then   I should see the following ranking table:
+		Then   I should see the following table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Ralph Crosby |       |  4.500     |
 		  | 2  |Harshvardhan |       |  4.000     |
@@ -61,6 +61,6 @@ Feature: Overall summary of Presenters
         | Sara | 1     |5,5,5,5,5|
 		And   Judge "Kelly" has not scored assigned poster 2
 	    When  I press "View Poster Rankings"
-		Then  I should see the following ranking table:
+		Then  I should see the following table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Harshvardhan |       |  5.000     |

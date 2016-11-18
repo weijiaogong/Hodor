@@ -14,7 +14,3 @@
       = f.submit "Sign in", class: "btn btn-large btn-primary"
     New presenters?
     = link_to "Register", new_poster_path, method: "get"
-.qrcode
-  = image_tag "qrcode.png"
-.pull-center
-  = button_to 'download QR code', download_sessions_path, method: "get"
