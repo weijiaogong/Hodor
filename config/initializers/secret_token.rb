@@ -1,1 +1,0 @@
-PosterJudging::Application.config.secret_key_base = 'a9737ad37889d111cdf6091d5a73790684c0a9db09123c4faf496a8ee6c55ad9cdd01c1ec316f7182069661c1c1e55f01e5908babcb23e144eff9a4cd7f1576c'
