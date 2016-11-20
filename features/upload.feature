@@ -27,11 +27,20 @@ Feature: Upload Multiple Posters
 
 	Scenario: Update existing poster entries
 	   Given  the following posters exist:
-        |number|presenter      |
-        | 1    |Harshvardhan   |
-        | 2    |Ralph Crosby   |
-        | 3    |Brittany Duncan|
+        |presenter      |
+        |Harshvardhan   |
+        |Ralph Crosby   |
+        |Brittany Duncan|
 		When   I upload the file "data_update.csv"
 		Then   I should see a poster titled "Processing Big Data Graphs"
 		And   I should see a poster titled "Quartet Distance Computation"
 		And   I should see a poster titled "Timing Integrity Check"
+	
+	Scenario: Upload malformed file
+		When I upload the file "data_wrong.csv"
+		Then I should see "Invalid column header"
+		
+	Scenario: Clear posters
+	  When I press "Clear"
+	  Then I should be on the admin poster page
+	  And I should see 0 rows in the table

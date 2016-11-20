@@ -1,10 +1,15 @@
 require 'securerandom'
 
 class Admin::JudgesController < ApplicationController
-    before_filter :require_login, :require_admin
+    before_action :require_login, :require_admin
 
     def index
-        @judges = Judge.all
+        role = Judge.find_by_access_code(session[:password]).role
+        if role == "superadmin"
+            @judges = Judge.all
+        else
+            @judges = Judge.where("role = ? or access_code = ?", "judge", session[:password])
+        end
     end
 
     def create

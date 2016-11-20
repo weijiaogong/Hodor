@@ -8,3 +8,7 @@
 
 
 Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
+<<<<<<< HEAD
+=======
+Judge.create!(name: 'admin', company_name: 'tamu', access_code: 'admin', role: 'admin')
+>>>>>>> addc9d016f32d391f753796886767c09236a1da9

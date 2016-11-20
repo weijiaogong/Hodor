@@ -7,7 +7,7 @@ ruby '2.3.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'	#fewer errors when moving to production
-
+gem 'rqrcode_png'
 
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
@@ -25,11 +25,12 @@ group :test do
 	gem 'autotest-rails'
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
+	gem "capybara"
+  gem "launchy"
 	gem 'test-unit'
 
 	gem 'capybara-webkit'
   gem 'headless'
-	gem "launchy"
 end
 
 group :production do
@@ -55,4 +56,4 @@ gem 'jquery-rails'
 gem 'haml'
 #gem 'test-unit'
 
-
+gem 'rqrcode_png'

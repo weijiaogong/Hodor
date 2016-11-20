@@ -5,12 +5,29 @@ Given(/^I register with my information$/) do |table|
     click_button "Register"
 end
 
-When (/^I judge "([^"]*)"$/) do |arg1|
-  click_button arg1
-  expect(page).to have_button('Submit', disabled: true)
+When (/^I judge poster #(\d)$/) do |arg1|
+    #click_button arg1
+    #expect(page).to have_button('Submit', disabled: true)
+
+    # use find first is important for waiting for javascript function to run
+    page.find('.table.table-bordered tbody tr', match: :first)
+    grade_button = nil
+	page.all('.table.table-bordered tbody tr').each do |row|
+	    row.all('td').each do |cell|
+	        if cell.text == arg1
+	            within(row) do
+ 	              grade_button = page.find_button("Grade")
+                end
+                break
+	        end
+	    end
+    end
+    grade_button.click
+    expect(page).to have_button('Submit', disabled: true)
 end
 
-And(/^I give scores to the poster in every category and submit$/) do
+And(/^I give scores to the poster in every category and submit$/) do\
+    expect(page).to have_button('Submit', disabled: true)
     choose('novelty3')
     choose('utility1')
     choose('difficulty5')
