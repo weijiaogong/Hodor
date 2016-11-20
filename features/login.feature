@@ -41,8 +41,7 @@ Background: users in database
     And I am on the login page
     Then I should be on the admin page
     
-#  Scenario: Logout
-#    Given I logged in as "admin"
-#    And I am on the login page
-#    And I press "Sign out"
-#    Then I should be on the login page
+  Scenario: Logout
+    Given I logged in as "admin"
+    When I follow "Sign out"
+    Then I should be on the login page

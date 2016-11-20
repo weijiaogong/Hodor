@@ -13,6 +13,9 @@ Replace with the one you just generated.
 
 *Do not commit this file to the repo* (Or git rm it if it's in your repo still)
 
+## Fixing attribute errors
+If posters is missing the no_show field, run `rake db:reset`
+
 ## Testing
 ### To test a particular feature \<feature\>, run
 `DISPLAY=localhost:1.0 xvfb-run cucumber features/<feature>.feature`

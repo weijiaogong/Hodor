@@ -1,1 +1,1 @@
-number,presenter,title,advisors
+id,number,presenter,title,advisors,scores_count,email,no_show
