@@ -39,10 +39,7 @@ ActiveRecord::Schema.define(version: 20161108032138) do
     t.string  "advisors"
     t.integer "scores_count", default: 0
     t.string  "email"
-<<<<<<< HEAD
-=======
     t.boolean "no_show",      default: false
->>>>>>> fb1718e90af6a50319672148252caab2355103e1
   end
 
   create_table "scores", force: :cascade do |t|
