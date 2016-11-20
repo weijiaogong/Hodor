@@ -30,10 +30,13 @@ class Admin::PostersController < ApplicationController
     def download
         File.delete("app/downloads/posters.csv") if File.exists?("app/downloads/posters.csv")
         @posters = Poster.all
+        vals = @posters.attribute_names
+        puts vals.to_s
         CSV.open("app/downloads/posters.csv", "wb") do |csv|
-            csv << ["number","presenter","title","advisors"]
+            csv << vals
             for poster in @posters
-                csv << [poster.number, poster.presenter, poster.title, poster.advisors]
+            	puts vals.methods
+            	csv << vals.map{ |v| poster.send(v) }
             end
         end
         send_file("app/downloads/posters.csv")

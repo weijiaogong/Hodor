@@ -1,4 +1,4 @@
-class Poster < ActiveRecord::Base
+class Poster < ApplicationRecord
 
 	has_many :scores, dependent: :destroy
 	has_many :judges, through: :scores
@@ -8,15 +8,14 @@ class Poster < ActiveRecord::Base
 	
 	def self.import(data)
 		data.each do |row|
-			if row.to_hash.keys.any? {|k| not(["number", "presenter", "title", "advisors", "email"].include?(k))}
-				return "Invalid column header- valid options are number, presenter, title, advisors, email"
+			row_hash = row.to_hash
+			if row_hash.keys.any? {|k| not(["presenter", "title", "advisors", "email"].include?(k))}
+				return "Invalid column header- valid options are presenter, title, advisors, email"
 			end
 			
-			if not row.to_hash.keys.all? {|k| (["presenter", "title", "advisors", "email"].include?(k))}
+			if not ["presenter", "title", "advisors", "email"].all? {|k| (row_hash.keys.include?(k))}
 				return "Missing column header- presenter, title, advisors, email are required"
 			end
-			
-			row_hash = row.to_hash
 			
 			#if title or presenter both change, we don't know if we have an old poster, so assume a new one
 			poster = Poster.where("presenter = ? or title = ?", row_hash["presenter"], row_hash["title"]).first	#protip/note to self: :presenter not eq "presenter"
