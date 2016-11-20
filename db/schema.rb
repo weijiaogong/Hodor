@@ -39,10 +39,6 @@ ActiveRecord::Schema.define(version: 20161108032138) do
     t.string  "advisors"
     t.integer "scores_count", default: 0
     t.string  "email"
-<<<<<<< HEAD
-=======
-    t.boolean "no_show",      default: false
->>>>>>> fb1718e90af6a50319672148252caab2355103e1
   end
 
   create_table "scores", force: :cascade do |t|
@@ -51,7 +47,7 @@ ActiveRecord::Schema.define(version: 20161108032138) do
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
-    t.boolean "no_show"
+    t.boolean "no_show",    default: false
     t.integer "poster_id"
     t.integer "judge_id"
     t.index ["judge_id"], name: "index_scores_on_judge_id", using: :btree
