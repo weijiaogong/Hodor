@@ -6,7 +6,7 @@ class CreateScores < ActiveRecord::Migration
 			t.integer :difficulty
 			t.integer :verbal
 			t.integer :written
-			t.boolean :no_show
+			t.boolean :no_show, default: false
 			t.belongs_to :poster, index: true
 			t.belongs_to :judge, index: true
 		end

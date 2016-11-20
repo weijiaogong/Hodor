@@ -23,18 +23,18 @@ Given(/^I am on the (.*?) page$/) do |arg1|
 end
 
 Then (/^(?:|I )should be on the (.*?) page$/) do |arg|
+    current_path = URI.parse(current_url).path
     case arg
 		when "admin"
-		  #visit admin_root_path
-		  current_path = URI.parse(current_url).path
           expect(current_path).to eq admin_root_path
 		when "signin"
-		    #visit signin_path
-		    current_path = URI.parse(current_url).path
             expect(current_path).to eq signin_path
-        when "admin poster"
-            current_path = URI.parse(current_url).path
+        when "poster add"
             expect(current_path).to eq admin_posters_path
+        when "admin poster"
+            expect(current_path).to eq admin_posters_path
+        when "login"
+            expect(current_path).to eq root_path
         else
             raise "Could not find #{arg}"
         
@@ -56,6 +56,10 @@ Then (/^(?:|I )should be on the (.*?) page for "([^"]*)"$/) do |arg1, arg2|
         when "admin_registeration"
             judge = Judge.find_by_access_code(arg2)
             expect(page).to have_current_path(admin_register_path(judge))
+        when "signout confirm"
+            #judge = Judge.find_by(name: arg2)
+            expect(page).to have_content("Do you want to keep your unscored assignments?")
+            expect(page).to have_current_path(signout_sessions_path)
         else
             raise "Could not find page #{arg1}"
     end
@@ -76,14 +80,14 @@ Given (/the following users exist/) do |user_table|
 end
 
 Given(/^the following posters exist:$/) do |table|
-	table.hashes.each do |poster|
-	   poster = Poster.new(:number => poster[:number], :email => poster[:email], :title => poster[:title], :presenter =>poster[:presenter], :advisors =>  poster[:advisors])
+	table.hashes.each do |row|
+	   poster = Poster.new(:number => Poster.count + 1, :email => row[:email], :title => row[:title], :presenter =>row[:presenter], :advisors =>  row[:advisors])
        poster.save!(validate: false)
     end
 end
 Given(/^the following judges exist:$/) do |table|
-	table.hashes.each do |judge|
-        judge = Judge.new(:name => judge[:name],  'company_name' => judge[:company_name],  :access_code => judge[:access_code])
+	table.hashes.each do |row|
+        judge = Judge.new(:name =>row[:name],  'company_name' => row[:company_name],  :access_code => row[:access_code], :role => row[:role])
         judge.save!(validate: false)
     end
 end

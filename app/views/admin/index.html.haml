@@ -16,7 +16,13 @@
 = @event_date_set.inspect
 %br 
 %br
-= form_tag admin_root_path, :method => :get do 
-  = date_select("event", "date", :default => Date.today) 
+= form_tag admin_root_path, :id=> "form_id", :method => :get do 
+  = date_field("event", "date",:default => Date.today) 
   %br
   = submit_tag 'Update Date'
+
+
+.qrcode
+  = image_tag "qrcode.png"
+.pull-center
+  = button_to 'download QR code', download_sessions_path, method: "get"

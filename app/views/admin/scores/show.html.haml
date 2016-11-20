@@ -1,6 +1,6 @@
 -# in app/views/admin/scores/show.html.haml
 = button_to "Back", admin_scores_path, method: "get", class: "btn btn-default btn"
-%h2 Details about Poster Number #{@poster.number}
+%h2 Details about Poster ##{@poster.number}
 
 %ul#details
 title: #{@poster.title}
@@ -18,7 +18,7 @@ title: #{@poster.title}
         %td= score.judge.name
         - @score_terms.each do |term|
           %td= show_score(score.send(term))
-        %td= show_score(@judge_avgs[score.judge_id])
+        %td= show_avg(score.no_show, @judge_avgs[score.judge_id])
         %td= link_to 'Edit', edit_admin_score_path(score), method: :get
     - unless @scores.empty?
       %tr

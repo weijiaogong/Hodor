@@ -1,5 +1,5 @@
 class Admin::AdminController < ApplicationController
-    before_filter :require_login, :require_admin
+    before_action :require_login, :require_admin
 
 	def index
 		
@@ -7,13 +7,18 @@ class Admin::AdminController < ApplicationController
 		 
 			event_date = params[:event]
 			if (Event.exists?)
-		 		stored_date = Event.find(1)
-		 		stored_date.update_attributes(:day => event_date["date(3i)"], :month => event_date["date(2i)"], :year => event_date["date(1i)"] )
-		 		@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
+				@event_date_set = Date.strptime(event_date[:date], '%Y-%m-%d')
+				stored_date = Event.find(1)
+				stored_date.update_attributes(:day => @event_date_set.mday, :month => @event_date_set.mon, :year => @event_date_set.year )
+
+		 		#stored_date = Event.find(1)
+		 		#stored_date.update_attributes(:day => event_date["date(3i)"], :month => event_date["date(2i)"], :year => event_date["date(1i)"] )
+		 		#@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
 
 			else
-				stored_date = Event.create(:day => event_date["date(3i)"], :month => event_date["date(2i)"], :year => event_date["date(1i)"] )
-				@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
+				@event_date_set = Date.strptime(event_date[:date], '%Y-%m-%d')
+				stored_date = Event.create(:day => @event_date_set.mday, :month => @event_date_set.mon, :year => @event_date_set.year )
+				#@event_date_set = Date.new stored_date[:year].to_i, stored_date[:month].to_i, stored_date[:day].to_i
 			end
 		
 		else
@@ -23,6 +28,13 @@ class Admin::AdminController < ApplicationController
 			end
 			
 		end
+		
+	    unless File.exists?("app/assets/images/qrcode.png")
+	      qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
+	      #@qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
+	      qr.save("app/assets/images/qrcode.png")
+	    end
+    
 		render 'admin/index.html'
 	end
 	
@@ -30,7 +42,6 @@ class Admin::AdminController < ApplicationController
 	
 	def reset 
 		render 'admin/reset.html'
-		@judge = Judge.find(1)			
 	end
 
 	def reset_pw

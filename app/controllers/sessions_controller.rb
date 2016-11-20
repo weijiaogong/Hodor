@@ -1,9 +1,10 @@
 #require 'rqrcode_png'
 class SessionsController < ApplicationController
   def new
-#    qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
-#    @qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
-#    qr.save("downloads/QRcode.png")
+    if not current_user.nil? and admin?
+      redirect_to admin_root_path and return
+    end
+
   end
 
   def create
@@ -27,8 +28,8 @@ class SessionsController < ApplicationController
     no_confirm = true
     if current_user.role  == "judge"
       current_user.scores.each do |score|
-          sum = Score.get_score_sum.find(score.id).score_sum
-          if sum < 0
+          first_score = score.send(Score.score_terms[0])
+          if first_score < 0 && !score.no_show
             no_confirm = false
             @judge = current_user
           end
@@ -41,7 +42,7 @@ class SessionsController < ApplicationController
   end
   
   def download
-        send_file("downloads/QRcode.png")
+        send_file("app/assets/images/qrcode.png",:filename => "qrcode.png")
   end
   
   

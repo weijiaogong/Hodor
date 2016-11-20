@@ -8,9 +8,9 @@ Feature: Overall summary of Presenters
           |name | company_name| access_code| role|
           |admin| TAMU        | admin      | admin|
         And  the following posters exist:
-        |number|presenter    |
-        | 1    |Harshvardhan |
-        | 2    |Ralph Crosby |
+        |presenter    |
+        |Harshvardhan |
+        |Ralph Crosby |
         And  the following judges exist:
         |name  | company_name|access_code|
         | Sara | TAMU        | Sara      |
@@ -28,7 +28,7 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
 		  
 	    When  I press "View Poster Rankings"
-		Then  I should see the following ranking table:
+		Then  I should see the following table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Harshvardhan |       |  5.000     |
 		  | 2  |Ralph Crosby |       |  4.000     |
@@ -41,7 +41,7 @@ Feature: Overall summary of Presenters
         | Kelly| 1     |3,3,3,3,3|
         | Kelly| 2     |5,5,5,5,5|
 	    When  I press "View Poster Rankings"
-		Then   I should see the following ranking table:
+		Then   I should see the following table:
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Ralph Crosby |       |  4.500     |
 		  | 2  |Harshvardhan |       |  4.000     |
@@ -53,4 +53,14 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
 	    When  I press "View Poster Rankings"
 	    And   I press "Download"
-		Then   I see a popup window for download
+		Then   I see a popup window for download "rankings.csv"
+    
+	Scenario: Only scored Posters shown in the ranking list
+		Given Judges scored posters as following:
+		|name  |number |scores   |
+        | Sara | 1     |5,5,5,5,5|
+		And   Judge "Kelly" has not scored assigned poster 2
+	    When  I press "View Poster Rankings"
+		Then  I should see the following table:
+		  |Rank| 	Presenter| 	Title| 	Avg. Score|
+		  | 1  |Harshvardhan |       |  5.000     |
