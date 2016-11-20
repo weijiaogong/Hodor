@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108032138) do
+ActiveRecord::Schema.define(version: 20161120201018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20161108032138) do
     t.integer "written"
     t.integer "poster_id"
     t.integer "judge_id"
+    t.boolean "no_show",    default: false
   end
 
 end
