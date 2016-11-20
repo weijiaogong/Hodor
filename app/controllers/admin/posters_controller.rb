@@ -35,7 +35,6 @@ class Admin::PostersController < ApplicationController
         CSV.open("app/downloads/posters.csv", "wb") do |csv|
             csv << vals
             for poster in @posters
-            	puts vals.methods
             	csv << vals.map{ |v| poster.send(v) }
             end
         end
