@@ -8,4 +8,3 @@
 
 
 Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
-Judge.create!(name: 'admin', company_name: 'tamu', access_code: 'admin', role: 'admin')

@@ -4,6 +4,8 @@ class Judge < ActiveRecord::Base
 	has_many :posters, through: :scores
 
     validates :name, :company_name, presence: true
+    validates :access_code, uniqueness: true # not sure whether the number should be unique
+
     before_save :create_remember_token
 
     private

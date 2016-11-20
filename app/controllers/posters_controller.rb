@@ -4,6 +4,27 @@ class PostersController < ApplicationController
     def judge
         @poster = Poster.find(params[:poster_id])
         @judge = Judge.find(params[:judge_id])
+        @posters = @judge.posters.order(:number)
+        
+        redirect = false
+        if !@posters.include? @poster
+            flash[:notice] = "#{@poster.title} was not assigned to current judge."
+            redirect = true
+        end
+        score_terms = Score.score_terms
+        @poster.scores.each do |score|
+            if @judge.scores.include?score
+                score_terms.each do |term|
+                    if score[term] > 0
+                        flash[:notice] = "#{@poster.title} has been scored."
+                        redirect = true
+                    end
+                end
+            end
+        end
+        if redirect
+            redirect_to judge_path(params[:judge_id])
+        end
     end    
     
     def new
