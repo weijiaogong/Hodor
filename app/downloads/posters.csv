@@ -1,4 +1,4 @@
-id,number,presenter,title,advisors,scores_count,email,no_show
-1,1,Harshvardhan,,,0,,false
-2,2,Ralph Crosby,,,0,,false
-3,3,Brittany Duncan,,,0,,false
+presenter,title,advisors,email
+Harshvardhan,,,
+Ralph Crosby,,,
+Brittany Duncan,,,

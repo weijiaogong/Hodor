@@ -56,4 +56,11 @@ Feature: Upload Multiple Posters
         |Ralph Crosby   |
         |Brittany Duncan|
 	  When I press "Download"
-	  #TODO pending
+	  Then the file app/downloads/posters.csv contains
+		"""
+		presenter,title,advisors,email
+		Harshvardhan,,,
+		Ralph Crosby,,,
+		Brittany Duncan,,,
+		
+		"""

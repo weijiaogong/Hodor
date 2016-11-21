@@ -30,8 +30,7 @@ class Admin::PostersController < ApplicationController
     def download
         File.delete("app/downloads/posters.csv") if File.exists?("app/downloads/posters.csv")
         @posters = Poster.all
-        vals = @posters.attribute_names
-        puts vals.to_s
+        vals = @posters.attribute_names.reject { |a| ['id', 'scores_count', 'no_show', 'number'].include?(a) }
         CSV.open("app/downloads/posters.csv", "wb") do |csv|
             csv << vals
             for poster in @posters
