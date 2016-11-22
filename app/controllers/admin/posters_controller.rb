@@ -20,7 +20,7 @@ class Admin::PostersController < ApplicationController
 			
 			#SendEmailJob.set(wait: 60.seconds).perform_later
 			#RemindMailer.delay(run_at: 1.minutes.from_now).remind_email
-    		RemindMailer.call_remind_email
+    		#RemindMailer.call_remind_email
     		#RemindMailer.remind_email.deliver_later(wait_until: 1.minutes.from_now)
     		#end
 		else
