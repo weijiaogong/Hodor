@@ -14,15 +14,7 @@ class Admin::PostersController < ApplicationController
 		elsif File.extname(@file.original_filename) == ".csv"
 			message = Poster.import(CSV.read(@file.path, headers: true, encoding: 'windows-1251:utf-8'))
 			redirect_to admin_posters_path, :notice => message
-			#Poster.find_each do |poster|
 			
-			#RemindMailer.remind_email.deliver_later(wait_until: 1.minutes.from_now)
-			
-			#SendEmailJob.set(wait: 60.seconds).perform_later
-			#RemindMailer.delay(run_at: 1.minutes.from_now).remind_email
-    		#RemindMailer.call_remind_email
-    		#RemindMailer.remind_email.deliver_later(wait_until: 1.minutes.from_now)
-    		#end
 		else
 			redirect_to admin_posters_path, :notice => "Invalid file extension"
 		end

@@ -13,7 +13,7 @@ class Admin::AdminController < ApplicationController
     		
 			# create the new email job
 			exec_day = @event_date_set.yesterday
-			exec_day_s = exec_day.to_s+" 07:30:00"
+			exec_day_s = exec_day.to_s+" 18:15:00"
 			
 			RemindMailer.delay(run_at: (exec_day_s).to_datetime).call_remind_email
 
