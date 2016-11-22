@@ -3,7 +3,7 @@ class Admin::AdminController < ApplicationController
 
 	def index
 		
-		if(params.has_key?(:event))
+		if(params.has_key?(:event) && params[:event][:date] != "")
 		 
 			event_date = params[:event]
 			@event_date_set = Date.strptime(event_date[:date], '%Y-%m-%d')
@@ -16,8 +16,7 @@ class Admin::AdminController < ApplicationController
 			exec_day_s = exec_day.to_s+" 07:30:00"
 			
 			RemindMailer.delay(run_at: (exec_day_s).to_datetime).call_remind_email
-			#RemindMailer.delay(run_at: 1.minutes.from_now).call_remind_email
-				
+
 			if (Event.exists?)
 				stored_date = Event.find(1)
 				stored_date.update_attributes(:day => @event_date_set.mday, :month => @event_date_set.mon, :year => @event_date_set.year )
