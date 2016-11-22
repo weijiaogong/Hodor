@@ -22,6 +22,6 @@ describe Poster do
         end
         
         it "expects all needed parameters" do
-            
+        end
     end
 end

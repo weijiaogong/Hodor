@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120201018) do
+ActiveRecord::Schema.define(version: 20161121235521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "day"
@@ -22,24 +37,23 @@ ActiveRecord::Schema.define(version: 20161120201018) do
   end
 
   create_table "judges", force: :cascade do |t|
-    t.string  "name",           limit: 255
-    t.string  "company_name",   limit: 255
-    t.string  "access_code",    limit: 255
-    t.integer "scores_count",               default: 0
-    t.string  "remember_token", limit: 255
-    t.string  "role",           limit: 255
-    t.boolean "leave",                      default: false
+    t.string  "name"
+    t.string  "company_name"
+    t.string  "access_code"
+    t.integer "scores_count",   default: 0
+    t.string  "remember_token"
+    t.string  "role"
+    t.boolean "leave",          default: false
     t.index ["remember_token"], name: "index_judges_on_remember_token", using: :btree
   end
 
   create_table "posters", force: :cascade do |t|
     t.integer "number"
-    t.string  "presenter",    limit: 255
-    t.string  "title",        limit: 255
-    t.string  "advisors",     limit: 255
-    t.integer "scores_count",             default: 0
-    t.string  "email",        limit: 255
-    t.boolean "no_show",                  default: false
+    t.string  "presenter"
+    t.string  "title"
+    t.string  "advisors"
+    t.integer "scores_count", default: 0
+    t.string  "email"
   end
 
   create_table "scores", force: :cascade do |t|
@@ -48,9 +62,11 @@ ActiveRecord::Schema.define(version: 20161120201018) do
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
+    t.boolean "no_show",    default: false
     t.integer "poster_id"
     t.integer "judge_id"
-    t.boolean "no_show",    default: false
+    t.index ["judge_id"], name: "index_scores_on_judge_id", using: :btree
+    t.index ["poster_id"], name: "index_scores_on_poster_id", using: :btree
   end
 
 end

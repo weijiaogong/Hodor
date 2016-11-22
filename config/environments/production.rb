@@ -75,10 +75,11 @@ PosterJudging::Application.configure do
    config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :user_name            => "iap.poster10@gmail.com",
+   :user_name            => ENV["email"],
    :domain               => "myapp.herokuapp.com",
-   :password             => "hodor606",
+   :password             => ENV["password"],
    :authentication       => "plain",
    :enable_starttls_auto => true
    }
+   config.active_job.queue_adapter = :delayed_job
 end
