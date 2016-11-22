@@ -16,7 +16,7 @@ class Admin::AdminController < ApplicationController
 			exec_day_s = exec_day.to_s+" 06:20:00"
 			
 			#RemindMailer.delay(run_at: (exec_day_s).to_datetime).call_remind_email
-			RemindMailer.delay(run_at: 1.minutes.from_now).call_remind_email
+			#RemindMailer.delay(run_at: 1.minutes.from_now).call_remind_email
 				
 			if (Event.exists?)
 				stored_date = Event.find(1)
