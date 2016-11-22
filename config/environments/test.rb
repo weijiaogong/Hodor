@@ -44,7 +44,7 @@ PosterJudging::Application.configure do
    :address              => "smtp.gmail.com",
    :port                 => 587,
    :user_name            => ENV["email"],
-   :domain               => "myapp.herokuapp.com",
+   :domain               => "lit-river-13435.herokuapp.com",
    :password             => ENV["password"],
    :authentication       => "plain",
    :enable_starttls_auto => true
