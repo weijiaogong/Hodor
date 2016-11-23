@@ -67,7 +67,7 @@ PosterJudging::Application.configure do
    config.eager_load = true
    
    # SMTP settings for gmail
-   config.action_mailer.default_url_options = { :host => 'lit-river-13435.herokuapp.com' }  
+   config.action_mailer.default_url_options = { :host => 'iap-poster-app.herokuapp.com' }  
    config.action_mailer.delivery_method = :smtp  
    config.action_mailer.perform_deliveries = true  
    config.action_mailer.raise_delivery_errors = false  
@@ -76,7 +76,7 @@ PosterJudging::Application.configure do
    :address              => "smtp.gmail.com",
    :port                 => 587,
    :user_name            => ENV["email"],
-   :domain               => "lit-river-13435.herokuapp.com",
+   :domain               => "iap-poster-app.herokuapp.com",
    :password             => ENV["password"],
    :authentication       => "plain",
    :enable_starttls_auto => true
