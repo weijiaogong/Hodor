@@ -50,5 +50,17 @@ Feature: Upload Multiple Posters
 	  And I should see 0 rows in the table
 	  
 	Scenario: Download posters
+	  Given  the following posters exist:
+        |presenter      |
+        |Harshvardhan   |
+        |Ralph Crosby   |
+        |Brittany Duncan|
 	  When I press "Download"
-	  #TODO pending
+	  Then the file app/downloads/posters.csv contains
+		"""
+		presenter,title,advisors,email
+		Harshvardhan,,,
+		Ralph Crosby,,,
+		Brittany Duncan,,,
+		
+		"""

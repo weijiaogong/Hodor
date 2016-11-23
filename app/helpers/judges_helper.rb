@@ -24,5 +24,4 @@ module  JudgesHelper
         msg = @notice ? @notice : "Are you sure?"
         return msg
     end
-    
 end

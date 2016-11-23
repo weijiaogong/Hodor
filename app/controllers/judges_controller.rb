@@ -11,7 +11,7 @@ class JudgesController < ApplicationController
            end
         end
     end
-=end    
+    
     def set_disable()
         @disable = Array.new
 	
@@ -22,7 +22,8 @@ class JudgesController < ApplicationController
             end
         end
     end
-      
+=end   
+
   def get_judge_avgs
     @judge_avgs = Hash.new
     @judge.scores.each do |score|

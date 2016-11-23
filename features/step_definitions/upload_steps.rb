@@ -14,3 +14,6 @@ Then(/^I should see a poster titled "(.*?)"$/) do |arg1|
 	expect(posters.count).to eq(1)
 end
 
+Then(/^the file (.*) contains$/) do |arg1, arg2|
+	File.read(arg1).should == arg2
+end
