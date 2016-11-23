@@ -11,7 +11,7 @@ class Admin::AdminController < ApplicationController
 			# delete previous email jobs
 			Delayed::Job.destroy_all
     		
-			# create the new email job
+			#create the new email job
 			exec_day = @event_date_set.yesterday
 			exec_day_s = exec_day.to_s+" 18:15:00"
 			
