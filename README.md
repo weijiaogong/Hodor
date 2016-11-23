@@ -39,3 +39,20 @@ gem install bundler
 delete Gemfile.lock
 bundle install
 sudo service postgresql start`
+
+
+### Making sure the auto_emailer is set up properly
+
+After pushing to heroku we need to setup username and password for the mailer
+
+'heroku config:set email=myemail@example.com password=mypassword'
+
+check if the background workers are running using 
+
+'heroku ps'
+
+if it shows a line with worker then its running if it shows web then we need to add a worker using the command below
+
+'heroku ps:scale worker=1'
+
+check background worker again (using heroku ps), it should show worker.
