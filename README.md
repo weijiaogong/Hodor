@@ -45,14 +45,14 @@ sudo service postgresql start`
 
 After pushing to heroku we need to setup username and password for the mailer
 
-'heroku config:set email=myemail@example.com password=mypassword'
+`heroku config:set email=myemail@example.com password=mypassword`
 
 check if the background workers are running using 
 
-'heroku ps'
+`heroku ps`
 
 if it shows a line with worker then its running if it shows web then we need to add a worker using the command below
 
-'heroku ps:scale worker=1'
+`heroku ps:scale worker=1`
 
 check background worker again (using heroku ps), it should show worker.
