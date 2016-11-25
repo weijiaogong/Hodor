@@ -18,13 +18,13 @@ Feature: Limit incorrect posters
         | Kelly| TAMU        | Kelly     |
     And I logged in as "Sara"
         
-    Scenario: Posters has been scored
+    Scenario: Posters can be rescored
 		Given Judges scored posters as following:
 		|name  |number |scores   |
         | Sara | 1     |5,5,5,5,5|
         | Sara | 2     |4,4,4,4,4|
 	    Then  I try to visit judges one posters one judge?
-		Then  I should be on the judge page for "Sara"
+		Then  I can judge poster one
 		
 	Scenario: Posters was not assigned to the judge
 		Given Judges scored posters as following:
@@ -32,6 +32,7 @@ Feature: Limit incorrect posters
         | Sara | 1     |5,5,5,5,5     |
         | Sara | 2     |4,4,4,4,4     |
         | Sara | 3     |-1,-1,-1,-1,-1|
+	   # Then  I try to visit judges 1 posters 4 judge?
 	    Then  I try to visit judges one posters four judge?
 		Then  I should be on the judge page for "Sara"
 		

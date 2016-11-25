@@ -3,6 +3,9 @@ class Score < ActiveRecord::Base
 	belongs_to :judge, counter_cache: true
 	belongs_to :poster, counter_cache: true
 	#attr_accessible :judge_id, :poster_id
+	
+	
+	
     def self.score_terms
        %w(novelty utility difficulty verbal written)
     end
