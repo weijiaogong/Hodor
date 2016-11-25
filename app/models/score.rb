@@ -1,4 +1,4 @@
-class Score < ActiveRecord::Base
+class Score < ApplicationRecord
 	#attr_accessible :novelty, :utility, :difficulty, :verbal, :written, :no_show
 	belongs_to :judge, counter_cache: true
 	belongs_to :poster, counter_cache: true

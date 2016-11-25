@@ -14,9 +14,7 @@ class Admin::PostersController < ApplicationController
 		elsif File.extname(@file.original_filename) == ".csv"
 			message = Poster.import(CSV.read(@file.path, headers: true, encoding: 'windows-1251:utf-8'))
 			redirect_to admin_posters_path, :notice => message
-			#Poster.find_each do |poster|
-    		#		RemindMailer.remind_email(poster).deliver_now
-    		#	end
+			
 		else
 			redirect_to admin_posters_path, :notice => "Invalid file extension"
 		end
@@ -30,10 +28,11 @@ class Admin::PostersController < ApplicationController
     def download
         File.delete("app/downloads/posters.csv") if File.exists?("app/downloads/posters.csv")
         @posters = Poster.all
+        vals = @posters.attribute_names.reject { |a| ['id', 'scores_count', 'no_show', 'number'].include?(a) }
         CSV.open("app/downloads/posters.csv", "wb") do |csv|
-            csv << ["number","presenter","title","advisors"]
+            csv << vals
             for poster in @posters
-                csv << [poster.number, poster.presenter, poster.title, poster.advisors]
+            	csv << vals.map{ |v| poster.send(v) }
             end
         end
         send_file("app/downloads/posters.csv")

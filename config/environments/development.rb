@@ -5,7 +5,8 @@ PosterJudging::Application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+    
+    
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 
@@ -38,7 +39,7 @@ PosterJudging::Application.configure do
   
  
    # SMTP settings for gmail
-   config.action_mailer.default_url_options = { :host => 'myapp.herokuapp.com' }  
+   config.action_mailer.default_url_options = { :host => 'iap-poster-app.herokuapp.com' }  
    config.action_mailer.delivery_method = :smtp  
    config.action_mailer.perform_deliveries = true  
    config.action_mailer.raise_delivery_errors = false  
@@ -46,11 +47,13 @@ PosterJudging::Application.configure do
    config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :user_name            => "iap.poster10@gmail.com",
-   :domain               => "myapp.herokuapp.com",
-   :password             => "hodor606",
+   :user_name            => ENV["email"],
+   :domain               => "iap-poster-app.herokuapp.com",
+   :password             => ENV["password"],
    :authentication       => "plain",
    :enable_starttls_auto => true
    }
+   
+   config.active_job.queue_adapter = :delayed_job
   
 end

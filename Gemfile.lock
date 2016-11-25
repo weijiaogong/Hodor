@@ -108,7 +108,13 @@ GEM
     cucumber-rails-training-wheels (1.0.0)
       cucumber-rails (>= 1.1.1)
     cucumber-wire (0.0.1)
+    daemons (1.2.4)
     database_cleaner (1.5.3)
+    delayed_job (4.1.2)
+      activesupport (>= 3.0, < 5.1)
+    delayed_job_active_record (4.1.1)
+      activerecord (>= 3.0, < 5.1)
+      delayed_job (>= 3.0, < 5)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.20161021)
@@ -122,6 +128,8 @@ GEM
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     fattr (2.3.0)
+    figaro (1.1.1)
+      thor (~> 0.14)
     flay (2.8.1)
       erubis (~> 2.7.0)
       path_expander (~> 1.0)
@@ -196,7 +204,11 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+<<<<<<< HEAD
     parallel (1.10.0)
+=======
+    parallel (1.9.0)
+>>>>>>> 512182945b13f7ab7ed73d5e8b257ca3c3938415
     parser (2.3.2.0)
       ast (~> 2.2)
     path_expander (1.0.0)
@@ -345,8 +357,11 @@ DEPENDENCIES
   coffee-rails
   cucumber-rails
   cucumber-rails-training-wheels
+  daemons
   database_cleaner
+  delayed_job_active_record
   factory_girl_rails
+  figaro
   haml
   headless
   jasmine-rails
