@@ -1,0 +1,32 @@
+= button_to "Back", admin_root_path, method: "get", class: "btn btn-default"
+= form_tag import_admin_posters_path, :class => "form-inline", multipart: true  do
+    .form-group
+        = file_field_tag :file
+    .form-group
+        = submit_tag "Import", class: "btn btn-default"
+    
+= button_to "Download", download_admin_posters_path, method: "get", class: "btn btn-default", form: {style: 'display:inline-block'}
+    
+= button_to "Add new poster", new_poster_path, method: "get", class: "btn btn-default", form: {style: 'display:inline-block'}
+    
+= button_to "Clear", clear_admin_posters_path, method: "delete", class: "btn btn-default", form: {style: 'display:inline-block'}
+%br
+%table{:class => "table table-bordered"}
+    %thead
+        %th #
+        %th Presenter(s)
+        %th Title
+        %th Advisor
+        %th E-mail(s)
+        %th
+        %th
+    %tbody
+        - @posters.each do |poster|
+            %tr
+                %td= poster.number
+                %td= poster.presenter
+                %td= poster.title
+                %td= poster.advisors
+                %td= poster.email
+                %td= link_to "Edit", edit_poster_path(poster)
+                %td= link_to "Delete",  poster_path(poster), data: { confirm: 'Are you sure?' }, method: :delete, id: "delete#{poster.id}"

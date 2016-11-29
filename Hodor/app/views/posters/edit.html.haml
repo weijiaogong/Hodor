@@ -1,0 +1,28 @@
+:javascript
+  $('input[value|="Register"]').click(function() {
+    var empty = $(this).parent().find("input").filter(function() {
+            return this.value === "";
+        });
+        if(empty.length) {
+            //At least one input is empty
+            alert("empty!");
+        }
+  });
+
+%h1 Edit Poster
+
+= form_tag poster_path(@poster), :method => :put do
+
+  = label :poster, :title, 'Title'
+  = text_field :poster, 'title'
+  %br
+  = label :poster, :presenter, 'Student Name(s)'
+  = text_field :poster, 'presenter'
+  %br
+  = label :poster, :advisors, 'Advisor\'s Full Name'
+  = text_field :poster, 'advisors'
+  %br
+  = label :poster, :email, 'Student e-mail(s)'
+  = text_field :poster, 'email'
+  %br
+  = submit_tag 'Save changes'
