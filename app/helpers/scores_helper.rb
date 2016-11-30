@@ -49,7 +49,7 @@ module  ScoresHelper
         end
         return msg
     end
-  # separate method from /app/views/admin/scores/index.html.haml
+  # method separated from /app/views/admin/scores/index.html.haml
   # used to count # of times a poster is scored = # of scoring judges
   def get_actual_scores_count(poster)
       return (poster.scores_count - poster.scores.where("#{Score.score_terms[0]} = -1").count)

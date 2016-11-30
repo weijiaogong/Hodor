@@ -39,8 +39,7 @@
                 %th Presenter
                 %th Title
                 %th Average
-                %th # of Judges Assigned
-                %th # of Posters Scored by Judge
+                %th Judge-Scored Posters
                 %th Detail
         %tbody
                 - @posters.each do |poster|
@@ -49,8 +48,6 @@
                                 %td= poster.presenter
                                 %td= poster.title
                                 %td= show_poster_avg(poster, @poster_avgs[poster.id])
-                                %td= poster.scores_count
-                                -# %td= poster.scores_count - poster.scores.where(novelty: '-1').count
                                 -# counts total number of actually scored posters = judges
                                 %td= get_actual_scores_count(poster)
                                 %td= link_to "See Details", admin_score_path(poster)
