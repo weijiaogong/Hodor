@@ -35,10 +35,7 @@ class SessionsController < ApplicationController
           end
       end
     end
-    if no_confirm
-      sign_out
-      redirect_to root_url
-    end
+    destroy if no_confirm
   end
   
   def download
