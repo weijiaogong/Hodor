@@ -1,0 +1,23 @@
+
+.ui-widget-content {
+    background: WhiteSmoke;
+    border: 1px solid Gainsboro;
+    color: Black;
+    text-align: center;
+    font-size: 150%;
+}
+
+.ui-widget-header {
+    background: Gainsboro;
+    border: 0;
+    color: Black;
+    font-weight: normal;
+    text-align: right;
+}
+
+.invisible {
+    display: none;
+}
+
+
+

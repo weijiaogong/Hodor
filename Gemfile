@@ -56,7 +56,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'jquery-ui-rails'
 # use Haml for templates
 gem 'haml'
 #gem 'test-unit'

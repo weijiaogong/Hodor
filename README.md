@@ -14,8 +14,8 @@ Replace with the one you just generated.
 *Do not commit this file to the repo* (Or git rm it if it's in your repo still)
 
 ## Fixing attribute errors
-If posters is missing the no_show field, run `rake db:reset`
-If judges is missing the leave attribute, run "rake db:drop rake db:create rake db:migrate"
+If posters is missing the no_show field, or
+If judges is missing the leave attribute, run "rake db:drop rake db:create rake db:migrate rake db:seed"
 
 ## Testing
 ### To test a particular feature \<feature\>, run

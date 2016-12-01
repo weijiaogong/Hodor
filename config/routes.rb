@@ -39,11 +39,11 @@ PosterJudging::Application.routes.draw do
     end
 
     resources :sessions, only: [:new, :create, :destroy] do
-        get :signout, on: :collection
         get :download, on: :collection
     end
     match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
+    match '/signout_check', to: "application#signout", via: :get
     root :to => 'sessions#new'
     
     resources :posters
