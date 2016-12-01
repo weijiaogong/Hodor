@@ -47,7 +47,7 @@
       - if current_user
         = link_to "Sign out", signout_path, :method => :delete, class: "sign-out", id: "signout"
         = button_to "ajax sign out", signout_path, :method => :delete, class: "invisible", id: "signout_button"
-        = button_to "judge leave", judge_leave_path(current_user), :method => :get, class: "invisible", id: "leave_button"
+        = button_to "judge leave", judge_leave_path(current_user), :method => :delete, class: "invisible", id: "leave_button"
       =image_tag('logo.png', style: "position: absolute; top: 35px;")
     %div{id: "leave-confirm"}
     %div{:class => "content container"}

@@ -29,4 +29,19 @@ class SessionsController < ApplicationController
   end
   
   
+  def signout
+    @no_confirm = true
+    if current_user.role  == "judge"
+      current_user.scores.each do |score|
+          first_score = score.send(Score.score_terms[0])
+          if first_score < 0 && !score.no_show
+            @no_confirm = false
+            @judge = current_user
+          end
+      end
+    end
+    render :json => @no_confirm
+  end
+  
+  
 end

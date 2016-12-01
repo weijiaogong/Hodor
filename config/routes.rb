@@ -34,7 +34,7 @@ PosterJudging::Application.routes.draw do
 			post :no_show
             get  :accept
 	    }
-        get :leave
+        delete :leave
         get :register
     end
 
@@ -43,7 +43,7 @@ PosterJudging::Application.routes.draw do
     end
     match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
-    match '/signout_check', to: "application#signout", via: :get
+    match '/signout_check', to: "sessions#signout", via: :get
     root :to => 'sessions#new'
     
     resources :posters
