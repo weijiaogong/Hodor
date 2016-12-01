@@ -1,6 +1,0 @@
-presenter,title,advisors
-Harshvardhan,Processing Big Data Graphs on Memory-Restricted Systems,Lawrence Rauchwerger
-Ralph Crosby,Quartet Distance Computation for sets of Heterogeneous Trees,Tiffani Williams
-Brittany Duncan,Timing Integrity Check of GPS Signal � Models and Computing Algorithms,Robin Murphy
-Michael Fu,�You might also like... � from Everyday Applications to Recommendations,Jyh-Charn (Steve) Liu
-Sampath Jayarathna,Sampling Based Motion Planning With Reachable Volumes: Application to Manipulators and Closed Chains,Frank Shipman
