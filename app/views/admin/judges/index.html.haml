@@ -3,10 +3,10 @@
 = form_tag admin_judges_path, class: "inline" do
     - if superadmin?
         admins:
-        = text_field_tag :admin_number, nil, placeholder: "Enter the number of admins here"
+        = text_field_tag :admin_number, nil, placeholder: "Number of admins?"
     %br
     judges :
-    = text_field_tag :number, nil, placeholder: "Enter the number of judges here"
+    = text_field_tag :number, nil, placeholder: "Number of judges?"
     = submit_tag "Generate", class: "btn btn-default"
 
 = button_to "Clear Judges", clear_admin_judges_path, method: "delete", class: "btn btn-default"

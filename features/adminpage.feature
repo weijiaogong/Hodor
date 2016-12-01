@@ -15,7 +15,7 @@ Feature: Administration Page
       Given I am on the admin page
       And I press "Reset Password"
       Then I should see "Enter new password: "
-      And I should see "Confirm the new password: "
+      And I should see "Confirm new password: "
     
     Scenario: Same password entered
       Given I am on the reset page

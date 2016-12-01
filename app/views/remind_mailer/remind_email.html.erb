@@ -5,19 +5,19 @@
   </head>
   <body>
     <p>
-      Howdy <%=@poster.presenter%> !
+      Howdy, <%=@poster.presenter%>!
       
       
     </p>
     
     <p>
-      Thank You for Registering for the IAP Poster Competition. This email is a reminder about the competition on 
+      Thank you for registering for the IAP poster competition. This email is a reminder about the competition on 
       <% date_of_event = Event.find(1) %>
       <% day = date_of_event[:day].to_i %>
       <% month = date_of_event[:month].to_i %>
       <% year = date_of_event[:year].to_i %>
       <% x = Date.new(year, month, day) %>
-      <%= x.inspect %>. We hope to see you there & Good Luck ! 
+      <%= x.inspect %>. We hope to see you there and wish you good luck! 
       <br>
     </p>
     

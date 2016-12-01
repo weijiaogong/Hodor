@@ -62,7 +62,7 @@ class Admin::AdminController < ApplicationController
         res = @judge.update_attributes(name: params[:name], company_name: params[:company])
         # this validation should be down in js
         unless res
-          flash[:error] = "name & company_name cannot be blank"
+          flash[:error] = "Name and company name cannot be blank"
           redirect_to admin_register_path(@judge) and return
         end
         sign_in @judge

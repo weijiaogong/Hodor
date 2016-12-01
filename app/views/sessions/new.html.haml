@@ -5,12 +5,10 @@
   }
 .pull-center
   %h1 IAP Research Poster Competition
-  %h4 Welcome! Already have an access code, please sign in
+  %h4 Welcome! Please sign in.
 .row
   .span6.offset3
     = form_for(:session, url: sessions_path) do |f|
       = f.label :'..'
       = f.password_field :password
       = f.submit "Sign in", class: "btn btn-large btn-primary"
-    New presenters?
-    = link_to "Register", new_poster_path, method: "get"
