@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      Howdy <%=@poster.presenter%> !
+      
+      
+    </p>
+    
+    <p>
+      Thank You for Registering for the IAP Poster Competition. This email is a reminder about the competition on 
+      <% date_of_event = Event.find(1) %>
+      <% day = date_of_event[:day].to_i %>
+      <% month = date_of_event[:month].to_i %>
+      <% year = date_of_event[:year].to_i %>
+      <% x = Date.new(year, month, day) %>
+      <%= x.inspect %>. We hope to see you there & Good Luck ! 
+      <br>
+    </p>
+    
+  </body>
+</html>
