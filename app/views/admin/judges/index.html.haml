@@ -17,6 +17,8 @@
         %th Role
         %th Name
         %th Company
+        %th Posters Scored
+        %th Finished?
         %th manage
     %tbody
         - @judges.each do |judge|
@@ -25,4 +27,6 @@
                 %td= judge.role
                 %td= judge.name
                 %td= judge.company_name
-                %td= button_to "delete", admin_judge_path(judge), :method => :delete, :disabled => higher_rank?(judge.role), data: { confirm: "Are you sure?" } 
+                %td= judge.role == 'judge' ? judge.scores_count : ' '
+                %td= judge.role == 'judge' ? judge.leave : ''
+                %td= judge.role == 'superadmin' ? ' ' : (button_to "delete", admin_judge_path(judge), :method => :delete, :disabled => higher_rank?(judge.role), data: { confirm: "Are you sure?" } )
