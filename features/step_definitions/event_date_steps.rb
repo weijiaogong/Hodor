@@ -8,9 +8,9 @@ When (/^I update the event date with a new date$/) do
 end
 
 
-Then(/^I should see the admin page$/) do
-   expect(page).to have_current_path(admin_root_path)
-end
+#Then(/^I should see the admin page$/) do
+#   expect(page).to have_current_path(admin_root_path)
+#end
 
 And(/^I should see the new date for the event on the admin page$/) do 
     

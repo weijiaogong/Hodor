@@ -28,4 +28,3 @@ Feature: Hide admins
     	 And   I should not see "superadmin_code"
     	 And   I should see "wyh1_code"
     	 And   I should see "wyh2_code"
-    	 
