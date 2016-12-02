@@ -4,7 +4,7 @@ Given(/^No posters has been judged$/) do
     	expect(poster.scores_count).to eq 0
     end
 end
-
+=begin
 Then (/^I should see two posters with average score '-'$/) do
      rows = page.all(".table.table-bordered tbody tr")
 	 rows.size.should eql 2
@@ -14,7 +14,7 @@ Then (/^I should see two posters with average score '-'$/) do
 	  end
 	end
 end
-
+=end
 Then(/^I see a popup window for download "(.*?)"$/) do |arg1|
 	page.response_headers['Content-Disposition'].should include(arg1)
 end

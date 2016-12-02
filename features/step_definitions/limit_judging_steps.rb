@@ -4,9 +4,9 @@
 
 # end
 
-Then(/^I try to visit judges (\d+) posters (\d+) judge\?$/) do |judge_id, poster_id|
-    redirect_to edit_judge_score_path(judge_id, poster_id)
-end
+#Then(/^I try to visit judges (\d+) posters (\d+) judge\?$/) do |judge_id, poster_id|
+#    redirect_to edit_judge_score_path(judge_id, poster_id)
+#end
 
 Then(/^I try to visit judges one posters one judge\?$/) do
     # visit path_to(onejudge)
