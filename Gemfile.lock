@@ -204,11 +204,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-<<<<<<< HEAD
     parallel (1.10.0)
-=======
-    parallel (1.9.0)
->>>>>>> 512182945b13f7ab7ed73d5e8b257ca3c3938415
     parser (2.3.2.0)
       ast (~> 2.2)
     path_expander (1.0.0)
