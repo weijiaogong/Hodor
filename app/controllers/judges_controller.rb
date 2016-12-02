@@ -77,7 +77,6 @@ class JudgesController < ApplicationController
         posters = Poster.find_least_judged()
         if posters.empty?
             flash[:notice] = "There are no more posters to be assigned."
-            puts flash[:notice]
             return 0
         end
         posters = posters.reject {|p| @judge.posters.include?(p)}

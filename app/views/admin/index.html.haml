@@ -3,7 +3,7 @@
 %br
 = button_to "View Posters", admin_posters_path, method: "get", class: "btn btn-lg btn-default btn-block"
 %br
-= button_to "View Judges", admin_judges_path, method: "get", class: "btn btn-default btn-lg btn-block"
+= button_to "View Users", admin_judges_path, method: "get", class: "btn btn-default btn-lg btn-block"
 %br
 = button_to "View Scores", admin_scores_path, method: "get", class: "btn btn-default btn-lg btn-block"
 %br
@@ -21,10 +21,11 @@
   %br
   = submit_tag 'Update Date'
 
+=button_to "Student Signup Page", new_poster_path, method: "get"
+
 = "IAP QR Code:"
 .qrcode
   = image_tag "qrcode.png"
 .pull-center
   = button_to 'download QR code', download_sessions_path, method: "get"
   
-=link_to "Student Signup Page", new_poster_path, method: "get"

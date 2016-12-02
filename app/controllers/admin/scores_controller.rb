@@ -129,7 +129,6 @@ end
     # calcualte average score for each poster
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
-		  puts poster.inspect
     end
   end
 
