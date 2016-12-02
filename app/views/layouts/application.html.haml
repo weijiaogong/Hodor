@@ -14,6 +14,7 @@
           height: "auto",
           width: 500,
           modal: true,
+          title: "Confirm Before Leaving",
           buttons: {
             Yes: function() {
               $(this).dialog("close");
@@ -26,10 +27,10 @@
           }
         });
         $("#signout").click(function(event){
+          event.preventDefault();
           $.ajax({
             type: "get",
             url: "/signout_check",
-            dataType: "json",
             success:  function(data){
               if (data){
                 $("#signout_button").trigger("click");
@@ -37,6 +38,7 @@
                 $("#leave-confirm").html("Do you want to keep your unscored assignments?");
                 $("#leave-confirm").dialog("open");
               }
+              return false;
             }
           });
           return false;
@@ -45,7 +47,7 @@
       
     %div{class: "header"}
       - if current_user
-        = link_to "Sign out", signout_path, :method => :delete, class: "sign-out", id: "signout"
+        = link_to "Sign out", signout_path, :method => :delete,  class: "sign-out", id: "signout"
         = button_to "ajax sign out", signout_path, :method => :delete, class: "invisible", id: "signout_button"
         = button_to "judge leave", judge_leave_path(current_user), :method => :delete, class: "invisible", id: "leave_button"
       =image_tag('logo.png', style: "position: absolute; top: 35px;")

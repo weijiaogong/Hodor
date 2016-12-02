@@ -1,4 +1,4 @@
-Before ('@summary @scores') do
+Before ('@summary @scores @judgehome') do
   DatabaseCleaner.start
 end
 
@@ -9,7 +9,7 @@ After ('@javascript') do
   Capybara.use_default_driver
 end
 
-After ('@summary @scores') do
+After ('@summary @scores @judgehome') do
   DatabaseCleaner.clean
   
 end

@@ -12,9 +12,8 @@
     border: 0;
     color: Black;
     font-weight: normal;
-    text-align: right;
+    text-align: left;
 }
-
 .invisible {
     display: none;
 }

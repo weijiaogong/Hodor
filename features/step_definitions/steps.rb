@@ -56,10 +56,6 @@ Then (/^(?:|I )should be on the (.*?) page for "([^"]*)"$/) do |arg1, arg2|
         when "admin_registeration"
             judge = Judge.find_by_access_code(arg2)
             expect(page).to have_current_path(admin_register_path(judge))
-        when "signout confirm"
-            #judge = Judge.find_by(name: arg2)
-            expect(page).to have_content("Do you want to keep your unscored assignments?")
-            expect(page).to have_current_path(signout_sessions_path)
         else
             raise "Could not find page #{arg1}"
     end

@@ -1,4 +1,4 @@
-@summary
+@judgehome
 Feature: Assignments of judges
     In order to score posters
     As a contest judge
@@ -16,11 +16,11 @@ Feature: Assignments of judges
         And  Judge "Sara" has not scored assigned poster 2
         And  Judge "Sara" has not scored assigned poster 3
         And  I logged in as "Sara"
-   
+    @javascript
     Scenario: Judge who released their unscored posters will not be assigned with new posters when coming back 
-        When I follow "Sign out"
-        Then I should be on the signout confirm page for "Sara"
-        When I press "No"
+        When I follow "Sign out" trigger dialog
+        Then I should see "Do you want to keep your unscored assignments?" within the dialog
+        When I press "No" within the dialog
         Then Judge "Sara" should have no scores
         And  I logged in as "Sara"
         Then  I should see an empty table "#assigned_posters_table"

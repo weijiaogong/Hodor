@@ -1,4 +1,4 @@
-@summary
+@judgehome
 Feature: Assignments of judges
     In order to score posters
     As a contest judge
@@ -55,10 +55,10 @@ Feature: Assignments of judges
 		And  The grade button for poster #4 in table "#assigned_posters_table" should be enabled
     Scenario: Judge can leave at any time and keep their unscored posters
         When I follow "Sign out"
-        Then I should be on the signout confirm page for "Sara"
-        When I press "Yes"
+        #Then I should be on the signout confirm page for "Sara"
+        #When I press "Yes"
         And  I logged in as "Sara"
-        Then  I should see the following table "#assigned_posters_table":
+        Then I should see the following table "#assigned_posters_table":
           |Poster #|Title           |Average|Grade|
 		  | 1      |Big Data        | -     |     |
 		  | 2      |Graph Theory    | -     |     |
@@ -66,8 +66,11 @@ Feature: Assignments of judges
 		And  I should see the following table "#orphan_posters_table":
           |Poster #|Title           |Accept|
 		  | 4      |Algorithm       |      |
-    Scenario: Judge can leave at any time and release their unscored posters
-        When I follow "Sign out"
-        Then I should be on the signout confirm page for "Sara"
-        When I press "No"
-        Then Judge "Sara" should have no scores
+    
+    #Scenario: Judge can leave at any time and release their unscored posters
+        #When I follow "Sign out"
+        #Then I should be on the signout confirm page for "Sara"
+        #When I press "No"
+        #Then Judge "Sara" should have no scores
+        #And  I logged in as "Sara"
+        #Then  I should see an empty table "#assigned_posters_table"
