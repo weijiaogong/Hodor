@@ -3,6 +3,10 @@ CSCE 431 Project - TAMU Poster Judging
 
 ## Installation
 
+Install postgresql
+
+`sudo service postgresql start`
+
 Run rake secret to generate a new token.
 
 Now create config/initializers/secret_token.rb with the following contents:

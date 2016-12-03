@@ -24,21 +24,9 @@ class Score < ApplicationRecord
         score_terms.each do |term|
              str += term + "+"
         end
-        str = str.gsub(/\+\z/, ") ")
-        str += "as score_sum"
+        str = str.gsub(/\+\z/, ") ") + "as score_sum"
+        puts str
+        puts Score.select(str).inspect
         return Score.select(str)
     end
-=begin    
-    def self.get_poster_sum
-        str = "SUM("
-        score_terms.each do |term|
-             str += term + "+"
-        end
-        str = str.gsub(/\+\z/, ") ")
-        str += "as poster_sum"
-        return Score.select(str)
-    end
-=end
-   
 end
-
