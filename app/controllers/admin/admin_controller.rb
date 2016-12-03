@@ -32,6 +32,29 @@ class Admin::AdminController < ApplicationController
 			end
 			
 		end
+		
+		if(params.has_key?(:poster_number))
+			@max = params[:poster_number].to_i
+			if(@max != 0)
+				Event.find(1).update_attributes(:max_poster_number => @max)
+				flash[:notice] = "Update successfully"
+			else
+				flash[:error] = "Invalid data"
+				@max = Event.find(1).max_poster_number
+			end
+		else
+			if(Event.exists?)
+				@max = Event.find(1).max_poster_number
+			end
+		end
+		
+	    unless File.exists?("app/assets/images/qrcode.png")
+	      qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
+	      #@qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
+	      qr.save("app/assets/images/qrcode.png")
+	    end
+    
+
 		render 'admin/index.html'
 	end
 	
@@ -62,7 +85,7 @@ class Admin::AdminController < ApplicationController
         res = @judge.update_attributes(name: params[:name], company_name: params[:company])
         # this validation should be down in js
         unless res
-          flash[:error] = "name & company_name cannot be blank"
+          flash[:error] = "Name and company name cannot be blank"
           redirect_to admin_register_path(@judge) and return
         end
         sign_in @judge

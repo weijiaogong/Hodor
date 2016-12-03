@@ -15,7 +15,7 @@ Feature: Hide admins
 	    
 	Scenario: login as superadmin
     	 Given I logged in as "superadmin_code"
-    	 Given I press "View Judges"
+    	 Given I press "View Users"
     	 Then  I should see "admin_code"
     	 And   I should see "superadmin_code"
     	 And   I should see "wyh1_code"
@@ -23,9 +23,8 @@ Feature: Hide admins
 	 
 	Scenario: login as admin
     	 Given I logged in as "admin_code"
-    	 Given I press "View Judges"
+    	 Given I press "View Users"
     	 Then  I should see "admin_code"
     	 And   I should not see "superadmin_code"
     	 And   I should see "wyh1_code"
     	 And   I should see "wyh2_code"
-    	 

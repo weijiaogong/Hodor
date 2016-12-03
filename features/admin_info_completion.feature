@@ -19,9 +19,9 @@ Background:
     Scenario: Missing Company Name
         When I fill in "name" with "Steven Bierwagen"
         And I press "Register"
-        Then I should see "name & company_name cannot be blank"
+        Then I should see "Name and company name cannot be blank"
 
     Scenario: Missing Name
         When I fill in "company" with "HIIT"
         And I press "Register"
-        Then I should see "name & company_name cannot be blank"
+        Then I should see "Name and company name cannot be blank"

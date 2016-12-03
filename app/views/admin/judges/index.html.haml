@@ -3,10 +3,10 @@
 = form_tag admin_judges_path, class: "inline" do
     - if superadmin?
         admins:
-        = text_field_tag :admin_number, nil, placeholder: "Enter the number of admins here"
+        = text_field_tag :admin_number, nil, placeholder: "Number of admins?"
     %br
     judges :
-    = text_field_tag :number, nil, placeholder: "Enter the number of judges here"
+    = text_field_tag :number, nil, placeholder: "Number of judges?"
     = submit_tag "Generate", class: "btn btn-default"
 
 = button_to "Clear Judges", clear_admin_judges_path, method: "delete", class: "btn btn-default"
@@ -17,6 +17,8 @@
         %th Role
         %th Name
         %th Company
+        %th Posters Scored
+        %th Finished?
         %th manage
     %tbody
         - @judges.each do |judge|
@@ -25,4 +27,6 @@
                 %td= judge.role
                 %td= judge.name
                 %td= judge.company_name
-                %td= button_to "delete", admin_judge_path(judge), :method => :delete, :disabled => higher_rank?(judge.role), data: { confirm: "Are you sure?" } 
+                %td= judge.role == 'judge' ? judge.scores_count : ' '
+                %td= judge.role == 'judge' ? judge.leave : ''
+                %td= judge.role == 'superadmin' ? ' ' : (button_to "delete", admin_judge_path(judge), :method => :delete, :disabled => higher_rank?(judge.role), data: { confirm: "Are you sure?" } )

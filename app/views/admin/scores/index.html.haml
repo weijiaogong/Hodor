@@ -28,6 +28,7 @@
         = label_tag 'Scored'
         = radio_button_tag "status","scored",  filter("scored"),id: "status_scored"
 
+= button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
         
 = form_tag admin_scores_path, :class => "navbar-search pull-right", :method => :get do
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
@@ -39,8 +40,7 @@
                 %th Presenter
                 %th Title
                 %th Average
-                %th # of Judges Assigned
-                %th # of Posters Scored by Judge
+                %th Judge-Scored Posters
                 %th Detail
         %tbody
                 - @posters.each do |poster|
@@ -49,6 +49,6 @@
                                 %td= poster.presenter
                                 %td= poster.title
                                 %td= show_poster_avg(poster, @poster_avgs[poster.id])
-                                %td= poster.scores_count
-                                %td= poster.scores_count - poster.scores.where(novelty: '-1').count
+                                -# counts total number of actually scored posters = judges
+                                %td= get_actual_scores_count(poster)
                                 %td= link_to "See Details", admin_score_path(poster)
