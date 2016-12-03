@@ -24,8 +24,3 @@ Feature: Assignments of judges
         Then Judge "Sara" should have no scores
         And  I logged in as "Sara"
         Then  I should see an empty table "#assigned_posters_table"
-        Then  I should see the following table "#orphan_posters_table":
-          |Poster #|Title           |Accept|
-		  | 1      |Big Data        |      |
-		  | 2      |Graph Theory    |      |
-		  | 3      |Wireless Network|      |
