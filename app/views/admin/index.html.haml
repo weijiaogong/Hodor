@@ -21,6 +21,9 @@
   %br
   = submit_tag 'Update Date'
 
+= form_tag admin_root_path,  :method => :get do
+  = text_field_tag :poster_number, nil, placeholder: "Max number of Posters"
+  = submit_tag 'Update Date'
 
 .qrcode
   = image_tag "qrcode.png"

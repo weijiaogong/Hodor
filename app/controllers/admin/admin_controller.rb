@@ -29,6 +29,12 @@ class Admin::AdminController < ApplicationController
 			
 		end
 		
+		if(params.has_key?(:poster_number))
+			@max = params[:poster_number]
+			logger.info "wyh222"
+			logger.info "#{params[:poster_number]}"
+		end
+		
 	    unless File.exists?("app/assets/images/qrcode.png")
 	      qr = RQRCode::QRCode.new( 'https://iap-poster-app.herokuapp.com').to_img.resize(400, 400)
 	      #@qrcode = qr.to_data_url    # returns an instance of ChunkyPNG
