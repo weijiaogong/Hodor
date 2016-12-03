@@ -27,6 +27,10 @@ class Poster < ApplicationRecord
 				if not poster.errors.messages.empty?
 					return "Missing fields- please make sure all entries are not blank"
 				end
+				
+				# Send Confirmation email to all the posters in the csv file uploaded
+				RemindMailer.confirmation_email(row_hash).deliver_later
+				
 			end
 		end
 		
