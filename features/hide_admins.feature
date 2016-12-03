@@ -6,27 +6,25 @@ Feature: Hide admins
     SuperAdmin can see Admins and Judges.
     
     Background: admin in database
-        Given the following users exist:
-        | name          | company_name| access_code     | scores_count | role       |
-        | admin         | tamu        | admin_code      | 0            | admin      |
-        | superadmin    | tamu        | superadmin_code | 0            | superadmin |
-        | wyh1          |   tamu      | wyh1_code       | 0            | judge      |
-        | wyh2          |   tamu      | wyh2_code       | 0            | judge      |
-        | no-judge      |   no-tamu   | no-judge _code  | 0            | no_judge   |
-        
-    Scenario: login as superadmin
-         Given I logged in as "superadmin_code"
-         Given I press "View Judges"
-         Then  I should see "admin_code"
-         And   I should see "superadmin_code"
-         And   I should see "wyh1_code"
-         And   I should see "wyh2_code"
-     
-    Scenario: login as admin
-         Given I logged in as "admin_code"
-         Given I press "View Judges"
-         Then  I should see "admin_code"
-         And   I should not see "superadmin_code"
-         And   I should see "wyh1_code"
-         And   I should see "wyh2_code"
-         
+		Given the following users exist:
+	    | name          | company_name| access_code     | scores_count | role       |
+	    | admin         | tamu        | admin_code      | 0			   | admin      |
+	    | superadmin    | tamu        | superadmin_code | 0            | superadmin |
+	    | wyh1          |   tamu      | wyh1_code       | 0            | judge      |
+	    | wyh2          |   tamu      | wyh2_code       | 0            | judge      |
+	    
+	Scenario: login as superadmin
+    	 Given I logged in as "superadmin_code"
+    	 Given I press "View Users"
+    	 Then  I should see "admin_code"
+    	 And   I should see "superadmin_code"
+    	 And   I should see "wyh1_code"
+    	 And   I should see "wyh2_code"
+	 
+	Scenario: login as admin
+    	 Given I logged in as "admin_code"
+    	 Given I press "View Users"
+    	 Then  I should see "admin_code"
+    	 And   I should not see "superadmin_code"
+    	 And   I should see "wyh1_code"
+    	 And   I should see "wyh2_code"

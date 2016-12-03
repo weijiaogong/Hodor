@@ -68,23 +68,6 @@ class Admin::ScoresController < ApplicationController
       end
       return posters
   end
-=begin
-  #for checkbox
-  def filter(status)
-    if status
-        session[:status] = status.keys.join("")
-    end
-    case session[:status]
-      when "no_show"
-        @posters = @posters.select {|p| p.no_show }
-      when "scored"
-        @posters = @posters.select {|p| p.scores_count > 0}
-      when "unscored"
-        @posters = @posters.select {|p| p.no_show == false and p.scores_count == 0}
-    end
-    @filter = session[:status] || ""
-  end
-=end 
 
 	def select_posters(origin_posters, filter)
 	  unassigned_posters = origin_posters.select {|p| p.scores_count == 0 }
@@ -129,7 +112,6 @@ end
     # calcualte average score for each poster
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
-		  puts poster.inspect
     end
   end
 
@@ -146,22 +128,7 @@ end
     @judge  = score.judge
     render 'scores/edit'
   end
-=begin  
-  def update
-      score_id = params[:id]
-      @score = Score.find(score_id)
-
-      begin
-        @score.update_attributes!(params.require("score"))
-        flash[:notice] = "The scores given by #{@score.judge.name} were updated successfully."
-        @score.poster.update_attributes!(:scores_count => @score.poster.scores_count + 1)
-        redirect_to admin_score_path(@score.poster)
-      rescue ActiveRecord::RecordInvalid => invalid
-          flash[:notice] = invalid
-          redirect_to judge_poster_judge_path(judge_id, poster_id)
-      end
-  end
-=end
+  
   def rankings
         @score_terms = Score.score_terms
         @posters = Poster.all_scored
@@ -176,8 +143,8 @@ end
         end
         @posters = @posters.sort_by{|poster| @poster_avgs[poster.id]}.reverse
         @posters = @posters.take(3)
-
-        create_rank_file(@posters, @poster_avgs)
+        
+        create_rank_file(@posters, @poster_avgs)  #FIXME this should be run before a download, right?
   end
 
   def create_rank_file(posters, scores)
@@ -192,7 +159,24 @@ end
         end
   end
   def download_ranks
+    
         send_file("downloads/rankings.csv", :filename => "rankings.csv")
+  end
+  
+  def download_scores
+        File.delete("app/downloads/scores.csv") if File.exists?("app/downloads/scores.csv")
+        @scores = Score.all
+        vals = @scores.attribute_names
+        
+        CSV.open("app/downloads/scores.csv", "wb") do |csv|
+            csv << vals + [:judge_name, :judge_company_name, :poster_title, :poster_presenter, :poster_number] 
+            for score in @scores
+            poster = Poster.find(score.poster_id)
+            judge = Judge.find(score.judge_id)
+            	csv << vals.map{ |v| score.send(v) } + [judge.name, judge.company_name, poster.title, poster.presenter, poster.number]
+            end
+        end
+        send_file("app/downloads/scores.csv")
   end
 
 end

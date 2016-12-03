@@ -28,6 +28,7 @@
         = label_tag 'Scored'
         = radio_button_tag "status","scored",  filter("scored"),id: "status_scored"
 
+= button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
         
 = form_tag admin_scores_path, :class => "navbar-search pull-right", :method => :get do
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"

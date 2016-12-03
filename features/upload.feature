@@ -7,6 +7,10 @@ Feature: Upload Multiple Posters
 		Given the following users exist:
 	    | name  | company_name| access_code| scores_count | role  |
 	    | admin | tamu        | admin      | 0			  | admin |
+	    Given the following events exist: 
+	    | day  | month	| year	|	max_poster_number  |
+	    | 6	   | 12		| 2016	|	20				   |
+	    
 		
 		Given   I logged in as "admin"
 		Given   I press "View Posters"

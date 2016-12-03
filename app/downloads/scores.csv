@@ -1,0 +1,3 @@
+id,novelty,utility,difficulty,verbal,written,poster_id,judge_id,no_show,judge_name,judge_company_name,poster_title,poster_presenter,poster_number
+1,3,5,3,5,3,1,3,false,Kelly,TAMU,Big Data,Harshvardhan,1
+2,5,5,5,5,5,2,2,false,Sara,TAMU,Graph Theory,Ralph Crosby,2

@@ -3,7 +3,7 @@
 %br
 = button_to "View Posters", admin_posters_path, method: "get", class: "btn btn-lg btn-default btn-block"
 %br
-= button_to "View Judges", admin_judges_path, method: "get", class: "btn btn-default btn-lg btn-block"
+= button_to "View Users", admin_judges_path, method: "get", class: "btn btn-default btn-lg btn-block"
 %br
 = button_to "View Scores", admin_scores_path, method: "get", class: "btn btn-default btn-lg btn-block"
 %br
@@ -14,6 +14,8 @@
 
 = "Event Date:   "
 = @event_date_set.inspect
+= "Max number of posters:   "
+= @max
 %br 
 %br
 = form_tag admin_root_path, :id=> "form_id", :method => :get do 
@@ -24,7 +26,10 @@
 
 = form_tag admin_root_path,  :method => :get do
   = text_field_tag :poster_number, nil, placeholder: "Max number of Posters"
-  = submit_tag 'Update Date'
+  = submit_tag 'Update'
+
+
+=button_to "Student Signup Page", new_poster_path, method: "get"
 
 
 = "IAP QR Code:"
@@ -34,4 +39,3 @@
 .pull-center
   = button_to 'download QR code', download_sessions_path, method: "get"
   
-=link_to "Student Signup Page", new_poster_path, method: "get"
