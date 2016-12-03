@@ -53,7 +53,6 @@ RSpec.describe "AdminScoresIndexPage" do
           expect(page).not_to have_content(@poster2.title)
           expect(page).not_to have_content(@poster3.title)
           expect(page).to have_content("%.3f" % get_avg)
-          expect(page).not_to have_content("-")
           expect(page).not_to have_content("No Show")
         end
         it "should only show unscored posters", :js => true  do
@@ -62,7 +61,6 @@ RSpec.describe "AdminScoresIndexPage" do
           expect(page).to have_content(@poster2.title)
           expect(page).not_to have_content(@poster3.title)
           expect(page).not_to have_content("%.3f" % get_avg)
-          expect(page).to have_content("-")
           expect(page).not_to have_content("No Show")
         end
         it "should only show no_show posters", :js => true  do
@@ -71,7 +69,6 @@ RSpec.describe "AdminScoresIndexPage" do
           expect(page).not_to have_content(@poster2.title)
           expect(page).to have_content(@poster3.title)
           expect(page).not_to have_content("%.3f" % get_avg)
-          expect(page).not_to have_content("-")
           expect(page).to have_content("No Show")
         end
     end
@@ -84,7 +81,6 @@ RSpec.describe "AdminScoresIndexPage" do
       expect(page).not_to have_content(@poster2.title)
       expect(page).not_to have_content(@poster3.title)
       expect(page).to have_content("%.3f" % get_avg)
-      expect(page).not_to have_content("-")
       expect(page).not_to have_content("No Show")
     end
     it "should show the right poster searching by poster id" do
@@ -94,7 +90,6 @@ RSpec.describe "AdminScoresIndexPage" do
       expect(page).to have_content(@poster2.title)
       expect(page).not_to have_content(@poster3.title)
       expect(page).not_to have_content("%.3f" % get_avg)
-      expect(page).to have_content("-")
       expect(page).not_to have_content("No Show")
     end
   end
