@@ -34,7 +34,7 @@
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
         = submit_tag "Search", class: "btn btn-success btn-md"
 
-%table{class: "table table-bordered"}
+%table{class: "table table-bordered", id: "scores_table"}
         %thead
                 %th Poster #
                 %th Presenter
