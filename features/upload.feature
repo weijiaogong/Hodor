@@ -40,7 +40,27 @@ Feature: Upload Multiple Posters
 		When I upload the file "data_wrong.csv"
 		Then I should see "Invalid column header"
 		
+	Scenario: Upload partial columns
+	  When I upload the file "data_missing_column.csv"
+	  Then I should see "Missing column header"
+		
 	Scenario: Clear posters
 	  When I press "Clear"
 	  Then I should be on the admin poster page
 	  And I should see 0 rows in the table
+	  
+	Scenario: Download posters
+	  Given  the following posters exist:
+        |presenter      |
+        |Harshvardhan   |
+        |Ralph Crosby   |
+        |Brittany Duncan|
+	  When I press "Download"
+	  Then the file app/downloads/posters.csv contains
+		"""
+		presenter,title,advisors,email
+		Harshvardhan,,,
+		Ralph Crosby,,,
+		Brittany Duncan,,,
+		
+		"""

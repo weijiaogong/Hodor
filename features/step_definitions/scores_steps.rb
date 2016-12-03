@@ -1,4 +1,4 @@
- When (/^I follow poster #(\d+) "(.*?)"$/) do |arg1, arg2|
+When(/^I follow poster #(\d+) "(.*?)"$/) do |arg1, arg2|
     #links = page.all(:link, arg2)
     #n = arg1.to_i - 1
     #links[n].click
@@ -17,12 +17,12 @@
     expect(page).to have_content("Details about Poster")
  end
  
- Then (/^I should see an empty table$/) do
+Then(/^I should see an empty table$/) do
      rows = page.all(".table.table-bordered tbody tr")
      expect(rows.size).to eql 0
 end
 
-Then (/^I should see an empty table "(.*?)"$/) do |arg1|
+Then(/^I should see an empty table "(.*?)"$/) do |arg1|
      rows = page.all(arg1 + " tbody tr")
      expect(rows.size).to eql 0
 end
@@ -81,12 +81,12 @@ Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
 end
 
 
-Given (/^Judge "(.*?)" has not scored assigned poster (\d)$/) do |arg1, arg2|
+Given(/^Judge "(.*?)" has not scored assigned poster (\d)$/) do |arg1, arg2|
     poster = Poster.where(:number => arg2).first()
     judge = Judge.where(:name => arg1).first()
     Score.assign_poster_to_judge(poster, judge)
 end
-Given (/^Judges scored posters as following:$/) do |table|
+Given(/^Judges scored posters as following:$/) do |table|
 	table.hashes.each do |row|
 		grade = row[:scores].split(',')
 	    judge = Judge.where(:name => row[:name]).first()
@@ -97,7 +97,7 @@ Given (/^Judges scored posters as following:$/) do |table|
     end
 end
 
-When (/^I give new scores (.*?)$/) do |grade|
+When(/^I give new scores (.*?)$/) do |grade|
     expect(page).to have_content("Poster #")
     score = grade.split(",")
     expect(page).to have_button('Submit', disabled: true)
@@ -110,7 +110,7 @@ When (/^I give new scores (.*?)$/) do |grade|
     click_button('Submit', disabled: true)
 end
 
-When (/^I edit the scores given by judge "(.*?)"$/) do |name|
+When(/^I edit the scores given by judge "(.*?)"$/) do |name|
     expect(page).to have_content("Details about Poster")
     rows = page.all('.table.table-bordered tbody tr')
     rows.each do |judge|
@@ -123,7 +123,7 @@ When (/^I edit the scores given by judge "(.*?)"$/) do |name|
       end
 end
 
-When (/^I edit the scores of poster #(\d+)$/) do |number|
+When(/^I edit the scores of poster #(\d+)$/) do |number|
  	   rows = page.all('.table.table-bordered tbody tr')
  	   rows.each do |poster|
  	       cells = poster.all('td')
@@ -135,7 +135,7 @@ When (/^I edit the scores of poster #(\d+)$/) do |number|
       end
 end
 
-Then (/^Judge "(.*?)" should have no scores$/) do |name|
+Then(/^Judge "(.*?)" should have no scores$/) do |name|
     judge = Judge.find_by(name: name)
     expect(judge.scores.size).to eq 0
 end

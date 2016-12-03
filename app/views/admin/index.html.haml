@@ -21,11 +21,17 @@
   %br
   = submit_tag 'Update Date'
 
+
 = form_tag admin_root_path,  :method => :get do
   = text_field_tag :poster_number, nil, placeholder: "Max number of Posters"
   = submit_tag 'Update Date'
+
+
+= "IAP QR Code:"
 
 .qrcode
   = image_tag "qrcode.png"
 .pull-center
   = button_to 'download QR code', download_sessions_path, method: "get"
+  
+=link_to "Student Signup Page", new_poster_path, method: "get"

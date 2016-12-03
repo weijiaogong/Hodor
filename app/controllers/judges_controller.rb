@@ -11,7 +11,7 @@ class JudgesController < ApplicationController
            end
         end
     end
-=end    
+    
     def set_disable()
         @disable = Array.new
 	
@@ -22,7 +22,8 @@ class JudgesController < ApplicationController
             end
         end
     end
-      
+=end   
+
   def get_judge_avgs
     @judge_avgs = Hash.new
     @judge.scores.each do |score|
@@ -55,7 +56,7 @@ class JudgesController < ApplicationController
         @orphan_posters = Poster.find_least_judged()
         @orphan_posters = @orphan_posters.reject {|p| @posters.include?(p)}
 
-    end    
+    end  
 
     #update judge information (name, company name)
     def update

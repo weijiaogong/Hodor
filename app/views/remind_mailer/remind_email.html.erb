@@ -4,9 +4,21 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Thank You for Registering for the IAP Poster Competition</h1>
     <p>
-      This email is a reminder about the competition tomorrow.<br>
+      Howdy, <%=@poster.presenter%>!
+      
+      
+    </p>
+    
+    <p>
+      Thank you for registering for the IAP poster competition. This email is a reminder about the competition on 
+      <% date_of_event = Event.find(1) %>
+      <% day = date_of_event[:day].to_i %>
+      <% month = date_of_event[:month].to_i %>
+      <% year = date_of_event[:year].to_i %>
+      <% x = Date.new(year, month, day) %>
+      <%= x.inspect %>. We hope to see you there and wish you good luck! 
+      <br>
     </p>
     
   </body>

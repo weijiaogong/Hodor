@@ -14,27 +14,24 @@ class Admin::JudgesController < ApplicationController
 
     def create
         admin_num = params[:admin_number].to_i
-        i = 0
-        while i < admin_num
-            code = SecureRandom.hex(2)
-            if(Judge.where(access_code: code).size == 0)
-                judge = Judge.new('access_code' => code, 'role' => 'admin')
-                judge.save!(validate: false)
-                i = i + 1
-            end
-        end
+        make_user(admin_num, 'admin')
         
         num = params[:number].to_i
+        make_user(num, 'judge')
+        
+        redirect_to admin_judges_path
+    end
+
+    def make_user(num, role)
         i = 0
         while i < num
             code = SecureRandom.hex(2)
             if(Judge.where(access_code: code).size == 0)
-                judge = Judge.new('access_code' => code, 'role' => 'judge')   
+                judge = Judge.new('access_code' => code, 'role' => role)
                 judge.save!(validate: false)
                 i = i + 1
             end
         end
-        redirect_to admin_judges_path
     end
 
     def clear

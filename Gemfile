@@ -8,6 +8,11 @@ ruby '2.3.0'
 
 gem 'pg'	#fewer errors when moving to production
 gem 'rqrcode_png'
+gem 'figaro'
+gem 'delayed_job_active_record'
+gem "daemons"
+
+
 
 # for Heroku deployment - as described in Ap A of ELLS book
 group :development, :test do
@@ -15,6 +20,9 @@ group :development, :test do
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
+	gem 'figaro'
+	gem 'delayed_job_active_record'
+	gem "daemons"
 end
 
 group :test do

@@ -33,7 +33,7 @@ class PostersController < ApplicationController
 #        rescue ActiveRecord::RecordNotFound    #situation in which this occurs: poster delete between clicking edit and update
 #            flash[:notice] = "No such poster"
 #            redirect_to admin_posters_path and return
-        @poster.update_attributes(params[:poster].merge({:number => Poster.count + 1}).permit(:number, :presenter, :title, :advisors, :email))
+        @poster.update_attributes(params[:poster].permit(:number, :presenter, :title, :advisors, :email))
         if @poster.errors.messages.empty?
             flash[:notice] = "#{@poster.title} was successfully updated."
             redirect_to admin_posters_path and return

@@ -91,3 +91,4 @@ Given(/^the following judges exist:$/) do |table|
         judge.save!(validate: false)
     end
 end
+

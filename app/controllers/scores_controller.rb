@@ -4,6 +4,10 @@ class ScoresController < ApplicationController
     def edit
         @poster = Poster.find(params[:poster_id])
         @judge = Judge.find(params[:judge_id])
+        if !@judge.posters.include?(@poster)
+            flash[:notice] = "#{@poster.title} was not assigned to #{@judge.name}."
+            redirect_to judge_path(@judge)
+        end
         @no_show = decide_no_show
     end
     
