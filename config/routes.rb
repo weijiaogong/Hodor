@@ -13,6 +13,8 @@ PosterJudging::Application.routes.draw do
 		    collection {
                  get :rankings
                  get :download_ranks
+                 get :download_scores
+                 
               }
         end
 

@@ -129,3 +129,18 @@ Feature: View scores
            | 1        |Harshvardhan  | Big Data        |5.000   |1                   |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0                   |See Details|
            | 3        |Bill Gwen     | Wireless Network|-       |0                   |See Details|    
+    
+    Scenario: Download all scores
+      Given Judges scored posters as following:
+        |name  |number |scores   |
+        | Kelly| 1     |3,5,3,5,3|
+        | Sara | 2     |5,5,5,5,5|
+        When  I press "View Scores" 
+        And I press "Download"
+        Then the file app/downloads/scores.csv contains
+		"""
+		id,novelty,utility,difficulty,verbal,written,poster_id,judge_id,no_show,judge_name,judge_company_name,poster_title,poster_presenter,poster_number
+		1,3,5,3,5,3,1,3,false,Kelly,TAMU,Big Data,Harshvardhan,1
+		2,5,5,5,5,5,2,2,false,Sara,TAMU,Graph Theory,Ralph Crosby,2
+		
+		"""
