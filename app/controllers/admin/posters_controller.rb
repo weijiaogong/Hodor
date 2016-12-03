@@ -14,10 +14,6 @@ class Admin::PostersController < ApplicationController
 		elsif File.extname(@file.original_filename) == ".csv"
 			message = Poster.import(CSV.read(@file.path, headers: true, encoding: 'windows-1251:utf-8'))
 			
-			##########################################################################
-			### Confirmation email to all the uploaded posters ################
-			#########################################################################
-			
 			redirect_to admin_posters_path, :notice => message
 			
 		else
