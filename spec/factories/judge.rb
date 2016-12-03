@@ -1,8 +1,8 @@
 FactoryGirl.define do
-	factory :judge do
-	  name "Grant"
+	factory :judge, class: 'Judge'  do
+	  sequence(:name) { |n|  "Grant#{n}"}
 	  company_name "tamu"
-	  access_code "grant"
-	  role "judge"
+	  sequence(:access_code) { |n|  "grant#{n}"}
+	  sequence(:role) { |n|  "judge#{n}"}
 	end
 end

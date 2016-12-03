@@ -66,6 +66,7 @@ class Admin::ScoresController < ApplicationController
       else
         posters = Poster.find_by_keywords(keywords).order(:number)
       end
+      
       return posters
   end
 =begin
