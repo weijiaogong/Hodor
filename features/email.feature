@@ -8,6 +8,9 @@ Feature: Confirmation email
     Given the following users exist:
     | name  | company_name| access_code|role|
     | admin | tamu        | admin      |admin|
+    Given the following events exist: 
+    | day | month	| year	|	max_poster_number  |
+    | 6	  | 12		| 2016	|	4				           |
 
     
   Scenario: Send confirmation email

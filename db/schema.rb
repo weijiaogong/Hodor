@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
-    t.boolean "no_show",    default: false
     t.integer "poster_id"
     t.integer "judge_id"
+    t.boolean "no_show",    default: false
     t.index ["judge_id"], name: "index_scores_on_judge_id", using: :btree
     t.index ["poster_id"], name: "index_scores_on_poster_id", using: :btree
   end
