@@ -71,26 +71,30 @@ class Admin::ScoresController < ApplicationController
   end
 
 	def select_posters(origin_posters, filter)
-	  unassigned_posters = origin_posters.select {|p| p.scores_count == 0 }
+	  if filter == "undone"
+	    return origin_posters.select {|p| p.scores_count < 3 }
+	  end
+	  
 	  posters = []
-	  #unassigned posters are part of unscored posters
-	  posters = unassigned_posters if filter == "unscored"
-	  assigned_posters = origin_posters - unassigned_posters
-	  #among assigned posters, there are three type: unscored, no_show, scored
+	  assigned_posters =  origin_posters.select {|p| p.scores_count == 3 }
+	  #among assigned posters, there are three type: inprogress, no_show, completed
+	  # we now label each poster with its write type
     assigned_posters.each do |poster|
       scores = poster.scores
-      type = "unscored"
+       #assume the poster is unscored at first, then we will find out whether it is scored or not
+      type = "completed"
       no_show = true
       scores.each do |score|
-        if score.send(Score.score_terms[0]) > 0
-          type = "scored" # the poster is scored if only scored once
+        if score.no_show
+          posters << poster if filter == "no_show"
+          break
+        elsif score.send(Score.score_terms[0]) < 0
+          posters << poster if filter == "inprogress"
+          type = "inprogress"
           break
         end
-        no_show = false unless score.no_show # the poster is no show only if its scores are all no show
       end
-      no_show = false if type == "scored"
-      type = "no_show" if no_show
-      posters << poster if filter == type
+      posters << poster if filter == "completed"
     end
     return posters
 	end
