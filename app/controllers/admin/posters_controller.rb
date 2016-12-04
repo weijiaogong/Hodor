@@ -38,4 +38,9 @@ class Admin::PostersController < ApplicationController
         end
         send_file("app/downloads/posters.csv")
     end
+    
+    def set_maximum
+    	
+    	redirect_to admin_posters_path, :notice => "Set successfully"
+    end
 end

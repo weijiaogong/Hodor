@@ -79,6 +79,13 @@ Given (/the following users exist/) do |user_table|
     end
 end
 
+Given (/the following events exist/) do |table|
+    table.hashes.each do |event|
+        e = Event.new(event)
+        e.save!(validate: false)
+    end
+end
+
 Given(/^the following posters exist:$/) do |table|
 	table.hashes.each do |row|
 	   poster = Poster.new(:number => Poster.count + 1, :email => row[:email], :title => row[:title], :presenter =>row[:presenter], :advisors =>  row[:advisors])

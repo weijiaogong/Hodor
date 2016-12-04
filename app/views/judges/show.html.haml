@@ -23,19 +23,20 @@
           %td= poster.title
           %td= show_score(@judge_avgs[poster.id])
           %td= button_to 'Grade', edit_judge_score_path(@judge.id, poster.id), :method => :get
-%h4 Posters needing scoring
-- if @orphan_posters.empty?
-  %p None
-- else
-  %table{class: "table table-hover table-bordered", id: "orphan_posters_table"}
-    %thead
-      %tr
-        %th Poster #
-        %th Title
-        %th Accept
-    %tbody
-      - @orphan_posters.each do |poster|
-        %tr
-          %td= poster.number
-          %td= poster.title
-          %td= button_to 'Accept', judge_score_accept_path(@judge.id,poster.id), method: :get, data: {confirm: volunteer_msg}
+         
+-# %h4 Posters needing scoring
+-# - if @orphan_posters.empty?
+-#   %p None
+-# - else
+-#   %table{class: "table table-hover table-bordered", id: "orphan_posters_table"}
+-#     %thead
+-#       %tr
+-#         %th Poster #
+-#         %th Title
+-#         %th Accept
+-#     %tbody
+-#       - @orphan_posters.each do |poster|
+-#         %tr
+-#           %td= poster.number
+-#           %td= poster.title
+-#           %td= button_to 'Accept', judge_score_accept_path(@judge.id,poster.id), method: :get, data: {confirm: volunteer_msg}

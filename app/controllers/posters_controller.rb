@@ -6,21 +6,27 @@ class PostersController < ApplicationController
     end
     
     def create
-        @poster = Poster.create(params[:poster].merge({:number => Poster.count + 1}).permit(:number, :presenter, :title, :advisors, :email))
-        if @poster.errors.messages.empty?
-            flash[:notice] = "#{@poster.title} was successfully created."
-            
-            # Send Confirmation email when the admin or the student uploads an individual poster
-            RemindMailer.confirmation_email(@poster).deliver_later
-            
-            if admin?
-                redirect_to admin_posters_path
+        @num = Poster.all.count
+        if(@num < Event.find(1).max_poster_number)
+            @poster = Poster.create(params[:poster].merge({:number => Poster.count + 1}).permit(:number, :presenter, :title, :advisors, :email))
+            if @poster.errors.messages.empty?
+                flash[:notice] = "#{@poster.title} was successfully created."
+                
+                # Send Confirmation email when the admin or the student uploads an individual poster
+                RemindMailer.confirmation_email(@poster).deliver_later
+                
+                if admin?
+                    redirect_to admin_posters_path
+                else
+                    redirect_to root_path
+                end
+                return
             else
-                redirect_to root_path
+                flash[:error] = "Please correct the following fields: #{@poster.errors.messages.keys.join(', ')}"
+                render :action => 'new' #and now the css breaks :(
             end
-            return
         else
-            flash[:error] = "Please correct the following fields: #{@poster.errors.messages.keys.join(', ')}"
+            flash[:error] = "No new poster can be created, please contact admin"
             render :action => 'new' #and now the css breaks :(
         end
     end

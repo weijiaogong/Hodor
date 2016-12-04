@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127053551) do
+ActiveRecord::Schema.define(version: 20161203180446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 20161127053551) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "day"
-    t.string "month"
-    t.string "year"
+    t.string  "day"
+    t.string  "month"
+    t.string  "year"
+    t.integer "max_poster_number"
   end
 
   create_table "judges", force: :cascade do |t|

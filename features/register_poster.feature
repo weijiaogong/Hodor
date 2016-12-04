@@ -11,6 +11,9 @@ Feature: Poster Registration
     And the following users exist:
     | name  | company_name| access_code|role|
     | admin | tamu        | admin      |admin|
+    And the following events exist: 
+	    | day  | month	| year	|	max_poster_number  |
+	    | 6	   | 12		| 2016	|	20				   |
 
 #  Scenario: Register from Index  #No longer valid- Admin provides the URL to students
 #    Given I am on the login page

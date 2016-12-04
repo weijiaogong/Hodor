@@ -70,7 +70,7 @@ class ScoresController < ApplicationController
     end
     
     
-	
+=begin	
     def accept
         judge_id  = params[:judge_id]
         poster_id = params[:score_poster_id]
@@ -83,4 +83,5 @@ class ScoresController < ApplicationController
             redirect_to edit_judge_score_path(judge_id, poster_id)
         end
     end
+=end    
 end
