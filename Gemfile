@@ -34,6 +34,7 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
 	gem "capybara"
+	gem 'email_spec'
   gem "launchy"
 	gem 'test-unit'
 
