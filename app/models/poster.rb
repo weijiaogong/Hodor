@@ -7,7 +7,7 @@ class Poster < ApplicationRecord
 	
 	
 	def self.import(data)
-		if((data.count + Poster.all.count) < Event.find(1).max_poster_number)
+		if((data.count + Poster.all.count) < Event.find(1).max_poster_number + 1)
 			data.each do |row|
 				row_hash = row.to_hash
 				if row_hash.keys.any? {|k| not(["presenter", "title", "advisors", "email"].include?(k))}
