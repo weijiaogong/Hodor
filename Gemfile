@@ -56,7 +56,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 # use Haml for templates

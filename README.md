@@ -37,7 +37,7 @@ sudo apt-get install xvfb`
 `gem cleanup --dryrun
 gem uninstall -aIx
 gem install bundler
-delete Gemfile.lock
+rm Gemfile.lock
 bundle install
 sudo service postgresql start`
 

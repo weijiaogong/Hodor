@@ -1,4 +1,4 @@
-@judgehome
+@judgehome     @javascript
 Feature: Assignments of judges
     In order to score posters
     As a contest judge
@@ -23,9 +23,6 @@ Feature: Assignments of judges
 		  | 1      |Big Data        | -     |     |
 		  | 2      |Graph Theory    | -     |     |
 		  | 3      |Wireless Network| -     |     |
-		 And  I should see the following table "#orphan_posters_table":
-          |Poster #|Title           |Accept|
-		  | 4      |Algorithm       |      |
 		 When I judge poster #1
 		 And I give new scores 5,5,5,4,4
 		 Then  I should see the following table "#assigned_posters_table":
@@ -43,13 +40,48 @@ Feature: Assignments of judges
 		  | 1      |Big Data        | 4.200 |     |
 		  | 2      |Graph Theory    | -     |     |
 		  | 3      |Wireless Network| -     |     |
-    Scenario: Judge can accept new poster and grade it from list of orphan posters 
-        When  I accept poster #4 from  table "#orphan_posters_table"
-        And I give new scores 5,5,5,4,4
-        Then  I should see the following table "#assigned_posters_table":
+
+    Scenario: Judge sign out without unscored posters will not see the dialog
+		When I judge poster #1
+		And I give new scores 5,5,5,4,4
+		When I judge poster #2
+		And I give new scores 5,5,5,4,4
+		When I judge poster #3
+		And I give new scores 5,5,5,4,4
+        When I follow "Sign out" without triggerring dialog
+        Then I should be on the login page
+        And  I logged in as "Sara"
+	    Then  I should see the following table "#assigned_posters_table":
           |Poster #|Title           |Average|Grade|
-		  | 1      |Big Data        | -     |     |
+    	  | 1      |Big Data        | 4.600 |     |
+		  | 2      |Graph Theory    | 4.600 |     |
+		  | 3      |Wireless Network| 4.600 |     |
+
+
+    Scenario: Judge who keep their unscored posters see former posters when coming back 
+        When I follow "Sign out"
+        And  I press "Yes"
+        Then I should be on the login page
+        And  I logged in as "Sara"
+	    Then  I should see the following table "#assigned_posters_table":
+          |Poster #|Title           |Average|Grade|
+    	  | 1      |Big Data        | -     |     |
 		  | 2      |Graph Theory    | -     |     |
 		  | 3      |Wireless Network| -     |     |
-		  | 4      |Algorithm       | 4.600 |     |
-		And  The grade button for poster #4 in table "#assigned_posters_table" should be enabled
+
+    Scenario: Judge who released their unscored posters will not be assigned with new posters when coming back 
+        When I follow "Sign out"
+        And  I press "No"
+        And  I logged in as "Sara"
+        Then  I should see an empty table "#assigned_posters_table"
+        
+    @javascript
+    Scenario: Judge who cancel the confirm dialog will stay on the page
+        When I follow "Sign out"
+        And  I press "Cancel"
+        Then I should be on the judge page for "Sara"
+	    Then  I should see the following table "#assigned_posters_table":
+          |Poster #|Title           |Average|Grade|
+    	  | 1      |Big Data        | -     |     |
+		  | 2      |Graph Theory    | -     |     |
+		  | 3      |Wireless Network| -     |     |
