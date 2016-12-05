@@ -107,7 +107,7 @@ When(/^I give new scores (.*?)$/) do |grade|
         choose(term+"#{score[i]}")
         i = i+1
     end
-    click_button('Submit', disabled: true)
+    click_button('Submit')
 end
 
 When(/^I edit the scores given by judge "(.*?)"$/) do |name|

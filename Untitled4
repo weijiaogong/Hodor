@@ -29,11 +29,26 @@
           if (data){
             $("#signout_button").trigger("click");
           } else{
-            if(confirm("Keep unscored posters?")) {
-              $("#signout_button").trigger("click");  
-            } else{
-              $("#leave_button").trigger("click");
-            };
+            $("#leave-confirm").dialog({
+              autoOpen: false,
+              resizable: false,
+              height: "auto",
+              width: 500,
+              modal: true,
+              title: "Confirm Before Leaving",
+              buttons: {
+                Yes: function() {
+                  $(this).dialog("close");
+                  $("#signout_button").trigger("click");
+                },
+                No: function() {
+                  $(this).dialog("close");
+                  $("#leave_button").trigger("click");
+                }
+              }
+            });
+            $("#leave-confirm").html("Do you want to keep your unscored assignments?");
+            $("#leave-confirm").dialog("open");
           };
           return false;
         }
@@ -45,6 +60,7 @@
         = button_to "ajax sign out", signout_path, :method => :delete, class: "invisible", id: "signout_button"
         = button_to "judge leave", judge_leave_path(current_user), :method => :delete, class: "invisible", id: "leave_button"
       =image_tag('logo.png', style: "position: absolute; top: 35px;")
+    %div{id: "leave-confirm"}
     %div{:class => "content container"}
       %br
       %div{:class => "col-sm-12 col-lg-12"}

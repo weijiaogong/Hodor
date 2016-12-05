@@ -33,7 +33,7 @@ Feature: Assignments of judges
 		  | 1      |Big Data        | 4.600 |     |
 		  | 2      |Graph Theory    | -     |     |
 		  | 3      |Wireless Network| -     |     |
-     Scenario: I can change scores later
+    Scenario: I can change scores later
 		 When I judge poster #1
 		 And I give new scores 5,5,5,4,4
 		 When I judge poster #1
@@ -53,24 +53,3 @@ Feature: Assignments of judges
 		  | 3      |Wireless Network| -     |     |
 		  | 4      |Algorithm       | 4.600 |     |
 		And  The grade button for poster #4 in table "#assigned_posters_table" should be enabled
-    Scenario: Judge can leave at any time and keep their unscored posters
-        When I follow "Sign out"
-        #Then I should be on the signout confirm page for "Sara"
-        #When I press "Yes"
-        And  I logged in as "Sara"
-        Then I should see the following table "#assigned_posters_table":
-          |Poster #|Title           |Average|Grade|
-		  | 1      |Big Data        | -     |     |
-		  | 2      |Graph Theory    | -     |     |
-		  | 3      |Wireless Network| -     |     |
-		And  I should see the following table "#orphan_posters_table":
-          |Poster #|Title           |Accept|
-		  | 4      |Algorithm       |      |
-    
-    #Scenario: Judge can leave at any time and release their unscored posters
-        #When I follow "Sign out"
-        #Then I should be on the signout confirm page for "Sara"
-        #When I press "No"
-        #Then Judge "Sara" should have no scores
-        #And  I logged in as "Sara"
-        #Then  I should see an empty table "#assigned_posters_table"
