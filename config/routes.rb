@@ -38,7 +38,7 @@ PosterJudging::Application.routes.draw do
             get  :accept
 	    }
         delete :leave
-        #put :assign
+        put :assign
         get :register
     end
 
