@@ -70,32 +70,48 @@ class Admin::ScoresController < ApplicationController
       return posters
   end
 
-	def select_posters(origin_posters, filter)
-	  if filter == "undone"
-	    return origin_posters.select {|p| p.scores_count < 3 }
-	  end
-	  
-	  posters = []
-	  assigned_posters =  origin_posters.select {|p| p.scores_count == 3 }
-	  #among assigned posters, there are three type: inprogress, no_show, completed
-	  # we now label each poster with its write type
-    assigned_posters.each do |poster|
-      scores = poster.scores
+  def select_posters_by_filter(origin_posters, posters, filter)
+    origin_posters.each do |poster|
        #assume the poster is unscored at first, then we will find out whether it is scored or not
       type = "completed"
-      no_show = true
-      scores.each do |score|
+      poster.scores.each do |score|
         if score.no_show
           posters << poster if filter == "no_show"
+          type = "no_show"
           break
         elsif score.send(Score.score_terms[0]) < 0
           posters << poster if filter == "inprogress"
+          puts "Inprogress!!!!!!!!!!!" 
           type = "inprogress"
           break
         end
       end
-      posters << poster if filter == "completed"
+      posters << poster if filter == "completed" && type == "completed"
     end
+    return posters
+  end
+
+	def select_posters(origin_posters, filter)
+	  inprogress_posters = origin_posters.select {|p| p.scores_count == 3 }
+	  undone_posters = origin_posters - inprogress_posters
+	  
+	  if filter == "undone"
+	    return undone_posters
+	  end
+	  
+	  posters = []
+	  
+	  if filter == "no_show"
+	    undone_posters.each do |poster|
+        poster.scores.each do |score|
+          posters << poster if score.no_show
+          break
+        end
+      end
+	  end
+	  #among assigned posters, there are three type: inprogress, no_show, completed
+	  # we now label each poster with its write type
+    select_posters_by_filter(inprogress_posters, posters, filter)
     return posters
 	end
 

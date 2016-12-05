@@ -37,7 +37,7 @@ Then(/^I should see the following table:$/) do |expect_table|
     
     # use find first is important for waiting for javascript function to run
     page.find('.table.table-bordered tbody tr', match: :first)
-	   table_body = page.all('.table.table-bordered tbody tr').map do |row|
+	table_body = page.all('.table.table-bordered tbody tr').map do |row|
 	    row.all('td').map do |cell|
 	        cell.text
 	    end

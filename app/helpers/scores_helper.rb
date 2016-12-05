@@ -43,9 +43,9 @@ module  ScoresHelper
     end
 
     def no_show_msg
-        msg = "are you sure?"
+        msg = "Are you sure?"
         unless @no_show || admin?
-            msg = "This poster is scored by other judges, please contact administrator for help"
+            msg = "This poster is scored by other judges, are you sure?"
         end
         return msg
     end
