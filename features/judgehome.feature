@@ -20,26 +20,26 @@ Feature: Assignments of judges
     Scenario: I should see 3 unscored posters and be able to judge them
         Then  I should see the following table "#assigned_posters_table":
           |Poster #|Title           |Average|Grade|
-		  | 1      |Big Data        | -     |     |
-		  | 2      |Graph Theory    | -     |     |
-		  | 3      |Wireless Network| -     |     |
-		 When I judge poster #1
-		 And I give new scores 5,5,5,4,4
-		 Then  I should see the following table "#assigned_posters_table":
+          | 1      |Big Data        | -     |     |
+          | 2      |Graph Theory    | -     |     |
+          | 3      |Wireless Network| -     |     |
+         When I judge poster #1
+         And I give new scores 5,5,5,4,4
+         Then  I should see the following table "#assigned_posters_table":
           |Poster #|Title           |Average|Grade|
-		  | 1      |Big Data        | 4.600 |     |
-		  | 2      |Graph Theory    | -     |     |
-		  | 3      |Wireless Network| -     |     |
+          | 1      |Big Data        | 4.600 |     |
+          | 2      |Graph Theory    | -     |     |
+          | 3      |Wireless Network| -     |     |
      Scenario: I can change scores later
-		 When I judge poster #1
-		 And I give new scores 5,5,5,4,4
-		 When I judge poster #1
-		 And I give new scores 5,4,4,4,4
-		 Then  I should see the following table "#assigned_posters_table":
+         When I judge poster #1
+         And I give new scores 5,5,5,4,4
+         When I judge poster #1
+         And I give new scores 5,4,4,4,4
+         Then  I should see the following table "#assigned_posters_table":
           |Poster #|Title           |Average|Grade|
-		  | 1      |Big Data        | 4.200 |     |
-		  | 2      |Graph Theory    | -     |     |
-		  | 3      |Wireless Network| -     |     |
+          | 1      |Big Data        | 4.200 |     |
+          | 2      |Graph Theory    | -     |     |
+          | 3      |Wireless Network| -     |     |
     Scenario: Judge can leave at any time and keep their unscored posters
         When I follow "Sign out"
         Then I should be on the signout confirm page for "Sara"
@@ -47,11 +47,25 @@ Feature: Assignments of judges
         And  I logged in as "Sara"
         Then  I should see the following table "#assigned_posters_table":
           |Poster #|Title           |Average|Grade|
-		  | 1      |Big Data        | -     |     |
-		  | 2      |Graph Theory    | -     |     |
-		  | 3      |Wireless Network| -     |     |
+          | 1      |Big Data        | -     |     |
+          | 2      |Graph Theory    | -     |     |
+          | 3      |Wireless Network| -     |     |
     Scenario: Judge can leave at any time and release their unscored posters
         When I follow "Sign out"
         Then I should be on the signout confirm page for "Sara"
         When I press "No"
         Then Judge "Sara" should have no scores
+    Scenario: I want to add another poster to judge
+        Then  I should see the following table "#assigned_posters_table":
+          |Poster #|Title           |Average|Grade|
+          | 1      |Big Data        | -     |     |
+          | 2      |Graph Theory    | -     |     |
+          | 3      |Wireless Network| -     |     |
+         When I press "Accept Another Poster?"
+         Then I should be on the accept-poster confirm page for "Sara"
+         And  I should see the following table "#assigned_posters_table":
+          |Poster #|Title           |Average|Grade|
+          | 1      |Big Data        | -     |     |
+          | 2      |Graph Theory    | -     |     |
+          | 3      |Wireless Network| -     |     |
+          | 4      |Algorithm       | -     |     |

@@ -40,3 +40,5 @@
 -#           %td= poster.number
 -#           %td= poster.title
 -#           %td= button_to 'Accept', judge_score_accept_path(@judge.id,poster.id), method: :get, data: {confirm: volunteer_msg}
+
+= button_to 'Accept Another Poster?', judge_assign_path(@judge.id), action: "assign", method: :put, class: "btn btn-lg btn-default btn-block", data: { confirm: accept_poster_msg}

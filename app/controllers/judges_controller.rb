@@ -9,6 +9,7 @@ class JudgesController < ApplicationController
            if res == 0 && no_notice
                flash[:notice] = nil
            end
+
         end
     end
     
@@ -22,8 +23,7 @@ class JudgesController < ApplicationController
             end
         end
     end
-=end   
-
+=end
   def get_judge_avgs
     @judge_avgs = Hash.new
     @judge.scores.each do |score|
@@ -72,9 +72,10 @@ class JudgesController < ApplicationController
         redirect_to judge_path(@judge)
     end
     #create 2 - 3 new Scores for each poster assigned to this judge
-    def assign(n)
+    def assign(n = 1) # used for initial and additional assignments
         #create 2 - 3 new Scores for each poster assigned to this judge
-        posters = Poster.find_least_judged()
+        @judge ||= Judge.find(params[:judge_id])
+        posters = Poster.find_least_judged().order(scores_count: :asc)
         if posters.empty?
             flash[:notice] = "There are no more posters to be assigned."
             return 0
@@ -84,7 +85,12 @@ class JudgesController < ApplicationController
         posters.each do |poster|
             Score.assign_poster_to_judge(poster, @judge)
         end
-        return posters.size
+        if @judge.scores_count > 3
+            flash[:notice] = "You have successfully added another poster for #{@judge.scores_count} total posters!"
+            redirect_to judge_path(params[:judge_id])
+        else
+            return posters.size
+        end
     end
     #display the form to add name and company name for a specific judge
     def register
