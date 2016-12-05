@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "scores_count",   default: 0
     t.string  "remember_token"
     t.string  "role"
+    t.boolean "leave",          default: false
     t.index ["remember_token"], name: "index_judges_on_remember_token", using: :btree
   end
 
