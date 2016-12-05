@@ -107,32 +107,27 @@ When(/^I give new scores (.*?)$/) do |grade|
         choose(term+"#{score[i]}")
         i = i+1
     end
-    click_button('Submit', disabled: true)
+    click_button('Submit')
 end
 
 When(/^I edit the scores given by judge "(.*?)"$/) do |name|
+    
+    page.find(".table.table-bordered tbody tr", match: :first)
     expect(page).to have_content("Details about Poster")
-    rows = page.all('.table.table-bordered tbody tr')
-    rows.each do |judge|
- 	       cells = judge.all('td')
- 	       if cells[0].text == name
- 	          within(judge) do
- 	              page.find_link("Edit").click
-              end
- 	       end
-      end
-end
 
-When(/^I edit the scores of poster #(\d+)$/) do |number|
- 	   rows = page.all('.table.table-bordered tbody tr')
- 	   rows.each do |poster|
- 	       cells = poster.all('td')
- 	       if cells[0].text == number
- 	          within(poster) do
- 	             page.find_link("See Details").click
- 	          end
- 	       end
-      end
+    link = nil
+    page.find('.table.table-bordered tbody tr', match: :first)
+	page.all('.table.table-bordered tbody tr').each do |row|
+	    row.all('td').each do |cell|
+            if cell.text == name
+                within(row) do
+                   link = page.find_link("Edit")
+                end
+                break
+            end
+        end
+    end
+    link.click
 end
 
 Then(/^Judge "(.*?)" should have no scores$/) do |name|

@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "scores_count",   default: 0
     t.string  "remember_token"
     t.string  "role"
-    t.boolean "leave",          default: false
+
     t.index ["remember_token"], name: "index_judges_on_remember_token", using: :btree
   end
 
@@ -63,8 +63,10 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
+    t.boolean "no_show",    default: false
     t.integer "poster_id"
     t.integer "judge_id"
+<<<<<<< HEAD
     t.boolean "no_show",    default: false
     t.index ["judge_id"], name: "index_scores_on_judge_id", using: :btree
     t.index ["poster_id"], name: "index_scores_on_poster_id", using: :btree
@@ -77,6 +79,10 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.datetime "updated_at"
     t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
     t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+=======
+    t.index ["judge_id"], name: "index_scores_on_judge_id", using: :btree
+    t.index ["poster_id"], name: "index_scores_on_poster_id", using: :btree
+>>>>>>> judgeleave1
   end
 
 end

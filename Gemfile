@@ -20,9 +20,6 @@ group :development, :test do
  	gem 'byebug'
 	gem 'jasmine-rails'
 	gem 'railroady'
-	gem 'figaro'
-	gem 'delayed_job_active_record'
-	gem "daemons"
 end
 
 group :test do
@@ -60,9 +57,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 # use Haml for templates
 gem 'haml'
 #gem 'test-unit'
-
-gem 'rqrcode_png'

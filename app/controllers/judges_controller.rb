@@ -39,6 +39,7 @@ class JudgesController < ApplicationController
     def show
         @score_terms = Score.score_terms
         @judge = Judge.find(params[:id])
+=begin        
         if @judge.leave
             begin
                @judge.update_attributes!(leave: false)
@@ -48,7 +49,8 @@ class JudgesController < ApplicationController
               redirect_to root_url and return
             end
         end
-        #comeback_assign() #no come back assign
+        comeback_assign() #no come back assign
+=end        
         @posters = @judge.posters.order(:number)
         #set_disable() #judge can edit their score later
         get_judge_avgs
@@ -109,7 +111,7 @@ class JudgesController < ApplicationController
     def leave
         @judge = Judge.find(params[:judge_id])
         begin
-            @judge.update_attributes!(:leave => true)
+            #@judge.update_attributes!(:leave => true)
             release_unscored_posters(@judge)
             flash[:notice] = "You have successfully signed out!"
             sign_out
