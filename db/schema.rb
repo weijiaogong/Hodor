@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "scores_count",   default: 0
     t.string  "remember_token"
     t.string  "role"
-
     t.index ["remember_token"], name: "index_judges_on_remember_token", using: :btree
   end
 
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "difficulty"
     t.integer "verbal"
     t.integer "written"
-    t.boolean "no_show",    default: false
     t.integer "poster_id"
     t.integer "judge_id"
     t.boolean "no_show",    default: false
