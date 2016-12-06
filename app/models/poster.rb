@@ -33,7 +33,7 @@ class Poster < ApplicationRecord
 			
 			return "Import successful"
 		else
-			return "Exceding the limit of posters"
+			return "Error: Exceeding poster limit"
 		end
 	end
 

@@ -10,13 +10,7 @@
         });
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default btn"
 
--#= form_tag admin_scores_path, :id => "status_form", :class => "pull-left", :method => :get do
--#        = label_tag 'No Show'
--#        = check_box_tag "status[no_show]", id: "status_no_show"
--#        = label_tag 'Unscored'
--#        = check_box_tag "status[unscored]", id: "status_unscored"
--#        = label_tag 'Scored'
--#        = check_box_tag "status[scored]", id: "status_scored"
+= button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
 
 = form_tag admin_scores_path, :id => "status_form", :class => "pull-left", :method => :get do
         = label_tag 'All'
@@ -28,7 +22,7 @@
         = label_tag 'Scored'
         = radio_button_tag "status","scored",  filter("scored"),id: "status_scored"
 
-= button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
+
         
 = form_tag admin_scores_path, :class => "navbar-search pull-right", :method => :get do
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
