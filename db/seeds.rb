@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
-# Judge.create!(name: 'admin', company_name: 'tamu', access_code: 'admin', role: 'admin')
+if Judge.count == 0
+    Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
+end
 
 Event.create!(day: '01', month: '01', year: '2016', max_poster_number: 30)
