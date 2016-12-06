@@ -10,4 +10,9 @@ if Judge.count == 0
     Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
 end
 
-Event.create!(day: '01', month: '01', year: '2016', max_poster_number: 30)
+Event.find_or_create_by(id: 1)  do |event|
+  event.max_poster_number = 30
+  event.day = '01'
+  event.month = '01'
+  event.year = '2016'
+end
