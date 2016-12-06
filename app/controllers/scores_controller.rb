@@ -32,10 +32,6 @@ class ScoresController < ApplicationController
             score[:no_show] = false
         end
         begin
-            #if poster.no_show
-            #    @poster.update_attribute(:no_show, false)
-            #end
-
             @score.update_attributes!(score)
             flash[:notice] = "Score is submitted successfully"
             if admin?
@@ -68,20 +64,15 @@ class ScoresController < ApplicationController
             redirect_to edit_judge_score_path(judge_id, poster_id)
         end
     end
-    
-    
-=begin	
-    def accept
-        judge_id  = params[:judge_id]
-        poster_id = params[:score_poster_id]
-        poster = Poster.find(poster_id)
-        if poster.scores_count >= 3
-            @notice = "Sorry, this poster is not available anymore"
-        else
-            @judge = Judge.find(judge_id)
-            Score.assign_poster_to_judge(poster, @judge)
-            redirect_to edit_judge_score_path(judge_id, poster_id)
+        #create 2 - 3 new Scores for each poster assigned to this judge
+    def assign
+        judge ||= Judge.find(params[:judge_id])
+        poster = Poster.find(params[:score_poster_id])
+        if  poster
+            Score.assign_poster_to_judge(poster, judge)
+            flash[:notice] = "You have successfully added poster #" + poster.number.to_s
         end
+        redirect_to judge_path(params[:judge_id])
     end
-=end    
+    
 end

@@ -30,8 +30,9 @@ RSpec.describe "AdminScoresIndexPage" do
       expect(current_path).to eq admin_scores_path
       expect(page).to have_selector('#status_all')
       expect(page).to have_selector('#status_no_show')
-      expect(page).to have_selector('#status_scored')
-      expect(page).to have_selector('#status_unscored')
+      expect(page).to have_selector('#status_undone')
+      expect(page).to have_selector('#status_inprogress')
+      expect(page).to have_selector('#status_completed')
       expect(page).to have_field('searchquery')
       expect(page).to have_button('Search')
       expect(page).to have_selector('#scores_table')
@@ -47,21 +48,13 @@ RSpec.describe "AdminScoresIndexPage" do
   end
   
    describe "filtered Page" do
-        it "should only show scored posters", js: true do
-          choose("status_scored")
+        it "should only show undone posters", :js => true  do
+          choose "status_undone"
           expect(page).to have_content(@poster1.title)
-          expect(page).not_to have_content(@poster2.title)
-          expect(page).not_to have_content(@poster3.title)
-          expect(page).to have_content("%.3f" % get_avg)
-          expect(page).not_to have_content("No Show")
-        end
-        it "should only show unscored posters", :js => true  do
-          choose "status_unscored"
-          expect(page).not_to have_content(@poster1.title)
           expect(page).to have_content(@poster2.title)
-          expect(page).not_to have_content(@poster3.title)
-          expect(page).not_to have_content("%.3f" % get_avg)
-          expect(page).not_to have_content("No Show")
+          expect(page).to have_content(@poster3.title)
+          expect(page).to have_content("%.3f" % get_avg)
+          expect(page).to have_content("No Show")
         end
         it "should only show no_show posters", :js => true  do
           choose "status_no_show"
@@ -70,6 +63,22 @@ RSpec.describe "AdminScoresIndexPage" do
           expect(page).to have_content(@poster3.title)
           expect(page).not_to have_content("%.3f" % get_avg)
           expect(page).to have_content("No Show")
+        end
+        it "should only show inprogress posters", :js => true  do
+          choose "status_inprogress"
+          expect(page).not_to have_content(@poster1.title)
+          expect(page).not_to have_content(@poster2.title)
+          expect(page).not_to have_content(@poster3.title)
+          expect(page).not_to have_content("%.3f" % get_avg)
+          expect(page).not_to have_content("No Show")
+        end
+        it "should only show completed posters", :js => true  do
+          choose "status_completed"
+          expect(page).not_to have_content(@poster1.title)
+          expect(page).not_to have_content(@poster2.title)
+          expect(page).not_to have_content(@poster3.title)
+          expect(page).not_to have_content("%.3f" % get_avg)
+          expect(page).not_to have_content("No Show")
         end
     end
     

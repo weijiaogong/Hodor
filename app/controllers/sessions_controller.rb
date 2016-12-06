@@ -28,5 +28,7 @@ class SessionsController < ApplicationController
         send_file("app/assets/images/qrcode.png",:filename => "qrcode.png")
   end
   
-  
+  def signout
+    
+  end
 end

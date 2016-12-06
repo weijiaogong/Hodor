@@ -1,8 +1,8 @@
 class Score < ApplicationRecord
-	#attr_accessible :novelty, :utility, :difficulty, :verbal, :written, :no_show
+	#attr_accessor :novelty, :utility, :difficulty, :verbal, :written, :no_show
 	belongs_to :judge, counter_cache: true
 	belongs_to :poster, counter_cache: true
-	#attr_accessible :judge_id, :poster_id
+	#attr_accessor :judge_id, :poster_id
 	
 	
 	
@@ -28,17 +28,6 @@ class Score < ApplicationRecord
         str += "as score_sum"
         return Score.select(str)
     end
-=begin    
-    def self.get_poster_sum
-        str = "SUM("
-        score_terms.each do |term|
-             str += term + "+"
-        end
-        str = str.gsub(/\+\z/, ") ")
-        str += "as poster_sum"
-        return Score.select(str)
-    end
-=end
-   
+
 end
 
