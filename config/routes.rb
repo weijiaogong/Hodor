@@ -10,7 +10,7 @@ PosterJudging::Application.routes.draw do
                 post :set_maximum
             }
         end
-		resources :scores, :only => [:index, :show, :edit, :update, :destroy] do
+		resources :scores, :only => [:index, :show, :edit, :update, :destroy, :create] do
 		    collection {
                  get :rankings
                  get :download_ranks

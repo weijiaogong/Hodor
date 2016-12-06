@@ -144,6 +144,9 @@ end
     poster_id = params[:id]
     @poster = Poster.find(poster_id)
     get_poster_avg(@poster)
+    if request.xhr?
+      render :partial => 'show_partial', :poster => @poster
+    end
   end
 
   def edit
@@ -151,6 +154,32 @@ end
     @poster = score.poster
     @judge  = score.judge
     render 'scores/edit'
+  end
+  
+  def create
+    poster_id = params[:poster_id]
+    @poster = Poster.find(poster_id)
+    @judge = Judge.find_by(name: params[:judge_name])
+    if @judge
+      score = Score.find_by(judge_id: @judge.id, poster_id: poster_id)
+      if score
+        flash[:notice]  = "Judge "+ params[:judge_name].to_s + " is already in the score table"
+      else
+        Score.assign_poster_to_judge(@poster, @judge)
+      end
+    else
+      flash[:notice]  = "Cannot Find Judge " + params[:judge_name].to_s
+    end
+    redirect_to admin_score_path(@poster)
+  end
+  
+  def destroy
+    score = Score.find(params[:id])
+    poster = score.poster
+    score.destroy
+    @scores = poster.scores
+    @score_terms = Score.score_terms
+    redirect_to admin_score_path(poster)
   end
   
   def rankings
