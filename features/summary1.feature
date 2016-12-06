@@ -1,4 +1,4 @@
-@summary
+@summary @javascript
 Feature: Overall summary of Presenters
     In order to rank each presenter and determine the winner of the poster contest
     As a contest administrator
@@ -19,7 +19,7 @@ Feature: Overall summary of Presenters
     Scenario: No posters has been judged
         Given No posters has been judged
         When  I press "View Poster Rankings"
-	    Then  I should see an empty table
+	    Then  I should see an empty table "#ranking_table"
 	    
    Scenario: Posters are ranked according to their average score
 		Given Judges scored posters as following:
@@ -28,7 +28,7 @@ Feature: Overall summary of Presenters
         | Sara | 2     |4,4,4,4,4|
 		  
 	    When  I press "View Poster Rankings"
-		Then  I should see the following table:
+		Then  I should see the following table "#ranking_table":
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Harshvardhan |       |  5.000     |
 		  | 2  |Ralph Crosby |       |  4.000     |
@@ -41,7 +41,7 @@ Feature: Overall summary of Presenters
         | Kelly| 1     |3,3,3,3,3|
         | Kelly| 2     |5,5,5,5,5|
 	    When  I press "View Poster Rankings"
-		Then   I should see the following table:
+		Then   I should see the following table "#ranking_table":
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Ralph Crosby |       |  4.500     |
 		  | 2  |Harshvardhan |       |  4.000     |
@@ -61,6 +61,6 @@ Feature: Overall summary of Presenters
         | Sara | 1     |5,5,5,5,5|
 		And   Judge "Kelly" has not scored assigned poster 2
 	    When  I press "View Poster Rankings"
-		Then  I should see the following table:
+		Then  I should see the following table "#ranking_table":
 		  |Rank| 	Presenter| 	Title| 	Avg. Score|
 		  | 1  |Harshvardhan |       |  5.000     |

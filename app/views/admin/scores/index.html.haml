@@ -5,9 +5,37 @@
 -#                document.getElementById("status_form").submit();
 -#        });
 :javascript
-        $(document).on("change", 'input[type="radio"]', function(){
-                document.getElementById("status_form").submit();
-        });
+        var FilterTable = {
+                setup: function() {
+                        $(document).on("change", 'input[type="radio"]', FilterTable.filter);
+                        $('#search_form').on('submit', FilterTable.filter);
+                }
+                ,filter: function(e){
+                        e.preventDefault();
+                        if (e.type == "change"){
+                                $('#searchquery').val('');        
+                        };
+                        
+                        $.ajax({
+                                type: 'GET',
+                                url: '/admin/scores',
+                                data: {
+                                        status: $('input[name="status"]:checked').val(),
+                                        searchquery: $('#searchquery').val()
+                                },
+                                success:  function(data){
+                                        $('#scores_content').html(data);
+                                        if (e.type == "submit") {
+                                                $('input[type="submit"]').prop('disabled', false);
+                                        };
+                                },
+                                error: function (error) {
+                                        alert(error);
+                                }
+                        });
+                }
+        };
+        $(FilterTable.setup);
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default btn"
 = button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
   
@@ -30,10 +58,10 @@
         = radio_button_tag "status","inprogress", filter("inprogress"), id: "status_inprogress"
         = label_tag 'Completed', nil, class: "padding-label"
         = radio_button_tag "status","completed",  filter("completed"),id: "status_completed"
-= form_tag admin_scores_path, :class => "navbar-search pull-right", :method => :get do
+        
+= form_tag admin_scores_path, :id => "search_form", :class => "navbar-search pull-right", :method => :get do
         = text_field_tag 'searchquery', nil, :class => "search-query span3", :placeholder => "Search"
         = submit_tag "Search", class: "btn btn-success btn-md"
-
       
 %table{class: "table table-bordered", id: "scores_table"}
         %thead
@@ -43,7 +71,7 @@
                 %th Average
                 %th # Scored
                 %th Detail
-        %tbody
+        %tbody{id: "scores_content"}
                 - @posters.each do |poster|
                         %tr
                                 %td= poster.number

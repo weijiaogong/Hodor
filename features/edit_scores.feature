@@ -28,7 +28,7 @@ Feature: Edit scores
 		And I edit the scores given by judge "Kelly"
  	    And I give new scores 5,5,5,4,4
         Then I should be on the show scores page for "1"
-       Then I should see the following table:
+       Then I should see the following table "#details_table":
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  |
           | Kelly  |5      |5      |5         |4     |4      |4.600  | Edit  |
 		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  |

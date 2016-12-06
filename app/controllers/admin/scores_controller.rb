@@ -81,7 +81,6 @@ class Admin::ScoresController < ApplicationController
           break
         elsif score.send(Score.score_terms[0]) < 0
           posters << poster if filter == "inprogress"
-          puts "Inprogress!!!!!!!!!!!" 
           type = "inprogress"
           break
         end
@@ -134,8 +133,12 @@ end
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
+    if request.xhr?
+      render :partial => 'index_partial'
+    end
+    #render :json => @posters
   end
-
+  
   def show
     @score_terms = Score.score_terms
     poster_id = params[:id]

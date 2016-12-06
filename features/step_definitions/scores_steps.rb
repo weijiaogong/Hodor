@@ -16,35 +16,11 @@ When(/^I follow poster #(\d+) "(.*?)"$/) do |arg1, arg2|
     link.click
     expect(page).to have_content("Details about Poster")
  end
- 
-Then(/^I should see an empty table$/) do
-     rows = page.all(".table.table-bordered tbody tr")
-     expect(rows.size).to eql 0
-end
 
 Then(/^I should see an empty table "(.*?)"$/) do |arg1|
+     wait_for_ajax
      rows = page.all(arg1 + " tbody tr")
      expect(rows.size).to eql 0
-end
-
-Then(/^I should see the following table:$/) do |expect_table|
-	
-	table_header = page.all('.table.table-bordered thead').map do |row|
-	    row.all('th').map do |cell|
-	        cell.text
-	    end
-    end
-    
-    # use find first is important for waiting for javascript function to run
-    page.find('.table.table-bordered tbody tr', match: :first)
-	table_body = page.all('.table.table-bordered tbody tr').map do |row|
-	    row.all('td').map do |cell|
-	        cell.text
-	    end
-    end
-    table_results = table_header + table_body
-	   data = expect_table.raw
-	   expect(table_results).to eq data
 end
 
 
@@ -57,7 +33,8 @@ Then(/^I should see the following table "(.*?)":$/) do |arg1, expect_table|
     end
     
     # use find first is important for waiting for javascript function to run
-    page.find(arg1 +  " tbody tr", match: :first)
+    wait_for_ajax
+    #page.find(arg1 +  " tbody tr", match: :first)
 	table_body = page.all(arg1 +  " tbody tr").map do |row|
 	    row.all('td').map do |cell|
 	        cell.text

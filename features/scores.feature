@@ -1,4 +1,4 @@
-@scores
+@scores @javascript 
 Feature: View scores
     In order to know the scores of all posters in-time
     As a contest administrator
@@ -22,13 +22,13 @@ Feature: View scores
     Scenario: No posters has been judged
         Given No posters has been judged
         When  I press "View Scores"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        |-       |0       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |-       |0       |See Details|
            | 3        |Bill Gwen     | Wireless Network|-       |0       |See Details|
         When I follow poster #1 "See Details"
-        Then I should see an empty table
+        Then I should see an empty table "#details_table"
         
     Scenario: The scoring status is updated correctly
         Given  Judges scored posters as following:
@@ -36,25 +36,25 @@ Feature: View scores
           | Sara | 1     |5,5,5,5,5|
         And   Judge "Sara" set poster 2 as "no_show"
         When  I press "View Scores"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        | 5.000  |1       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0       |See Details|
            | 3        |Bill Gwen     | Wireless Network|-       |0       |See Details|
 
         When I follow poster #1 "See Details"
-        Then I should see the following table:
+        Then I should see the following table "#details_table":
           |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit   |
           | Sara   |5      |5      |5         |5     |5      |5.000  |  Edit  |
           |Average |5.000  |5.000  |5.000     |5.000 |5.000  |5.000  |        |
         When  I am on the view scores page
         When I follow poster #3 "See Details"
-        Then I should see an empty table
+        Then I should see an empty table "#details_table"
         
     Scenario: The score page is reloaded automatically
         Given No posters has been judged
         When  I press "View Scores"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        |-       |0       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |-       |0       |See Details|
@@ -64,13 +64,13 @@ Feature: View scores
           |name  |number |scores   |
           | Kelly| 1     |3,5,3,5,3|
         When  I am on the view scores page
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        | 3.800  |1       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    | -      |0       |See Details|
            | 3        |Bill Gwen     | Wireless Network| -      |0       |See Details|
            
-    @javascript      
+     
        Scenario: The filter works correctly
         Given  Judges scored posters as following:
           |name  |number |scores   |
@@ -83,25 +83,25 @@ Feature: View scores
         And   Judge "Kelly" has not scored assigned poster 3
         When  I press "View Scores"
         When I choose "status_all"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        |5.000   |3       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0       |See Details|
            | 3        |Bill Gwen     | Wireless Network|5.000   |1       |See Details|
         When I choose "status_no_show"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0       |See Details|
         When I choose "status_undone"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0       |See Details|
         When I choose "status_inprogress"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 3        |Bill Gwen     | Wireless Network|5.000   |1       |See Details|
         When I choose "status_completed"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        |5.000   |3       |See Details|
     
@@ -115,7 +115,7 @@ Feature: View scores
         When  I press "View Scores"
         When  I fill in "searchquery" with "3"
         And   I press "Search"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 3        |Bill Gwen     | Wireless Network|-       |0       |See Details|    
     Scenario: Search poster by poster title
@@ -127,15 +127,15 @@ Feature: View scores
         When  I press "View Scores"
         When  I fill in "searchquery" with "Big Data"
         And   I press "Search"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        |5.000   |1       |See Details|   
         When  I fill in "searchquery" with "Algorithm"
         And   I press "Search"
-        Then I should see an empty table
+        Then I should see an empty table "#scores_table"
         When  I fill in "searchquery" with " "
         And   I press "Search"
-        Then  I should see the following table:
+        Then  I should see the following table "#scores_table":
            |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
            | 1        |Harshvardhan  | Big Data        |5.000   |1       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0       |See Details|
