@@ -1,4 +1,4 @@
- @summary
+ @summary  @javascript
  Feature: QRcode for the website
   In order to visit the IAP Poster Judging System
   As a judge or admin
