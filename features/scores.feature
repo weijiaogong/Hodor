@@ -140,18 +140,24 @@ Feature: View scores
            | 1        |Harshvardhan  | Big Data        |5.000   |1       |See Details|
            | 2        |Ralph Crosby  | Graph Theory    |No Show |0       |See Details|
            | 3        |Bill Gwen     | Wireless Network|-       |0       |See Details|    
-    
+
     Scenario: Download all scores
       Given Judges scored posters as following:
         |name  |number |scores   |
         | Kelly| 1     |3,5,3,5,3|
         | Sara | 2     |5,5,5,5,5|
         When  I press "View Scores" 
+        
+        Then  I should see the following table "#scores_table":
+           |Poster #  |Presenter     |Title            |Average |# Scored|Detail     |
+           | 1        |Harshvardhan  | Big Data        |3.800   |1       |See Details|
+           | 2        |Ralph Crosby  | Graph Theory    |5.000   |1       |See Details|
+           | 3        |Bill Gwen     | Wireless Network|-       |0       |See Details|
         And I press "Download"
-        Then the file app/downloads/scores.csv contains
+        Then the file downloads/scores.csv contains
 		"""
-		difficulty,id,judge_id,no_show,novelty,poster_id,utility,verbal,written,judge_name,judge_company_name,poster_title,poster_presenter,poster_number
-		1,3,5,3,5,3,1,3,false,Kelly,TAMU,Big Data,Harshvardhan,1
-		2,5,5,5,5,5,2,2,false,Sara,TAMU,Graph Theory,Ralph Crosby,2
+		id,poster_number,judge_name,novelty,utility,difficulty,verbal,written,no_show,poster_title,poster_presenter,judge_company_name
+		1,1,Kelly,3,5,3,5,3,false,Big Data,Harshvardhan,TAMU
+		2,2,Sara,5,5,5,5,5,false,Graph Theory,Ralph Crosby,TAMU
 		
 		"""

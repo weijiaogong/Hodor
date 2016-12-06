@@ -217,20 +217,22 @@ end
         send_file("downloads/rankings.csv", :filename => "rankings.csv")
   end
   
+  
+  
+  
   def download_scores
-        File.delete("app/downloads/scores.csv") if File.exists?("app/downloads/scores.csv")
-        @scores = Score.all
-        vals = @scores.attribute_names
-        
-        CSV.open("app/downloads/scores.csv", "wb") do |csv|
-            csv << vals.sort + [:judge_name, :judge_company_name, :poster_title, :poster_presenter, :poster_number] 
+        File.delete("downloads/scores.csv") if File.exists?("downloads/scores.csv")
+        @scores = Score.includes(:poster, :judge).order("posters.number")
+
+        CSV.open("downloads/scores.csv", "wb") do |csv|
+            csv << [:id, :poster_number, :judge_name] + Score.score_terms + [:no_show, :poster_title, :poster_presenter, :judge_company_name] 
             for score in @scores
-            poster = Poster.find(score.poster_id)
-            judge = Judge.find(score.judge_id)
-            	csv << vals.map{ |v| score.send(v) } + [judge.name, judge.company_name, poster.title, poster.presenter, poster.number]
+              poster = Poster.find(score.poster_id)
+              judge = Judge.find(score.judge_id)
+            	csv << [score.id, poster.number, judge.name] + Score.score_terms.map{ |v| score.send(v) } + [score.no_show, poster.title, poster.presenter, judge.company_name]
             end
         end
-        send_file("app/downloads/scores.csv")
+        send_file("downloads/scores.csv")
   end
 
 end
