@@ -11,6 +11,10 @@ class PostersController < ApplicationController
             @poster = Poster.create(params[:poster].merge({:number => Poster.count + 1}).permit(:number, :presenter, :title, :advisors, :email))
             if @poster.errors.messages.empty?
                 flash[:notice] = "#{@poster.title} was successfully created."
+                
+                # Send Confirmation email when the admin or the student uploads an individual poster
+                RemindMailer.confirmation_email(@poster).deliver_later
+                
                 if admin?
                     redirect_to admin_posters_path
                 else

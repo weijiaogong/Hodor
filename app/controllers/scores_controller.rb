@@ -1,6 +1,13 @@
 class ScoresController < ApplicationController
     before_action :require_login
     #render the view for judging each poster
+    def decide_no_show
+        no_show = true
+        @poster.scores.each do |score|
+            no_show = false unless score.no_show
+        end
+        return no_show
+    end
     def edit
         @poster = Poster.find(params[:poster_id])
         @judge = Judge.find(params[:judge_id])
@@ -42,14 +49,7 @@ class ScoresController < ApplicationController
         end
 
     end
-   
-    def decide_no_show
-        no_show = true
-        @poster.scores.each do |score|
-            no_show = false unless score.no_show
-        end
-        return no_show
-    end
+
     
 
     def no_show
@@ -70,7 +70,7 @@ class ScoresController < ApplicationController
     end
     
     
-	
+=begin	
     def accept
         judge_id  = params[:judge_id]
         poster_id = params[:score_poster_id]
@@ -83,4 +83,5 @@ class ScoresController < ApplicationController
             redirect_to edit_judge_score_path(judge_id, poster_id)
         end
     end
+=end    
 end

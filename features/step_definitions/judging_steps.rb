@@ -57,3 +57,10 @@ Then(/^Return to list of posters$/) do
    judge = Judge.find_by_name("Umair")
    expect(page).to have_current_path(judge_path(judge))
 end
+
+Then(/^I should see "([^"]*)" message$/) do |arg1|
+    message = accept_prompt(text: "Click 'Yes' if you would like to score another poster") do
+      click_link(arg1, disabled: true)
+    end
+    expect(message).to eq("Click 'Yes' if you would like to score another poster")
+end

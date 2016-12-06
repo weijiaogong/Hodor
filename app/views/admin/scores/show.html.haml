@@ -4,7 +4,7 @@
 
 %ul#details
 title: #{@poster.title}
-%table{class: "table table-bordered"}
+%table{class: "table table-bordered", id: "details_table"}
   %thead
     %tr
       %th Judge
@@ -12,6 +12,7 @@ title: #{@poster.title}
         %th= term
       %th Average
       %th Edit
+      %th Delete
   %tbody
     -@scores.each do |score|
       %tr
@@ -20,6 +21,7 @@ title: #{@poster.title}
           %td= show_score(score.send(term))
         %td= show_avg(score.no_show, @judge_avgs[score.judge_id])
         %td= link_to 'Edit', edit_admin_score_path(score), method: :get
+        %td= link_to 'Delete', admin_score_path(score), method: :delete
     - unless @scores.empty?
       %tr
         %td Average
@@ -27,3 +29,10 @@ title: #{@poster.title}
           %td= show_score(@term_avgs[term])
         %td= show_score(@poster_avg)
         %td
+        %td
+
+= form_tag admin_scores_path, method: :post  do
+  = label_tag "Enter Judge Name:" 
+  = text_field_tag 'judge_name', "", size: 20
+  = hidden_field_tag "poster_id", @poster.id
+  = submit_tag 'Create New Score', class: "btn btn-default btn"

@@ -8,10 +8,11 @@ Feature: Hide admins
     Background: admin in database
 		Given the following users exist:
 	    | name          | company_name| access_code     | scores_count | role       |
-	    | admin         | tamu        | admin_code      | 0			   | admin      |
+	    | admin         | tamu        | admin_code      | 0	           | admin      |
 	    | superadmin    | tamu        | superadmin_code | 0            | superadmin |
 	    | wyh1          |   tamu      | wyh1_code       | 0            | judge      |
 	    | wyh2          |   tamu      | wyh2_code       | 0            | judge      |
+	    | rock          |   TxAM      | roc2_code       | 0            | non-judge  |
 	    
 	Scenario: login as superadmin
     	 Given I logged in as "superadmin_code"

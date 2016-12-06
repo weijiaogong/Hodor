@@ -40,8 +40,8 @@ Background: users in database
     Given I logged in as "admin"
     And I am on the login page
     Then I should be on the admin page
-    
+  @javascript  
   Scenario: Logout
     Given I logged in as "admin"
-    When I follow "Sign out"
+    When I follow "Sign out" without triggerring dialog
     Then I should be on the login page

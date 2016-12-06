@@ -2,10 +2,13 @@ class RemindMailer < ApplicationMailer
     
     
     def remind_email(poster)
-       #Poster.find_each do |papa|
             @poster = poster
     		mail(to: poster.email , subject: 'Reminder about the IAP Poster Competition')
-    	 #end
+    end
+    
+    def confirmation_email(poster)
+            @poster = poster
+    		mail(to: poster["email"] , subject: 'Confirmation of Regisration for IAP Poster Competition')
     end
     
     def self.call_remind_email

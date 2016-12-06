@@ -9,6 +9,8 @@ SimpleCov.start 'rails'
 
 require 'cucumber/rails'
 require 'capybara/webkit'
+
+require 'email_spec/cucumber'
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -29,6 +31,8 @@ require 'capybara/webkit'
 # 2) Set the value below to true. Beware that doing this globally is not
 # recommended as it will mask a lot of errors for you!
 #
+
+
 ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.
@@ -62,11 +66,11 @@ Capybara.javascript_driver = :webkit
 Capybara::Webkit.configure do |config|
   # Enable debug mode. Prints a log of everything the driver is doing.
   config.debug = false
-
   # Don't raise errors when SSL certificates can't be validated
   config.ignore_ssl_errors
 
 end
 # to let javascript function run at interval = 5 seconds
 Capybara.default_max_wait_time = 10
-
+Capybara.server_port = '8000'
+Capybara.app_host = 'http://localhost:8000'

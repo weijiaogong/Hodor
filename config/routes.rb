@@ -10,7 +10,7 @@ PosterJudging::Application.routes.draw do
                 post :set_maximum
             }
         end
-		resources :scores, :only => [:index, :show, :edit, :update, :destroy] do
+		resources :scores, :only => [:index, :show, :edit, :update, :destroy, :create] do
 		    collection {
                  get :rankings
                  get :download_ranks
@@ -37,16 +37,17 @@ PosterJudging::Application.routes.draw do
 			post :no_show
             get  :accept
 	    }
-        get :leave
+        delete :leave
+        put :assign
         get :register
     end
 
     resources :sessions, only: [:new, :create, :destroy] do
-        get :signout, on: :collection
         get :download, on: :collection
     end
     match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete
+    match '/signout_check', to: "application#signout_check", via: :get
     root :to => 'sessions#new'
     
     resources :posters

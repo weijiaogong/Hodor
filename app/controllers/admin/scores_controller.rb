@@ -66,31 +66,51 @@ class Admin::ScoresController < ApplicationController
       else
         posters = Poster.find_by_keywords(keywords).order(:number)
       end
+      
       return posters
   end
 
-	def select_posters(origin_posters, filter)
-	  unassigned_posters = origin_posters.select {|p| p.scores_count == 0 }
-	  posters = []
-	  #unassigned posters are part of unscored posters
-	  posters = unassigned_posters if filter == "unscored"
-	  assigned_posters = origin_posters - unassigned_posters
-	  #among assigned posters, there are three type: unscored, no_show, scored
-    assigned_posters.each do |poster|
-      scores = poster.scores
-      type = "unscored"
-      no_show = true
-      scores.each do |score|
-        if score.send(Score.score_terms[0]) > 0
-          type = "scored" # the poster is scored if only scored once
+  def select_posters_by_filter(origin_posters, posters, filter)
+    origin_posters.each do |poster|
+       #assume the poster is unscored at first, then we will find out whether it is scored or not
+      type = "completed"
+      poster.scores.each do |score|
+        if score.no_show
+          posters << poster if filter == "no_show"
+          type = "no_show"
+          break
+        elsif score.send(Score.score_terms[0]) < 0
+          posters << poster if filter == "inprogress"
+          type = "inprogress"
           break
         end
-        no_show = false unless score.no_show # the poster is no show only if its scores are all no show
       end
-      no_show = false if type == "scored"
-      type = "no_show" if no_show
-      posters << poster if filter == type
+      posters << poster if filter == "completed" && type == "completed"
     end
+    return posters
+  end
+
+	def select_posters(origin_posters, filter)
+	  inprogress_posters = origin_posters.select {|p| p.scores_count == 3 }
+	  undone_posters = origin_posters - inprogress_posters
+	  
+	  if filter == "undone"
+	    return undone_posters
+	  end
+	  
+	  posters = []
+	  
+	  if filter == "no_show"
+	    undone_posters.each do |poster|
+        poster.scores.each do |score|
+          posters << poster if score.no_show
+          break
+        end
+      end
+	  end
+	  #among assigned posters, there are three type: inprogress, no_show, completed
+	  # we now label each poster with its write type
+    select_posters_by_filter(inprogress_posters, posters, filter)
     return posters
 	end
 
@@ -113,13 +133,20 @@ end
     @posters.each do |poster|
 		   @poster_avgs[poster.id] = get_poster_avg(poster)
     end
+    if request.xhr?
+      render :partial => 'index_partial'
+    end
+    #render :json => @posters
   end
-
+  
   def show
     @score_terms = Score.score_terms
     poster_id = params[:id]
     @poster = Poster.find(poster_id)
     get_poster_avg(@poster)
+    if request.xhr?
+      render :partial => 'show_partial', :poster => @poster
+    end
   end
 
   def edit
@@ -127,6 +154,32 @@ end
     @poster = score.poster
     @judge  = score.judge
     render 'scores/edit'
+  end
+  
+  def create
+    poster_id = params[:poster_id]
+    @poster = Poster.find(poster_id)
+    @judge = Judge.find_by(name: params[:judge_name])
+    if @judge
+      score = Score.find_by(judge_id: @judge.id, poster_id: poster_id)
+      if score
+        flash[:notice]  = "Judge "+ params[:judge_name].to_s + " is already in the score table"
+      else
+        Score.assign_poster_to_judge(@poster, @judge)
+      end
+    else
+      flash[:notice]  = "Cannot Find Judge " + params[:judge_name].to_s
+    end
+    redirect_to admin_score_path(@poster)
+  end
+  
+  def destroy
+    score = Score.find(params[:id])
+    poster = score.poster
+    score.destroy
+    @scores = poster.scores
+    @score_terms = Score.score_terms
+    redirect_to admin_score_path(poster)
   end
   
   def rankings

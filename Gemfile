@@ -31,6 +31,7 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'metric_fu'
 	gem "capybara"
+	gem 'email_spec'
   gem "launchy"
 	gem 'test-unit'
 
@@ -56,7 +57,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 # use Haml for templates
 gem 'haml'
-#gem 'test-unit'

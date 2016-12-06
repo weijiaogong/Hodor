@@ -25,8 +25,6 @@ class Score < ApplicationRecord
              str += term + "+"
         end
         str = str.gsub(/\+\z/, ") ") + "as score_sum"
-        puts str
-        puts Score.select(str).inspect
         return Score.select(str)
     end
 end
