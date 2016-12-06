@@ -6,6 +6,6 @@ Given(/^No posters has been judged$/) do
 end
 
 Then(/^I see a popup window for download "(.*?)"$/) do |arg1|
-	wait_for_ajax
+	sleep 3
 	page.response_headers['Content-Disposition'].should have_content(arg1)
 end
