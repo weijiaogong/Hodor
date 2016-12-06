@@ -87,7 +87,7 @@ When(/^I give new scores (.*?)$/) do |grade|
     click_button('Submit')
 end
 
-When(/^I edit the scores given by judge "(.*?)"$/) do |name|
+When(/^I "(.*?)" the scores given by judge "(.*?)"$/) do |link_name, name|
     
     page.find(".table.table-bordered tbody tr", match: :first)
     expect(page).to have_content("Details about Poster")
@@ -98,7 +98,7 @@ When(/^I edit the scores given by judge "(.*?)"$/) do |name|
 	    row.all('td').each do |cell|
             if cell.text == name
                 within(row) do
-                   link = page.find_link("Edit")
+                   link = page.find_link(link_name)
                 end
                 break
             end
@@ -110,4 +110,10 @@ end
 Then(/^Judge "(.*?)" should have no scores$/) do |name|
     judge = Judge.find_by(name: name)
     expect(judge.scores.size).to eq 0
+end
+
+
+And(/^I create new score for judge "(.*?)"$/) do |name|
+    fill_in("judge_name", :with => name)
+    click_button "Create New Score"
 end

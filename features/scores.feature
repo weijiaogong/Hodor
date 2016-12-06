@@ -44,9 +44,9 @@ Feature: View scores
 
         When I follow poster #1 "See Details"
         Then I should see the following table "#details_table":
-          |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit   |
-          | Sara   |5      |5      |5         |5     |5      |5.000  |  Edit  |
-          |Average |5.000  |5.000  |5.000     |5.000 |5.000  |5.000  |        |
+          |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit   | Delete|
+          | Sara   |5      |5      |5         |5     |5      |5.000  |  Edit  | Delete|
+          |Average |5.000  |5.000  |5.000     |5.000 |5.000  |5.000  |        |       |
         When  I am on the view scores page
         When I follow poster #3 "See Details"
         Then I should see an empty table "#details_table"
