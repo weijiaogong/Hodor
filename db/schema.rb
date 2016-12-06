@@ -38,23 +38,24 @@ ActiveRecord::Schema.define(version: 20161203180446) do
   end
 
   create_table "judges", force: :cascade do |t|
-    t.string  "name"
-    t.string  "company_name"
-    t.string  "access_code"
-    t.integer "scores_count",   default: 0
-    t.string  "remember_token"
-    t.string  "role"
-    t.boolean "leave",          default: false
+    t.string  "name",           limit: 255
+    t.string  "company_name",   limit: 255
+    t.string  "access_code",    limit: 255
+    t.integer "scores_count",               default: 0
+    t.string  "remember_token", limit: 255
+    t.string  "role",           limit: 255
+    t.boolean "leave",                      default: false
     t.index ["remember_token"], name: "index_judges_on_remember_token", using: :btree
   end
 
   create_table "posters", force: :cascade do |t|
     t.integer "number"
-    t.string  "presenter"
-    t.string  "title"
-    t.string  "advisors"
-    t.integer "scores_count", default: 0
-    t.string  "email"
+    t.string  "presenter",    limit: 255
+    t.string  "title",        limit: 255
+    t.string  "advisors",     limit: 255
+    t.integer "scores_count",             default: 0
+    t.string  "email",        limit: 255
+    t.boolean "no_show",                  default: false
   end
 
   create_table "scores", force: :cascade do |t|
@@ -66,8 +67,6 @@ ActiveRecord::Schema.define(version: 20161203180446) do
     t.integer "poster_id"
     t.integer "judge_id"
     t.boolean "no_show",    default: false
-    t.index ["judge_id"], name: "index_scores_on_judge_id", using: :btree
-    t.index ["poster_id"], name: "index_scores_on_poster_id", using: :btree
   end
 
   create_table "sessions", force: :cascade do |t|

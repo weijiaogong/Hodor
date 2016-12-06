@@ -24,8 +24,7 @@ class Score < ApplicationRecord
         score_terms.each do |term|
              str += term + "+"
         end
-        str = str.gsub(/\+\z/, ") ")
-        str += "as score_sum"
+        str = str.gsub(/\+\z/, ") ") + "as score_sum"
         return Score.select(str)
     end
 

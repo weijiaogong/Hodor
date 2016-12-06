@@ -222,7 +222,7 @@ end
         vals = @scores.attribute_names
         
         CSV.open("app/downloads/scores.csv", "wb") do |csv|
-            csv << vals + [:judge_name, :judge_company_name, :poster_title, :poster_presenter, :poster_number] 
+            csv << vals.sort + [:judge_name, :judge_company_name, :poster_title, :poster_presenter, :poster_number] 
             for score in @scores
             poster = Poster.find(score.poster_id)
             judge = Judge.find(score.judge_id)

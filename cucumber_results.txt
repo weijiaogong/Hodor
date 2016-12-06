@@ -1,3 +1,0 @@
-DEPRECATED: #default_wait_time= is deprecated, please use #default_max_wait_time= instead
-No such file or directory - features/admin.feature. You can use `cucumber --init` to get started.
-Coverage report generated for Cucumber Features to /home/ubuntu/workspace/coverage. 203 / 506 LOC (40.12%) covered.

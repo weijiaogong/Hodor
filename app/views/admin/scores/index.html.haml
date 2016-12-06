@@ -37,6 +37,7 @@
         };
         $(FilterTable.setup);
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default btn"
+
 = button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
   
 -#= form_tag admin_scores_path, :id => "status_form", :class => "pull-left", :method => :get do
