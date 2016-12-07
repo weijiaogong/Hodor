@@ -230,7 +230,9 @@ end
             for score in @scores
               poster = Poster.find(score.poster_id)
               judge = Judge.find(score.judge_id)
-            	csv << [score.id, poster.number, judge.name] + Score.score_terms.map{ |v| score.send(v) } + [score.no_show, poster.title, poster.presenter, judge.company_name]
+              if poster and judge #need to exclude scores from prior competitions since we never delete those...
+              	csv << [score.id, poster.number, judge.name] + Score.score_terms.map{ |v| score.send(v) } + [score.no_show, poster.title, poster.presenter, judge.company_name]
+              end
             end
         end
         send_file("downloads/scores.csv")
