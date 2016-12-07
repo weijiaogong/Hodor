@@ -10,13 +10,15 @@
         %th Rank
         %th Presenter
         %th Title
+        %th #Scores
         %th Avg. Score
     %tbody
         - i = 0
         - @posters.each do |poster|
             %tr
-                - viewed_poster_avg = show_poster_avg(poster, @poster_avgs[poster.id])
+                - viewed_poster_avg = show_poster_avg(poster, @poster_avgs[poster.id][:avg])
                 %td= i = view_ranking(viewed_poster_avg, i)
                 %td= poster.presenter
                 %td= poster.title
+                %td= @poster_avgs[poster.id][:count]
                 %td= viewed_poster_avg

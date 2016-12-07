@@ -9,9 +9,9 @@ describe "Authentication" do
 
     describe "with invalid information" do
       before { click_button "Sign in" }
-      it { should have_selector('h1', text: 'Sign in') }
+      it { should have_button('Sign in') }
       it { should have_title('PosterJudging') }
-      it { should have_selector('div.alert.alert-error', text: 'Invalid') }
+      it { should have_content('Invalid') }
     end
 
   end

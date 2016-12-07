@@ -29,9 +29,9 @@ Feature: Overall summary of Presenters
 		  
 	    When  I press "View Poster Rankings"
 		Then  I should see the following table "#ranking_table":
-		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Harshvardhan |       |  5.000     |
-		  | 2  |Ralph Crosby |       |  4.000     |
+		  |Rank| 	Presenter| 	Title|#Scores | 	Avg. Score|
+		  | 1  |Harshvardhan |       |1       |   5.000     |
+		  | 2  |Ralph Crosby |       |1       |  4.000     |
 		
 	Scenario: Rankings are updated according to their average score
  	    Given Judges scored posters as following:
@@ -42,9 +42,9 @@ Feature: Overall summary of Presenters
         | Kelly| 2     |5,5,5,5,5|
 	    When  I press "View Poster Rankings"
 		Then   I should see the following table "#ranking_table":
-		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Ralph Crosby |       |  4.500     |
-		  | 2  |Harshvardhan |       |  4.000     |
+		  |Rank| 	Presenter| 	Title|#Scores | 	Avg. Score|
+		  | 1  |Ralph Crosby |       |2       |  4.500     |
+		  | 2  |Harshvardhan |       |2       |  4.000     |
 
 	Scenario: download the ranking file
 		Given Judges scored posters as following:
@@ -62,5 +62,5 @@ Feature: Overall summary of Presenters
 		And   Judge "Kelly" has not scored assigned poster 2
 	    When  I press "View Poster Rankings"
 		Then  I should see the following table "#ranking_table":
-		  |Rank| 	Presenter| 	Title| 	Avg. Score|
-		  | 1  |Harshvardhan |       |  5.000     |
+		  |Rank| 	Presenter| 	Title|#Scores | 	Avg. Score|
+		  | 1  |Harshvardhan |       |1       |  5.000     |

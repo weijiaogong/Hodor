@@ -9,15 +9,15 @@ module  ScoresHelper
         	'-'
         end
     end
-=begin    
+    
     def show_avg(no_show, avg)
         if no_show
-            "No Show"
+           "No Show" 
         else
             show_score(avg)
         end
     end
-=end
+    
     def show_poster_avg(poster, avg)
         if poster.scores.empty?
             no_show = false
@@ -30,14 +30,7 @@ module  ScoresHelper
         show_avg(no_show, avg)
     end
     
-    def show_avg(no_show, avg)
-        if no_show
-           "No Show" 
-        else
-            show_score(avg)
-        end
-    end
-    
+
     def filter(state)
        return @filter.eql?(state)
     end
@@ -49,12 +42,15 @@ module  ScoresHelper
         end
         return msg
     end
+    
+=begin    
   # method separated from /app/views/admin/scores/index.html.haml
+  
   # used to count # of times a poster is scored = # of scoring judges
   def get_actual_scores_count(poster)
       return (poster.scores_count - poster.scores.where("#{Score.score_terms[0]} = -1").count)
   end
-  
+=end  
   def view_ranking(viewed_poster_avg, i)
       @temp_poster_avg ||= 0.0
       if viewed_poster_avg != @temp_poster_avg
