@@ -63,9 +63,7 @@ class JudgesController < ApplicationController
     
     def get_another_posters(n)
         posters = Poster.find_least_judged().order(scores_count: :asc)
-        if posters.empty?
-            flash[:notice] = "There are no more posters to be assigned."
-        else
+        unless posters.empty?
             posters = posters.reject {|p| @judge.posters.include?(p)}
             posters = posters.sample(n)
         end
