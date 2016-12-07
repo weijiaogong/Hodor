@@ -57,7 +57,10 @@ class JudgesController < ApplicationController
           redirect_to judge_register_path(@judge) and return
         end
         sign_in @judge
-        assign_posters(3)
+        posters = assign_posters(3)
+        if posters.empty?
+            flash[:notice] = "There are no more posters to be assigned."
+        end
         redirect_to judge_path(@judge)
     end
     
