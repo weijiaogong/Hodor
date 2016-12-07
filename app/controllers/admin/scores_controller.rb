@@ -196,18 +196,21 @@ end
         end
         
         @posters = @posters.sort_by{|poster| @poster_avgs[poster.id]}.reverse
-        @high_avgs = []
         @counts = 0
+        # @ranking_place = 0
         @poster_avgs.values.sort.reverse.each do |value| 
-          @high_avgs.append(value) unless @high_avgs.include?(value) 
-          # if flag && @counts > 3
-          #   yield
-          # else
-          #   @counts += 1
-          # end 
+          @temp_avg ||= 0.0
+          # if @ranking_place < 30
+            if @temp_avg != value
+              @temp_avg = value
+              # @ranking_place += 1
+            #   @counts += 1
+            # else
+            end
+            @counts += 1
+          # end
         end
-        puts "@HIGH_AVGS", @high_avgs.inspect, @poster_avgs, @high_avgs.values.count
-        @posters = @posters.take(3)
+        @posters = @posters.take(@counts)
         
         create_rank_file(@posters, @poster_avgs)  #FIXME this should be run before a download, right?
   end

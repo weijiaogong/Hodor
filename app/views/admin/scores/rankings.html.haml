@@ -15,7 +15,8 @@
         - i = 0
         - @posters.each do |poster|
             %tr
-                %td= i = i + 1
+                - viewed_poster_avg = show_poster_avg(poster, @poster_avgs[poster.id])
+                %td= i = view_ranking(viewed_poster_avg, i)
                 %td= poster.presenter
                 %td= poster.title
-                %td= show_poster_avg(poster, @poster_avgs[poster.id])
+                %td= viewed_poster_avg
