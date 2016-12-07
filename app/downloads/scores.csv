@@ -1,3 +1,64 @@
 id,novelty,utility,difficulty,verbal,written,poster_id,judge_id,no_show,judge_name,judge_company_name,poster_title,poster_presenter,poster_number
-1,3,5,3,5,3,1,3,false,Kelly,TAMU,Big Data,Harshvardhan,1
-2,5,5,5,5,5,2,2,false,Sara,TAMU,Graph Theory,Ralph Crosby,2
+3,5,5,5,5,5,15,7,false,Rocky Whitely,Navasota High School,#prochoice or #prolife? Discovering Topic-Sensitive Opinion Bias in Social Media,Haokai,15
+1,4,5,5,5,5,19,7,false,Rocky Whitely,Navasota High School,A Twitter Extension Promotes Exploratory Browsing,Ajit Jain,19
+4,4,4,5,5,5,4,7,false,Rocky Whitely,Navasota High School,Timing Integrity Check of GPSSignal - Models and Computing Algorithm,Michael Fu,4
+5,5,5,5,4,4,13,7,false,Rocky Whitely,Navasota High School,Mode-Multiplexed Photonic Router for High Performance Network-on- Chip,Dharanidhar Dang,13
+8,5,5,5,5,5,8,6,false,Old Sarge,Corps of Cadets,The STAPL Skeleton Framework,Mani Zandifar,8
+7,5,5,4,5,5,10,6,false,Old Sarge,Corps of Cadets,"Fractal Analysis of Radiologists' Ocular search pattern in Mammography""",Folami Alamudun,10
+6,5,4,4,5,5,17,6,false,Old Sarge,Corps of Cadets,PerCon : A Personal Digital Library for Heterogeneous Data,Suinn Park,17
+9,1,1,1,1,1,12,6,false,Old Sarge,Corps of Cadets,Unordered Associative Containers in STAPL,Tyler Biehle,12
+11,2,2,2,2,2,4,4,false,Rotten Potatoes,Potato Factory,Timing Integrity Check of GPSSignal - Models and Computing Algorithm,Michael Fu,4
+12,2,3,3,3,3,16,4,false,Rotten Potatoes,Potato Factory,From Petascale to the Pocket: Adaptively Scaling Parallel Programs for Mobile SoCs,Adam Fidel,16
+10,-1,-1,-1,-1,-1,21,4,true,Rotten Potatoes,Potato Factory,Step Up Ufe: A Context Aware Health Assistant,Vijay Rajanna,21
+13,1,1,1,1,1,7,4,false,Rotten Potatoes,Potato Factory,KidGab: A Sketch-Based Social Network for Teaching Digital Citizenship & Improving School Climate,Stephanie Valentine,7
+14,-1,-1,-1,-1,-1,2,7,false,Rocky Whitely,Navasota High School,Quartet Distance Computation for sets of Heterogeneous Trees,Ralph Crosby,2
+15,-1,-1,-1,-1,-1,14,7,false,Rocky Whitely,Navasota High School,Fast Approximate Convex Decomposition,Mukulika Ghosh,14
+16,-1,-1,-1,-1,-1,7,7,false,Rocky Whitely,Navasota High School,KidGab: A Sketch-Based Social Network for Teaching Digital Citizenship & Improving School Climate,Stephanie Valentine,7
+17,-1,-1,-1,-1,-1,11,7,false,Rocky Whitely,Navasota High School,A Region-Based Strategy for Collaborative Roadmap Construction,Jory Denny,11
+18,-1,-1,-1,-1,-1,10,7,false,Rocky Whitely,Navasota High School,"Fractal Analysis of Radiologists' Ocular search pattern in Mammography""",Folami Alamudun,10
+20,-1,-1,-1,-1,-1,10,4,false,Rotten Potatoes,Potato Factory,"Fractal Analysis of Radiologists' Ocular search pattern in Mammography""",Folami Alamudun,10
+21,-1,-1,-1,-1,-1,11,4,false,Rotten Potatoes,Potato Factory,A Region-Based Strategy for Collaborative Roadmap Construction,Jory Denny,11
+22,-1,-1,-1,-1,-1,5,4,false,Rotten Potatoes,Potato Factory,"You might also like ..."" from Everyday Applications to Recommendations",Sampath Jayarathna,5
+23,-1,-1,-1,-1,-1,13,4,false,Rotten Potatoes,Potato Factory,Mode-Multiplexed Photonic Router for High Performance Network-on- Chip,Dharanidhar Dang,13
+24,-1,-1,-1,-1,-1,12,4,false,Rotten Potatoes,Potato Factory,Unordered Associative Containers in STAPL,Tyler Biehle,12
+25,-1,-1,-1,-1,-1,6,6,false,Old Sarge,Corps of Cadets,Sampling Based Motion Planning With Reachable Volumes: Application to Manipulators and Closed Chains,Troy McMahon,6
+26,-1,-1,-1,-1,-1,19,6,false,Old Sarge,Corps of Cadets,A Twitter Extension Promotes Exploratory Browsing,Ajit Jain,19
+27,-1,-1,-1,-1,-1,20,6,false,Old Sarge,Corps of Cadets,Flappy Voice: An Interactive Game for Childhood Apraxia of Speech Therapy,Tian Lan,20
+28,-1,-1,-1,-1,-1,18,6,false,Old Sarge,Corps of Cadets,Spatial Neighbor Learning in Motion Planning,Chinwe Ekenna,18
+29,-1,-1,-1,-1,-1,1,6,false,Old Sarge,Corps of Cadets,Processing Big Data Graphs on Memory-Restricted Systems,Harshvardhan,1
+31,-1,-1,-1,-1,-1,9,6,false,Old Sarge,Corps of Cadets,UOBPRM: A Uniformly Distributed Obstacle-Based PRM,Cindy Yeh,9
+32,-1,-1,-1,-1,-1,16,6,false,Old Sarge,Corps of Cadets,From Petascale to the Pocket: Adaptively Scaling Parallel Programs for Mobile SoCs,Adam Fidel,16
+33,-1,-1,-1,-1,-1,5,6,false,Old Sarge,Corps of Cadets,"You might also like ..."" from Everyday Applications to Recommendations",Sampath Jayarathna,5
+34,-1,-1,-1,-1,-1,14,6,false,Old Sarge,Corps of Cadets,Fast Approximate Convex Decomposition,Mukulika Ghosh,14
+35,-1,-1,-1,-1,-1,21,6,false,Old Sarge,Corps of Cadets,Step Up Ufe: A Context Aware Health Assistant,Vijay Rajanna,21
+36,-1,-1,-1,-1,-1,7,6,false,Old Sarge,Corps of Cadets,KidGab: A Sketch-Based Social Network for Teaching Digital Citizenship & Improving School Climate,Stephanie Valentine,7
+37,-1,-1,-1,-1,-1,8,4,false,Rotten Potatoes,Potato Factory,The STAPL Skeleton Framework,Mani Zandifar,8
+39,-1,-1,-1,-1,-1,17,4,false,Rotten Potatoes,Potato Factory,PerCon : A Personal Digital Library for Heterogeneous Data,Suinn Park,17
+40,-1,-1,-1,-1,-1,9,4,false,Rotten Potatoes,Potato Factory,UOBPRM: A Uniformly Distributed Obstacle-Based PRM,Cindy Yeh,9
+41,-1,-1,-1,-1,-1,15,4,false,Rotten Potatoes,Potato Factory,#prochoice or #prolife? Discovering Topic-Sensitive Opinion Bias in Social Media,Haokai,15
+42,-1,-1,-1,-1,-1,14,4,false,Rotten Potatoes,Potato Factory,Fast Approximate Convex Decomposition,Mukulika Ghosh,14
+44,-1,-1,-1,-1,-1,18,4,false,Rotten Potatoes,Potato Factory,Spatial Neighbor Learning in Motion Planning,Chinwe Ekenna,18
+45,-1,-1,-1,-1,-1,15,6,false,Old Sarge,Corps of Cadets,#prochoice or #prolife? Discovering Topic-Sensitive Opinion Bias in Social Media,Haokai,15
+46,-1,-1,-1,-1,-1,3,6,false,Old Sarge,Corps of Cadets,Timing Integrity Check of GPS Signal - Models and Computing Algorithms,Brittany Duncan,3
+47,-1,-1,-1,-1,-1,13,6,false,Old Sarge,Corps of Cadets,Mode-Multiplexed Photonic Router for High Performance Network-on- Chip,Dharanidhar Dang,13
+48,-1,-1,-1,-1,-1,2,6,false,Old Sarge,Corps of Cadets,Quartet Distance Computation for sets of Heterogeneous Trees,Ralph Crosby,2
+49,-1,-1,-1,-1,-1,11,6,false,Old Sarge,Corps of Cadets,A Region-Based Strategy for Collaborative Roadmap Construction,Jory Denny,11
+50,-1,-1,-1,-1,-1,19,4,false,Rotten Potatoes,Potato Factory,A Twitter Extension Promotes Exploratory Browsing,Ajit Jain,19
+51,-1,-1,-1,-1,-1,20,4,false,Rotten Potatoes,Potato Factory,Flappy Voice: An Interactive Game for Childhood Apraxia of Speech Therapy,Tian Lan,20
+52,-1,-1,-1,-1,-1,6,4,false,Rotten Potatoes,Potato Factory,Sampling Based Motion Planning With Reachable Volumes: Application to Manipulators and Closed Chains,Troy McMahon,6
+43,2,1,1,1,1,1,4,false,Rotten Potatoes,Potato Factory,Processing Big Data Graphs on Memory-Restricted Systems,Harshvardhan,1
+19,2,1,2,2,1,2,4,false,Rotten Potatoes,Potato Factory,Quartet Distance Computation for sets of Heterogeneous Trees,Ralph Crosby,2
+38,3,3,3,3,3,3,4,false,Rotten Potatoes,Potato Factory,Timing Integrity Check of GPS Signal - Models and Computing Algorithms,Brittany Duncan,3
+30,5,5,5,5,5,4,6,false,Old Sarge,Corps of Cadets,Timing Integrity Check of GPSSignal - Models and Computing Algorithm,Michael Fu,4
+53,-1,-1,-1,-1,-1,5,5,false,RP Movies,Review the Best,"You might also like ..."" from Everyday Applications to Recommendations",Sampath Jayarathna,5
+54,-1,-1,-1,-1,-1,1,5,false,RP Movies,Review the Best,Processing Big Data Graphs on Memory-Restricted Systems,Harshvardhan,1
+55,-1,-1,-1,-1,-1,6,5,false,RP Movies,Review the Best,Sampling Based Motion Planning With Reachable Volumes: Application to Manipulators and Closed Chains,Troy McMahon,6
+2,3,3,3,3,3,21,7,false,Rocky Whitely,Navasota High School,Step Up Ufe: A Context Aware Health Assistant,Vijay Rajanna,21
+56,-1,-1,-1,-1,-1,20,5,false,RP Movies,Review the Best,Flappy Voice: An Interactive Game for Childhood Apraxia of Speech Therapy,Tian Lan,20
+57,-1,-1,-1,-1,-1,12,5,false,RP Movies,Review the Best,Unordered Associative Containers in STAPL,Tyler Biehle,12
+58,-1,-1,-1,-1,-1,8,5,false,RP Movies,Review the Best,The STAPL Skeleton Framework,Mani Zandifar,8
+59,-1,-1,-1,-1,-1,17,5,false,RP Movies,Review the Best,PerCon : A Personal Digital Library for Heterogeneous Data,Suinn Park,17
+60,-1,-1,-1,-1,-1,3,5,false,RP Movies,Review the Best,Timing Integrity Check of GPS Signal - Models and Computing Algorithms,Brittany Duncan,3
+61,-1,-1,-1,-1,-1,18,5,false,RP Movies,Review the Best,Spatial Neighbor Learning in Motion Planning,Chinwe Ekenna,18
+62,-1,-1,-1,-1,-1,16,5,false,RP Movies,Review the Best,From Petascale to the Pocket: Adaptively Scaling Parallel Programs for Mobile SoCs,Adam Fidel,16
+63,-1,-1,-1,-1,-1,9,5,false,RP Movies,Review the Best,UOBPRM: A Uniformly Distributed Obstacle-Based PRM,Cindy Yeh,9

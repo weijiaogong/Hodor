@@ -184,33 +184,35 @@ end
   
   def rankings
         @score_terms = Score.score_terms
-        @posters = Poster.all_scored
+        @posters = Poster.all #_scored
         @poster_avgs = Hash.new
         @posters.each do |poster|
           poster_avg = get_poster_avg(poster)
-          if poster_avg < 0
-            @posters = @posters.reject {|p| p.id == poster.id}
-          else
+        #   Commented out lines limited posters ranked
+        #   if poster_avg < 0
+        #     @posters = @posters.reject {|p| p.id == poster.id}
+        #   else
             @poster_avgs[poster.id] = poster_avg
-          end
+        #   end
         end
         
         @posters = @posters.sort_by{|poster| @poster_avgs[poster.id]}.reverse
-        @counts = 0
-        # @ranking_place = 0
-        @poster_avgs.values.sort.reverse.each do |value| 
-          @temp_avg ||= 0.0
-          # if @ranking_place < 30
-            if @temp_avg != value
-              @temp_avg = value
-              # @ranking_place += 1
-            #   @counts += 1
-            # else
-            end
-            @counts += 1
-          # end
-        end
-        @posters = @posters.take(@counts)
+        # @counts = 0
+        # # @ranking_place = 0
+        # @poster_avgs.values.sort.reverse.each do |value| 
+        #   @temp_avg ||= 0.0
+        #   lists equal rank for equal scores by incrementing with change in scores
+        #   if @ranking_place < 30
+        #     if @temp_avg != value
+        #       @temp_avg = value
+        #       @ranking_place += 1
+        #       @counts += 1
+        #     else
+        #       @counts += 1
+        #     end
+        #   end
+        # end
+        # @posters = @posters.take(@counts)
         
         create_rank_file(@posters, @poster_avgs)  #FIXME this should be run before a download, right?
   end
@@ -219,10 +221,15 @@ end
         File.delete("downloads/rankings.csv") if File.exists?("downloads/rankings.csv")
         CSV.open("downloads/rankings.csv", "wb") do |csv|
             csv << ["rank", "presenter", "title", "score"]
-            rank = 1
+            rank = 0
+            temp_score = 0.0
             for poster in posters
+                # lists equal rank for equal scores by incrementing with change in scores
+                if temp_score != scores[poster.id]
+                  temp_score = scores[poster.id]
+                  rank += 1
+                end
                 csv << [rank, poster.presenter, poster.title, scores[poster.id]]
-                rank += 1
             end
         end
   end
