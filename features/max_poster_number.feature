@@ -52,5 +52,5 @@ Feature: Poster number limit
         And I fill in "poster[advisors]" with "Advisor"
         And I fill in "poster[email]" with "e-mail@example.com"
         And I press "Register"
-        Then I see "No new poster can be created, please contact admin"
+        Then I see "Poster could not be created- poster limit reached"
         

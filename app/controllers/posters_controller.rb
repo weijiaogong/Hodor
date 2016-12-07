@@ -26,7 +26,7 @@ class PostersController < ApplicationController
                 render :action => 'new' #and now the css breaks :(
             end
         else
-            flash[:error] = "No new poster can be created, please contact admin"
+            flash[:error] = "Poster could not be created- poster limit reached"
             render :action => 'new' #and now the css breaks :(
         end
     end
