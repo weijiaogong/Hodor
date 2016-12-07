@@ -54,4 +54,14 @@ module  ScoresHelper
   def get_actual_scores_count(poster)
       return (poster.scores_count - poster.scores.where("#{Score.score_terms[0]} = -1").count)
   end
+  
+  def view_ranking(viewed_poster_avg, i)
+      @temp_poster_avg ||= 0.0
+      if viewed_poster_avg != @temp_poster_avg
+          @temp_poster_avg = viewed_poster_avg
+          return i + 1
+      else
+          return i
+      end
+  end
 end
