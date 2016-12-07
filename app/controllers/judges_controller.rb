@@ -78,20 +78,22 @@ class JudgesController < ApplicationController
         #create 2 - 3 new Scores for each poster assigned to this judge
         @judge ||= Judge.find(params[:judge_id])
         posters = Poster.find_least_judged().order(scores_count: :asc)
+        posters = posters.reject {|p| @judge.posters.include?(p)}
         if posters.empty?
             flash[:notice] = "There are no more posters to be assigned."
-            return 0
-        end
-        posters = posters.reject {|p| @judge.posters.include?(p)}
-        posters = posters.sample(n)
-        posters.each do |poster|
-            Score.assign_poster_to_judge(poster, @judge)
-        end
-        if @judge.scores_count > 3
-            flash[:notice] = "You have successfully added another poster for #{@judge.scores_count} total posters!"
             redirect_to judge_path(params[:judge_id])
+            return 0
         else
-            return posters.size
+            posters = posters.sample(n)
+            posters.each do |poster|
+                Score.assign_poster_to_judge(poster, @judge)
+            end
+            if @judge.scores_count > 3
+                flash[:notice] = "You have successfully added another poster for #{@judge.scores_count} total posters!"
+                redirect_to judge_path(params[:judge_id])
+            else
+                return posters.size
+            end
         end
     end
     #display the form to add name and company name for a specific judge
