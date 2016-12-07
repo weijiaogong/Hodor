@@ -37,6 +37,7 @@
         };
         $(FilterTable.setup);
 = button_to "Back", admin_root_path, method: "get", class: "btn btn-default btn"
+
 = button_to "Download", download_scores_admin_scores_path, method: "get", class: "btn btn-default btn"
   
 -#= form_tag admin_scores_path, :id => "status_form", :class => "pull-left", :method => :get do
@@ -52,9 +53,9 @@
         = radio_button_tag "status","all",  filter("all"),id: "status_all"
         = label_tag "No Show", nil, class: "padding-label"
         = radio_button_tag "status", "no_show", filter("no_show"), id: "status_no_show"
-        = label_tag 'Undone', nil, class: "padding-label"
+        = label_tag 'Need More Judges', nil, class: "padding-label"
         = radio_button_tag "status","undone", filter("undone"), id: "status_undone"
-        = label_tag 'InProgress', nil, class: "padding-label"
+        = label_tag 'In Progress', nil, class: "padding-label"
         = radio_button_tag "status","inprogress", filter("inprogress"), id: "status_inprogress"
         = label_tag 'Completed', nil, class: "padding-label"
         = radio_button_tag "status","completed",  filter("completed"),id: "status_completed"

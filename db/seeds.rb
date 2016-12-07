@@ -6,7 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+if Judge.count == 0
+    Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
+end
 
-Judge.create!(name: 'superadmin', company_name: 'tamu', access_code: 'superadmin', role: 'superadmin')
-# Judge.create!(name: 'admin', company_name: 'tamu', access_code: 'admin', role: 'admin')
-
+Event.find_or_create_by(id: 1)  do |event|
+  event.max_poster_number = 30
+  event.day = '01'
+  event.month = '01'
+  event.year = '2016'
+end

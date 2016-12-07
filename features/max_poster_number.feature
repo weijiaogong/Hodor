@@ -28,7 +28,7 @@ Feature: Poster number limit
 	    | 6	   | 12		| 2016	|	4				   |
         When  I press "View Posters"
 		When   I upload the file "data_exced.csv"
-		Then   I should see "Exceding the limit of posters"
+		Then   I should see "Error: Exceeding poster limit"
 		
   Scenario: Signup new posters without exceding the limit
         Given the following events exist: 

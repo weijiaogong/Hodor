@@ -39,25 +39,12 @@ class JudgesController < ApplicationController
     def show
         @score_terms = Score.score_terms
         @judge = Judge.find(params[:id])
-=begin        
-        if @judge.leave
-            begin
-               @judge.update_attributes!(leave: false)
-               sign_in @judge # this is important: resign in after udpation, I do not know why
-            rescue ActiveRecord::RecordInvalid => invalid
-              flash[:error] = invalid
-              redirect_to root_url and return
-            end
-        end
-        comeback_assign() #no come back assign
-=end        
         @posters = @judge.posters.order(:number)
         #set_disable() #judge can edit their score later
         get_judge_avgs
-        #unscored posters
-        #@orphan_posters = Poster.find_least_judged()
-        #@orphan_posters = @orphan_posters.reject {|p| @posters.include?(p)}
-        #@orphan_posters =  @orphan_posters.sample(3)
+        
+        #orphan posters
+        @orphan_poster = get_another_posters(1).first
     end  
 
     #update judge information (name, company name)
@@ -70,9 +57,14 @@ class JudgesController < ApplicationController
           redirect_to judge_register_path(@judge) and return
         end
         sign_in @judge
-        assign(3)
+        posters = assign_posters(3)
+        if posters.empty?
+            flash[:notice] = "There are no more posters to be assigned."
+        end
         redirect_to judge_path(@judge)
     end
+    
+# 
     #create 2 - 3 new Scores for each poster assigned to this judge
     def assign(n = 1) # used for initial and additional assignments
         #create 2 - 3 new Scores for each poster assigned to this judge
@@ -96,6 +88,7 @@ class JudgesController < ApplicationController
             end
         end
     end
+
     #display the form to add name and company name for a specific judge
     def register
         @judge = Judge.find(params[:judge_id])

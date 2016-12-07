@@ -19,14 +19,14 @@ module  JudgesHelper
            return false
         end
     end
-=begin    
-    def volunteer_msg
-        msg = @notice ? @notice : "Are you sure?"
-        return msg
-    end
-=end    
+ 
     def accept_poster_msg
-        return "Are you sure?"
+        if @orphan_poster
+            return "Do you want to judge poster ##{@orphan_poster.number} " + @orphan_poster.title + "?"
+        else
+            return "All posters have been judged"
+        end
     end
 
+   
 end

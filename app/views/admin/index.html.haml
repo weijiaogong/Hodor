@@ -14,14 +14,16 @@
 
 = "Event Date:   "
 = @event_date_set.inspect
-= "Max number of posters:   "
-= @max
+
 %br 
 %br
 = form_tag admin_root_path, :id=> "form_id", :method => :get do 
   = date_field("event", "date",:default => Date.today) 
   %br
   = submit_tag 'Update Date'
+  
+= "Max number of posters:   "
+= @max
 
 
 = form_tag admin_root_path,  :method => :get do

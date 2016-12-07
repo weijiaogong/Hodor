@@ -1,7 +1,5 @@
 FactoryGirl.define do
 	factory :score, class: 'Score' do
-	  association :poster
-	  association :judge
 	  trait(:unscored){
 		  novelty -1
 		  utility -1
@@ -16,12 +14,19 @@ FactoryGirl.define do
 		  verbal 5
 		  written 5
 	  }
-	  after :create  do |score|
-	  	poster = score.poster
-	  	judge  = score.judge
-	  	poster.save
-	  	judge.save
+	  
+	  transient do
+	    judge_name "Bill"
+	    poster_number 1
 	  end
+	 
+	  judge do
+	    Judge.find_by(name: judge_name) || FactoryGirl.create(:judge, name: judge_name)
+	  end
+
+      poster do
+      	Poster.find_by(number: poster_number) ||  FactoryGirl.create(:poster, number: poster_number)
+      end
 	  trait(:no_show) {no_show true}
 	  trait(:show) {no_show false}
 	  

@@ -73,16 +73,17 @@ class Admin::ScoresController < ApplicationController
   def select_posters_by_filter(origin_posters, posters, filter)
     origin_posters.each do |poster|
        #assume the poster is unscored at first, then we will find out whether it is scored or not
-      type = "completed"
+      type = "completed" # a poster in origin_posters is either completed or inprogress
+      no_show = false
       poster.scores.each do |score|
         if score.no_show
-          posters << poster if filter == "no_show"
-          type = "no_show"
-          break
-        elsif score.send(Score.score_terms[0]) < 0
-          posters << poster if filter == "inprogress"
-          type = "inprogress"
-          break
+          unless no_show
+            posters << poster if filter == "no_show"
+            no_show = true
+          end
+        elsif score.send(Score.score_terms[0]) < 0 && type != "inprogress"
+            posters << poster if filter == "inprogress"
+            type = "inprogress"
         end
       end
       posters << poster if filter == "completed" && type == "completed"
@@ -238,20 +239,22 @@ end
         send_file("downloads/rankings.csv", :filename => "rankings.csv")
   end
   
+  
+  
+  
   def download_scores
-        File.delete("app/downloads/scores.csv") if File.exists?("app/downloads/scores.csv")
-        @scores = Score.all
-        vals = @scores.attribute_names
-        
-        CSV.open("app/downloads/scores.csv", "wb") do |csv|
-            csv << vals + [:judge_name, :judge_company_name, :poster_title, :poster_presenter, :poster_number] 
+        File.delete("downloads/scores.csv") if File.exists?("downloads/scores.csv")
+        @scores = Score.includes(:poster, :judge).order("posters.number")
+
+        CSV.open("downloads/scores.csv", "wb") do |csv|
+            csv << [:id, :poster_number, :judge_name] + Score.score_terms + [:no_show, :poster_title, :poster_presenter, :judge_company_name] 
             for score in @scores
-            poster = Poster.find(score.poster_id)
-            judge = Judge.find(score.judge_id)
-            	csv << vals.map{ |v| score.send(v) } + [judge.name, judge.company_name, poster.title, poster.presenter, poster.number]
+              poster = Poster.find(score.poster_id)
+              judge = Judge.find(score.judge_id)
+            	csv << [score.id, poster.number, judge.name] + Score.score_terms.map{ |v| score.send(v) } + [score.no_show, poster.title, poster.presenter, judge.company_name]
             end
         end
-        send_file("app/downloads/scores.csv")
+        send_file("downloads/scores.csv")
   end
 
 end

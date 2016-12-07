@@ -36,14 +36,15 @@ PosterJudging::Application.routes.draw do
         resources :scores, path: :posters, param: :poster_id, :only => [:edit, :update]{
 			post :no_show
             get  :accept
+            put :assign
 	    }
         delete :leave
-        put :assign
         get :register
     end
 
     resources :sessions, only: [:new, :create, :destroy] do
         get :download, on: :collection
+        delete :signout, on: :collection
     end
     match '/signin', to: 'sessions#new', via: :get
     match '/signout', to: 'sessions#destroy', via: :delete

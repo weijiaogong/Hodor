@@ -4,7 +4,7 @@ class Admin::PostersController < ApplicationController
         before_action :require_admin
 
 	def index
-		@posters = Poster.all
+		@posters = Poster.all.order(:number)
 	end
 	
 	def import

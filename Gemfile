@@ -61,4 +61,3 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 # use Haml for templates
 gem 'haml'
-#gem 'test-unit'
