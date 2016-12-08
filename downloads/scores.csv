@@ -1,3 +1,6 @@
 id,poster_number,judge_name,novelty,utility,difficulty,verbal,written,no_show,poster_title,poster_presenter,judge_company_name
-1,1,Kelly,3,5,3,5,3,false,Big Data,Harshvardhan,TAMU
-2,2,Sara,5,5,5,5,5,false,Graph Theory,Ralph Crosby,TAMU
+14,1,a,5,5,5,5,5,false,Processing Big Data Graphs on Memory-Restricted Systems,Harshvardhan,a
+15,1,a,-1,-1,-1,-1,-1,false,Processing Big Data Graphs on Memory-Restricted Systems,Harshvardhan,a
+9,2,a,5,5,5,5,5,false,Quartet Distance Computation for sets of Heterogeneous Trees,Ralph Crosby,a
+10,3,a,-1,-1,-1,-1,-1,true,Timing Integrity Check of GPS Signal вЂ“ Models and Computing Algorithms,Brittany Duncan,a
+8,5,a,-1,-1,-1,-1,-1,true,Optimization,Kelly Jiang,a
