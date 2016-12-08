@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     judge = Judge.find_by_access_code(params[:session][:password])
-    session[:password] = params[:session][:password]
+    session[:password] = params[:session][:password] if params[:session][:password] 
 
     if judge
       sign_in judge
