@@ -23,8 +23,10 @@ RSpec.describe "AdminScoresShowPage" do
       current_path = URI.parse(current_url).path
       expect(current_path).to eq admin_score_path(@poster1)
       expect(page).to have_link('Edit')
+      expect(page).to have_link('Delete')
       expect(page).to have_selector('#details_table')
       expect(page).to have_button("Back")
+      expect(page).to have_button("Create New Score")
     end
     it "should list all scores for the poster" do
       expect(page).to have_content(@poster1.title)

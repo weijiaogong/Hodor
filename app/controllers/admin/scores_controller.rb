@@ -165,12 +165,12 @@ end
     if @judge
       score = Score.find_by(judge_id: @judge.id, poster_id: poster_id)
       if score
-        flash[:notice]  = "Judge "+ params[:judge_name].to_s + " is already in the score table"
+        flash[:notice]  = "Judge "+ @judge.name + " is already in the score table"
       else
         Score.assign_poster_to_judge(@poster, @judge)
       end
     else
-      flash[:notice]  = "Cannot Find Judge " + params[:judge_name].to_s
+      flash[:notice]  = "Cannot find Judge with access code " + params[:judge_code]
     end
     redirect_to admin_score_path(@poster)
   end

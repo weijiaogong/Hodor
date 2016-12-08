@@ -81,4 +81,4 @@ Feature: Edit scores
 		When I follow poster #1 "See Details"
 		And I create new score for judge "Jerry"
         Then I should be on the show scores page for "1"
-       Then I should see "Cannot Find Judge Jerry"
+       Then I should see "Cannot find Judge with access code Jerry"

@@ -117,8 +117,8 @@ Then(/^Judge "(.*?)" should have no scores$/) do |name|
 end
 
 
-And(/^I create new score for judge "(.*?)"$/) do |name|
-    fill_in("judge_name", :with => name)
+And(/^I create new score for judge "(.*?)"$/) do |code|
+    fill_in("judge_code", :with => code)
     click_button "Create New Score"
 end
 
