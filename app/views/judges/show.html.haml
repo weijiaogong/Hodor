@@ -23,4 +23,4 @@
           %td= button_to 'Grade', edit_judge_score_path(@judge.id, poster.id), :method => :get
 
 - if @orphan_poster
-  = button_to 'Accept Another Poster?', judge_score_assign_path(@judge.id, @orphan_poster.id),  method: :put, class: "btn btn-lg btn-default btn-block", data: { confirm: accept_poster_msg}
+  = button_to 'Accept Another Poster', judge_score_assign_path(@judge.id, @orphan_poster.id),  method: :put, class: "btn btn-lg btn-default btn-block", data: { confirm: accept_poster_msg}

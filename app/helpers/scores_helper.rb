@@ -37,7 +37,7 @@ module  ScoresHelper
 
     def no_show_msg
         msg = "Are you sure?"
-        unless @no_show || admin?
+        if (@score_exist && !admin?)
             msg = "This poster is scored by other judges, are you sure?"
         end
         return msg

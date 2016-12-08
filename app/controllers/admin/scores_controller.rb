@@ -71,27 +71,32 @@ class Admin::ScoresController < ApplicationController
 
   def select_posters_by_filter(origin_posters, posters, filter)
     origin_posters.each do |poster|
-       #assume the poster is unscored at first, then we will find out whether it is scored or not
-      type = "completed" # a poster in origin_posters is either completed or inprogress
+      #assume the poster is unscored at first, then we will find out whether it is scored or not
+      # a poster in origin_posters is either completed or inprogress
       no_show = false
+      count = 0
       poster.scores.each do |score|
         if score.no_show
           unless no_show
             posters << poster if filter == "no_show"
             no_show = true
           end
-        elsif score.send(Score.score_terms[0]) < 0 && type != "inprogress"
-            posters << poster if filter == "inprogress"
-            type = "inprogress"
+        elsif score.send(Score.score_terms[0]) > 0
+            count += 1
         end
       end
-      posters << poster if filter == "completed" && type == "completed"
+      
+      if count >= 3
+        posters << poster if filter == "completed"
+      else
+        posters << poster if filter == "inprogress"
+      end
     end
     return posters
   end
 
 	def select_posters(origin_posters, filter)
-	  inprogress_posters = origin_posters.select {|p| p.scores_count == 3 }
+	  inprogress_posters = origin_posters.select {|p| p.scores_count > 2 }
 	  undone_posters = origin_posters - inprogress_posters
 	  
 	  if filter == "undone"

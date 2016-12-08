@@ -2,6 +2,9 @@ class Score < ApplicationRecord
 	#attr_accessor :novelty, :utility, :difficulty, :verbal, :written, :no_show
 	belongs_to :judge, counter_cache: true
 	belongs_to :poster, counter_cache: true
+	validates :novelty, :utility, :difficulty, :verbal, :written, numericality: true
+	validates :novelty, :utility, :difficulty, :verbal, :written, numericality: { other_than: 0 }
+
 	#attr_accessor :judge_id, :poster_id
 	
 	
@@ -13,7 +16,7 @@ class Score < ApplicationRecord
     def self.assign_poster_to_judge(poster, judge)
         score = Score.find_by(poster_id: poster.id, judge_id: judge.id)
         unless score
-            score = judge.scores.build(novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1)
+            score = judge.scores.build(novelty: -1, utility: -1, difficulty: -1, verbal: -1, written: -1, no_show: false)
             poster.scores << score
             score.save!
         end

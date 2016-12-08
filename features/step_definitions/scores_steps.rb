@@ -47,8 +47,6 @@ end
 
 
 
-
-
 Then(/^Judge "(.*?)" set poster (\d) as "no_show"$/) do |arg1, arg2|
     judge = Judge.find_by(name: arg1)
 	poster = Poster.find_by(:number => arg2)
@@ -74,17 +72,23 @@ Given(/^Judges scored posters as following:$/) do |table|
     end
 end
 
+
+
 When(/^I give new scores (.*?)$/) do |grade|
     expect(page).to have_content("Poster #")
-    score = grade.split(",")
-    expect(page).to have_button('Submit', disabled: true)
-    score_terms = Score.score_terms
-    i = 0
-    score_terms.each do |term|
-        choose(term+"#{score[i]}")
-        i = i+1
+    if grade == "No Show"
+        click_button "No Show"
+    else
+        score = grade.split(",")
+        expect(page).to have_button('Submit', disabled: true)
+        score_terms = Score.score_terms
+        i = 0
+        score_terms.each do |term|
+            choose(term+"#{score[i]}")
+            i = i+1
+        end
+        click_button('Submit')
     end
-    click_button('Submit')
 end
 
 When(/^I "(.*?)" the scores given by judge "(.*?)"$/) do |link_name, name|
@@ -116,4 +120,8 @@ end
 And(/^I create new score for judge "(.*?)"$/) do |name|
     fill_in("judge_name", :with => name)
     click_button "Create New Score"
+end
+
+Then(/^Button disappeared "(.*?)"$/) do |button|
+     expect(page).not_to have_button("Accept Another Poster")
 end

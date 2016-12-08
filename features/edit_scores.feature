@@ -35,6 +35,17 @@ Feature: Edit scores
 		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  | Delete|
 		  |Average |4.500  |5.000  |4.500     |4.500 |4.000  |4.500  |       |       |
 
+    Scenario: Edit score to no show
+		Given I am on the view scores page
+		When I follow poster #1 "See Details"
+		And I "Edit" the scores given by judge "Kelly"
+ 	    And I give new scores No Show
+        Then I should be on the show scores page for "1"
+       Then I should see the following table "#details_table":
+          |Judge   |novelty|utility|difficulty|verbal|written|Average| Edit  | Delete|
+          | Kelly  |-      |-      |-         |-     |-      |No Show | Edit  | Delete|
+		  | Sara   |4      |5      |4         |5     |4      |4.400  | Edit  | Delete|
+		  |Average |4.000  |5.000  |4.000     |5.000 |4.000  |4.400  |       |       |
 
 	Scenario: Delete score successfully
 		Given I am on the view scores page

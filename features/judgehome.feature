@@ -30,6 +30,7 @@ Feature: Assignments of judges
 		  | 1      |Big Data        | 4.600 |     |
 		  | 2      |Graph Theory    | -     |     |
 		  | 3      |Wireless Network| -     |     |
+
     Scenario: I can change scores later
 		 When I judge poster #1
 		 And I give new scores 5,5,5,4,4
@@ -41,6 +42,25 @@ Feature: Assignments of judges
 		  | 2      |Graph Theory    | -     |     |
 		  | 3      |Wireless Network| -     |     |
 
+    Scenario: I can change no show scores later
+		 When   Judge "Sara" set poster 1 as "no_show"
+		 When I judge poster #1
+		 And I give new scores 5,4,4,4,4
+		 Then  I should see the following table "#assigned_posters_table":
+          |Poster #|Title           |Average|Grade|
+		  | 1      |Big Data        | 4.200 |     |
+		  | 2      |Graph Theory    | -     |     |
+		  | 3      |Wireless Network| -     |     |
+        
+    Scenario: I can get another poster if there are posters need judges
+		 When I press "Accept Another Poster"
+		 Then  I should see the following table "#assigned_posters_table":
+          |Poster #|Title           |Average|Grade|
+		  | 1      |Big Data        | -     |     |
+		  | 2      |Graph Theory    | -     |     |
+		  | 3      |Wireless Network| -     |     |
+		  | 4      |Algorithm       | -     |     |
+		 Then Button disappeared "Accept Another Poster"
     Scenario: Judge sign out without unscored posters will not see the dialog
 		When I judge poster #1
 		And I give new scores 5,5,5,4,4
@@ -75,7 +95,7 @@ Feature: Assignments of judges
         And  I logged in as "Sara"
         Then  I should see an empty table "#assigned_posters_table"
         
-    @javascript
+  
     Scenario: Judge who cancel the confirm dialog will stay on the page
         When I follow "Sign out"
         And  I press "Cancel"

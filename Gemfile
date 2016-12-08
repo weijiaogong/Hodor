@@ -34,7 +34,7 @@ group :test do
 	gem 'email_spec'
   gem "launchy"
 	gem 'test-unit'
-
+  gem 'rails-controller-testing'
 	gem 'capybara-webkit'
   gem 'headless'
 end
@@ -56,6 +56,7 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'activerecord-session_store'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'

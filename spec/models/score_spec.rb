@@ -16,7 +16,7 @@ describe Score do
            terms = ["novelty", "utility", "difficulty", "verbal", "written"]
            expect(Score.score_terms).to eq terms
         end
-        let(:score) {FactoryGirl.build(:score)}
+        let(:score) {FactoryGirl.build(:unscored)}
         subject{score}
     	it { should respond_to(:novelty) }
     	it { should respond_to(:utility) }
