@@ -4,11 +4,10 @@ class Admin::JudgesController < ApplicationController
     before_action :require_login, :require_admin
 
     def index
-        role = Judge.find_by_access_code(session[:password]).role
-        if role == "superadmin"
+        if current_user.role == "superadmin"
             @judges = Judge.all
         else
-            @judges = Judge.where("role = ? or access_code = ?", "judge", session[:password])
+            @judges = Judge.where("role = ? or id = ?", "judge", current_user.id)
         end
     end
 
