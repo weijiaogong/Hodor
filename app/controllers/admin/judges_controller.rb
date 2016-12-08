@@ -7,7 +7,7 @@ class Admin::JudgesController < ApplicationController
         if current_user.role == "superadmin"
             @judges = Judge.all
         else
-            @judges = Judge.where("role = ? or access_code = ?", "judge", session[:password])
+            @judges = Judge.where("role = ? or id", "judge", current_user.id)
         end
     end
 
