@@ -67,8 +67,8 @@ class Admin::AdminController < ApplicationController
 
 	def reset_pw
 		if (params[:new_pw] == params[:confirm_pw])
-			flash[:notice] = "Password updated"
 			@current_user.update_attributes(access_code: params[:new_pw])
+			flash[:notice] = "Password updated"
 		else
 			flash[:error] = "Passwords don't match"
 		end

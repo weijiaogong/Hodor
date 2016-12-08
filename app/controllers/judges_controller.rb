@@ -65,7 +65,7 @@ class JudgesController < ApplicationController
     end
     
     def get_another_posters(n)
-        posters = Poster.find_least_judged().order(scores_count: :asc)
+        posters = Poster.find_least_judged()
         unless posters.empty?
             posters = posters.reject {|p| @judge.posters.include?(p)}
             posters = posters.sample(n)
