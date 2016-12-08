@@ -42,7 +42,7 @@ class Poster < ApplicationRecord
 		#Poster.where("no_show = false AND scores_count < 3")
 		Poster.where("scores_count < 3")
 	end
-	
+=begin	
 	def self.all_scored
 		posters = Poster.where("scores_count > 0")
 		posters.each do |poster|
@@ -58,6 +58,8 @@ class Poster < ApplicationRecord
             end
 		end
 	end
+=end
+	
 	def self.find_by_keywords(keywords)
 			keywords = keywords.gsub(/^/, '%').gsub(/$/, '%')
 	        Poster.where('lower(title) LIKE ?', keywords.downcase)
