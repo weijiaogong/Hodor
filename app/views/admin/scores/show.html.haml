@@ -32,7 +32,7 @@ title: #{@poster.title}
         %td
 
 = form_tag admin_scores_path, method: :post  do
-  = label_tag "Enter Judge Name:" 
-  = text_field_tag 'judge_name', "", size: 20
+  = label_tag "Enter Judge Access Code:" 
+  = text_field_tag 'judge_code', "", size: 20
   = hidden_field_tag "poster_id", @poster.id
   = submit_tag 'Create New Score', class: "btn btn-default btn"

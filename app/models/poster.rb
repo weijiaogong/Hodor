@@ -62,6 +62,7 @@ class Poster < ApplicationRecord
 	
 	def self.find_by_keywords(keywords)
 			keywords = keywords.gsub(/^/, '%').gsub(/$/, '%')
-	        Poster.where('lower(title) LIKE ?', keywords.downcase)
+	        posters = Poster.where('lower(title) LIKE ?', keywords.downcase)
+	        posters = posters.or(Poster.where('lower(presenter) LIKE ?', keywords.downcase))
 	end
 end

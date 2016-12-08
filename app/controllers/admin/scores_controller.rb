@@ -161,7 +161,7 @@ end
   def create
     poster_id = params[:poster_id]
     @poster = Poster.find(poster_id)
-    @judge = Judge.find_by(name: params[:judge_name])
+    @judge = Judge.find_by(access_code: params[:judge_code])
     if @judge
       score = Score.find_by(judge_id: @judge.id, poster_id: poster_id)
       if score
